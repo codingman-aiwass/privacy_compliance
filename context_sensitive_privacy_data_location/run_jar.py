@@ -52,7 +52,7 @@ def traverse(directory):
         print(fileName)
         try:
             # execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, "/""+fileName+"/"", r'H:\SDKPrivacyLegal\demoApps\googleApps'))
-            execute_cmd_with_timeout(r'java -jar -Xmx16G {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
+            execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
         except Exception as e:
             print(e)
 
@@ -69,14 +69,14 @@ def traverse_decompile(directory):
         apk_name_list.append(directory)
     else:
         for fileName in os.listdir(directory):
-            if fileName.endswith('.apk') and fileName[:-4] + '_decompile' not in os.listdir():
+            if fileName.endswith('.apk'):
                 fileName = os.path.join(directory, fileName)
                 apk_name_list.append(fileName)
 
     for fileName in apk_name_list:
         print(fileName)
         if not os.path.exists(fileName[:-4] + '_decompile'):
-            os.system(r'java -jar -Xmx8G {} {}'.format(decompile_jar_path, fileName))
+            os.system(r'java -jar {} {}'.format(decompile_jar_path, fileName))
 
 
 # run output
@@ -93,13 +93,12 @@ def traverse_output(directory):
     for fileName in apk_name_list:
         print(fileName)
         try:
-            execute_cmd_with_timeout(r'java -jar -Xmx8G {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
+            execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
         except Exception as e:
             print(e)
 
 
 if __name__ == '__main__':
-    print(directories)
     for directory in directories.split(';'):
         if len(directory) > 0:
             traverse_decompile(directory)

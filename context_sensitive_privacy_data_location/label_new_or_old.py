@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 import json
 import sys
 from dealWithInputAndOutput import get_input_args
@@ -18,7 +17,7 @@ def generate_dict_word():
             line = f.readline()
 
 
-def label_new_or_old(input_file, output_file):
+def label_new_or_old(input_file: str, output_file: str):
     """
     Label the result in filtered result.
     The word occured in `dict_word_set` is old.

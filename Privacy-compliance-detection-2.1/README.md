@@ -28,7 +28,6 @@
 - `PrivacyPolicySaveDir` Floder to store the json processing result of the privacy policy
 - `model` stores the models that need to be installed to run the program
 
-- `missing_pp_url_apps.txt` stores those apps whose privacy policy urls are failed to fetch via python crawler. If you want to analyze them, you need to add it to the `Privacy-compliance-detection-2.1/core/pkgName_url.json` and run again.
 
 #### Prerequisites
 
@@ -62,11 +61,7 @@ In order to get logs and results, you need to do the following steps:
 
 - `python3 privacy-policy-main.py`
 
-
-
 '''AppUIAutomator2Navigation-main Setup&&Run'''
-
-Change directory to AppUIAutomator2Navigation-main first.
 
 Make sure to has a real mobile phone and well setup  and python3.10.10. The following blog tells how to set up.
 
@@ -81,11 +76,7 @@ Config what app to dynamically test in `config.py` . It should be package name o
 
  Run `python3 run.py` 
 
-
-
 ''' Static analysis Setup&Run '''
-
-Change directory to Privacy-compliance-detection-2.1/core first.
 
 - Open the `RunningConfig.properties` and add the absolute path of apk(s) or folder(s) after the `apk=` . Seperate each absolute path with ; . For example:`apk=/home/test/;/home/test_apk;/home/test_apks/淘宝联盟.apk;/home/youku.apk;`
 
@@ -97,11 +88,7 @@ Change directory to Privacy-compliance-detection-2.1/core first.
 
 - Run `python3 report_data_in_pp_and_program.py` to start comparing.
 
-  
-
 '''context_sensitive_privacy_data_location Setup&Run'''
-
-Change to context_sensitive_privacy_data_location First.
 
 You can set outputdir and apks to analysis and other config in the RunningConfig.ini
 
@@ -110,9 +97,9 @@ You can set outputdir and apks to analysis and other config in the RunningConfig
 
 
 
-**'''One command run'''**
-- Run `pip install configobj`
-Make sure you are at `./隐私合规` first, and then if you want to run with config file, run `python3 run.py -c config.ini`, else run `python3 run.py`
+'''One command run'''
+
+Make sure you are at `./隐私合规` first, and then run `python3 run.py` .
 
 #### Note
 
@@ -123,10 +110,7 @@ Make sure the file directory structure is like this:
   - context_sensitive_privacy_data_location
   - Privacy-compliance-detection-2.1
   - run.py
-  - missing_pp_url_apps.txt
-  - config.ini
   
-
 **Final integrate logs lie in ./context_sensitive_privacy_data_location/final_res_log_dir**
 
 

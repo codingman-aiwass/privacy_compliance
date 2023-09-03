@@ -115,17 +115,12 @@ def run_write_json(single_txt_path,save_json_path):
     write_list = [total_dict,data_dict_list]
     #权限：
     #获取url
-    with open("result_pkgName_url.json",'r',encoding='utf-8')as f:
+    with open("pkgName_url.json",'r',encoding='utf-8')as f:
         url_name_dict = json.load(f)
     f.close()
-    try:
-        url = url_name_dict[os.path.basename(single_txt_path)[:-4]]#只需要改这里的逻辑就行,解析文件名字提取url,+后面到
-        print(os.path.basename(single_txt_path)[:-4]+"------------")
-        permission_list = run_permission_handle(list(set(data_total_list)),s_list,url)
-        total_dict["permission_list"] = list(set(permission_list))
-    except Exception as e:
-        print(os.path.basename(single_txt_path)[:-4]+"权限提取失败")
-        print(e)
+    url = url_name_dict[os.path.basename(single_txt_path)[:-4]]
+    permission_list = run_permission_handle(list(set(data_total_list)),s_list,url)
+    total_dict["permission_list"] = list(set(permission_list))
     with open(save_json_path+".json", "w", encoding="utf-8") as f:
         json.dump(write_list, f, ensure_ascii=False, indent=2)
     return True

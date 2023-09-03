@@ -1,7 +1,4 @@
 #!/bin/bash
-chmod +x ./config/build-tools-mac/aapt
-chmod +x ./config/build-tools-linux/aapt
-chmod +x ../../AppUIAutomator2Navigation/run.sh
 
 if [ ! -d "$(pwd)/logsPath" ]; then
     mkdir $(pwd)/logsPath
@@ -20,6 +17,5 @@ if [ ! -d "$(pwd)/final_res/pp_missing" ]; then
 fi
 
 echo "Start static analysis..."
-java -jar -Xmx16G find_data_points.jar
-#java -jar find_data_points.jar
+java -jar find_data_points.jar
 
