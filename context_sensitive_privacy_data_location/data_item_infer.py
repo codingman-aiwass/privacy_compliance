@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 import json
 import os.path
 import sys
@@ -29,7 +28,7 @@ def split_camel_case(word):
     return words
 
 
-def handle_dep_pn(dep_result):
+def handle_dep_pn(dep_result: List[dict]) -> dict:
     nn_items = dict()
     condition_items = dict()
 
@@ -62,7 +61,7 @@ def handle_dep_pn(dep_result):
 
 
 # resolve PN propagation: 您的简历信息、软件习惯  --> 您的简历信息、您的软件习惯
-def handle_pn_propagation(condition_items, nn_items):
+def handle_pn_propagation(condition_items: dict, nn_items: dict):
     for key in nn_items.keys():
         nn_item = nn_items[key]
         if nn_item['head'] in condition_items.keys() and nn_item['deprel'] == 'conj':
@@ -82,7 +81,7 @@ def handle_pn_propagation(condition_items, nn_items):
 
 
 # resolve NN propagation: 您的 简历 信息 -->  您的简历信息
-def handle_nn_propagation(condition_items, nn_items):
+def handle_nn_propagation(condition_items: dict, nn_items: dict):
     appending_list_items = dict()
     for key in nn_items.keys():
         nn_item = nn_items[key]
@@ -99,7 +98,7 @@ def handle_nn_propagation(condition_items, nn_items):
             condition_items[key]['form'] = added_form + condition_items[key]['form']
 
 
-def modifier_found(dep_result, nn_item, conjunction_stack):
+def modifier_found(dep_result: List[dict], nn_item: dict, conjunction_stack: list) -> bool:
     for dep_item in dep_result:
         if dep_item['head'] == nn_item['id'] and dep_item['upos'] == 'PN' and dep_item['deprel'] == 'assmod':
             return True
@@ -112,7 +111,7 @@ def modifier_found(dep_result, nn_item, conjunction_stack):
     return False
 
 
-def handle_dep(dep_result):
+def handle_dep(dep_result: List[dict]) -> List[dict]:
     condition_item = dict()
     tmp_condition_item = dict()
     tmp_condition_item_list = list()
@@ -166,7 +165,7 @@ def handle_dep(dep_result):
     return tmp_condition_item_list
 
 
-def clear_data(data):
+def clear_data(data: dict) -> dict:
     for host_object in data['outputObjects']:
         for layout_object in host_object['layouts']:
             if 'LayoutTitle' in layout_object.keys():
@@ -182,7 +181,7 @@ def clear_data(data):
 
 
 class DateInfer:
-    def __init__(self, input_file_path, output_file_path):
+    def __init__(self, input_file_path: str, output_file_path: str):
         self.input_file_path = input_file_path
         self.output_file_path = output_file_path
         self.json_list = self.init_json_list()
@@ -289,7 +288,7 @@ class DateInfer:
         data = clear_data(data)
         return data
 
-    def is_data_item(self, text_obj):
+    def is_data_item(self, text_obj: dict) -> bool:
         item_state = False
         text = text_obj['Text']
         if text == '':
@@ -303,7 +302,7 @@ class DateInfer:
 
         return item_state
 
-    def infer_layout_context(self, layout_title):
+    def infer_layout_context(self, layout_title: str) -> str:
         layout_title = layout_title.replace(' ', '').replace('\n', '')
         if layout_title not in self.text_tok_dict.keys():
             return ''

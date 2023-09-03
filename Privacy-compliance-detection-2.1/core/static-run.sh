@@ -1,7 +1,4 @@
 #!/bin/bash
-chmod +x ./config/build-tools-mac/aapt
-chmod +x ./config/build-tools-linux/aapt
-chmod +x ../../AppUIAutomator2Navigation/run.sh
 
 if [ ! -d "$(pwd)/logsPath" ]; then
     mkdir $(pwd)/logsPath

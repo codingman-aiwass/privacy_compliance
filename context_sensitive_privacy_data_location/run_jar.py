@@ -69,7 +69,7 @@ def traverse_decompile(directory):
         apk_name_list.append(directory)
     else:
         for fileName in os.listdir(directory):
-            if fileName.endswith('.apk') and fileName[:-4] + '_decompile' not in os.listdir():
+            if fileName.endswith('.apk'):
                 fileName = os.path.join(directory, fileName)
                 apk_name_list.append(fileName)
 

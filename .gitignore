@@ -1,12 +1,3 @@
 apks/
 __pycache__/
 .DS_Store
-test.py
-.history
-*.log
-test/
-test1.py
-test2.py
-.idea/
-.vscode/
-AppUIAutomator2Navigation/
