@@ -1,0 +1,2161 @@
+[
+  {
+    "data-item-count": 309,
+    "fp-count": 130,
+    "fp_items": [
+      "key user id",
+      "key user id",
+      "user id",
+      "user id",
+      "user id",
+      "caller user id",
+      "callee user id",
+      "key user id",
+      "key user id",
+      "key user id",
+      "user id",
+      "workspace id",
+      "user id",
+      "mount space id",
+      "space id",
+      "space id",
+      "key user id",
+      "user id",
+      "user id",
+      "user id",
+      "space id",
+      "watch id",
+      "address",
+      "key user id",
+      "user id",
+      "key user id",
+      "province code",
+      "district code",
+      "key user id",
+      "delivery address",
+      "key user id",
+      "delivery address",
+      "user id",
+      "address id",
+      "buyer user id",
+      "user id",
+      "user id",
+      "sub user id",
+      "user id",
+      "space id",
+      "mount space id",
+      "question user id",
+      "key user id",
+      "qn active user id",
+      "main user id",
+      "sub taobao user id",
+      "taobao user id",
+      "user id",
+      "question user id",
+      "key user id",
+      "user id",
+      "mount space id",
+      "space id",
+      "short user id",
+      "user id",
+      "user id",
+      "user id",
+      "user id",
+      "user id",
+      "notification user id",
+      "key user id",
+      "delivery address",
+      "user id",
+      "key user id",
+      "user id",
+      "receiver address",
+      "user id",
+      "user id",
+      "user id",
+      "address component",
+      "user id",
+      "sub user id",
+      "user id",
+      "remote user id",
+      "province code",
+      "district code",
+      "user id",
+      "address",
+      "user id",
+      "current user id",
+      "caller user id",
+      "callee user id",
+      "user id",
+      "user id",
+      "address",
+      "qn active user id",
+      "question user id",
+      "key user id",
+      "speed bucket id",
+      "user id",
+      "address",
+      "key user id",
+      "user id",
+      "province code",
+      "district code",
+      "user id",
+      "address",
+      "delivery address",
+      "question user id",
+      "user id",
+      "buyer user id",
+      "question user id",
+      "user id",
+      "receiver address",
+      "sub taobao user id",
+      "taobao user id",
+      "address",
+      "user id",
+      "address",
+      "address component",
+      "parent enterprise user id",
+      "user id",
+      "parent user id",
+      "user id",
+      "current user id",
+      "user id",
+      "key user id",
+      "user id",
+      "caller user id",
+      "callee user id",
+      "main user id",
+      "sub taobao user id",
+      "taobao user id",
+      "user id",
+      "key user id",
+      "user id",
+      "user id",
+      "address",
+      "sub taobao user id",
+      "taobao user id"
+    ]
+  },
+  [
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: int e(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "address",
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": [
+        "address"
+      ]
+    },
+    {
+      "clazz": "com.taobao.qianniu.deal.ui.BaseDealActivity$2",
+      "method": "<com.taobao.qianniu.deal.ui.BaseDealActivity$2: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.printer.ui.QNPrintOrderListActivity$b",
+      "method": "<com.taobao.qianniu.printer.ui.QNPrintOrderListActivity$b: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.qianniu.newworkbench.a.a$3",
+      "method": "<com.qianniu.newworkbench.a.a$3: void run()>",
+      "privacy_data_items": [
+        "country",
+        "city code",
+        "province",
+        "city",
+        "district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.util.SessionUtils",
+      "method": "<com.ali.user.open.util.SessionUtils: java.lang.String toInternalSessionJSON(com.ali.user.open.session.InternalSession)>",
+      "privacy_data_items": [
+        "avatar url",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.login4android.jsbridge.JSBridgeService",
+      "method": "<com.taobao.login4android.jsbridge.JSBridgeService: void mockLogin(android.taobao.windvane.jsbridge.WVCallBackContext,java.lang.String)>",
+      "privacy_data_items": [
+        "password",
+        "username"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object opt(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.hint.notification.NotificationForwardActivity",
+      "method": "<com.taobao.qianniu.hint.notification.NotificationForwardActivity: void recordSlowReply(android.content.Intent)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.ui.setting.ChatSettingActivity$2",
+      "method": "<com.taobao.qianniu.module.im.ui.setting.ChatSettingActivity$2: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.services.route.RouteSearchV2$CustomCostMode",
+      "method": "<com.amap.api.services.route.RouteSearchV2$CustomCostMode: java.lang.String toJson()>",
+      "privacy_data_items": [
+        "speed cost",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,int)",
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: java.util.Map a(java.util.List,com.huawei.hms.framework.network.grs.GrsBaseInfo,java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "no country",
+        "no route country"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor",
+      "method": "<com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor: void receiveShowPage(boolean,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.logistics.service.impl.QnLogisticsServiceImpl",
+      "method": "<com.taobao.qianniu.logistics.service.impl.QnLogisticsServiceImpl: void selectLogisticsCompany(long,com.taobao.qianniu.deal.service.SelectItem,com.taobao.qianniu.deal.service.QnLogisticsCallback)>",
+      "privacy_data_items": [
+        "send broad cast",
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,boolean)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.dx.handler.e",
+      "method": "<com.taobao.qianniu.headline.ui.dx.handler.e: void handleEvent(com.taobao.android.dinamicx.expression.event.DXEvent,java.lang.Object[],com.taobao.android.dinamicx.DXRuntimeContext)>",
+      "privacy_data_items": [
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.deal.ui.order.detail.OrderDetailActivity",
+      "method": "<com.taobao.qianniu.deal.ui.order.detail.OrderDetailActivity: boolean resolveEventCode(java.lang.String,com.alibaba.fastjson.JSONObject,com.taobao.android.dinamicx.DXRuntimeContext,com.alibaba.fastjson.JSONObject)>",
+      "privacy_data_items": [
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.String getQueryParameter(java.lang.String)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.weibo.ssosdk.b",
+      "method": "<com.weibo.ssosdk.b: java.lang.String bc(android.content.Context)>",
+      "privacy_data_items": [
+        "batterycurrentcapacity",
+        "batterymaxcapacity"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,double)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: java.util.List a(org.json.JSONArray,org.json.JSONObject)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alipay.mobile.common.amnet.service.AmnetInitInfosHelper",
+      "method": "<com.alipay.mobile.common.amnet.service.AmnetInitInfosHelper: java.util.Map getInitInfoFromLocalDeviceInfo(java.util.Map)>",
+      "privacy_data_items": [
+        "workspace id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "workspace id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.biz.filecenter.a.k",
+      "method": "<com.taobao.qianniu.framework.biz.filecenter.a.k: com.taobao.qianniu.framework.biz.filecenter.entity.RemoteFile a(org.json.JSONObject,long)>",
+      "privacy_data_items": [
+        "mount space id",
+        "space id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "mount space id",
+        "space id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.xiaomi.mipush.sdk.MiPushClient$3",
+      "method": "<com.xiaomi.mipush.sdk.MiPushClient$3: void run()>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "space id"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [
+        "space id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.base.BaseQnHeadLineActionActivity",
+      "method": "<com.taobao.qianniu.headline.ui.base.BaseQnHeadLineActionActivity: void onDetailLiveAvatarClick(com.taobao.qianniu.headline.controller.a.d$a,com.taobao.qianniu.headline.model.detail.data.HeadLineDetailModel)>",
+      "privacy_data_items": [
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.biz_account.launch.d.a",
+      "method": "<com.taobao.qianniu.biz_account.launch.d.a: void a(com.taobao.qianniu.biz_account.a.a$a,int,android.os.Bundle,com.taobao.qianniu.framework.account.model.IProtocolAccount)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "void <init>(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.io.Serializable)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.xiaomi.push.service.m",
+      "method": "<com.xiaomi.push.service.m: com.xiaomi.push.service.l a(android.content.Context,java.lang.String,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "user id",
+        "space id"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [
+        "user id",
+        "space id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.aliweex.adapter.module.location.DefaultLocation$WXLocationListener",
+      "method": "<com.alibaba.aliweex.adapter.module.location.DefaultLocation$WXLocationListener: void onLocationChanged(android.location.Location)>",
+      "privacy_data_items": [
+        "country",
+        "watch id",
+        "city code",
+        "address",
+        "province",
+        "city",
+        "address line",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "watch id",
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.bd.pm.biz.web.jsbridge.ProductJsbridge",
+      "method": "<com.alibaba.android.bd.pm.biz.web.jsbridge.ProductJsbridge: void itemSelector(java.lang.String,android.taobao.windvane.jsbridge.WVCallBackContext)>",
+      "privacy_data_items": [
+        "notify by broadcast",
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,boolean)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.xiaomi.push.cs",
+      "method": "<com.xiaomi.push.cs: java.util.ArrayList a(java.util.ArrayList)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "province",
+        "city"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.mapcore.util.bj",
+      "method": "<com.amap.api.mapcore.util.bj: java.util.List a(org.json.JSONObject,android.content.Context)>",
+      "privacy_data_items": [
+        "offlinemapinfo with province",
+        "province"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "org.json.JSONArray optJSONArray(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.settings.bussiness.view.newmobile.NewSettingsActivity",
+      "method": "<com.taobao.qianniu.module.settings.bussiness.view.newmobile.NewSettingsActivity: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.io.Serializable)"
+      ],
+      "false-positive": [
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.bd.sm.data.ShopJsonModel",
+      "method": "<com.alibaba.android.bd.sm.data.ShopJsonModel: java.util.Map _getPoiInfo()>",
+      "privacy_data_items": [
+        "city code",
+        "province code",
+        "city name",
+        "province name",
+        "district name",
+        "district code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "province code",
+        "district code"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil: com.taobao.message.datasdk.facade.model.ConversationViewMap convertConversationViewMapV2(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation)>",
+      "privacy_data_items": [
+        "avatar url",
+        "last msg sender avatar url",
+        "last msg sender name"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.ui.adapter.QNOnlineDeliveryListAdapter$WaitDeliveryHeaderViewHolder",
+      "method": "<com.taobao.qianniu.onlinedelivery.ui.adapter.QNOnlineDeliveryListAdapter$WaitDeliveryHeaderViewHolder: void c(com.taobao.qianniu.onlinedelivery.model.bean.LogisticInfo)>",
+      "privacy_data_items": [
+        "key user id",
+        "delivery refund address",
+        "delivery address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,android.os.Parcelable)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "delivery address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: java.util.List a(org.json.JSONArray)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.circle.a.a",
+      "method": "<com.taobao.qianniu.module.circle.a.a: com.taobao.qianniu.module.circle.bussiness.meeting.bean.CirclesMeeting b(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "province",
+        "city",
+        "publisher avatar"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.ui.fragment.QNOnlineWaitDeliverySubFragment$c",
+      "method": "<com.taobao.qianniu.onlinedelivery.ui.fragment.QNOnlineWaitDeliverySubFragment$c: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "key user id",
+        "delivery refund address",
+        "delivery address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,android.os.Parcelable)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "delivery address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.qianniu.im.business.chat.features.QnByPassFeature$2",
+      "method": "<com.qianniu.im.business.chat.features.QnByPassFeature$2: void run()>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.umipublish.tnode.submit.b",
+      "method": "<com.taobao.umipublish.tnode.submit.b: void a(com.taobao.tao.flexbox.layoutmanager.ac.TNodeActionService$d,java.util.Map)>",
+      "privacy_data_items": [
+        "submit info",
+        "async publish form submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.ui.fragment.QNOnlineWaitDeliverySubFragment",
+      "method": "<com.taobao.qianniu.onlinedelivery.ui.fragment.QNOnlineWaitDeliverySubFragment: com.alibaba.fastjson.JSONObject changeToSenderRequestParams(com.alibaba.fastjson.JSONObject)>",
+      "privacy_data_items": [
+        "province",
+        "city",
+        "district",
+        "address id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "address id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.e",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.e: com.taobao.qianniu.framework.ui.goods.biz.a a(long,java.util.Map)>",
+      "privacy_data_items": [
+        "buyer user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)",
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "buyer user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.circle.bussiness.ad.a.a$3",
+      "method": "<com.taobao.qianniu.module.circle.bussiness.ad.a.a$3: void run()>",
+      "privacy_data_items": [
+        "country",
+        "city code",
+        "province",
+        "city",
+        "district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.e",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.e: com.taobao.qianniu.framework.net.model.APIResult a(long,long,java.lang.String,java.lang.String,int,int,long,int,long)>",
+      "privacy_data_items": [
+        "user id",
+        "sub user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id",
+        "sub user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.dal.QnMainRoomDatabase_Impl$1",
+      "method": "<com.taobao.qianniu.dal.QnMainRoomDatabase_Impl$1: androidx.room.RoomOpenHelper$ValidationResult onValidateSchema(androidx.sqlite.db.SupportSQLiteDatabase)>",
+      "privacy_data_items": [
+        "user id",
+        "avatar",
+        "space id",
+        "mount space id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id",
+        "space id",
+        "mount space id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint: void setMessageViewMap(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation,java.util.List,java.util.List)>",
+      "privacy_data_items": [
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "boolean containsKey(java.lang.Object)",
+        "java.lang.Object get(java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.logistics.ui.delivery.LogisticsDeliveryActivity$27",
+      "method": "<com.taobao.qianniu.logistics.ui.delivery.LogisticsDeliveryActivity$27: void run()>",
+      "privacy_data_items": [
+        "city name",
+        "province name",
+        "district name"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.api.HeadLineApiServiceImpl",
+      "method": "<com.taobao.qianniu.headline.api.HeadLineApiServiceImpl: void openQaDetail(java.lang.String,java.lang.String,long)>",
+      "privacy_data_items": [
+        "question user id",
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "question user id",
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.workbench.NewWorkbenchFragmentDeprecated",
+      "method": "<com.taobao.qianniu.workbench.NewWorkbenchFragmentDeprecated: void onViewCreated(android.view.View,android.os.Bundle)>",
+      "privacy_data_items": [
+        "qn active user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "qn active user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.biz_account.a.b",
+      "method": "<com.taobao.qianniu.biz_account.a.b: com.taobao.qianniu.biz_account.a.a$a a(org.json.JSONObject,java.lang.String)>",
+      "privacy_data_items": [
+        "main user id",
+        "sub taobao user id",
+        "taobao user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String,long)",
+        "org.json.JSONObject put(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "main user id",
+        "sub taobao user id",
+        "taobao user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.api.HeadLineApiServiceImpl",
+      "method": "<com.taobao.qianniu.headline.api.HeadLineApiServiceImpl: void openHeadlinePage(com.taobao.qianniu.headline.api.b,long)>",
+      "privacy_data_items": [
+        "question user id",
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "question user id",
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.AbstractProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.AbstractProfileOpenPoint: void refreshProfile(com.taobao.messagesdkwrapper.messagesdk.profile.model.Profile)>",
+      "privacy_data_items": [
+        "avatar decoration",
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint: void refreshProfile(com.taobao.messagesdkwrapper.messagesdk.profile.model.Profile)>",
+      "privacy_data_items": [
+        "avatar decoration",
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.qianniu.im.business.profile.ProfileConvert",
+      "method": "<com.qianniu.im.business.profile.ProfileConvert: java.util.List convertProfileList(org.json.JSONArray)>",
+      "privacy_data_items": [
+        "user id",
+        "avatar"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: int b(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area group",
+        "country group",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: int c(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: void b(org.json.JSONArray)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "address",
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": [
+        "address"
+      ]
+    },
+    {
+      "clazz": "com.taobao.tao.flexbox.layoutmanager.component.ListViewComponent$h",
+      "method": "<com.taobao.tao.flexbox.layoutmanager.component.ListViewComponent$h: void d(android.content.Context,java.util.HashMap)>",
+      "privacy_data_items": [
+        "speed per width",
+        "min page speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.biz.filecenter.a.k",
+      "method": "<com.taobao.qianniu.framework.biz.filecenter.a.k: com.taobao.qianniu.framework.biz.filecenter.entity.QTaskAttachments a(org.json.JSONObject,long)>",
+      "privacy_data_items": [
+        "mount space id",
+        "space id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "mount space id",
+        "space id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.ui.profile.WWEditRemarkActivity",
+      "method": "<com.taobao.qianniu.module.im.ui.profile.WWEditRemarkActivity: android.content.Intent getStartIntent(android.content.Context,java.lang.String,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "short user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "short user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.e",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.e: com.taobao.qianniu.framework.net.model.APIResult a(long,long,java.lang.String,int,int,java.lang.String)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.dal.QnMCRoomDatabase_Impl$1",
+      "method": "<com.taobao.qianniu.dal.QnMCRoomDatabase_Impl$1: androidx.room.RoomOpenHelper$ValidationResult onValidateSchema(androidx.sqlite.db.SupportSQLiteDatabase)>",
+      "privacy_data_items": [
+        "avatar url",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.history.AccountHistoryManager",
+      "method": "<com.ali.user.open.history.AccountHistoryManager: java.lang.String toJSONString(java.util.List)>",
+      "privacy_data_items": [
+        "user id",
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.speed.TBSpeed",
+      "method": "<com.taobao.android.speed.TBSpeed: void init()>",
+      "privacy_data_items": [
+        "init speed swith enable false",
+        "tbspeed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "int w(java.lang.String,java.lang.String)",
+        "int e(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.ui.message.DojoSubConversationActivity$1",
+      "method": "<com.taobao.qianniu.module.im.ui.message.DojoSubConversationActivity$1: void run()>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.hint.HintService",
+      "method": "<com.taobao.qianniu.hint.HintService: void handleThirdPushClick(com.taobao.qianniu.framework.biz.mc.domain.PushMsg)>",
+      "privacy_data_items": [
+        "user id",
+        "notification user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.io.Serializable)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "user id",
+        "notification user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.ui.QNOnlineDeliveryActivity",
+      "method": "<com.taobao.qianniu.onlinedelivery.ui.QNOnlineDeliveryActivity: void onLogisticsClick()>",
+      "privacy_data_items": [
+        "key user id",
+        "delivery refund address",
+        "delivery address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,android.os.Parcelable)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "delivery address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tv.danmaku.ijk.media.player.MonitorMediaPlayer",
+      "method": "<tv.danmaku.ijk.media.player.MonitorMediaPlayer: java.util.HashMap getBaseDimensionValues()>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.rate.foundation.RateJsBridge",
+      "method": "<com.alibaba.android.rate.foundation.RateJsBridge: void handleOpenRateManager(java.lang.String,android.taobao.windvane.jsbridge.WVCallBackContext)>",
+      "privacy_data_items": [
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.biz.SoldTradesApiParser",
+      "method": "<com.taobao.qianniu.module.im.biz.SoldTradesApiParser: java.util.List parse(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "receiver address",
+        "receiver city",
+        "receiver district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "receiver address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.deal.controller.utils.b",
+      "method": "<com.taobao.qianniu.deal.controller.utils.b: void b(java.lang.String,java.lang.String,java.util.Set)>",
+      "privacy_data_items": [
+        "refund search history"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.SharedPreferences$Editor putStringSet(java.lang.String,java.util.Set)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.avplayer.k$1",
+      "method": "<com.taobao.avplayer.k$1: void onSuccess(com.taobao.avplayer.core.model.DWResponse)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)",
+        "java.lang.String getString(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.model.comment.a",
+      "method": "<com.taobao.qianniu.headline.model.comment.a: com.taobao.qianniu.headline.model.comment.data.HeadLineCommentResult a(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "user id",
+        "avatar"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.e",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.e: com.taobao.qianniu.framework.net.model.APIResult b(long,long,java.lang.String,int)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.col.s.ai",
+      "method": "<com.amap.api.col.s.ai: com.amap.api.services.geocoder.RegeocodeAddress a(java.lang.String)>",
+      "privacy_data_items": [
+        "roadinter",
+        "address component"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "org.json.JSONArray optJSONArray(java.lang.String)"
+      ],
+      "false-positive": [
+        "address component"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.biz.common.h$a",
+      "method": "<com.taobao.qianniu.framework.biz.common.h$a: java.util.List parse(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "user id",
+        "sub user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id",
+        "sub user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.artc.internal.ArtcEngineImpl",
+      "method": "<com.taobao.artc.internal.ArtcEngineImpl: void onArtcEvent(int,java.lang.String)>",
+      "privacy_data_items": [
+        "user id",
+        "audio recv lose rate",
+        "remote user id",
+        "video recv lose rate"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id",
+        "remote user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.bd.sm.biz.info.ShopInfoFragment",
+      "method": "<com.alibaba.android.bd.sm.biz.info.ShopInfoFragment: void onActivityResult(int,int,android.content.Intent)>",
+      "privacy_data_items": [
+        "city code",
+        "province code",
+        "city name",
+        "province name",
+        "district name",
+        "district code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "province code",
+        "district code"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.history.AccountHistoryManager",
+      "method": "<com.ali.user.open.history.AccountHistoryManager: java.util.List parseObject(java.lang.String)>",
+      "privacy_data_items": [
+        "user id",
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.logistics.ui.delivery.LogisticsDeliveryActivity$19",
+      "method": "<com.taobao.qianniu.logistics.ui.delivery.LogisticsDeliveryActivity$19: void run()>",
+      "privacy_data_items": [
+        "address",
+        "city name",
+        "province name",
+        "district name"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.chat.page.base.ParseUtil",
+      "method": "<com.taobao.message.chat.page.base.ParseUtil: java.lang.String getIdentifier(android.os.Bundle,android.net.Uri)>",
+      "privacy_data_items": [
+        "user id",
+        "current user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String getQueryParameter(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id",
+        "current user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor",
+      "method": "<com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor: void startCallPhone(java.lang.String,boolean,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.e",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.e: com.taobao.qianniu.framework.net.model.APIResult a(long,long,java.lang.String,int)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil: void removeViewMapLastMessageInfoV2(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation)>",
+      "privacy_data_items": [
+        "last msg sender avatar url",
+        "last msg sender name"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object remove(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.biz.slowreply.SlowReplyPushCenter",
+      "method": "<com.taobao.qianniu.module.im.biz.slowreply.SlowReplyPushCenter: void recordPush()>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.module.im.biz.NewSoldTradesApiParser",
+      "method": "<com.taobao.qianniu.module.im.biz.NewSoldTradesApiParser: java.util.List parse(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "address",
+        "city"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.share.taopassword.querypassword.check.checker.a",
+      "method": "<com.taobao.share.taopassword.querypassword.check.checker.a: boolean fk(java.lang.String)>",
+      "privacy_data_items": [
+        "be tao password",
+        "tppassword checker"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String getString(java.lang.String)",
+        "int d(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.workbench.v2.homepage.container.b",
+      "method": "<com.taobao.qianniu.workbench.v2.homepage.container.b: void onViewCreated(android.view.View,android.os.Bundle)>",
+      "privacy_data_items": [
+        "qn active user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "qn active user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.controller.d.a",
+      "method": "<com.taobao.qianniu.headline.controller.d.a: boolean b(java.lang.String,android.content.Intent)>",
+      "privacy_data_items": [
+        "question user id",
+        "key user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.String getQueryParameter(java.lang.String)"
+      ],
+      "false-positive": [
+        "question user id",
+        "key user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "mtopsdk.mtop.util.MtopStatistics",
+      "method": "<mtopsdk.mtop.util.MtopStatistics: void doCommitStatsTask()>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "datum speed",
+        "speed bucket id",
+        "speed bucket"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [
+        "speed bucket id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.c.b",
+      "method": "<com.taobao.qianniu.onlinedelivery.c.b: com.alibaba.fastjson.JSONObject b(com.taobao.qianniu.onlinedelivery.model.bean.DeliveryAddressBean)>",
+      "privacy_data_items": [
+        "province",
+        "city",
+        "district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.ucc.base.BaseUccServiceProvider",
+      "method": "<com.ali.user.open.ucc.base.BaseUccServiceProvider: java.util.Map buildSessionInfo(java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "avatar url",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.autonavi.amap.mapcore.Inner_3dMap_location",
+      "method": "<com.autonavi.amap.mapcore.Inner_3dMap_location: org.json.JSONObject toJson(int)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,double)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.base.BaseQnHeadLineActionActivity",
+      "method": "<com.taobao.qianniu.headline.ui.base.BaseQnHeadLineActionActivity: void onProfileClick(com.taobao.qianniu.headline.model.detail.data.HeadLineDetailModel)>",
+      "privacy_data_items": [
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.printer.model.a",
+      "method": "<com.taobao.qianniu.printer.model.a: com.taobao.qianniu.printer.model.a.c a(long,boolean,com.taobao.qianniu.printer.model.model.af,com.taobao.qianniu.printer.model.model.o,com.taobao.qianniu.printer.model.model.aa,com.taobao.qianniu.printer.model.model.ae,com.taobao.qianniu.printer.model.model.ad,com.taobao.qianniu.printer.model.model.m)>",
+      "privacy_data_items": [
+        "waybill type dto str",
+        "waybill dto str",
+        "consign send address str"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.bd.sm.biz.address.AddressActivity",
+      "method": "<com.alibaba.android.bd.sm.biz.address.AddressActivity: void onConfirm()>",
+      "privacy_data_items": [
+        "have detail address change",
+        "city code",
+        "province code",
+        "city name",
+        "province name",
+        "district name",
+        "district code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,boolean)"
+      ],
+      "false-positive": [
+        "province code",
+        "district code"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.d",
+      "method": "<com.huawei.hms.framework.network.grs.b.d: int b(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area group",
+        "country group",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.biz_login.view.fragment.EnterPriseRegFragment",
+      "method": "<com.taobao.qianniu.biz_login.view.fragment.EnterPriseRegFragment: void onSendSMSSuccess(long,com.ali.user.mobile.data.model.SmsApplyResult)>",
+      "privacy_data_items": [
+        "password",
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.login4android.session.SessionManager",
+      "method": "<com.taobao.login4android.session.SessionManager: void onLoginSuccess(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,java.lang.String[],java.lang.String[],java.lang.String[],long,long,java.lang.String)>",
+      "privacy_data_items": [
+        "user id",
+        "username"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.location.AMapLocation",
+      "method": "<com.amap.api.location.AMapLocation: org.json.JSONObject toJson(int)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,double)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.onlinedelivery.ui.QNOnlineDeliveryLogisticsActivity",
+      "method": "<com.taobao.qianniu.onlinedelivery.ui.QNOnlineDeliveryLogisticsActivity: void onSureClick()>",
+      "privacy_data_items": [
+        "delivery refund address",
+        "delivery address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,android.os.Parcelable)"
+      ],
+      "false-positive": [
+        "delivery address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.dx.handler.b",
+      "method": "<com.taobao.qianniu.headline.ui.dx.handler.b: void handleEvent(com.taobao.android.dinamicx.expression.event.DXEvent,java.lang.Object[],com.taobao.android.dinamicx.DXRuntimeContext)>",
+      "privacy_data_items": [
+        "question user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "question user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.ui.goods.biz.d$7",
+      "method": "<com.taobao.qianniu.framework.ui.goods.biz.d$7: void run()>",
+      "privacy_data_items": [
+        "buyer user id",
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object remove(java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "buyer user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.dx.handler.a",
+      "method": "<com.taobao.qianniu.headline.ui.dx.handler.a: void handleEvent(com.taobao.android.dinamicx.expression.event.DXEvent,java.lang.Object[],com.taobao.android.dinamicx.DXRuntimeContext)>",
+      "privacy_data_items": [
+        "question user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "question user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: void a(com.huawei.hms.framework.network.grs.GrsBaseInfo)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "no country",
+        "no route country"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.changeprice.a.b",
+      "method": "<com.taobao.qianniu.changeprice.a.b: com.taobao.qianniu.changeprice.model.TradeOrderItemList a(org.json.JSONObject,org.json.JSONObject)>",
+      "privacy_data_items": [
+        "receiver address",
+        "receiver city",
+        "receiver district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "receiver address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.speed.TBSpeed",
+      "method": "<com.taobao.android.speed.TBSpeed: void initOrange()>",
+      "privacy_data_items": [
+        "be speed enable",
+        "tbspeed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)",
+        "int e(java.lang.String,java.lang.String,java.lang.Throwable)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.top.android.TopAndroidClient",
+      "method": "<com.taobao.top.android.TopAndroidClient: java.lang.Long getUserIdFromAccessToken(com.taobao.top.android.auth.AccessToken)>",
+      "privacy_data_items": [
+        "sub taobao user id",
+        "taobao user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [
+        "sub taobao user id",
+        "taobao user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.speed.TBSpeed$3",
+      "method": "<com.taobao.android.speed.TBSpeed$3: void onConfigUpdate(java.lang.String,java.util.Map)>",
+      "privacy_data_items": [
+        "speed open",
+        "speed black list",
+        "be speed enable",
+        "speed gray",
+        "tbspeed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)",
+        "int e(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.c",
+      "method": "<com.loc.c: int a(java.lang.String,java.util.List,android.os.Bundle)>",
+      "privacy_data_items": [
+        "address",
+        "cityname"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.c",
+      "method": "<com.loc.c: int c(java.lang.String,java.util.List,android.os.Bundle)>",
+      "privacy_data_items": [
+        "citycode",
+        "district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONArray optJSONArray(java.lang.String)",
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.framework.biz.common.h$b",
+      "method": "<com.taobao.qianniu.framework.biz.common.h$b: java.util.List parse(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.i",
+      "method": "<com.loc.i: java.lang.String a(com.amap.api.location.AMapLocation)>",
+      "privacy_data_items": [
+        "country",
+        "city code",
+        "address",
+        "province",
+        "city",
+        "street",
+        "district",
+        "street num"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.fg",
+      "method": "<com.loc.fg: com.loc.eo b(java.lang.String)>",
+      "privacy_data_items": [
+        "country",
+        "street number",
+        "province",
+        "citycode",
+        "city",
+        "street",
+        "district",
+        "address component"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address component"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.plugin.ui.qap.mtop.IpcJSBridgeService",
+      "method": "<com.taobao.qianniu.plugin.ui.qap.mtop.IpcJSBridgeService: void mockLogin(android.taobao.windvane.jsbridge.WVCallBackContext,java.lang.String)>",
+      "privacy_data_items": [
+        "password",
+        "username"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object opt(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.dal.QnAccountRoomDatabase_Impl$1",
+      "method": "<com.taobao.qianniu.dal.QnAccountRoomDatabase_Impl$1: androidx.room.RoomOpenHelper$ValidationResult onValidateSchema(androidx.sqlite.db.SupportSQLiteDatabase)>",
+      "privacy_data_items": [
+        "parent enterprise user id",
+        "user id",
+        "avatar",
+        "parent user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "parent enterprise user id",
+        "user id",
+        "parent user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.chat.page.base.ParseUtil",
+      "method": "<com.taobao.message.chat.page.base.ParseUtil: com.taobao.message.chat.page.base.UserInfo getUserInfo(android.os.Bundle,android.net.Uri)>",
+      "privacy_data_items": [
+        "user id",
+        "current user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String getQueryParameter(java.lang.String)"
+      ],
+      "false-positive": [
+        "user id",
+        "current user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.family.c",
+      "method": "<com.taobao.family.c: void <init>(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "gender",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "int optInt(java.lang.String,int)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.headline.ui.channel.QnHeadLineNewSubsAdapter$c$1",
+      "method": "<com.taobao.qianniu.headline.ui.channel.QnHeadLineNewSubsAdapter$c$1: void onClick(android.view.View)>",
+      "privacy_data_items": [
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.Intent putExtra(java.lang.String,long)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor",
+      "method": "<com.taobao.message.ui.biz.videochat.vchat.utils.VideoAppMonitor: void cancelCallPhone(boolean,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "caller user id",
+        "callee user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.biz_account.a.a",
+      "method": "<com.taobao.qianniu.biz_account.a.a: com.taobao.qianniu.biz_account.a.a$a a(org.json.JSONObject,android.os.Bundle,java.lang.String)>",
+      "privacy_data_items": [
+        "main user id",
+        "sub taobao user id",
+        "taobao user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "long optLong(java.lang.String,long)",
+        "org.json.JSONObject put(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "main user id",
+        "sub taobao user id",
+        "taobao user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.bd.pm.biz.web.jsbridge.ProductJsbridge",
+      "method": "<com.alibaba.android.bd.pm.biz.web.jsbridge.ProductJsbridge: void handleMediaPreview(java.lang.String,android.taobao.windvane.jsbridge.WVCallBackContext)>",
+      "privacy_data_items": [
+        "notify by broadcast",
+        "key user id",
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,boolean)",
+        "android.content.Intent putExtra(java.lang.String,long)"
+      ],
+      "false-positive": [
+        "key user id",
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.deal.model.QnDealDatabase_Impl$1",
+      "method": "<com.taobao.qianniu.deal.model.QnDealDatabase_Impl$1: androidx.room.RoomOpenHelper$ValidationResult onValidateSchema(androidx.sqlite.db.SupportSQLiteDatabase)>",
+      "privacy_data_items": [
+        "user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user id"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.fj",
+      "method": "<com.loc.fj: void a(com.amap.api.location.AMapLocation,org.json.JSONObject)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "java.lang.String optString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.qianniu.net.client.top.c",
+      "method": "<com.taobao.qianniu.net.client.top.c: com.taobao.top.android.TopAndroidClient b(java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "sub taobao user id",
+        "taobao user id"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "boolean has(java.lang.String)",
+        "long getLong(java.lang.String)"
+      ],
+      "false-positive": [
+        "sub taobao user id",
+        "taobao user id"
+      ],
+      "3-false-positive": []
+    }
+  ]
+]

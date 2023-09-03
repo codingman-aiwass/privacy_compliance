@@ -1,0 +1,1580 @@
+{
+    "permission-count": 315,
+    "permission-description": [
+        [
+            "USE_SIP",
+            "use SIP",
+            "使用互联网电话"
+        ],
+        [
+            "PROCESS_OUTGOING_CALLS",
+            "process outgoing calls",
+            "处理拨出电话"
+        ],
+        [
+            "BODY_SENSORS",
+            "body sensors",
+            "身体传感器"
+        ],
+        [
+            "RECEIVE_WAP_PUSH",
+            "receive WAP push",
+            "接收WAP推送"
+        ],
+        [
+            "RECEIVE_MMS",
+            "receive MMS",
+            "接收彩信"
+        ],
+        [
+            "READ_CALENDAR",
+            "read calendar",
+            "读取日历"
+        ],
+        [
+            "WRITE_CALENDAR",
+            "write calendar",
+            "写入日历"
+        ],
+        [
+            "READ_HISTORY_BOOKMARKS",
+            "read bookmarks",
+            "读取书签历史"
+        ],
+        [
+            "WRITE_HISTORY_BOOKMARKS",
+            "write bookmarks",
+            "写入书签历史"
+        ],
+        [
+            "READ_PROFILE",
+            "read profile",
+            "读取个人资料"
+        ],
+        [
+            "WRITE_PROFILE",
+            "write profile",
+            "写入个人资料"
+        ],
+        [
+            "READ_SOCIAL_STREAM",
+            "read social stream",
+            "读取社交流"
+        ],
+        [
+            "WRITE_SOCIAL_STREAM",
+            "write social stream",
+            "写入社交流"
+        ],
+        [
+            "READ_USER_DICTIONARY",
+            "read user dictionary",
+            "读取用户词典"
+        ],
+        [
+            "WRITE_USER_DICTIONARY",
+            "write user dictionary",
+            "写入用户词典"
+        ],
+        [
+            "BIND_DEVICE_ADMIN",
+            "bind device admin",
+            "绑定设备管理员"
+        ],
+        [
+            "CHANGE_CONFIGURATION",
+            "change configuration",
+            "更改配置"
+        ],
+        [
+            "EXPAND_STATUS_BAR",
+            "expand status bar",
+            "扩展状态栏"
+        ],
+        [
+            "FLASHLIGHT",
+            "flashlight",
+            "手电筒"
+        ],
+        [
+            "MANAGE_OWN_CALLS",
+            "manage own calls",
+            "管理自己的通话"
+        ],
+        [
+            "MODIFY_AUDIO_SETTINGS",
+            "modify audio settings",
+            "修改音频设置"
+        ],
+        [
+            "NFC",
+            "NFC",
+            "NFC"
+        ],
+        [
+            "WRITE_SETTINGS",
+            "write settings",
+            "写入设置"
+        ],
+        [
+            "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+            "ignore battery optimizations",
+            "忽略电池优化"
+        ],
+        [
+            "SYSTEM_ALERT_WINDOW",
+            "system alert window",
+            ""
+        ],
+        [
+            "CAMERA",
+            "camera",
+            "相机"
+        ],
+        [
+            "READ_CONTACTS",
+            "read contacts",
+            "读取联系人"
+        ],
+        [
+            "WRITE_CONTACTS",
+            "write contacts",
+            "写入联系人"
+        ],
+        [
+            "RECORD_AUDIO",
+            "record audio",
+            "录音"
+        ],
+        [
+            "READ_PHONE_STATE",
+            "read phone state",
+            "读取手机状态"
+        ],
+        [
+            "CALL_PHONE",
+            "call phone",
+            "拨打电话"
+        ],
+        [
+            "READ_CALL_LOG",
+            "read call log",
+            "读取通话记录"
+        ],
+        [
+            "WRITE_CALL_LOG",
+            "write call log",
+            "写入通话记录"
+        ],
+        [
+            "READ_SMS",
+            "read SMS",
+            "读取短信"
+        ],
+        [
+            "SEND_SMS",
+            "send SMS",
+            "发送短信"
+        ],
+        [
+            "RECEIVE_SMS",
+            "receive SMS",
+            "接收短信"
+        ],
+        [
+            "READ_EXTERNAL_STORAGE",
+            "read external storage",
+            "读取外部存储"
+        ],
+        [
+            "WRITE_EXTERNAL_STORAGE",
+            "write external storage",
+            "写入外部存储"
+        ],
+        [
+            "GET_ACCOUNTS",
+            "get accounts",
+            "获取账户信息"
+        ],
+        [
+            "USE_FINGERPRINT",
+            "use fingerprint",
+            "使用指纹识别"
+        ],
+        [
+            "INTERNET",
+            "internet",
+            "互联网"
+        ],
+        [
+            "CHANGE_WIFI_STATE",
+            "change Wi-Fi",
+            "更改 Wi-Fi"
+        ],
+        [
+            "BLUETOOTH",
+            "bluetooth",
+            "蓝牙"
+        ],
+        [
+            "BLUETOOTH_ADMIN",
+            "bluetooth admin",
+            "蓝牙管理员"
+        ],
+        [
+            "VIBRATE",
+            "vibrate",
+            "震动"
+        ],
+        [
+            "WAKE_LOCK",
+            "wake lock",
+            "保持唤醒"
+        ],
+        [
+            "RECEIVE_BOOT_COMPLETED",
+            "boot completed",
+            "启动完成"
+        ],
+        [
+            "INSTALL_SHORTCUT",
+            "install shortcut",
+            "安装快捷方式"
+        ],
+        [
+            "UNINSTALL_SHORTCUT",
+            "uninstall shortcut",
+            "卸载快捷方式"
+        ],
+        [
+            "ACCEPT_HANDOVER",
+            "handover",
+            "递交接管"
+        ],
+        [
+            "ACCESS_BACKGROUND_LOCATION",
+            "background location",
+            "后台定位"
+        ],
+        [
+            "ACCESS_BLOBS_ACROSS_USERS",
+            "across user blobs",
+            "跨用户blob"
+        ],
+        [
+            "ACCESS_CHECKIN_PROPERTIES",
+            "checkin properties",
+            "签入属性"
+        ],
+        [
+            "ACCESS_COARSE_LOCATION",
+            "coarse location",
+            "粗略位置"
+        ],
+        [
+            "ACCESS_FINE_LOCATION",
+            "fine location",
+            "精确位置"
+        ],
+        [
+            "ACCESS_LOCATION_EXTRA_COMMANDS",
+            "extra commands",
+            "额外命令"
+        ],
+        [
+            "ACCESS_MEDIA_LOCATION",
+            "media location",
+            "媒体位置"
+        ],
+        [
+            "ACCESS_NETWORK_STATE",
+            "network state",
+            "网络状态"
+        ],
+        [
+            "ACCESS_NOTIFICATION_POLICY",
+            "notification policy",
+            "访问通知策略"
+        ],
+        [
+            "ACCESS_WIFI_STATE",
+            "wifi state",
+            "Wi-Fi 状态"
+        ],
+        [
+            "ACCOUNT_MANAGER",
+            "account manager",
+            "账户管理器"
+        ],
+        [
+            "ACTIVITY_RECOGNITION",
+            "activity recognition",
+            "活动识别"
+        ],
+        [
+            "ADD_VOICEMAIL",
+            "voicemail",
+            "语音信箱"
+        ],
+        [
+            "ANSWER_PHONE_CALLS",
+            "answer calls",
+            "接听电话"
+        ],
+        [
+            "BATTERY_STATS",
+            "battery stats",
+            "电池状态"
+        ],
+        [
+            "BIND_ACCESSIBILITY_SERVICE",
+            "accessibility service",
+            "可访问性服务"
+        ],
+        [
+            "BIND_APPWIDGET",
+            "app widget",
+            "应用小部件"
+        ],
+        [
+            "BIND_AUTOFILL_SERVICE",
+            "autofill service",
+            "自动填充服务"
+        ],
+        [
+            "BIND_CALL_REDIRECTION_SERVICE",
+            "call redirection",
+            "呼叫重定向"
+        ],
+        [
+            "BIND_CARRIER_MESSAGING_CLIENT_SERVICE",
+            "carrier messaging client",
+            "运营商短信客户端"
+        ],
+        [
+            "BIND_CARRIER_MESSAGING_SERVICE",
+            "carrier messaging",
+            "运营商短信"
+        ],
+        [
+            "BIND_CARRIER_SERVICES",
+            "carrier services",
+            "运营商服务"
+        ],
+        [
+            "BIND_CHOOSER_TARGET_SERVICE",
+            "chooser target",
+            "目标选择器"
+        ],
+        [
+            "BIND_COMPANION_DEVICE_SERVICE",
+            "companion device",
+            "配套设备"
+        ],
+        [
+            "BIND_CONDITION_PROVIDER_SERVICE",
+            "condition provider",
+            "条件提供程序"
+        ],
+        [
+            "BIND_CONTROLS",
+            "controls",
+            "控制"
+        ],
+        [
+            "BIND_CREDENTIAL_PROVIDER_SERVICE",
+            "credential provider",
+            "凭据提供程序"
+        ],
+        [
+            "BIND_DREAM_SERVICE",
+            "dream",
+            "梦境"
+        ],
+        [
+            "BIND_INCALL_SERVICE",
+            "incall",
+            "呼入"
+        ],
+        [
+            "BIND_INPUT_METHOD",
+            "input method",
+            "输入法"
+        ],
+        [
+            "BIND_MIDI_DEVICE_SERVICE",
+            "midi device",
+            "MIDI设备"
+        ],
+        [
+            "BIND_NFC_SERVICE",
+            "NFC",
+            "近场通讯"
+        ],
+        [
+            "BIND_NOTIFICATION_LISTENER_SERVICE",
+            "notification listener",
+            "通知监听器"
+        ],
+        [
+            "BIND_PRINT_SERVICE",
+            "print",
+            "打印"
+        ],
+        [
+            "BIND_QUICK_ACCESS_WALLET_SERVICE",
+            "wallet",
+            "钱包"
+        ],
+        [
+            "BIND_QUICK_SETTINGS_TILE",
+            "settings",
+            "设置"
+        ],
+        [
+            "BIND_REMOTEVIEWS",
+            "remote",
+            "远程"
+        ],
+        [
+            "BIND_SCREENING_SERVICE",
+            "screening",
+            "屏幕"
+        ],
+        [
+            "BIND_TELECOM_CONNECTION_SERVICE",
+            "telecom",
+            "电信"
+        ],
+        [
+            "BIND_TEXT_SERVICE",
+            "text",
+            "文本"
+        ],
+        [
+            "BIND_TV_INPUT",
+            "tv",
+            "电视"
+        ],
+        [
+            "BIND_TV_INTERACTIVE_APP",
+            "tv interactive",
+            "电视互动"
+        ],
+        [
+            "BIND_VISUAL_VOICEMAIL_SERVICE",
+            "voicemail",
+            "视觉语音信箱"
+        ],
+        [
+            "BIND_VOICE_INTERACTION",
+            "voice",
+            "语音交互"
+        ],
+        [
+            "BIND_VPN_SERVICE",
+            "vpn",
+            "虚拟专用网络"
+        ],
+        [
+            "BIND_VR_LISTENER_SERVICE",
+            "vr",
+            "虚拟现实"
+        ],
+        [
+            "BIND_WALLPAPER",
+            "bind wallpaper",
+            "绑定壁纸"
+        ],
+        [
+            "BLUETOOTH_ADVERTISE",
+            "bluetooth advertise",
+            "蓝牙广播"
+        ],
+        [
+            "BLUETOOTH_CONNECT",
+            "bluetooth connect",
+            "蓝牙连接"
+        ],
+        [
+            "BLUETOOTH_PRIVILEGED",
+            "bluetooth privileged",
+            "蓝牙特权"
+        ],
+        [
+            "BLUETOOTH_SCAN",
+            "bluetooth scan",
+            "蓝牙扫描"
+        ],
+        [
+            "BODY_SENSORS_BACKGROUND",
+            "body sensors background",
+            "车身传感器背景"
+        ],
+        [
+            "BROADCAST_PACKAGE_REMOVED",
+            "package removed",
+            "包装已移除"
+        ],
+        [
+            "BROADCAST_SMS",
+            "SMS",
+            "短讯服务"
+        ],
+        [
+            "BROADCAST_STICKY",
+            "sticky",
+            "粘性的"
+        ],
+        [
+            "BROADCAST_WAP_PUSH",
+            "WAP push",
+            "WAP推送"
+        ],
+        [
+            "CALL_COMPANION_APP",
+            "companion",
+            "同伴"
+        ],
+        [
+            "CALL_PRIVILEGED",
+            "call privileged",
+            "拨打紧急电话"
+        ],
+        [
+            "CAPTURE_AUDIO_OUTPUT",
+            "audio output",
+            "音频输出"
+        ],
+        [
+            "CHANGE_COMPONENT_ENABLED_STATE",
+            "component",
+            "组件启用"
+        ],
+        [
+            "CHANGE_NETWORK_STATE",
+            "network",
+            "网络"
+        ],
+        [
+            "CHANGE_WIFI_MULTICAST_STATE",
+            "multicast",
+            "多播"
+        ],
+        [
+            "CLEAR_APP_CACHE",
+            "app cache",
+            "应用程序缓存"
+        ],
+        [
+            "CONFIGURE_WIFI_DISPLAY",
+            "configure wifi display",
+            "配置无线显示器"
+        ],
+        [
+            "CONTROL_LOCATION_UPDATES",
+            "control location updates",
+            "控制位置信息更新"
+        ],
+        [
+            "CREDENTIAL_MANAGER_SET_ORIGIN",
+            "set credential manager origin",
+            "设置凭据源"
+        ],
+        [
+            "DELETE_CACHE_FILES",
+            "delete cache files",
+            "删除缓存文件"
+        ],
+        [
+            "DELETE_PACKAGES",
+            "delete packages",
+            "删除应用程序"
+        ],
+        [
+            "DELIVER_COMPANION_MESSAGES",
+            "deliver companion messages",
+            "传递附件消息"
+        ],
+        [
+            "DETECT_SCREEN_CAPTURE",
+            "detect screen capture",
+            "检测屏幕截取"
+        ],
+        [
+            "DIAGNOSTIC",
+            "diagnostic",
+            "诊断"
+        ],
+        [
+            "DISABLE_KEYGUARD",
+            "disable keyguard",
+            "禁用密钥保护"
+        ],
+        [
+            "DUMP",
+            "dump",
+            "访问系统级数据"
+        ],
+        [
+            "ENFORCE_UPDATE_OWNERSHIP",
+            "enforce update ownership",
+            "强制更新所有权"
+        ],
+        [
+            "EXECUTE_APP_ACTION",
+            "execute app action",
+            "执行应用程序操作"
+        ],
+        [
+            "FACTORY_TEST",
+            "factory test",
+            "出厂测试"
+        ],
+        [
+            "FOREGROUND_SERVICE",
+            "foreground service",
+            "前台服务"
+        ],
+        [
+            "FOREGROUND_SERVICE_CAMERA",
+            "foreground service camera",
+            "前台服务相机"
+        ],
+        [
+            "FOREGROUND_SERVICE_CONNECTED_DEVICE",
+            "foreground service connected device",
+            "前台服务连接设备"
+        ],
+        [
+            "FOREGROUND_SERVICE_DATA_SYNC",
+            "foreground service data sync",
+            "前台服务数据同步"
+        ],
+        [
+            "FOREGROUND_SERVICE_HEALTH",
+            "health",
+            "健康"
+        ],
+        [
+            "FOREGROUND_SERVICE_LOCATION",
+            "location",
+            "位置"
+        ],
+        [
+            "FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+            "media playback",
+            "媒体播放"
+        ],
+        [
+            "FOREGROUND_SERVICE_MEDIA_PROJECTION",
+            "media projection",
+            "媒体投影"
+        ],
+        [
+            "FOREGROUND_SERVICE_MICROPHONE",
+            "microphone",
+            "麦克风"
+        ],
+        [
+            "FOREGROUND_SERVICE_PHONE_CALL",
+            "phone call",
+            "电话"
+        ],
+        [
+            "FOREGROUND_SERVICE_REMOTE_MESSAGING",
+            "remote messaging",
+            "远程消息"
+        ],
+        [
+            "FOREGROUND_SERVICE_SPECIAL_USE",
+            "special use",
+            "特殊用途"
+        ],
+        [
+            "FOREGROUND_SERVICE_SYSTEM_EXEMPTED",
+            "system exempted",
+            "系统豁免"
+        ],
+        [
+            "GET_ACCOUNTS_PRIVILEGED",
+            "privileged accounts",
+            "特权帐户"
+        ],
+        [
+            "GET_PACKAGE_SIZE",
+            "package size",
+            "包装尺寸"
+        ],
+        [
+            "GET_TASKS",
+            "tasks",
+            "任务"
+        ],
+        [
+            "GLOBAL_SEARCH",
+            "global search",
+            "全局搜索"
+        ],
+        [
+            "HIDE_OVERLAY_WINDOWS",
+            "overlay windows",
+            "覆盖窗口"
+        ],
+        [
+            "HIGH_SAMPLING_RATE_SENSORS",
+            "high-rate sensors",
+            "高速率传感器"
+        ],
+        [
+            "INSTALL_LOCATION_PROVIDER",
+            "location provider",
+            "位置提供程序"
+        ],
+        [
+            "INSTALL_PACKAGES",
+            "install packages",
+            "安装程序包"
+        ],
+        [
+            "INSTANT_APP_FOREGROUND_SERVICE",
+            "instant foreground service",
+            "即时前台服务"
+        ],
+        [
+            "INTERACT_ACROSS_PROFILES",
+            "interact across profiles",
+            "跨配置文件交互"
+        ],
+        [
+            "KILL_BACKGROUND_PROCESSES",
+            "kill background processes",
+            "终止后台进程"
+        ],
+        [
+            "LAUNCH_CAPTURE_CONTENT_ACTIVITY_FOR_NOTE",
+            "launch capture activity",
+            "发射捕获活动"
+        ],
+        [
+            "LAUNCH_MULTI_PANE_SETTINGS_DEEP_LINK",
+            "launch settings",
+            "启动设置"
+        ],
+        [
+            "LOADER_USAGE_STATS",
+            "loader usage stats",
+            "加载程序使用情况统计"
+        ],
+        [
+            "LOCATION_HARDWARE",
+            "location hardware",
+            "硬件地址"
+        ],
+        [
+            "MANAGE_DEVICE_LOCK_STATE",
+            "manage lock state",
+            "管理锁定状态"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ACCESSIBILITY",
+            "manage accessibility policy",
+            "管理可访问性策略"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ACCOUNT_MANAGEMENT",
+            "manage account policy",
+            "管理帐户策略"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ACROSS_USERS",
+            "user management",
+            "用户管理"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ACROSS_USERS_FULL",
+            "full user management",
+            "全用户管理"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ACROSS_USERS_SECURITY_CRITICAL",
+            "critical user management",
+            "关键用户管理"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_AIRPLANE_MODE",
+            "airplane mode control",
+            "飞机模式控制"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_APPS_CONTROL",
+            "app control",
+            "应用程序控件"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_APP_RESTRICTIONS",
+            "app restrictions",
+            "应用程序限制"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_APP_USER_DATA",
+            "app user data control",
+            "应用程序用户数据控件"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_AUDIO_OUTPUT",
+            "audio output",
+            "音频输出"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_AUTOFILL",
+            "autofill",
+            "自动填充"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_BACKUP_SERVICE",
+            "backup service",
+            "备份服务"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_BLUETOOTH",
+            "bluetooth",
+            "蓝牙"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_BUGREPORT",
+            "bug report",
+            "错误报告"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_CALLS",
+            "calls",
+            "电话"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_CAMERA",
+            "camera",
+            "照相机"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_CERTIFICATES",
+            "certificates",
+            "证书"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_COMMON_CRITERIA_MODE",
+            "common criteria mode",
+            "通用标准模式"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES",
+            "debugging features",
+            "调试功能"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_DEFAULT_SMS",
+            "default SMS",
+            "默认SMS"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_DEVICE_IDENTIFIERS",
+            "identifiers",
+            "标识符"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_DISPLAY",
+            "display",
+            "陈列"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_FACTORY_RESET",
+            "factory reset",
+            "恢复出厂设置"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_FUN",
+            "fun",
+            "享乐"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_INPUT_METHODS",
+            "input methods",
+            "输入法"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_INSTALL_UNKNOWN_SOURCES",
+            "unknown sources",
+            "未知来源"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_KEEP_UNINSTALLED_PACKAGES",
+            "keep packages",
+            "保留包裹"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_KEYGUARD",
+            "keyguard",
+            "键盘防护装置"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_LOCALE",
+            "locale",
+            "场所"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_LOCATION",
+            "location",
+            "地方"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_LOCK",
+            "lock",
+            "锁"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_LOCK_CREDENTIALS",
+            "lock credentials",
+            "锁定凭据"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_LOCK_TASK",
+            "lock task",
+            "锁定任务"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_METERED_DATA",
+            "metered data",
+            "计量数据"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_MICROPHONE",
+            "microphone",
+            "麦克风"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+            "network",
+            "网络"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_MODIFY_USERS",
+            "users",
+            "用户"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_MTE",
+            "mte",
+            "mte"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+            "communication",
+            "通讯"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+            "logging",
+            "记录"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_ORGANIZATION_IDENTITY",
+            "identity",
+            "身份"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_OVERRIDE_APN",
+            "override",
+            "override"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+            "state",
+            "状态"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PHYSICAL_MEDIA",
+            "media",
+            "媒体"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PRINTING",
+            "printing",
+            "打印"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+            "dns",
+            "DNS"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PROFILES",
+            "profiles",
+            "配置文件"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+            "interaction",
+            "交互"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_PROXY",
+            "proxy",
+            "代理"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_QUERY_SYSTEM_UPDATES",
+            "query system updates",
+            "查询系统更新"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_RESET_PASSWORD",
+            "reset password",
+            "重置密码"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_RESTRICT_PRIVATE_DNS",
+            "restrict private DNS",
+            "限制私有DNS"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_RUNTIME_PERMISSIONS",
+            "runtime permissions",
+            "运行时权限"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_RUN_IN_BACKGROUND",
+            "run in background",
+            "后台运行"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SAFE_BOOT",
+            "safe boot",
+            "安全启动"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SCREEN_CAPTURE",
+            "screen capture",
+            "截屏"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SCREEN_CONTENT",
+            "screen content",
+            "屏幕内容"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SECURITY_LOGGING",
+            "security logging",
+            "安全日志记录"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SETTINGS",
+            "settings",
+            "设置"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SMS",
+            "SMS",
+            "短信"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_STATUS_BAR",
+            "status bar",
+            "状态栏"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SUPPORT_MESSAGE",
+            "support message",
+            "支持信息"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SUSPEND_PERSONAL_APPS",
+            "suspend personal apps",
+            "挂起个人应用"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SYSTEM_APPS",
+            "system apps",
+            "系统应用"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SYSTEM_DIALOGS",
+            "system dialogs",
+            "系统对话框"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_SYSTEM_UPDATES",
+            "system updates",
+            "系统更新"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_TIME",
+            "time",
+            "时间"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_USB_DATA_SIGNALLING",
+            "USB signalling",
+            "USB 信令"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_USB_FILE_TRANSFER",
+            "USB file transfer",
+            "USB 文件传输"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_USERS",
+            "users",
+            "用户"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_VPN",
+            "VPN",
+            "虚拟专用网"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_WALLPAPER",
+            "wallpaper",
+            "壁纸"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_WIFI",
+            "Wi-Fi",
+            "无线局域网"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_WINDOWS",
+            "windows",
+            "窗户"
+        ],
+        [
+            "MANAGE_DEVICE_POLICY_WIPE_DATA",
+            "wipe data",
+            "清除数据"
+        ],
+        [
+            "MANAGE_DOCUMENTS",
+            "documents",
+            "文件"
+        ],
+        [
+            "MANAGE_EXTERNAL_STORAGE",
+            "external storage",
+            "外部存储器"
+        ],
+        [
+            "MANAGE_MEDIA",
+            "media",
+            "媒体"
+        ],
+        [
+            "MANAGE_ONGOING_CALLS",
+            "ongoing calls",
+            "正在进行的呼叫"
+        ],
+        [
+            "MANAGE_WIFI_INTERFACES",
+            "Wi-Fi interfaces",
+            "Wi-Fi接口"
+        ],
+        [
+            "MANAGE_WIFI_NETWORK_SELECTION",
+            "Wi-Fi network selection",
+            "Wi-Fi网络选择"
+        ],
+        [
+            "MASTER_CLEAR",
+            "master clear",
+            "主清除"
+        ],
+        [
+            "MEDIA_CONTENT_CONTROL",
+            "media control",
+            "媒体控制"
+        ],
+        [
+            "MODIFY_PHONE_STATE",
+            "phone state",
+            "电话状态"
+        ],
+        [
+            "MOUNT_FORMAT_FILESYSTEMS",
+            "format filesystems",
+            "格式化文件系统"
+        ],
+        [
+            "MOUNT_UNMOUNT_FILESYSTEMS",
+            "unmount filesystems",
+            "卸载文件系统"
+        ],
+        [
+            "NEARBY_WIFI_DEVICES",
+            "nearby WiFi",
+            "附近的WiFi"
+        ],
+        [
+            "NFC_PREFERRED_PAYMENT_INFO",
+            "nfc preferred payment",
+            "nfc优先付款"
+        ],
+        [
+            "NFC_TRANSACTION_EVENT",
+            "NFC event",
+            "NFC活动"
+        ],
+        [
+            "OVERRIDE_WIFI_CONFIG",
+            "WiFi config",
+            "WiFi配置"
+        ],
+        [
+            "PACKAGE_USAGE_STATS",
+            "App usage",
+            "应用程序使用情况"
+        ],
+        [
+            "PERSISTENT_ACTIVITY",
+            "App activity",
+            "应用程序活动"
+        ],
+        [
+            "POST_NOTIFICATIONS",
+            "Notifications",
+            "通知"
+        ],
+        [
+            "QUERY_ALL_PACKAGES",
+            "App info",
+            "应用程序信息"
+        ],
+        [
+            "READ_ASSISTANT_APP_SEARCH_DATA",
+            "Assistant data",
+            "助理数据"
+        ],
+        [
+            "READ_BASIC_PHONE_STATE",
+            "Phone state",
+            "电话状态"
+        ],
+        [
+            "READ_HOME_APP_SEARCH_DATA",
+            "Home app data",
+            "家庭应用程序数据"
+        ],
+        [
+            "READ_INPUT_STATE",
+            "Input state",
+            "输入状态"
+        ],
+        [
+            "READ_LOGS",
+            "System logs",
+            "系统日志"
+        ],
+        [
+            "READ_MEDIA_AUDIO",
+            "Audio files",
+            "音频文件"
+        ],
+        [
+            "READ_MEDIA_IMAGES",
+            "Image files",
+            "图像文件"
+        ],
+        [
+            "READ_MEDIA_VIDEO",
+            "Video files",
+            "视频文件"
+        ],
+        [
+            "READ_MEDIA_VISUAL_USER_SELECTED",
+            "Selected media",
+            "所选媒体"
+        ],
+        [
+            "READ_NEARBY_STREAMING_POLICY",
+            "streaming policy",
+            "流媒体策略"
+        ],
+        [
+            "READ_PHONE_NUMBERS",
+            "phone numbers",
+            "电话号码"
+        ],
+        [
+            "READ_PRECISE_PHONE_STATE",
+            "precise phone state",
+            "精确的电话状态"
+        ],
+        [
+            "READ_SYNC_SETTINGS",
+            "sync settings",
+            "同步设置"
+        ],
+        [
+            "READ_SYNC_STATS",
+            "sync stats",
+            "同步统计数据"
+        ],
+        [
+            "READ_VOICEMAIL",
+            "voicemail",
+            "语音信箱"
+        ],
+        [
+            "REBOOT",
+            "reboot",
+            "重新启动"
+        ],
+        [
+            "REORDER_TASKS",
+            "reorder tasks",
+            "重新排序任务"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_APP_STREAMING",
+            "app streaming",
+            "应用程序流"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_AUTOMOTIVE_PROJECTION",
+            "automotive projection",
+            "汽车投影"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_COMPUTER",
+            "computer",
+            "计算机"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_GLASSES",
+            "glasses",
+            "玻璃杯"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_NEARBY_DEVICE_STREAMING",
+            "nearby device streaming",
+            "附近设备流"
+        ],
+        [
+            "REQUEST_COMPANION_PROFILE_WATCH",
+            "companion profile watch",
+            "配套配置表"
+        ],
+        [
+            "REQUEST_COMPANION_RUN_IN_BACKGROUND",
+            "companion background run",
+            "伴随背景运行"
+        ],
+        [
+            "REQUEST_COMPANION_SELF_MANAGED",
+            "companion self managed",
+            "同伴自我管理"
+        ],
+        [
+            "REQUEST_COMPANION_START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+            "companion start foreground from bg",
+            "伴随从bg开始前景"
+        ],
+        [
+            "REQUEST_COMPANION_USE_DATA_IN_BACKGROUND",
+            "companion use data bg",
+            "配套使用数据bg"
+        ],
+        [
+            "REQUEST_DELETE_PACKAGES",
+            "delete packages",
+            "删除程序包"
+        ],
+        [
+            "REQUEST_INSTALL_PACKAGES",
+            "install packages",
+            "安装程序包"
+        ],
+        [
+            "REQUEST_OBSERVE_COMPANION_DEVICE_PRESENCE",
+            "observe companion presence",
+            "观察同伴的存在"
+        ],
+        [
+            "REQUEST_PASSWORD_COMPLEXITY",
+            "password complexity",
+            "密码复杂性"
+        ],
+        [
+            "RESTART_PACKAGES",
+            "restart packages",
+            "重新启动程序包"
+        ],
+        [
+            "RUN_USER_INITIATED_JOBS",
+            "user initiated jobs",
+            "用户启动的作业"
+        ],
+        [
+            "SCHEDULE_EXACT_ALARM",
+            "exact alarm",
+            "精确警报"
+        ],
+        [
+            "SEND_RESPOND_VIA_MESSAGE",
+            "respond via message",
+            "通过消息进行响应"
+        ],
+        [
+            "SET_ALARM",
+            "set alarm",
+            "设置警报"
+        ],
+        [
+            "SET_ALWAYS_FINISH",
+            "always finish",
+            "始终完成"
+        ],
+        [
+            "SET_ANIMATION_SCALE",
+            "animation scale",
+            "动画比例"
+        ],
+        [
+            "SET_DEBUG_APP",
+            "debug app",
+            "调试应用程序"
+        ],
+        [
+            "SET_PREFERRED_APPLICATIONS",
+            "preferred apps",
+            "首选应用程序"
+        ],
+        [
+            "SET_PROCESS_LIMIT",
+            "process limit",
+            "工艺限制"
+        ],
+        [
+            "SET_TIME",
+            "time setting",
+            "时间设置"
+        ],
+        [
+            "SET_TIME_ZONE",
+            "time zone setting",
+            "时区设置"
+        ],
+        [
+            "SET_WALLPAPER",
+            "wallpaper setting",
+            "壁纸设置"
+        ],
+        [
+            "SET_WALLPAPER_HINTS",
+            "wallpaper hints",
+            "壁纸提示"
+        ],
+        [
+            "SIGNAL_PERSISTENT_PROCESSES",
+            "persistent processes",
+            "持续进程"
+        ],
+        [
+            "SMS_FINANCIAL_TRANSACTIONS",
+            "financial transactions via SMS",
+            "通过短信进行财务交易"
+        ],
+        [
+            "START_FOREGROUND_SERVICES_FROM_BACKGROUND",
+            "foreground service from background",
+            "后台前台服务"
+        ],
+        [
+            "START_VIEW_APP_FEATURES",
+            "view app features",
+            "查看应用功能"
+        ],
+        [
+            "START_VIEW_PERMISSION_USAGE",
+            "view permission usage",
+            "查看权限使用情况"
+        ],
+        [
+            "STATUS_BAR",
+            "status bar",
+            "状态栏"
+        ],
+        [
+            "SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE",
+            "keyguard locked state",
+            "订阅锁屏状态"
+        ],
+        [
+            "TRANSMIT_IR",
+            "IR transmission",
+            "红外传输"
+        ],
+        [
+            "TURN_SCREEN_ON",
+            "screen on",
+            "点亮屏幕"
+        ],
+        [
+            "UPDATE_DEVICE_STATS",
+            "update device stats",
+            "更新设备状态"
+        ],
+        [
+            "UPDATE_PACKAGES_WITHOUT_USER_ACTION",
+            "update packages without user action",
+            "无用户操作更新包"
+        ],
+        [
+            "USE_BIOMETRIC",
+            "biometric",
+            "生物特征"
+        ],
+        [
+            "USE_EXACT_ALARM",
+            "exact alarm",
+            "精确定时"
+        ],
+        [
+            "USE_FULL_SCREEN_INTENT",
+            "full screen intent",
+            "全屏意图"
+        ],
+        [
+            "USE_ICC_AUTH_WITH_DEVICE_IDENTIFIER",
+            "ICC auth",
+            "身份认证"
+        ],
+        [
+            "UWB_RANGING",
+            "UWB ranging",
+            "UWB定位"
+        ],
+        [
+            "WRITE_APN_SETTINGS",
+            "APN settings",
+            "APN设置"
+        ],
+        [
+            "WRITE_GSERVICES",
+            "Gservices",
+            "Google服务"
+        ],
+        [
+            "WRITE_SECURE_SETTINGS",
+            "secure settings",
+            "安全设置"
+        ],
+        [
+            "WRITE_SYNC_SETTINGS",
+            "sync settings",
+            "同步设置"
+        ],
+        [
+            "WRITE_VOICEMAIL",
+            "voice mail",
+            "语音邮件"
+        ]
+    ]
+}

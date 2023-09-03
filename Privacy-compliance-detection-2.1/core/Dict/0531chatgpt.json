@@ -1,0 +1,6876 @@
+[
+  {
+    "data-cn": "网络状态",
+    "data-en": [
+      "network state",
+      "networkStatus",
+      "network status"
+    ]
+  },
+  {
+    "data-cn": "配置",
+    "data-en": [
+      "config",
+      "configuration",
+      "configure"
+    ]
+  },
+  {
+    "data-cn": "分享状态",
+    "data-en": [
+      "share state",
+      "shareStatus",
+      "share status"
+    ]
+  },
+  {
+    "data-cn": "请求",
+    "data-en": [
+      "request",
+      "requests",
+      "requesting"
+    ]
+  },
+  {
+    "data-cn": "血氧",
+    "data-en": [
+      "oxygen",
+      "oxygen level",
+      "oxygen saturation"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "tel",
+      "phone",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "ID",
+      "identity",
+      "identification"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "profession",
+      "occupation",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "月收入",
+    "data-en": [
+      "income",
+      "salary",
+      "wages"
+    ]
+  },
+  {
+    "data-cn": "婚姻状况",
+    "data-en": [
+      "marriage",
+      "married",
+      "wedded"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree",
+      "academic degree"
+    ]
+  },
+  {
+    "data-cn": "户籍所在地",
+    "data-en": [
+      "household",
+      "domicile",
+      "residence"
+    ]
+  },
+  {
+    "data-cn": "现居住地",
+    "data-en": [
+      "address",
+      "addresses",
+      "residence"
+    ]
+  },
+  {
+    "data-cn": "指令",
+    "data-en": [
+      "order",
+      "instruction",
+      "command"
+    ]
+  },
+  {
+    "data-cn": "风险测评",
+    "data-en": [
+      "risk",
+      "assessment",
+      "evaluation"
+    ]
+  },
+  {
+    "data-cn": "作息",
+    "data-en": [
+      "work schedule",
+      "work and rest",
+      "working hours"
+    ]
+  },
+  {
+    "data-cn": "商品",
+    "data-en": [
+      "product",
+      "commodity",
+      "goods"
+    ]
+  },
+  {
+    "data-cn": "商品评价",
+    "data-en": [
+      "product review",
+      "product comments",
+      "goods comments"
+    ]
+  },
+  {
+    "data-cn": "信用卡",
+    "data-en": [
+      "credit card",
+      "creditcards",
+      "CreditCard"
+    ]
+  },
+  {
+    "data-cn": "信用卡卡号",
+    "data-en": [
+      "credit card number",
+      "credit card numbers",
+      "Credit Card Number"
+    ]
+  },
+  {
+    "data-cn": "软件特征",
+    "data-en": [
+      "software features",
+      "Software Features",
+      "software function"
+    ]
+  },
+  {
+    "data-cn": "导航",
+    "data-en": [
+      "navigation",
+      "Navigation",
+      "guide"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "year"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "tall"
+    ]
+  },
+  {
+    "data-cn": "运动量",
+    "data-en": [
+      "activity",
+      "exercise",
+      "sport"
+    ]
+  },
+  {
+    "data-cn": "睡眠时长",
+    "data-en": [
+      "sleep",
+      "rest",
+      "nap"
+    ]
+  },
+  {
+    "data-cn": "习惯",
+    "data-en": [
+      "habit",
+      "custom",
+      "routine"
+    ]
+  },
+  {
+    "data-cn": "硬件数据",
+    "data-en": [
+      "data",
+      "information",
+      "hardware"
+    ]
+  },
+  {
+    "data-cn": "异常数据",
+    "data-en": [
+      "abnormal",
+      "unusual",
+      "exceptional"
+    ]
+  },
+  {
+    "data-cn": "照片",
+    "data-en": [
+      "photo",
+      "picture",
+      "image"
+    ]
+  },
+  {
+    "data-cn": "系统版本",
+    "data-en": [
+      "system version",
+      "system edition",
+      "system type"
+    ]
+  },
+  {
+    "data-cn": "资质",
+    "data-en": [
+      "qualification",
+      "capability",
+      "aptitude"
+    ]
+  },
+  {
+    "data-cn": "用户",
+    "data-en": [
+      "user",
+      "account",
+      "member"
+    ]
+  },
+  {
+    "data-cn": "查询记录",
+    "data-en": [
+      "query record",
+      "search record",
+      "inquiry record"
+    ]
+  },
+  {
+    "data-cn": "房型",
+    "data-en": [
+      "room type",
+      "room style",
+      "room category"
+    ]
+  },
+  {
+    "data-cn": "商品",
+    "data-en": [
+      "product",
+      "item",
+      "goods"
+    ]
+  },
+  {
+    "data-cn": "参数",
+    "data-en": [
+      "parameter",
+      "param",
+      "arg"
+    ]
+  },
+  {
+    "data-cn": "应用列表",
+    "data-en": [
+      "apps",
+      "applications",
+      "application list"
+    ]
+  },
+  {
+    "data-cn": "咨询记录",
+    "data-en": [
+      "record",
+      "records",
+      "log"
+    ]
+  },
+  {
+    "data-cn": "镜头型号",
+    "data-en": [
+      "lens",
+      "lens model",
+      "lens type"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "login name"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "pwd",
+      "secret"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "year"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "phone",
+      "telephone",
+      "mobile"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "birth",
+      "date of birth"
+    ]
+  },
+  {
+    "data-cn": "提供者",
+    "data-en": [
+      "provider",
+      "auth type",
+      "oauth type"
+    ]
+  },
+  {
+    "data-cn": "异常状态",
+    "data-en": [
+      "exception",
+      "status",
+      "error"
+    ]
+  },
+  {
+    "data-cn": "系统配置",
+    "data-en": [
+      "config",
+      "setting",
+      "system config"
+    ]
+  },
+  {
+    "data-cn": "国家",
+    "data-en": [
+      "country",
+      "nation",
+      "state"
+    ]
+  },
+  {
+    "data-cn": "记录",
+    "data-en": [
+      "record",
+      "log",
+      "trace"
+    ]
+  },
+  {
+    "data-cn": "跟踪",
+    "data-en": [
+      "track",
+      "trace",
+      "log"
+    ]
+  },
+  {
+    "data-cn": "监测",
+    "data-en": [
+      "monitor",
+      "log",
+      "trace"
+    ]
+  },
+  {
+    "data-cn": "日志",
+    "data-en": [
+      "log",
+      "record",
+      "trace"
+    ]
+  },
+  {
+    "data-cn": "异常堆栈",
+    "data-en": [
+      "exception stack",
+      "error log",
+      "log"
+    ]
+  },
+  {
+    "data-cn": "服务日志",
+    "data-en": [
+      "service log",
+      "log",
+      "trace"
+    ]
+  },
+  {
+    "data-cn": "掩码",
+    "data-en": [
+      "mask",
+      "encrypt",
+      "hash"
+    ]
+  },
+  {
+    "data-cn": "区域",
+    "data-en": [
+      "area",
+      "district",
+      "region"
+    ]
+  },
+  {
+    "data-cn": "关注列表",
+    "data-en": [
+      "following list",
+      "follows",
+      "subscription"
+    ]
+  },
+  {
+    "data-cn": "麦克风",
+    "data-en": [
+      "microphone",
+      "mic",
+      "mike"
+    ]
+  },
+  {
+    "data-cn": "人脸",
+    "data-en": [
+      "face",
+      "facial",
+      "visage"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "id card",
+      "identity card",
+      "identification card"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "cell phone",
+      "mobile phone",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "身份证正面照",
+    "data-en": [
+      "id card positive",
+      "identity card positive",
+      "identification card positive"
+    ]
+  },
+  {
+    "data-cn": "身份证反面照",
+    "data-en": [
+      "id card negative",
+      "identity card negative",
+      "identification card negative"
+    ]
+  },
+  {
+    "data-cn": "手持身份证照",
+    "data-en": [
+      "id card handheld",
+      "identity card handheld",
+      "identification card handheld"
+    ]
+  },
+  {
+    "data-cn": "支付宝",
+    "data-en": [
+      "alipay",
+      "alipay account",
+      "alipay payment"
+    ]
+  },
+  {
+    "data-cn": "微信",
+    "data-en": [
+      "wechat",
+      "wechat account",
+      "wechat payment"
+    ]
+  },
+  {
+    "data-cn": "银行卡",
+    "data-en": [
+      "bank card",
+      "bank account",
+      "bank payment"
+    ]
+  },
+  {
+    "data-cn": "芝麻信用",
+    "data-en": [
+      "zm credit",
+      "zm score",
+      "zm authorization"
+    ]
+  },
+  {
+    "data-cn": "声纹",
+    "data-en": [
+      "voiceprint",
+      "voice print",
+      "voice identification"
+    ]
+  },
+  {
+    "data-cn": "信用代码",
+    "data-en": [
+      "credit code",
+      "organization code",
+      "business license"
+    ]
+  },
+  {
+    "data-cn": "机构代码",
+    "data-en": [
+      "organization code",
+      "credit code",
+      "business license"
+    ]
+  },
+  {
+    "data-cn": "存储",
+    "data-en": [
+      "storage",
+      "repository",
+      "storehouse"
+    ]
+  },
+  {
+    "data-cn": "工单",
+    "data-en": [
+      "work order",
+      "job",
+      "ticket"
+    ]
+  },
+  {
+    "data-cn": "设置",
+    "data-en": [
+      "setting",
+      "configuration",
+      "preference"
+    ]
+  },
+  {
+    "data-cn": "注册日期",
+    "data-en": [
+      "register date",
+      "registration date",
+      "signup date"
+    ]
+  },
+  {
+    "data-cn": "机器编码",
+    "data-en": [
+      "machine code",
+      "machine number",
+      "serial number"
+    ]
+  },
+  {
+    "data-cn": "城市",
+    "data-en": [
+      "city",
+      "town",
+      "village"
+    ]
+  },
+  {
+    "data-cn": "姓氏",
+    "data-en": [
+      "surname",
+      "last name",
+      "family name"
+    ]
+  },
+  {
+    "data-cn": "名字",
+    "data-en": [
+      "name",
+      "first name",
+      "given name"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male female"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "altitude"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight",
+      "mass",
+      "gravity"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "period",
+      "time"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "age"
+    ]
+  },
+  {
+    "data-cn": "联系方式",
+    "data-en": [
+      "contact",
+      "phone number",
+      "email"
+    ]
+  },
+  {
+    "data-cn": "家庭住址",
+    "data-en": [
+      "address",
+      "home address",
+      "family address"
+    ]
+  },
+  {
+    "data-cn": "邮编",
+    "data-en": [
+      "postcode",
+      "zip code",
+      "postal code"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "ID card",
+      "identity card",
+      "personal identification"
+    ]
+  },
+  {
+    "data-cn": "民族",
+    "data-en": [
+      "nation",
+      "nationality",
+      "ethnic group"
+    ]
+  },
+  {
+    "data-cn": "政治面貌",
+    "data-en": [
+      "politics",
+      "political affiliation",
+      "political status"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "educational background",
+      "academic degree"
+    ]
+  },
+  {
+    "data-cn": "专业",
+    "data-en": [
+      "major",
+      "professional",
+      "specialty"
+    ]
+  },
+  {
+    "data-cn": "学校",
+    "data-en": [
+      "school",
+      "university",
+      "institution"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "简历",
+    "data-en": [
+      "resume",
+      "CV",
+      "vitae"
+    ]
+  },
+  {
+    "data-cn": "工作经历",
+    "data-en": [
+      "work experience",
+      "professional experience",
+      "employment history"
+    ]
+  },
+  {
+    "data-cn": "家庭成员",
+    "data-en": [
+      "family member",
+      "family",
+      "household"
+    ]
+  },
+  {
+    "data-cn": "父母",
+    "data-en": [
+      "parents",
+      "father mother",
+      "parent"
+    ]
+  },
+  {
+    "data-cn": "父亲",
+    "data-en": [
+      "father",
+      "dad",
+      "pa"
+    ]
+  },
+  {
+    "data-cn": "母亲",
+    "data-en": [
+      "mother",
+      "mom",
+      "ma"
+    ]
+  },
+  {
+    "data-cn": "配偶",
+    "data-en": [
+      "spouse",
+      "partner",
+      "mate"
+    ]
+  },
+  {
+    "data-cn": "子女",
+    "data-en": [
+      "children",
+      "son daughter",
+      "child"
+    ]
+  },
+  {
+    "data-cn": "儿子",
+    "data-en": [
+      "son",
+      "boy",
+      "male child"
+    ]
+  },
+  {
+    "data-cn": "女儿",
+    "data-en": [
+      "daughter",
+      "girl",
+      "female child"
+    ]
+  },
+  {
+    "data-cn": "兄弟姐妹",
+    "data-en": [
+      "siblings",
+      "brother sister",
+      "sibling"
+    ]
+  },
+  {
+    "data-cn": "兄弟",
+    "data-en": [
+      "brother",
+      "bro",
+      "male sibling"
+    ]
+  },
+  {
+    "data-cn": "姐妹",
+    "data-en": [
+      "sister",
+      "sis",
+      "female sibling"
+    ]
+  },
+  {
+    "data-cn": "亲戚",
+    "data-en": [
+      "relatives",
+      "kinship",
+      "family"
+    ]
+  },
+  {
+    "data-cn": "叔叔",
+    "data-en": [
+      "uncle",
+      "father's brother",
+      "male relative"
+    ]
+  },
+  {
+    "data-cn": "阿姨",
+    "data-en": [
+      "aunt",
+      "father's sister",
+      "female relative"
+    ]
+  },
+  {
+    "data-cn": "伯父",
+    "data-en": [
+      "uncle",
+      "mother's brother",
+      "male relative"
+    ]
+  },
+  {
+    "data-cn": "伯母",
+    "data-en": [
+      "aunt",
+      "mother's sister",
+      "female relative"
+    ]
+  },
+  {
+    "data-cn": "堂兄",
+    "data-en": [
+      "cousin",
+      "father's brother's son",
+      "male relative"
+    ]
+  },
+  {
+    "data-cn": "堂弟",
+    "data-en": [
+      "cousin",
+      "father's brother's son",
+      "male relative"
+    ]
+  },
+  {
+    "data-cn": "堂姐",
+    "data-en": [
+      "cousin",
+      "father's brother's daughter",
+      "female relative"
+    ]
+  },
+  {
+    "data-cn": "堂妹",
+    "data-en": [
+      "cousin",
+      "father's brother's daughter",
+      "female relative"
+    ]
+  },
+  {
+    "data-cn": "表兄",
+    "data-en": [
+      "cousin",
+      "father's sister's son",
+      "male relative"
+    ]
+  },
+  {
+    "data-cn": "互动",
+    "data-en": [
+      "interaction",
+      "interactive",
+      "interactively"
+    ]
+  },
+  {
+    "data-cn": "订阅",
+    "data-en": [
+      "subscribe",
+      "subscription",
+      "subscriber"
+    ]
+  },
+  {
+    "data-cn": "场景指令",
+    "data-en": [
+      "scene command",
+      "scene instructions",
+      "scene commands"
+    ]
+  },
+  {
+    "data-cn": "银行卡",
+    "data-en": [
+      "bank card",
+      "bankcard",
+      "debit card"
+    ]
+  },
+  {
+    "data-cn": "银行卡号",
+    "data-en": [
+      "bank card number",
+      "bankcard number",
+      "debit card number"
+    ]
+  },
+  {
+    "data-cn": "行程",
+    "data-en": [
+      "trip",
+      "journey",
+      "travel"
+    ]
+  },
+  {
+    "data-cn": "胎压",
+    "data-en": [
+      "tire pressure",
+      "tyre pressure",
+      "tire pressure monitoring system"
+    ]
+  },
+  {
+    "data-cn": "会话",
+    "data-en": [
+      "session",
+      "chat",
+      "conversation"
+    ]
+  },
+  {
+    "data-cn": "睡眠报告",
+    "data-en": [
+      "sleep report",
+      "sleep log",
+      "sleep data"
+    ]
+  },
+  {
+    "data-cn": "报障",
+    "data-en": [
+      "fault report",
+      "report a fault",
+      "report an error"
+    ]
+  },
+  {
+    "data-cn": "编码",
+    "data-en": [
+      "encoding",
+      "encode",
+      "coding"
+    ]
+  },
+  {
+    "data-cn": "访问",
+    "data-en": [
+      "access",
+      "visit",
+      "call"
+    ]
+  },
+  {
+    "data-cn": "报表",
+    "data-en": [
+      "report",
+      "statement",
+      "data"
+    ]
+  },
+  {
+    "data-cn": "数字证书",
+    "data-en": [
+      "digital certificate",
+      "digital ID",
+      "digital credential"
+    ]
+  },
+  {
+    "data-cn": "存储",
+    "data-en": [
+      "storage",
+      "keep",
+      "save"
+    ]
+  },
+  {
+    "data-cn": "分配",
+    "data-en": [
+      "allocation",
+      "distribution",
+      "assignment"
+    ]
+  },
+  {
+    "data-cn": "排行榜",
+    "data-en": [
+      "rank",
+      "ranking",
+      "ranklist"
+    ]
+  },
+  {
+    "data-cn": "关注",
+    "data-en": [
+      "follow",
+      "focus",
+      "attention"
+    ]
+  },
+  {
+    "data-cn": "余额",
+    "data-en": [
+      "balance",
+      "money",
+      "rest"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "phone",
+      "telephone",
+      "cellphone"
+    ]
+  },
+  {
+    "data-cn": "验证码",
+    "data-en": [
+      "code",
+      "verify",
+      "verification"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "手机",
+    "data-en": [
+      "phone",
+      "mobile",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "years"
+    ]
+  },
+  {
+    "data-cn": "签名",
+    "data-en": [
+      "signature",
+      "autograph",
+      "self introduction"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "tall",
+      "stature"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree",
+      "school"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "career",
+      "job"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "earning",
+      "wage"
+    ]
+  },
+  {
+    "data-cn": "婚姻状态",
+    "data-en": [
+      "marriage",
+      "married",
+      "wedding"
+    ]
+  },
+  {
+    "data-cn": "星座",
+    "data-en": [
+      "constellation",
+      "star",
+      "astrology"
+    ]
+  },
+  {
+    "data-cn": "血型",
+    "data-en": [
+      "blood type",
+      "bloodtype",
+      "blood"
+    ]
+  },
+  {
+    "data-cn": "身份证",
+    "data-en": [
+      "ID card",
+      "identity card",
+      "ID"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "birth",
+      "date of birth"
+    ]
+  },
+  {
+    "data-cn": "QQ",
+    "data-en": [
+      "QQ",
+      "QQ number",
+      "QQ"
+    ]
+  },
+  {
+    "data-cn": "微信",
+    "data-en": [
+      "WeChat",
+      "WeChat number",
+      "WeChat"
+    ]
+  },
+  {
+    "data-cn": "微博",
+    "data-en": [
+      "Weibo",
+      "Weibo account",
+      "Weibo"
+    ]
+  },
+  {
+    "data-cn": "车辆",
+    "data-en": [
+      "vehicle",
+      "car",
+      "bike"
+    ]
+  },
+  {
+    "data-cn": "房产",
+    "data-en": [
+      "property",
+      "house",
+      "land"
+    ]
+  },
+  {
+    "data-cn": "计算机水平",
+    "data-en": [
+      "computer level",
+      "computer",
+      "IT"
+    ]
+  },
+  {
+    "data-cn": "外语水平",
+    "data-en": [
+      "foreign language level",
+      "language",
+      "English"
+    ]
+  },
+  {
+    "data-cn": "文件大小",
+    "data-en": [
+      "file size",
+      "size",
+      "capacity"
+    ]
+  },
+  {
+    "data-cn": "日历",
+    "data-en": [
+      "calendar",
+      "date",
+      "time"
+    ]
+  },
+  {
+    "data-cn": "邮件记录",
+    "data-en": [
+      "mail record",
+      "email",
+      "message"
+    ]
+  },
+  {
+    "data-cn": "互动记录",
+    "data-en": [
+      "interaction record",
+      "interaction",
+      "communication"
+    ]
+  },
+  {
+    "data-cn": "名字",
+    "data-en": [
+      "name",
+      "first name",
+      "last name"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "year"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "tall"
+    ]
+  },
+  {
+    "data-cn": "手机机型",
+    "data-en": [
+      "phone model",
+      "phone type",
+      "model"
+    ]
+  },
+  {
+    "data-cn": "隶属部门",
+    "data-en": [
+      "belong department",
+      "department",
+      "group"
+    ]
+  },
+  {
+    "data-cn": "通讯录",
+    "data-en": [
+      "contact list",
+      "contacts",
+      "address book"
+    ]
+  },
+  {
+    "data-cn": "系统",
+    "data-en": [
+      "system",
+      "platform",
+      "software"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mailbox",
+      "inbox"
+    ]
+  },
+  {
+    "data-cn": "民族",
+    "data-en": [
+      "nation",
+      "nationality",
+      "ethnicity"
+    ]
+  },
+  {
+    "data-cn": "登录",
+    "data-en": [
+      "login",
+      "sign in",
+      "sign up"
+    ]
+  },
+  {
+    "data-cn": "声音",
+    "data-en": [
+      "sound",
+      "voice",
+      "noise"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passcode",
+      "pin"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "cellphone number",
+      "phone number",
+      "telephone number"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "e mail",
+      "mail"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male",
+      "female"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "date of birth",
+      "year of birth"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature"
+    ]
+  },
+  {
+    "data-cn": "婚姻状况",
+    "data-en": [
+      "marital status",
+      "marriage",
+      "married",
+      "unmarried"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "educational background",
+      "highest degree"
+    ]
+  },
+  {
+    "data-cn": "工作年限",
+    "data-en": [
+      "work experience",
+      "professional experience",
+      "years of work experience"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "job",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "公司",
+    "data-en": [
+      "company",
+      "employer",
+      "workplace"
+    ]
+  },
+  {
+    "data-cn": "职位",
+    "data-en": [
+      "position",
+      "job title",
+      "occupation"
+    ]
+  },
+  {
+    "data-cn": "行业",
+    "data-en": [
+      "industry",
+      "business",
+      "sector"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "salary",
+      "earnings"
+    ]
+  },
+  {
+    "data-cn": "常住地",
+    "data-en": [
+      "residence",
+      "address",
+      "residence address",
+      "home address"
+    ]
+  },
+  {
+    "data-cn": "户籍",
+    "data-en": [
+      "household registration",
+      "hukou",
+      "domicile"
+    ]
+  },
+  {
+    "data-cn": "籍贯",
+    "data-en": [
+      "native place",
+      "hometown",
+      "birthplace"
+    ]
+  },
+  {
+    "data-cn": "民族",
+    "data-en": [
+      "nationality",
+      "ethnic group",
+      "race"
+    ]
+  },
+  {
+    "data-cn": "语言",
+    "data-en": [
+      "language",
+      "languages",
+      "foreign language",
+      "mother tongue"
+    ]
+  },
+  {
+    "data-cn": "支付",
+    "data-en": [
+      "payment",
+      "payment amount",
+      "transaction id"
+    ]
+  },
+  {
+    "data-cn": "宗教信仰",
+    "data-en": [
+      "religion",
+      "religious belief",
+      "faith"
+    ]
+  },
+  {
+    "data-cn": "政治面貌",
+    "data-en": [
+      "political affiliation",
+      "political status"
+    ]
+  },
+  {
+    "data-cn": "自我介绍",
+    "data-en": [
+      "self introduction",
+      "introduction",
+      "profile"
+    ]
+  },
+  {
+    "data-cn": "爱好",
+    "data-en": [
+      "hobby",
+      "hobbies",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "个人主页",
+    "data-en": [
+      "personal homepage",
+      "blog",
+      "website"
+    ]
+  },
+  {
+    "data-cn": "相册",
+    "data-en": [
+      "photo album",
+      "album"
+    ]
+  },
+  {
+    "data-cn": "音乐",
+    "data-en": [
+      "music",
+      "song",
+      "singer"
+    ]
+  },
+  {
+    "data-cn": "电影",
+    "data-en": [
+      "movie",
+      "film",
+      "cinema"
+    ]
+  },
+  {
+    "data-cn": "书籍",
+    "data-en": [
+      "book",
+      "novel",
+      "literature"
+    ]
+  },
+  {
+    "data-cn": "名言警句",
+    "data-en": [
+      "quote",
+      "saying",
+      "proverb"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "interest",
+      "hobby",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "标签",
+    "data-en": [
+      "tag",
+      "label",
+      "keyword"
+    ]
+  },
+  {
+    "data-cn": "相片",
+    "data-en": [
+      "photo",
+      "picture",
+      "image"
+    ]
+  },
+  {
+    "data-cn": "相机",
+    "data-en": [
+      "camera",
+      "photograph"
+    ]
+  },
+  {
+    "data-cn": "蓝牙",
+    "data-en": [
+      "bluetooth",
+      "wireless"
+    ]
+  },
+  {
+    "data-cn": "帐号",
+    "data-en": [
+      "account",
+      "username",
+      "user account"
+    ]
+  },
+  {
+    "data-cn": "群体标签",
+    "data-en": [
+      "group tag",
+      "tag",
+      "label"
+    ]
+  },
+  {
+    "data-cn": "账号",
+    "data-en": [
+      "account",
+      "username",
+      "id"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "昵称",
+    "data-en": [
+      "nickname",
+      "name",
+      "title"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "birth",
+      "date of birth"
+    ]
+  },
+  {
+    "data-cn": "手机",
+    "data-en": [
+      "phone",
+      "mobile",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "个性签名",
+    "data-en": [
+      "signature",
+      "personalized signature",
+      "motto"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "等级",
+    "data-en": [
+      "level",
+      "lv",
+      "rank"
+    ]
+  },
+  {
+    "data-cn": "经验值",
+    "data-en": [
+      "experience",
+      "exp",
+      "experience value"
+    ]
+  },
+  {
+    "data-cn": "会员",
+    "data-en": [
+      "member",
+      "vip",
+      "subscriber"
+    ]
+  },
+  {
+    "data-cn": "认证",
+    "data-en": [
+      "authentication",
+      "auth",
+      "authorization"
+    ]
+  },
+  {
+    "data-cn": "车型",
+    "data-en": [
+      "type",
+      "model",
+      "car type"
+    ]
+  },
+  {
+    "data-cn": "颜色",
+    "data-en": [
+      "color",
+      "colour",
+      "paint"
+    ]
+  },
+  {
+    "data-cn": "价格",
+    "data-en": [
+      "price",
+      "cost",
+      "value"
+    ]
+  },
+  {
+    "data-cn": "折扣",
+    "data-en": [
+      "discount",
+      "sale",
+      "promotion"
+    ]
+  },
+  {
+    "data-cn": "发布时间",
+    "data-en": [
+      "publish time",
+      "publish",
+      "time"
+    ]
+  },
+  {
+    "data-cn": "有效期",
+    "data-en": [
+      "validity",
+      "valid",
+      "effective"
+    ]
+  },
+  {
+    "data-cn": "标题",
+    "data-en": [
+      "title",
+      "subject",
+      "headline"
+    ]
+  },
+  {
+    "data-cn": "内容",
+    "data-en": [
+      "content",
+      "text",
+      "body"
+    ]
+  },
+  {
+    "data-cn": "图片",
+    "data-en": [
+      "image",
+      "pic",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "点赞",
+    "data-en": [
+      "like",
+      "praise",
+      "thumb up"
+    ]
+  },
+  {
+    "data-cn": "评论",
+    "data-en": [
+      "comment",
+      "review",
+      "remark"
+    ]
+  },
+  {
+    "data-cn": "留言",
+    "data-en": [
+      "message",
+      "msg",
+      "information"
+    ]
+  },
+  {
+    "data-cn": "续航里程",
+    "data-en": [
+      "mileage",
+      "endurance",
+      "range"
+    ]
+  },
+  {
+    "data-cn": "时间",
+    "data-en": [
+      "time",
+      "date",
+      "duration"
+    ]
+  },
+  {
+    "data-cn": "跳跃模式",
+    "data-en": [
+      "jump",
+      "mode",
+      "function"
+    ]
+  },
+  {
+    "data-cn": "查询",
+    "data-en": [
+      "query",
+      "search",
+      "find"
+    ]
+  },
+  {
+    "data-cn": "睡眠状态",
+    "data-en": [
+      "sleep status"
+    ]
+  },
+  {
+    "data-cn": "关注关系",
+    "data-en": [
+      "follow relationship"
+    ]
+  },
+  {
+    "data-cn": "收件",
+    "data-en": [
+      "mail"
+    ]
+  },
+  {
+    "data-cn": "银行帐号",
+    "data-en": [
+      "bank account"
+    ]
+  },
+  {
+    "data-cn": "呼吸率",
+    "data-en": [
+      "respiratory rate"
+    ]
+  },
+  {
+    "data-cn": "文件",
+    "data-en": [
+      "file",
+      "files",
+      "attachment"
+    ]
+  },
+  {
+    "data-cn": "图片",
+    "data-en": [
+      "image",
+      "picture",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "画报",
+    "data-en": [
+      "poster",
+      "picture",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "播放时长",
+    "data-en": [
+      "duration",
+      "time",
+      "length"
+    ]
+  },
+  {
+    "data-cn": "浏览器",
+    "data-en": [
+      "browser",
+      "web browser",
+      "internet browser"
+    ]
+  },
+  {
+    "data-cn": "泄露",
+    "data-en": [
+      "leak",
+      "leaked",
+      "leaking"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "name",
+      "user name"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "years"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "man"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "tall",
+      "stature"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight",
+      "fat",
+      "heavy"
+    ]
+  },
+  {
+    "data-cn": "视力",
+    "data-en": [
+      "vision",
+      "eye",
+      "sight"
+    ]
+  },
+  {
+    "data-cn": "听力",
+    "data-en": [
+      "hearing",
+      "ear",
+      "listen"
+    ]
+  },
+  {
+    "data-cn": "血型",
+    "data-en": [
+      "blood",
+      "type",
+      "group"
+    ]
+  },
+  {
+    "data-cn": "婚姻状况",
+    "data-en": [
+      "marriage",
+      "status",
+      "married"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree",
+      "school"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "job",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "平均月薪",
+    "data-en": [
+      "salary",
+      "wage",
+      "pay"
+    ]
+  },
+  {
+    "data-cn": "居住地",
+    "data-en": [
+      "residence",
+      "address",
+      "home"
+    ]
+  },
+  {
+    "data-cn": "户籍",
+    "data-en": [
+      "household",
+      "register",
+      "account"
+    ]
+  },
+  {
+    "data-cn": "籍贯",
+    "data-en": [
+      "native",
+      "place",
+      "birthplace"
+    ]
+  },
+  {
+    "data-cn": "民族",
+    "data-en": [
+      "nation",
+      "ethnic",
+      "group"
+    ]
+  },
+  {
+    "data-cn": "宗教信仰",
+    "data-en": [
+      "religion",
+      "faith",
+      "believe"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "earnings",
+      "revenue"
+    ]
+  },
+  {
+    "data-cn": "语言",
+    "data-en": [
+      "language",
+      "speak",
+      "tongue"
+    ]
+  },
+  {
+    "data-cn": "购车情况",
+    "data-en": [
+      "car",
+      "vehicle",
+      "transportation"
+    ]
+  },
+  {
+    "data-cn": "住房情况",
+    "data-en": [
+      "house",
+      "home",
+      "accommodation"
+    ]
+  },
+  {
+    "data-cn": "投资情况",
+    "data-en": [
+      "investment",
+      "invest",
+      "finance"
+    ]
+  },
+  {
+    "data-cn": "信用情况",
+    "data-en": [
+      "credit",
+      "trust",
+      "reputation"
+    ]
+  },
+  {
+    "data-cn": "负债情况",
+    "data-en": [
+      "debt",
+      "owe",
+      "lend"
+    ]
+  },
+  {
+    "data-cn": "保险情况",
+    "data-en": [
+      "insurance",
+      "secure",
+      "protection"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "interest",
+      "hobby",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "旅游偏好",
+    "data-en": [
+      "travel",
+      "tourism",
+      "vacation"
+    ]
+  },
+  {
+    "data-cn": "饮食偏好",
+    "data-en": [
+      "diet",
+      "food",
+      "eat"
+    ]
+  },
+  {
+    "data-cn": "娱乐偏好",
+    "data-en": [
+      "entertainment",
+      "amusement",
+      "fun"
+    ]
+  },
+  {
+    "data-cn": "运动偏好",
+    "data-en": [
+      "sport",
+      "exercise",
+      "activity"
+    ]
+  },
+  {
+    "data-cn": "游戏偏好",
+    "data-en": [
+      "game",
+      "play",
+      "entertainment"
+    ]
+  },
+  {
+    "data-cn": "影视偏好",
+    "data-en": [
+      "movie",
+      "television",
+      "film"
+    ]
+  },
+  {
+    "data-cn": "音乐偏好",
+    "data-en": [
+      "music",
+      "song",
+      "sound"
+    ]
+  },
+  {
+    "data-cn": "书籍偏好",
+    "data-en": [
+      "book",
+      "novel",
+      "literature"
+    ]
+  },
+  {
+    "data-cn": "软件偏好",
+    "data-en": [
+      "software",
+      "program",
+      "application"
+    ]
+  },
+  {
+    "data-cn": "其他偏好",
+    "data-en": [
+      "other",
+      "else",
+      "additional"
+    ]
+  },
+  {
+    "data-cn": "购物偏好",
+    "data-en": [
+      "shopping",
+      "buy",
+      "purchase"
+    ]
+  },
+  {
+    "data-cn": "交友目的",
+    "data-en": [
+      "friendship",
+      "social",
+      "acquaintance"
+    ]
+  },
+  {
+    "data-cn": "婚恋目的",
+    "data-en": [
+      "marriage",
+      "love",
+      "romance"
+    ]
+  },
+  {
+    "data-cn": "聊天对象",
+    "data-en": [
+      "chat",
+      "talk",
+      "conversation"
+    ]
+  },
+  {
+    "data-cn": "成交",
+    "data-en": [
+      "transaction",
+      "deal",
+      "transaction"
+    ]
+  },
+  {
+    "data-cn": "有效期限",
+    "data-en": [
+      "validity",
+      "validity period",
+      "shelf life"
+    ]
+  },
+  {
+    "data-cn": "点赞",
+    "data-en": [
+      "like",
+      "thumbs up",
+      "praise"
+    ]
+  },
+  {
+    "data-cn": "指纹",
+    "data-en": [
+      "fingerprint",
+      "fingerprint",
+      "fingerprint"
+    ]
+  },
+  {
+    "data-cn": "部门",
+    "data-en": [
+      "department",
+      "department",
+      "department"
+    ]
+  },
+  {
+    "data-cn": "首页",
+    "data-en": [
+      "homepage",
+      "index",
+      "main"
+    ]
+  },
+  {
+    "data-cn": "发布",
+    "data-en": [
+      "publish",
+      "post",
+      "send"
+    ]
+  },
+  {
+    "data-cn": "点赞",
+    "data-en": [
+      "like",
+      "praise",
+      "thumb up"
+    ]
+  },
+  {
+    "data-cn": "评论",
+    "data-en": [
+      "comment",
+      "review",
+      "discuss"
+    ]
+  },
+  {
+    "data-cn": "收藏",
+    "data-en": [
+      "collect",
+      "favorite",
+      "bookmark"
+    ]
+  },
+  {
+    "data-cn": "分享",
+    "data-en": [
+      "share",
+      "forward",
+      "transmit"
+    ]
+  },
+  {
+    "data-cn": "历史",
+    "data-en": [
+      "history",
+      "past",
+      "previous"
+    ]
+  },
+  {
+    "data-cn": "设置",
+    "data-en": [
+      "set",
+      "configure",
+      "adjust"
+    ]
+  },
+  {
+    "data-cn": "退出",
+    "data-en": [
+      "quit",
+      "exit",
+      "logout"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "account",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "secret",
+      "code"
+    ]
+  },
+  {
+    "data-cn": "登录",
+    "data-en": [
+      "login",
+      "sign in",
+      "enter"
+    ]
+  },
+  {
+    "data-cn": "注册",
+    "data-en": [
+      "register",
+      "sign up",
+      "enroll"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "mailbox",
+      "email",
+      "inbox"
+    ]
+  },
+  {
+    "data-cn": "手机",
+    "data-en": [
+      "phone",
+      "mobile",
+      "cellular"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "old"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "born"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "tall"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight",
+      "mass",
+      "heavy"
+    ]
+  },
+  {
+    "data-cn": "血型",
+    "data-en": [
+      "blood type",
+      "blood",
+      "type"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree",
+      "school"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "job",
+      "work"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "earning",
+      "salary"
+    ]
+  },
+  {
+    "data-cn": "婚姻",
+    "data-en": [
+      "marriage",
+      "wedding",
+      "married"
+    ]
+  },
+  {
+    "data-cn": "民族",
+    "data-en": [
+      "nation",
+      "ethnic",
+      "group"
+    ]
+  },
+  {
+    "data-cn": "星座",
+    "data-en": [
+      "constellation",
+      "star",
+      "astrology"
+    ]
+  },
+  {
+    "data-cn": "语言",
+    "data-en": [
+      "language",
+      "languages",
+      "speak"
+    ]
+  },
+  {
+    "data-cn": "会员身份",
+    "data-en": [
+      "member status",
+      "member level",
+      "member rank"
+    ]
+  },
+  {
+    "data-cn": "收货地址",
+    "data-en": [
+      "receiver address",
+      "shipping address",
+      "delivery address"
+    ]
+  },
+  {
+    "data-cn": "物流信息",
+    "data-en": [
+      "logistics information",
+      "delivery information",
+      "shipping information"
+    ]
+  },
+  {
+    "data-cn": "使用情况",
+    "data-en": [
+      "usage",
+      "usage status",
+      "use status"
+    ]
+  },
+  {
+    "data-cn": "使用频率",
+    "data-en": [
+      "usage frequency",
+      "use frequency",
+      "frequency of use"
+    ]
+  },
+  {
+    "data-cn": "发票",
+    "data-en": [
+      "invoice",
+      "invoice information",
+      "billing information"
+    ]
+  },
+  {
+    "data-cn": "音频",
+    "data-en": [
+      "audio",
+      "audio file",
+      "audio stream"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "years"
+    ]
+  },
+  {
+    "data-cn": "版本",
+    "data-en": [
+      "version",
+      "edition",
+      "release"
+    ]
+  },
+  {
+    "data-cn": "用户标识",
+    "data-en": [
+      "user id",
+      "uid",
+      "id"
+    ]
+  },
+  {
+    "data-cn": "身体指标",
+    "data-en": [
+      "body data",
+      "body",
+      "body information"
+    ]
+  },
+  {
+    "data-cn": "时区",
+    "data-en": [
+      "time zone",
+      "timezone"
+    ]
+  },
+  {
+    "data-cn": "联系",
+    "data-en": [
+      "contact",
+      "contacts",
+      "get in touch"
+    ]
+  },
+  {
+    "data-cn": "血压",
+    "data-en": [
+      "blood pressure",
+      "bp"
+    ]
+  },
+  {
+    "data-cn": "收货人",
+    "data-en": [
+      "consignee",
+      "recipient"
+    ]
+  },
+  {
+    "data-cn": "WiFi",
+    "data-en": [
+      "WiFi",
+      "wifi",
+      "WIFI"
+    ]
+  },
+  {
+    "data-cn": "无线连接",
+    "data-en": [
+      "wireless connection",
+      "wireless connectivity",
+      "wireless link"
+    ]
+  },
+  {
+    "data-cn": "脂肪",
+    "data-en": [
+      "fat",
+      "fats",
+      "adipose"
+    ]
+  },
+  {
+    "data-cn": "沟通",
+    "data-en": [
+      "communication",
+      "communicate",
+      "com"
+    ]
+  },
+  {
+    "data-cn": "肌肉含量",
+    "data-en": [
+      "muscle mass",
+      "muscle content",
+      "muscularity"
+    ]
+  },
+  {
+    "data-cn": "容量",
+    "data-en": [
+      "capacity",
+      "capability",
+      "volumetric"
+    ]
+  },
+  {
+    "data-cn": "数据",
+    "data-en": [
+      "data",
+      "information",
+      "datum"
+    ]
+  },
+  {
+    "data-cn": "用户",
+    "data-en": [
+      "user",
+      "customer",
+      "client"
+    ]
+  },
+  {
+    "data-cn": "质量",
+    "data-en": [
+      "quality",
+      "superiority",
+      "excellence"
+    ]
+  },
+  {
+    "data-cn": "组织",
+    "data-en": [
+      "organization",
+      "organisation",
+      "institution"
+    ]
+  },
+  {
+    "data-cn": "手机号码",
+    "data-en": [
+      "phone number",
+      "telephone number",
+      "cellphone number"
+    ]
+  },
+  {
+    "data-cn": "访问量",
+    "data-en": [
+      "traffic",
+      "flow",
+      "visit"
+    ]
+  },
+  {
+    "data-cn": "反馈",
+    "data-en": [
+      "feedback",
+      "response",
+      "reaction"
+    ]
+  },
+  {
+    "data-cn": "联系",
+    "data-en": [
+      "contact",
+      "connection",
+      "link"
+    ]
+  },
+  {
+    "data-cn": "网络环境",
+    "data-en": [
+      "network environment",
+      "network conditions",
+      "network state"
+    ]
+  },
+  {
+    "data-cn": "赔付",
+    "data-en": [
+      "compensation",
+      "pay",
+      "compensate"
+    ]
+  },
+  {
+    "data-cn": "聊天",
+    "data-en": [
+      "chat",
+      "chatting",
+      "to chat"
+    ]
+  },
+  {
+    "data-cn": "证件",
+    "data-en": [
+      "credentials",
+      "certificate",
+      "certification"
+    ]
+  },
+  {
+    "data-cn": "点击记录",
+    "data-en": [
+      "click record",
+      "click history",
+      "click log"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "userName"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "验证码",
+    "data-en": [
+      "captcha",
+      "verifyCode",
+      "code"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "phone",
+      "mobile",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "姓名",
+    "data-en": [
+      "name",
+      "first name",
+      "last name"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "year"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "tall"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "job",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree"
+    ]
+  },
+  {
+    "data-cn": "婚姻状况",
+    "data-en": [
+      "marriage",
+      "married"
+    ]
+  },
+  {
+    "data-cn": "家庭住址",
+    "data-en": [
+      "address",
+      "home address"
+    ]
+  },
+  {
+    "data-cn": "现居住地",
+    "data-en": [
+      "location",
+      "live place"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "interest",
+      "hobby"
+    ]
+  },
+  {
+    "data-cn": "个人简介",
+    "data-en": [
+      "introduction",
+      "brief",
+      "profile"
+    ]
+  },
+  {
+    "data-cn": "照片",
+    "data-en": [
+      "photo",
+      "picture",
+      "image"
+    ]
+  },
+  {
+    "data-cn": "视频",
+    "data-en": [
+      "video"
+    ]
+  },
+  {
+    "data-cn": "音频",
+    "data-en": [
+      "audio",
+      "music"
+    ]
+  },
+  {
+    "data-cn": "位置",
+    "data-en": [
+      "position",
+      "location"
+    ]
+  },
+  {
+    "data-cn": "经度",
+    "data-en": [
+      "longitude"
+    ]
+  },
+  {
+    "data-cn": "纬度",
+    "data-en": [
+      "latitude"
+    ]
+  },
+  {
+    "data-cn": "速度",
+    "data-en": [
+      "speed"
+    ]
+  },
+  {
+    "data-cn": "海拔",
+    "data-en": [
+      "altitude"
+    ]
+  },
+  {
+    "data-cn": "方向",
+    "data-en": [
+      "direction"
+    ]
+  },
+  {
+    "data-cn": "时间",
+    "data-en": [
+      "time",
+      "date"
+    ]
+  },
+  {
+    "data-cn": "日期",
+    "data-en": [
+      "date"
+    ]
+  },
+  {
+    "data-cn": "年",
+    "data-en": [
+      "year"
+    ]
+  },
+  {
+    "data-cn": "月",
+    "data-en": [
+      "month"
+    ]
+  },
+  {
+    "data-cn": "日",
+    "data-en": [
+      "day"
+    ]
+  },
+  {
+    "data-cn": "星期",
+    "data-en": [
+      "week"
+    ]
+  },
+  {
+    "data-cn": "时",
+    "data-en": [
+      "hour"
+    ]
+  },
+  {
+    "data-cn": "分",
+    "data-en": [
+      "minute"
+    ]
+  },
+  {
+    "data-cn": "秒",
+    "data-en": [
+      "second"
+    ]
+  },
+  {
+    "data-cn": "温度",
+    "data-en": [
+      "temperature"
+    ]
+  },
+  {
+    "data-cn": "气压",
+    "data-en": [
+      "pressure"
+    ]
+  },
+  {
+    "data-cn": "光照强度",
+    "data-en": [
+      "light"
+    ]
+  },
+  {
+    "data-cn": "设备名称",
+    "data-en": [
+      "device name"
+    ]
+  },
+  {
+    "data-cn": "设备版本",
+    "data-en": [
+      "device version"
+    ]
+  },
+  {
+    "data-cn": "操作系统",
+    "data-en": [
+      "os",
+      "operating system"
+    ]
+  },
+  {
+    "data-cn": "运营商",
+    "data-en": [
+      "carrier",
+      "operator"
+    ]
+  },
+  {
+    "data-cn": "信号强度",
+    "data-en": [
+      "signal"
+    ]
+  },
+  {
+    "data-cn": "电池电量",
+    "data-en": [
+      "battery"
+    ]
+  },
+  {
+    "data-cn": "步数",
+    "data-en": [
+      "steps"
+    ]
+  },
+  {
+    "data-cn": "距离",
+    "data-en": [
+      "distance"
+    ]
+  },
+  {
+    "data-cn": "卡路里",
+    "data-en": [
+      "calorie"
+    ]
+  },
+  {
+    "data-cn": "运动时长",
+    "data-en": [
+      "duration",
+      "sport time"
+    ]
+  },
+  {
+    "data-cn": "睡眠时长",
+    "data-en": [
+      "sleep time"
+    ]
+  },
+  {
+    "data-cn": "睡眠质量",
+    "data-en": [
+      "sleep quality"
+    ]
+  },
+  {
+    "data-cn": "深睡时长",
+    "data-en": [
+      "deep sleep time"
+    ]
+  },
+  {
+    "data-cn": "浅睡时长",
+    "data-en": [
+      "light sleep time"
+    ]
+  },
+  {
+    "data-cn": "清醒时长",
+    "data-en": [
+      "awake time"
+    ]
+  },
+  {
+    "data-cn": "心率",
+    "data-en": [
+      "heart rate"
+    ]
+  },
+  {
+    "data-cn": "血氧",
+    "data-en": [
+      "blood oxygen"
+    ]
+  },
+  {
+    "data-cn": "血压",
+    "data-en": [
+      "blood pressure"
+    ]
+  },
+  {
+    "data-cn": "血糖",
+    "data-en": [
+      "blood sugar"
+    ]
+  },
+  {
+    "data-cn": "崩溃",
+    "data-en": [
+      "crash"
+    ]
+  },
+  {
+    "data-cn": "脸部图像",
+    "data-en": [
+      "face image"
+    ]
+  },
+  {
+    "data-cn": "语音命令",
+    "data-en": [
+      "voice command",
+      "voice commands",
+      "voice control"
+    ]
+  },
+  {
+    "data-cn": "崩溃报告",
+    "data-en": [
+      "crash report",
+      "crash reports",
+      "crashes"
+    ]
+  },
+  {
+    "data-cn": "网关",
+    "data-en": [
+      "gateway",
+      "gateways",
+      "router"
+    ]
+  },
+  {
+    "data-cn": "行业",
+    "data-en": [
+      "industry",
+      "industries",
+      "sector"
+    ]
+  },
+  {
+    "data-cn": "会员",
+    "data-en": [
+      "member",
+      "members",
+      "membership"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "account"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "注册日期",
+    "data-en": [
+      "register date",
+      "register time",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "register time",
+      "registration time",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "注册IP",
+    "data-en": [
+      "register ip",
+      "registration ip",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "最后登录日期",
+    "data-en": [
+      "last login date",
+      "last logon date",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "最后登录时间",
+    "data-en": [
+      "last login time",
+      "last logon time",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "最后登录IP",
+    "data-en": [
+      "last login ip",
+      "last logon ip",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "登录次数",
+    "data-en": [
+      "login count",
+      "logon count",
+      "logins"
+    ]
+  },
+  {
+    "data-cn": "状态",
+    "data-en": [
+      "status",
+      "state",
+      "account status"
+    ]
+  },
+  {
+    "data-cn": "角色",
+    "data-en": [
+      "role",
+      "roles",
+      "user role"
+    ]
+  },
+  {
+    "data-cn": "权限",
+    "data-en": [
+      "permission",
+      "permissions",
+      "user permission"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "sex type"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "date of birth"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "mobile phone",
+      "cell phone",
+      "phone"
+    ]
+  },
+  {
+    "data-cn": "座机",
+    "data-en": [
+      "telephone",
+      "tel",
+      "landline"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "addr",
+      "user address"
+    ]
+  },
+  {
+    "data-cn": "邮编",
+    "data-en": [
+      "zipcode",
+      "postcode",
+      "postal code"
+    ]
+  },
+  {
+    "data-cn": "个人简介",
+    "data-en": [
+      "intro",
+      "introduction",
+      "profile"
+    ]
+  },
+  {
+    "data-cn": "备注",
+    "data-en": [
+      "remark",
+      "notes",
+      "comment"
+    ]
+  },
+  {
+    "data-cn": "标签",
+    "data-en": [
+      "tag",
+      "tags",
+      "user tag"
+    ]
+  },
+  {
+    "data-cn": "积分",
+    "data-en": [
+      "score",
+      "points",
+      "user score"
+    ]
+  },
+  {
+    "data-cn": "经验",
+    "data-en": [
+      "experience",
+      "exp",
+      "user experience"
+    ]
+  },
+  {
+    "data-cn": "等级",
+    "data-en": [
+      "level",
+      "lv",
+      "user level"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "account"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "注册日期",
+    "data-en": [
+      "register date",
+      "register time",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "register time",
+      "registration time",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "注册IP",
+    "data-en": [
+      "register ip",
+      "registration ip",
+      "registration date"
+    ]
+  },
+  {
+    "data-cn": "最后登录日期",
+    "data-en": [
+      "last login date",
+      "last logon date",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "最后登录时间",
+    "data-en": [
+      "last login time",
+      "last logon time",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "最后登录IP",
+    "data-en": [
+      "last login ip",
+      "last logon ip",
+      "last logon"
+    ]
+  },
+  {
+    "data-cn": "登录次数",
+    "data-en": [
+      "login count",
+      "logon count",
+      "logins"
+    ]
+  },
+  {
+    "data-cn": "状态",
+    "data-en": [
+      "status",
+      "state",
+      "account status"
+    ]
+  },
+  {
+    "data-cn": "角色",
+    "data-en": [
+      "role",
+      "roles",
+      "user role"
+    ]
+  },
+  {
+    "data-cn": "权限",
+    "data-en": [
+      "permission",
+      "permissions",
+      "user permission"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "sex type"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "date of birth"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "mobile phone",
+      "cell phone",
+      "phone"
+    ]
+  },
+  {
+    "data-cn": "座机",
+    "data-en": [
+      "telephone",
+      "tel",
+      "landline"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "addr",
+      "user address"
+    ]
+  },
+  {
+    "data-cn": "邮编",
+    "data-en": [
+      "zipcode",
+      "postcode",
+      "postal code"
+    ]
+  },
+  {
+    "data-cn": "个人简介",
+    "data-en": [
+      "intro",
+      "introduction",
+      "profile"
+    ]
+  },
+  {
+    "data-cn": "备注",
+    "data-en": [
+      "remark"
+    ]
+  },
+  {
+    "data-cn": "钱包",
+    "data-en": [
+      "wallet",
+      "purse",
+      "handbag"
+    ]
+  },
+  {
+    "data-cn": "体型",
+    "data-en": [
+      "figure",
+      "build",
+      "stature"
+    ]
+  },
+  {
+    "data-cn": "触发事件",
+    "data-en": [
+      "trigger an event",
+      "fire an event",
+      "raise an event"
+    ]
+  },
+  {
+    "data-cn": "识别码",
+    "data-en": [
+      "identification code",
+      "identifying code",
+      "identification number"
+    ]
+  },
+  {
+    "data-cn": "肌肤监测",
+    "data-en": [
+      "skin monitoring",
+      "skin condition monitoring",
+      "skin moisture monitoring"
+    ]
+  },
+  {
+    "data-cn": "屏幕",
+    "data-en": [
+      "screen",
+      "display",
+      "monitor"
+    ]
+  },
+  {
+    "data-cn": "票务",
+    "data-en": [
+      "ticket",
+      "ticketing",
+      "tickets"
+    ]
+  },
+  {
+    "data-cn": "监控",
+    "data-en": [
+      "monitor",
+      "monitoring",
+      "monitors"
+    ]
+  },
+  {
+    "data-cn": "收缩压",
+    "data-en": [
+      "systolic blood pressure",
+      "systolic pressure",
+      "systolic"
+    ]
+  },
+  {
+    "data-cn": "浏览时长",
+    "data-en": [
+      "time on site",
+      "time on page",
+      "session duration"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "userName"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "pwd",
+      "passWord"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "phone",
+      "tel",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "years"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "tall",
+      "stature"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight",
+      "fat",
+      "thin"
+    ]
+  },
+  {
+    "data-cn": "婚姻状况",
+    "data-en": [
+      "marriage",
+      "married",
+      "single"
+    ]
+  },
+  {
+    "data-cn": "学历",
+    "data-en": [
+      "education",
+      "degree",
+      "schooling"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "job",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "salary",
+      "earnings"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "interest",
+      "hobby",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "登录时间",
+    "data-en": [
+      "login time",
+      "logon time",
+      "log time"
+    ]
+  },
+  {
+    "data-cn": "浏览时间",
+    "data-en": [
+      "browsing time",
+      "surfing time",
+      "browse time"
+    ]
+  },
+  {
+    "data-cn": "搜索时间",
+    "data-en": [
+      "search time",
+      "seek time",
+      "find time"
+    ]
+  },
+  {
+    "data-cn": "次数",
+    "data-en": [
+      "times",
+      "frequency",
+      "number"
+    ]
+  },
+  {
+    "data-cn": "购物车记录",
+    "data-en": [
+      "shopping cart",
+      "shopping record",
+      "buy record"
+    ]
+  },
+  {
+    "data-cn": "睡眠状况",
+    "data-en": [
+      "sleep status",
+      "sleeping status",
+      "sleep condition"
+    ]
+  },
+  {
+    "data-cn": "商品名称",
+    "data-en": [
+      "name",
+      "item name",
+      "item title"
+    ]
+  },
+  {
+    "data-cn": "商品图",
+    "data-en": [
+      "pic",
+      "item pic",
+      "item image"
+    ]
+  },
+  {
+    "data-cn": "商品价格",
+    "data-en": [
+      "price",
+      "item price",
+      "item cost"
+    ]
+  },
+  {
+    "data-cn": "商品数量",
+    "data-en": [
+      "number",
+      "quantity",
+      "item quantity"
+    ]
+  },
+  {
+    "data-cn": "商品描述",
+    "data-en": [
+      "description",
+      "item description",
+      "item detail"
+    ]
+  },
+  {
+    "data-cn": "商品类型",
+    "data-en": [
+      "type",
+      "item type",
+      "item category"
+    ]
+  },
+  {
+    "data-cn": "商品ID",
+    "data-en": [
+      "id",
+      "item id",
+      "product id"
+    ]
+  },
+  {
+    "data-cn": "商品链接",
+    "data-en": [
+      "url",
+      "item url",
+      "product url"
+    ]
+  },
+  {
+    "data-cn": "商品状态",
+    "data-en": [
+      "status",
+      "item status",
+      "product status"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "职级",
+    "data-en": [
+      "rank",
+      "level",
+      "position"
+    ]
+  },
+  {
+    "data-cn": "户籍",
+    "data-en": [
+      "household register",
+      "household",
+      "hukou"
+    ]
+  },
+  {
+    "data-cn": "操作记录",
+    "data-en": [
+      "operation record",
+      "operational record",
+      "operating record"
+    ]
+  },
+  {
+    "data-cn": "开关状态",
+    "data-en": [
+      "switch status",
+      "switch",
+      "state"
+    ]
+  },
+  {
+    "data-cn": "账号",
+    "data-en": [
+      "account",
+      "username",
+      "id"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "手机",
+    "data-en": [
+      "phone",
+      "mobile",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "birthdate"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "idcard",
+      "identity card",
+      "identity number"
+    ]
+  },
+  {
+    "data-cn": "家庭住址",
+    "data-en": [
+      "address",
+      "home address"
+    ]
+  },
+  {
+    "data-cn": "邮编",
+    "data-en": [
+      "postcode",
+      "zipcode"
+    ]
+  },
+  {
+    "data-cn": "公司名称",
+    "data-en": [
+      "company",
+      "company name"
+    ]
+  },
+  {
+    "data-cn": "公司地址",
+    "data-en": [
+      "company address"
+    ]
+  },
+  {
+    "data-cn": "传真",
+    "data-en": [
+      "fax"
+    ]
+  },
+  {
+    "data-cn": "主营行业",
+    "data-en": [
+      "business",
+      "industry"
+    ]
+  },
+  {
+    "data-cn": "操作系统",
+    "data-en": [
+      "os",
+      "operating system"
+    ]
+  },
+  {
+    "data-cn": "账号绑定",
+    "data-en": [
+      "account binding"
+    ]
+  },
+  {
+    "data-cn": "设备型号",
+    "data-en": [
+      "device model"
+    ]
+  },
+  {
+    "data-cn": "序列号",
+    "data-en": [
+      "serial number"
+    ]
+  },
+  {
+    "data-cn": "自动息屏",
+    "data-en": [
+      "auto sleep",
+      "auto sleep mode",
+      "automatic sleep"
+    ]
+  },
+  {
+    "data-cn": "睡眠周期",
+    "data-en": [
+      "sleep cycle",
+      "sleep cycle alarm",
+      "sleep period"
+    ]
+  },
+  {
+    "data-cn": "语音交互",
+    "data-en": [
+      "voice interaction",
+      "voice interaction service",
+      "voice recognition"
+    ]
+  },
+  {
+    "data-cn": "业务事件",
+    "data-en": [
+      "business event",
+      "business event log",
+      "business event record"
+    ]
+  },
+  {
+    "data-cn": "历史",
+    "data-en": [
+      "history",
+      "history data",
+      "history record"
+    ]
+  },
+  {
+    "data-cn": "用户ID",
+    "data-en": [
+      "user id",
+      "username",
+      "password"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male",
+      "female"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "birthdate"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "phone",
+      "telephone",
+      "cellphone",
+      "mobilephone"
+    ]
+  },
+  {
+    "data-cn": "昵称",
+    "data-en": [
+      "nickname",
+      "screen name"
+    ]
+  },
+  {
+    "data-cn": "签名",
+    "data-en": [
+      "signature",
+      "tweet",
+      "status"
+    ]
+  },
+  {
+    "data-cn": "简介",
+    "data-en": [
+      "description",
+      "bio",
+      "introduction"
+    ]
+  },
+  {
+    "data-cn": "背景",
+    "data-en": [
+      "background",
+      "cover"
+    ]
+  },
+  {
+    "data-cn": "位置",
+    "data-en": [
+      "location",
+      "address",
+      "city"
+    ]
+  },
+  {
+    "data-cn": "语言",
+    "data-en": [
+      "language",
+      "locale"
+    ]
+  },
+  {
+    "data-cn": "情感状态",
+    "data-en": [
+      "emotion",
+      "emotion status",
+      "relationship"
+    ]
+  },
+  {
+    "data-cn": "会员类型",
+    "data-en": [
+      "vip type",
+      "membership level",
+      "level"
+    ]
+  },
+  {
+    "data-cn": "星座",
+    "data-en": [
+      "constellation",
+      "horoscope"
+    ]
+  },
+  {
+    "data-cn": "故乡",
+    "data-en": [
+      "birthplace",
+      "hometown",
+      "home"
+    ]
+  },
+  {
+    "data-cn": "微博数",
+    "data-en": [
+      "tweets num",
+      "statuses count"
+    ]
+  },
+  {
+    "data-cn": "关注数",
+    "data-en": [
+      "follows num",
+      "friends count",
+      "following"
+    ]
+  },
+  {
+    "data-cn": "粉丝数",
+    "data-en": [
+      "fans num",
+      "followers count"
+    ]
+  },
+  {
+    "data-cn": "好友数",
+    "data-en": [
+      "page friends num",
+      "friends count"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "created at",
+      "registertime",
+      "registration time"
+    ]
+  },
+  {
+    "data-cn": "是否允许评论",
+    "data-en": [
+      "allow all comment",
+      "allow all comment",
+      "allow all comment"
+    ]
+  },
+  {
+    "data-cn": "是否开启地理位置",
+    "data-en": [
+      "geo enabled",
+      "geo enabled",
+      "geo enabled"
+    ]
+  },
+  {
+    "data-cn": "是否在线",
+    "data-en": [
+      "online status",
+      "online status",
+      "online status"
+    ]
+  },
+  {
+    "data-cn": "互粉数",
+    "data-en": [
+      "bi followers count",
+      "bi followers count",
+      "bi followers count"
+    ]
+  },
+  {
+    "data-cn": "备注",
+    "data-en": [
+      "remark",
+      "remark",
+      "remark"
+    ]
+  },
+  {
+    "data-cn": "省份",
+    "data-en": [
+      "province",
+      "province",
+      "province"
+    ]
+  },
+  {
+    "data-cn": "城市",
+    "data-en": [
+      "city",
+      "city",
+      "city"
+    ]
+  },
+  {
+    "data-cn": "个人主页",
+    "data-en": [
+      "url",
+      "url",
+      "url"
+    ]
+  },
+  {
+    "data-cn": "头像地址",
+    "data-en": [
+      "profile image url",
+      "profile image url",
+      "profile image url"
+    ]
+  },
+  {
+    "data-cn": "个性域名",
+    "data-en": [
+      "domain",
+      "domain",
+      "domain"
+    ]
+  },
+  {
+    "data-cn": "微号",
+    "data-en": [
+      "weihao",
+      "weihao",
+      "weihao"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "gender",
+      "gender"
+    ]
+  },
+  {
+    "data-cn": "关注数",
+    "data-en": [
+      "followers count",
+      "followers count",
+      "followers count"
+    ]
+  },
+  {
+    "data-cn": "好友数",
+    "data-en": [
+      "friends count",
+      "friends count",
+      "friends count"
+    ]
+  },
+  {
+    "data-cn": "微博数",
+    "data-en": [
+      "statuses count",
+      "statuses count",
+      "statuses count"
+    ]
+  },
+  {
+    "data-cn": "收藏数",
+    "data-en": [
+      "favourites count",
+      "favourites count",
+      "favourites count"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "created at",
+      "created at",
+      "created at"
+    ]
+  },
+  {
+    "data-cn": "是否关注",
+    "data-en": [
+      "following",
+      "following",
+      "following"
+    ]
+  },
+  {
+    "data-cn": "是否认证",
+    "data-en": [
+      "verified",
+      "verified",
+      "verified"
+    ]
+  },
+  {
+    "data-cn": "认证原因",
+    "data-en": [
+      "verified reason",
+      "verified reason",
+      "verified reason"
+    ]
+  },
+  {
+    "data-cn": "是否关注我",
+    "data-en": [
+      "follow me",
+      "follow me",
+      "follow"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "name",
+      "account"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "year",
+      "old"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "DOB"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "手机",
+    "data-en": [
+      "phone",
+      "mobile",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "账户",
+    "data-en": [
+      "account",
+      "account number",
+      "bank account"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "mailing address",
+      "postal address"
+    ]
+  },
+  {
+    "data-cn": "金额",
+    "data-en": [
+      "amount",
+      "sum",
+      "total"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "DOB"
+    ]
+  },
+  {
+    "data-cn": "城市",
+    "data-en": [
+      "city",
+      "metropolis",
+      "urban area"
+    ]
+  },
+  {
+    "data-cn": "国家",
+    "data-en": [
+      "country",
+      "land",
+      "state"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "e mail",
+      "electronic mail"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "sexuality"
+    ]
+  },
+  {
+    "data-cn": "身份证",
+    "data-en": [
+      "id",
+      "identification",
+      "identity card"
+    ]
+  },
+  {
+    "data-cn": "位置",
+    "data-en": [
+      "location",
+      "placement",
+      "position"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "profession",
+      "trade"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "phone",
+      "telephone",
+      "cellphone"
+    ]
+  },
+  {
+    "data-cn": "路况",
+    "data-en": [
+      "road condition",
+      "traffic condition",
+      "roadway condition"
+    ]
+  },
+  {
+    "data-cn": "开户人",
+    "data-en": [
+      "user",
+      "account holder",
+      "registered user"
+    ]
+  },
+  {
+    "data-cn": "局域网模式",
+    "data-en": [
+      "wifi",
+      "wireless fidelity",
+      "IEEE 802.11"
+    ]
+  },
+  {
+    "data-cn": "军官证",
+    "data-en": [
+      "officer",
+      "military officer",
+      "commissioned officer"
+    ]
+  },
+  {
+    "data-cn": "弹幕",
+    "data-en": [
+      "Barrage",
+      "Bullet screen",
+      "Danmaku"
+    ]
+  },
+  {
+    "data-cn": "热点",
+    "data-en": [
+      "Hot",
+      "Hotspot",
+      "Hot topic"
+    ]
+  },
+  {
+    "data-cn": "故障码",
+    "data-en": [
+      "Error code",
+      "Fault code",
+      "Failure code"
+    ]
+  },
+  {
+    "data-cn": "讨论",
+    "data-en": [
+      "Discussion",
+      "Talk",
+      "Chat"
+    ]
+  },
+  {
+    "data-cn": "近程",
+    "data-en": [
+      "nearby",
+      "near",
+      "close"
+    ]
+  },
+  {
+    "data-cn": "运行状态",
+    "data-en": [
+      "running status",
+      "running",
+      "run"
+    ]
+  },
+  {
+    "data-cn": "通话",
+    "data-en": [
+      "call",
+      "calling",
+      "called"
+    ]
+  },
+  {
+    "data-cn": "通信",
+    "data-en": [
+      "communicate",
+      "communication",
+      "communicating"
+    ]
+  },
+  {
+    "data-cn": "收藏",
+    "data-en": [
+      "collection",
+      "collecting",
+      "collected"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "name",
+      "user name"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "user pass",
+      "pass"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "email address"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "sex",
+      "gender",
+      "sex type"
+    ]
+  },
+  {
+    "data-cn": "年龄",
+    "data-en": [
+      "age",
+      "birthday",
+      "user age"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "user height"
+    ]
+  },
+  {
+    "data-cn": "体重",
+    "data-en": [
+      "weight",
+      "user weight",
+      "body weight"
+    ]
+  },
+  {
+    "data-cn": "血型",
+    "data-en": [
+      "blood type",
+      "bloodtype",
+      "blood group"
+    ]
+  },
+  {
+    "data-cn": "星座",
+    "data-en": [
+      "constellation",
+      "star sign",
+      "star"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "profession",
+      "occupation",
+      "job"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "favorite"
+    ]
+  },
+  {
+    "data-cn": "个人简介",
+    "data-en": [
+      "personal profile",
+      "brief introduction",
+      "self introduction"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "register time",
+      "registration time",
+      "sign up time"
+    ]
+  },
+  {
+    "data-cn": "注册地址",
+    "data-en": [
+      "register address",
+      "registration address",
+      "sign up address"
+    ]
+  },
+  {
+    "data-cn": "出生地",
+    "data-en": [
+      "birthplace",
+      "birth place",
+      "place of birth"
+    ]
+  },
+  {
+    "data-cn": "居住地",
+    "data-en": [
+      "residence",
+      "residence address",
+      "address"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "phone number",
+      "cellphone number",
+      "mobile number"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "ID card number",
+      "identification card number",
+      "ID number"
+    ]
+  },
+  {
+    "data-cn": "观影偏好",
+    "data-en": [
+      "viewing preference",
+      "viewing habit",
+      "viewing taste"
+    ]
+  },
+  {
+    "data-cn": "统计数据",
+    "data-en": [
+      "statistical data",
+      "statistics",
+      "data"
+    ]
+  },
+  {
+    "data-cn": "下单",
+    "data-en": [
+      "order",
+      "place an order",
+      "make an order"
+    ]
+  },
+  {
+    "data-cn": "护照",
+    "data-en": [
+      "passport",
+      "passport number",
+      "international passport"
+    ]
+  },
+  {
+    "data-cn": "设备类别",
+    "data-en": [
+      "device type",
+      "device class",
+      "equipment type"
+    ]
+  },
+  {
+    "data-cn": "设备",
+    "data-en": [
+      "device",
+      "equipment",
+      "instrument"
+    ]
+  },
+  {
+    "data-cn": "肌肤",
+    "data-en": [
+      "skin",
+      "complexion",
+      "rind"
+    ]
+  },
+  {
+    "data-cn": "存储卡",
+    "data-en": [
+      "storage card",
+      "memory card",
+      "storage medium"
+    ]
+  },
+  {
+    "data-cn": "内容",
+    "data-en": [
+      "content",
+      "substance",
+      "matter"
+    ]
+  },
+  {
+    "data-cn": "体温",
+    "data-en": [
+      "body temperature",
+      "temperature",
+      "body heat"
+    ]
+  },
+  {
+    "data-cn": "商品",
+    "data-en": [
+      "product",
+      "item",
+      "goods"
+    ]
+  },
+  {
+    "data-cn": "购物车",
+    "data-en": [
+      "cart",
+      "shopping cart",
+      "trolley"
+    ]
+  },
+  {
+    "data-cn": "库存",
+    "data-en": [
+      "stock",
+      "inventory",
+      "storage"
+    ]
+  },
+  {
+    "data-cn": "网页活动",
+    "data-en": [
+      "web activity",
+      "online activity",
+      "network activity"
+    ]
+  },
+  {
+    "data-cn": "收藏记录",
+    "data-en": [
+      "collection",
+      "record",
+      "keep"
+    ]
+  },
+  {
+    "data-cn": "收件人",
+    "data-en": [
+      "recipient",
+      "consignee",
+      "mail"
+    ]
+  },
+  {
+    "data-cn": "引用网址",
+    "data-en": [
+      "citation",
+      "reference",
+      "url"
+    ]
+  },
+  {
+    "data-cn": "睡醒",
+    "data-en": [
+      "awaken",
+      "waken",
+      "wake"
+    ]
+  },
+  {
+    "data-cn": "画面",
+    "data-en": [
+      "image",
+      "picture",
+      "screen"
+    ]
+  },
+  {
+    "data-cn": "安卓版本",
+    "data-en": [
+      "Android version",
+      "Android Version",
+      "android version"
+    ]
+  },
+  {
+    "data-cn": "网卡",
+    "data-en": [
+      "ethernet",
+      "network card",
+      "NIC"
+    ]
+  },
+  {
+    "data-cn": "还款金额",
+    "data-en": [
+      "repayment amount",
+      "repayment",
+      "amount"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "dob"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "telephone",
+      "phone",
+      "mobile"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "身份证",
+    "data-en": [
+      "id card",
+      "identity card",
+      "identification card"
+    ]
+  },
+  {
+    "data-cn": "收入",
+    "data-en": [
+      "income",
+      "earning",
+      "salary"
+    ]
+  },
+  {
+    "data-cn": "生活偏好",
+    "data-en": [
+      "life style",
+      "lifestyle",
+      "hobby"
+    ]
+  },
+  {
+    "data-cn": "国家码",
+    "data-en": [
+      "country code",
+      "nation code",
+      "area code"
+    ]
+  },
+  {
+    "data-cn": "邮编",
+    "data-en": [
+      "postcode",
+      "postal code",
+      "zipcode"
+    ]
+  },
+  {
+    "data-cn": "消费偏好",
+    "data-en": [
+      "consumption preference",
+      "consumer preference",
+      "consumption tendency"
+    ]
+  },
+  {
+    "data-cn": "寄件",
+    "data-en": [
+      "mailing",
+      "mail",
+      "mail send"
+    ]
+  },
+  {
+    "data-cn": "记录",
+    "data-en": [
+      "record",
+      "recording",
+      "records"
+    ]
+  },
+  {
+    "data-cn": "身高",
+    "data-en": [
+      "height",
+      "stature",
+      "height cm"
+    ]
+  },
+  {
+    "data-cn": "购买日期",
+    "data-en": [
+      "purchase date",
+      "buy date",
+      "purchase time"
+    ]
+  },
+  {
+    "data-cn": "铃声",
+    "data-en": [
+      "ringtone",
+      "bell",
+      "chime"
+    ]
+  },
+  {
+    "data-cn": "收货",
+    "data-en": [
+      "delivery",
+      "receipt",
+      "acceptance"
+    ]
+  },
+  {
+    "data-cn": "图文",
+    "data-en": [
+      "graphic",
+      "image",
+      "picture"
+    ]
+  },
+  {
+    "data-cn": "温度",
+    "data-en": [
+      "temperature",
+      "heat",
+      "cold"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "mailbox",
+      "email",
+      "inbox"
+    ]
+  },
+  {
+    "data-cn": "邮件",
+    "data-en": [
+      "email",
+      "mail",
+      "message"
+    ]
+  },
+  {
+    "data-cn": "日程",
+    "data-en": [
+      "calendar",
+      "schedule",
+      "timetable"
+    ]
+  },
+  {
+    "data-cn": "基站",
+    "data-en": [
+      "base",
+      "base station",
+      "station"
+    ]
+  },
+  {
+    "data-cn": "交易对象",
+    "data-en": [
+      "counterparty",
+      "object",
+      "transaction"
+    ]
+  },
+  {
+    "data-cn": "购机",
+    "data-en": [
+      "buy",
+      "machine",
+      "purchase"
+    ]
+  },
+  {
+    "data-cn": "进货单",
+    "data-en": [
+      "purchase order",
+      "order form",
+      "order"
+    ]
+  },
+  {
+    "data-cn": "轨迹",
+    "data-en": [
+      "trajectory",
+      "track",
+      "path"
+    ]
+  },
+  {
+    "data-cn": "频次",
+    "data-en": [
+      "frequency",
+      "frequencies",
+      "freq"
+    ]
+  },
+  {
+    "data-cn": "卡路里",
+    "data-en": [
+      "calorie",
+      "calories",
+      "kcal"
+    ]
+  },
+  {
+    "data-cn": "市场活动",
+    "data-en": [
+      "marketing activity",
+      "marketing campaign",
+      "promotion"
+    ]
+  },
+  {
+    "data-cn": "银行名称",
+    "data-en": [
+      "bank name",
+      "bankName",
+      "bankname"
+    ]
+  },
+  {
+    "data-cn": "开户行名称",
+    "data-en": [
+      "open bank name",
+      "openBankName",
+      "openbankname"
+    ]
+  },
+  {
+    "data-cn": "银行卡号",
+    "data-en": [
+      "bank card no",
+      "bankCardNo",
+      "bankcardno"
+    ]
+  },
+  {
+    "data-cn": "银行卡预留手机号",
+    "data-en": [
+      "bank card phone",
+      "bankCardPhone",
+      "bankcardphone"
+    ]
+  },
+  {
+    "data-cn": "支付宝账号",
+    "data-en": [
+      "alipay account",
+      "alipayAccount",
+      "alipayaccount"
+    ]
+  },
+  {
+    "data-cn": "支付宝姓名",
+    "data-en": [
+      "alipay name",
+      "alipayName",
+      "alipayname"
+    ]
+  },
+  {
+    "data-cn": "身份证号",
+    "data-en": [
+      "id card no",
+      "idCardNo",
+      "idcardno"
+    ]
+  },
+  {
+    "data-cn": "身份证姓名",
+    "data-en": [
+      "id card name",
+      "idCardName",
+      "idcardname"
+    ]
+  },
+  {
+    "data-cn": "信用卡有效期",
+    "data-en": [
+      "expiry date",
+      "expiryDate",
+      "expirydate"
+    ]
+  },
+  {
+    "data-cn": "信用卡类型",
+    "data-en": [
+      "card type",
+      "cardType",
+      "cardtype"
+    ]
+  },
+  {
+    "data-cn": "信用卡验证码",
+    "data-en": [
+      "card verify code",
+      "cardVerifyCode",
+      "cardverifycode"
+    ]
+  },
+  {
+    "data-cn": "配网",
+    "data-en": [
+      "configure network",
+      "configureNetwork",
+      "configurenetwork"
+    ]
+  },
+  {
+    "data-cn": "文件记录",
+    "data-en": [
+      "file record",
+      "file log",
+      "file recording"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "phone number",
+      "phone no",
+      "tel number"
+    ]
+  },
+  {
+    "data-cn": "业务事件",
+    "data-en": [
+      "business event",
+      "business log",
+      "business record"
+    ]
+  },
+  {
+    "data-cn": "传感器",
+    "data-en": [
+      "sensor",
+      "transducer",
+      "probe"
+    ]
+  },
+  {
+    "data-cn": "压力",
+    "data-en": [
+      "pressure",
+      "press",
+      "stress"
+    ]
+  },
+  {
+    "data-cn": "城市",
+    "data-en": [
+      "city",
+      "town",
+      "metropolis"
+    ]
+  },
+  {
+    "data-cn": "电影",
+    "data-en": [
+      "movie",
+      "film",
+      "cinema"
+    ]
+  },
+  {
+    "data-cn": "音乐",
+    "data-en": [
+      "music",
+      "song",
+      "audio"
+    ]
+  },
+  {
+    "data-cn": "相册",
+    "data-en": [
+      "album",
+      "gallery",
+      "photography"
+    ]
+  },
+  {
+    "data-cn": "通讯",
+    "data-en": [
+      "communication",
+      "telecommunication",
+      "correspondence"
+    ]
+  },
+  {
+    "data-cn": "性能",
+    "data-en": [
+      "performance",
+      "function",
+      "capacity"
+    ]
+  },
+  {
+    "data-cn": "学校",
+    "data-en": [
+      "school",
+      "university",
+      "education"
+    ]
+  },
+  {
+    "data-cn": "路由器",
+    "data-en": [
+      "router",
+      "gateway",
+      "server"
+    ]
+  },
+  {
+    "data-cn": "陀螺仪",
+    "data-en": [
+      "gyroscope",
+      "gyro",
+      "g sensor"
+    ]
+  },
+  {
+    "data-cn": "角色",
+    "data-en": [
+      "role",
+      "roles",
+      "character"
+    ]
+  },
+  {
+    "data-cn": "访问页面",
+    "data-en": [
+      "visit page",
+      "visit the page",
+      "access page"
+    ]
+  },
+  {
+    "data-cn": "点击",
+    "data-en": [
+      "click",
+      "clicking",
+      "clicked"
+    ]
+  },
+  {
+    "data-cn": "身份证",
+    "data-en": [
+      "identification",
+      "ID",
+      "identity card"
+    ]
+  },
+  {
+    "data-cn": "姓名",
+    "data-en": [
+      "name",
+      "full name",
+      "display name"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male female"
+    ]
+  },
+  {
+    "data-cn": "出生日期",
+    "data-en": [
+      "birthday",
+      "date of birth",
+      "dob"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "mobile number",
+      "cell phone",
+      "phone"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "e mail",
+      "mail"
+    ]
+  },
+  {
+    "data-cn": "地址",
+    "data-en": [
+      "address",
+      "location",
+      "place"
+    ]
+  },
+  {
+    "data-cn": "邮政编码",
+    "data-en": [
+      "postal code",
+      "zip code",
+      "zip"
+    ]
+  },
+  {
+    "data-cn": "硬盘",
+    "data-en": [
+      "disk",
+      "hard disk",
+      "hdd"
+    ]
+  },
+  {
+    "data-cn": "付款",
+    "data-en": [
+      "payment",
+      "pay",
+      "money"
+    ]
+  },
+  {
+    "data-cn": "专业",
+    "data-en": [
+      "major",
+      "specialty",
+      "profession"
+    ]
+  },
+  {
+    "data-cn": "音乐",
+    "data-en": [
+      "music",
+      "musical",
+      "musically"
+    ]
+  },
+  {
+    "data-cn": "接收人",
+    "data-en": [
+      "receiver",
+      "recipient",
+      "donee"
+    ]
+  },
+  {
+    "data-cn": "网络",
+    "data-en": [
+      "network",
+      "networking",
+      "net"
+    ]
+  },
+  {
+    "data-cn": "食材",
+    "data-en": [
+      "food",
+      "foodstuff",
+      "provisions"
+    ]
+  },
+  {
+    "data-cn": "观演人",
+    "data-en": [
+      "viewer",
+      "observer",
+      "beholder"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "screen name"
+    ]
+  },
+  {
+    "data-cn": "用户简介",
+    "data-en": [
+      "description",
+      "user description",
+      "user description"
+    ]
+  },
+  {
+    "data-cn": "关注数",
+    "data-en": [
+      "followers count",
+      "followersCount",
+      "followers"
+    ]
+  },
+  {
+    "data-cn": "粉丝数",
+    "data-en": [
+      "friends count",
+      "friendsCount",
+      "friends"
+    ]
+  },
+  {
+    "data-cn": "微博数",
+    "data-en": [
+      "statuses count",
+      "statusesCount",
+      "statuses"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "created at",
+      "createdAt",
+      "created"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "gender str"
+    ]
+  },
+  {
+    "data-cn": "所在地",
+    "data-en": [
+      "location",
+      "user location",
+      "userLocation"
+    ]
+  },
+  {
+    "data-cn": "认证信息",
+    "data-en": [
+      "verified reason",
+      "verifiedReason",
+      "verified trade"
+    ]
+  },
+  {
+    "data-cn": "认证类型",
+    "data-en": [
+      "verified type",
+      "verifiedType",
+      "verified type ext"
+    ]
+  },
+  {
+    "data-cn": "会员等级",
+    "data-en": [
+      "mbrank",
+      "mbRank",
+      "memberRank"
+    ]
+  },
+  {
+    "data-cn": "工作状态",
+    "data-en": [
+      "work status",
+      "status",
+      "work info"
+    ]
+  },
+  {
+    "data-cn": "屏幕",
+    "data-en": [
+      "screen",
+      "display",
+      "monitor"
+    ]
+  },
+  {
+    "data-cn": "阅读记录",
+    "data-en": [
+      "read history",
+      "read log",
+      "read record"
+    ]
+  },
+  {
+    "data-cn": "建立",
+    "data-en": [
+      "build",
+      "create",
+      "establish"
+    ]
+  },
+  {
+    "data-cn": "账号",
+    "data-en": [
+      "account",
+      "username",
+      "user name"
+    ]
+  },
+  {
+    "data-cn": "字母",
+    "data-en": [
+      "letter",
+      "alphabet",
+      "character"
+    ]
+  },
+  {
+    "data-cn": "反馈",
+    "data-en": [
+      "feedback",
+      "response",
+      "reaction"
+    ]
+  },
+  {
+    "data-cn": "记录",
+    "data-en": [
+      "record",
+      "log",
+      "data"
+    ]
+  },
+  {
+    "data-cn": "生日",
+    "data-en": [
+      "birthday",
+      "birth",
+      "bday"
+    ]
+  },
+  {
+    "data-cn": "副本",
+    "data-en": [
+      "copy",
+      "duplicate",
+      "replica"
+    ]
+  },
+  {
+    "data-cn": "状态",
+    "data-en": [
+      "status",
+      "condition",
+      "situation"
+    ]
+  },
+  {
+    "data-cn": "点播",
+    "data-en": [
+      "video on demand",
+      "vod",
+      "video on demand"
+    ]
+  },
+  {
+    "data-cn": "软件列表",
+    "data-en": [
+      "software list",
+      "software catalog",
+      "software directory"
+    ]
+  },
+  {
+    "data-cn": "年龄段",
+    "data-en": [
+      "age range",
+      "age group",
+      "age bracket"
+    ]
+  },
+  {
+    "data-cn": "视频",
+    "data-en": [
+      "video",
+      "movie",
+      "clip"
+    ]
+  },
+  {
+    "data-cn": "记录路线",
+    "data-en": [
+      "record route",
+      "record path",
+      "record track"
+    ]
+  },
+  {
+    "data-cn": "头像",
+    "data-en": [
+      "avatar",
+      "icon",
+      "profile picture"
+    ]
+  },
+  {
+    "data-cn": "反馈",
+    "data-en": [
+      "feedback",
+      "opinions",
+      "reaction"
+    ]
+  },
+  {
+    "data-cn": "语音指令",
+    "data-en": [
+      "voice command",
+      "voice control",
+      "voice recognition"
+    ]
+  },
+  {
+    "data-cn": "点评",
+    "data-en": [
+      "comment",
+      "review",
+      "view"
+    ]
+  },
+  {
+    "data-cn": "下载",
+    "data-en": [
+      "download",
+      "get",
+      "obtain"
+    ]
+  },
+  {
+    "data-cn": "搜索记录",
+    "data-en": [
+      "history",
+      "record",
+      "search history"
+    ]
+  },
+  {
+    "data-cn": "搜索",
+    "data-en": [
+      "search",
+      "find",
+      "look up"
+    ]
+  },
+  {
+    "data-cn": "输入",
+    "data-en": [
+      "input",
+      "enter",
+      "type"
+    ]
+  },
+  {
+    "data-cn": "确定",
+    "data-en": [
+      "confirm",
+      "ensure",
+      "ok"
+    ]
+  },
+  {
+    "data-cn": "取消",
+    "data-en": [
+      "cancel",
+      "clear",
+      "remove"
+    ]
+  },
+  {
+    "data-cn": "通讯录",
+    "data-en": [
+      "address book",
+      "contacts",
+      "phone book"
+    ]
+  },
+  {
+    "data-cn": "城市",
+    "data-en": [
+      "city",
+      "town",
+      "location"
+    ]
+  },
+  {
+    "data-cn": "网络",
+    "data-en": [
+      "network",
+      "internet",
+      "web"
+    ]
+  },
+  {
+    "data-cn": "图像",
+    "data-en": [
+      "image",
+      "picture",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "标题",
+    "data-en": [
+      "title",
+      "headline",
+      "caption"
+    ]
+  },
+  {
+    "data-cn": "作者",
+    "data-en": [
+      "author",
+      "writer",
+      "creator"
+    ]
+  },
+  {
+    "data-cn": "时间",
+    "data-en": [
+      "time",
+      "date",
+      "year"
+    ]
+  },
+  {
+    "data-cn": "识别号",
+    "data-en": [
+      "identification",
+      "identifier",
+      "ID"
+    ]
+  },
+  {
+    "data-cn": "分辨率",
+    "data-en": [
+      "resolution",
+      "resolve",
+      "resolving power"
+    ]
+  },
+  {
+    "data-cn": "录像日期",
+    "data-en": [
+      "shooting date",
+      "recording date",
+      "capture date"
+    ]
+  },
+  {
+    "data-cn": "访问",
+    "data-en": [
+      "access",
+      "visit",
+      "call"
+    ]
+  },
+  {
+    "data-cn": "观影记录",
+    "data-en": [
+      "viewing history",
+      "watch history",
+      "view history"
+    ]
+  },
+  {
+    "data-cn": "输入",
+    "data-en": [
+      "input",
+      "enter",
+      "type"
+    ]
+  },
+  {
+    "data-cn": "标识符",
+    "data-en": [
+      "identifier",
+      "id",
+      "mark"
+    ]
+  },
+  {
+    "data-cn": "信号强度",
+    "data-en": [
+      "signal strength",
+      "signal",
+      "signal intensity"
+    ]
+  },
+  {
+    "data-cn": "场景",
+    "data-en": [
+      "scene",
+      "ambient",
+      "setting"
+    ]
+  },
+  {
+    "data-cn": "画像",
+    "data-en": [
+      "image",
+      "picture",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "店铺",
+    "data-en": [
+      "store",
+      "shop",
+      "business"
+    ]
+  },
+  {
+    "data-cn": "兴趣爱好",
+    "data-en": [
+      "hobby",
+      "interest",
+      "passion"
+    ]
+  },
+  {
+    "data-cn": "共享",
+    "data-en": [
+      "share",
+      "communal",
+      "common"
+    ]
+  },
+  {
+    "data-cn": "用户名",
+    "data-en": [
+      "username",
+      "user name",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "密码",
+    "data-en": [
+      "password",
+      "passwd",
+      "pwd"
+    ]
+  },
+  {
+    "data-cn": "邮箱",
+    "data-en": [
+      "email",
+      "mail",
+      "e mail"
+    ]
+  },
+  {
+    "data-cn": "性别",
+    "data-en": [
+      "gender",
+      "sex",
+      "male"
+    ]
+  },
+  {
+    "data-cn": "手机号",
+    "data-en": [
+      "mobile",
+      "phone",
+      "telephone"
+    ]
+  },
+  {
+    "data-cn": "注册时间",
+    "data-en": [
+      "register time",
+      "reg time",
+      "time"
+    ]
+  },
+  {
+    "data-cn": "注册ip",
+    "data-en": [
+      "register ip",
+      "reg ip",
+      "ip"
+    ]
+  },
+  {
+    "data-cn": "状态",
+    "data-en": [
+      "status",
+      "state",
+      "active"
+    ]
+  },
+  {
+    "data-cn": "授权",
+    "data-en": [
+      "auth",
+      "authorization",
+      "authorized"
+    ]
+  },
+  {
+    "data-cn": "楼盘",
+    "data-en": [
+      "property",
+      "estate",
+      "house"
+    ]
+  },
+  {
+    "data-cn": "认证",
+    "data-en": [
+      "certification",
+      "certified",
+      "authentication"
+    ]
+  },
+  {
+    "data-cn": "行为",
+    "data-en": [
+      "behavior",
+      "action",
+      "activity"
+    ]
+  },
+  {
+    "data-cn": "天气",
+    "data-en": [
+      "weather",
+      "meteorological",
+      "meteorology"
+    ]
+  },
+  {
+    "data-cn": "电子邮件",
+    "data-en": [
+      "email",
+      "e mail",
+      "mail"
+    ]
+  },
+  {
+    "data-cn": "运行模式",
+    "data-en": [
+      "run mode",
+      "operating mode",
+      "operational mode"
+    ]
+  },
+  {
+    "data-cn": "搜索词",
+    "data-en": [
+      "search term",
+      "search word",
+      "search phrase"
+    ]
+  },
+  {
+    "data-cn": "搜索",
+    "data-en": [
+      "search",
+      "look for",
+      "seek"
+    ]
+  },
+  {
+    "data-cn": "电量",
+    "data-en": [
+      "battery",
+      "electricity",
+      "power"
+    ]
+  },
+  {
+    "data-cn": "剪切板",
+    "data-en": [
+      "clipboard",
+      "clip",
+      "paste"
+    ]
+  },
+  {
+    "data-cn": "简介",
+    "data-en": [
+      "profile",
+      "brief",
+      "introduction"
+    ]
+  },
+  {
+    "data-cn": "国家代码",
+    "data-en": [
+      "country code",
+      "nation code",
+      "phone code"
+    ]
+  },
+  {
+    "data-cn": "交易",
+    "data-en": [
+      "transaction",
+      "deal",
+      "trade"
+    ]
+  },
+  {
+    "data-cn": "交易时间",
+    "data-en": [
+      "transaction time",
+      "transaction date",
+      "transaction datetime"
+    ]
+  },
+  {
+    "data-cn": "交易金额",
+    "data-en": [
+      "transaction amount",
+      "transaction money",
+      "amount"
+    ]
+  },
+  {
+    "data-cn": "银行",
+    "data-en": [
+      "bank",
+      "bank name",
+      "bank account"
+    ]
+  },
+  {
+    "data-cn": "电池",
+    "data-en": [
+      "battery",
+      "battery level",
+      "battery quantity"
+    ]
+  },
+  {
+    "data-cn": "开票",
+    "data-en": [
+      "invoice",
+      "invoice title",
+      "invoice type"
+    ]
+  },
+  {
+    "data-cn": "备注",
+    "data-en": [
+      "remarks",
+      "notes",
+      "comment"
+    ]
+  },
+  {
+    "data-cn": "页面",
+    "data-en": [
+      "page",
+      "screen",
+      "view"
+    ]
+  },
+  {
+    "data-cn": "交互",
+    "data-en": [
+      "interaction",
+      "dialogue",
+      "communication"
+    ]
+  },
+  {
+    "data-cn": "关键词",
+    "data-en": [
+      "keyword",
+      "key phrase",
+      "search term"
+    ]
+  },
+  {
+    "data-cn": "分享链接",
+    "data-en": [
+      "share link",
+      "share URL",
+      "shared link"
+    ]
+  },
+  {
+    "data-cn": "职业",
+    "data-en": [
+      "occupation",
+      "job",
+      "career"
+    ]
+  },
+  {
+    "data-cn": "产品号",
+    "data-en": [
+      "product id",
+      "product no",
+      "product number"
+    ]
+  },
+  {
+    "data-cn": "产品名",
+    "data-en": [
+      "product name",
+      "name"
+    ]
+  },
+  {
+    "data-cn": "产品类型",
+    "data-en": [
+      "product type",
+      "product class",
+      "type"
+    ]
+  },
+  {
+    "data-cn": "产品品牌",
+    "data-en": [
+      "product brand",
+      "brand"
+    ]
+  },
+  {
+    "data-cn": "产品价格",
+    "data-en": [
+      "product price",
+      "price"
+    ]
+  },
+  {
+    "data-cn": "产品图片",
+    "data-en": [
+      "product image",
+      "image",
+      "photo"
+    ]
+  },
+  {
+    "data-cn": "产品颜色",
+    "data-en": [
+      "product color",
+      "color"
+    ]
+  },
+  {
+    "data-cn": "产品尺寸",
+    "data-en": [
+      "product size",
+      "size"
+    ]
+  },
+  {
+    "data-cn": "产品重量",
+    "data-en": [
+      "product weight",
+      "weight"
+    ]
+  },
+  {
+    "data-cn": "产品详情",
+    "data-en": [
+      "product detail",
+      "detail"
+    ]
+  },
+  {
+    "data-cn": "购买渠道",
+    "data-en": [
+      "purchase channel",
+      "channel"
+    ]
+  },
+  {
+    "data-cn": "购买",
+    "data-en": [
+      "purchase",
+      "buy",
+      "shopping"
+    ]
+  },
+  {
+    "data-cn": "电压",
+    "data-en": [
+      "voltage",
+      "volt"
+    ]
+  },
+  {
+    "data-cn": "语言",
+    "data-en": [
+      "language",
+      "languages"
+    ]
+  },
+  {
+    "data-cn": "身体评分",
+    "data-en": [
+      "body score",
+      "score"
+    ]
+  },
+  {
+    "data-cn": "车辆状态",
+    "data-en": [
+      "car status",
+      "vehicle status"
+    ]
+  },
+  {
+    "data-cn": "车牌号",
+    "data-en": [
+      "license plate",
+      "plate",
+      "license"
+    ]
+  },
+  {
+    "data-cn": "颜色",
+    "data-en": [
+      "color",
+      "colour"
+    ]
+  },
+  {
+    "data-cn": "发动机号",
+    "data-en": [
+      "engine number",
+      "engine"
+    ]
+  },
+  {
+    "data-cn": "车主",
+    "data-en": [
+      "car owner",
+      "vehicle owner",
+      "owner"
+    ]
+  },
+  {
+    "data-cn": "电话",
+    "data-en": [
+      "phone",
+      "telephone",
+      "cellphone"
+    ]
+  },
+  {
+    "data-cn": "排量",
+    "data-en": [
+      "displacement",
+      "engine displacement"
+    ]
+  },
+  {
+    "data-cn": "变速箱",
+    "data-en": [
+      "transmission",
+      "gearbox"
+    ]
+  },
+  {
+    "data-cn": "油箱容积",
+    "data-en": [
+      "tank capacity",
+      "fuel tank capacity"
+    ]
+  },
+  {
+    "data-cn": "行驶里程",
+    "data-en": [
+      "mileage",
+      "odometer",
+      "kilometrage"
+    ]
+  },
+  {
+    "data-cn": "燃油类型",
+    "data-en": [
+      "fuel type",
+      "fuel"
+    ]
+  },
+  {
+    "data-cn": "座位数",
+    "data-en": [
+      "seating capacity",
+      "seats"
+    ]
+  },
+  {
+    "data-cn": "车门数",
+    "data-en": [
+      "doors",
+      "door count"
+    ]
+  },
+  {
+    "data-cn": "天窗数",
+    "data-en": [
+      "sunroof",
+      "sunroof count"
+    ]
+  },
+  {
+    "data-cn": "车辆配置",
+    "data-en": [
+      "car configuration",
+      "vehicle configuration",
+      "configuration"
+    ]
+  },
+  {
+    "data-cn": "发动机",
+    "data-en": [
+      "engine",
+      "motor"
+    ]
+  },
+  {
+    "data-cn": "最高车速",
+    "data-en": [
+      "top speed",
+      "maximum speed"
+    ]
+  },
+  {
+    "data-cn": "安全气囊",
+    "data-en": [
+      "airbag",
+      "air bag",
+      "safety airbag"
+    ]
+  },
+  {
+    "data-cn": "定速巡航",
+    "data-en": [
+      "cruise control",
+      "constant speed cruise"
+    ]
+  },
+  {
+    "data-cn": "GPS导航",
+    "data-en": [
+      "GPS navigation",
+      "GPS"
+    ]
+  },
+  {
+    "data-cn": "感应雨刷",
+    "data-en": [
+      "sensing wipers",
+      "rain sensing wipers"
+    ]
+  },
+  {
+    "data-cn": "夜视系统",
+    "data-en": [
+      "night vision system",
+      "night vision"
+    ]
+  },
+  {
+    "data-cn": "数据",
+    "data-en": [
+      "data",
+      "information",
+      "details"
+    ]
+  },
+  {
+    "data-cn": "留言",
+    "data-en": [
+      "message",
+      "information",
+      "comments"
+    ]
+  },
+  {
+    "data-cn": "日程",
+    "data-en": [
+      "schedule",
+      "arrangement",
+      "plan"
+    ]
+  },
+  {
+    "data-cn": "行车",
+    "data-en": [
+      "driving",
+      "driving",
+      "driving"
+    ]
+  },
+  {
+    "data-cn": "执照",
+    "data-en": [
+      "license",
+      "permit",
+      "certificate"
+    ]
+  },
+  {
+    "data-cn": "车",
+    "data-en": [
+      "cart",
+      "shopping cart",
+      "trolley"
+    ]
+  },
+  {
+    "data-cn": "订单",
+    "data-en": [
+      "order",
+      "orders",
+      "purchase order"
+    ]
+  },
+  {
+    "data-cn": "里程",
+    "data-en": [
+      "mileage",
+      "miles",
+      "kilometres"
+    ]
+  },
+  {
+    "data-cn": "通信记录",
+    "data-en": [
+      "communication",
+      "communications",
+      "comm"
+    ]
+  },
+  {
+    "data-cn": "水质",
+    "data-en": [
+      "water quality",
+      "water",
+      "quality"
+    ]
+  },
+  {
+    "data-cn": "税号",
+    "data-en": [
+      "tax number",
+      "tax",
+      "number"
+    ]
+  },
+  {
+    "data-cn": "订购人",
+    "data-en": [
+      "subscriber",
+      "orderer",
+      "purchaser"
+    ]
+  },
+  {
+    "data-cn": "锻炼时长",
+    "data-en": [
+      "exercise time",
+      "workout time",
+      "fitness time"
+    ]
+  },
+  {
+    "data-cn": "行车",
+    "data-en": [
+      "driving",
+      "driving record",
+      "driving history"
+    ]
+  },
+  {
+    "data-cn": "认证公函",
+    "data-en": [
+      "certification letter",
+      "certification",
+      "letter of certification"
+    ]
+  },
+  {
+    "data-cn": "血糖",
+    "data-en": [
+      "blood sugar",
+      "blood glucose",
+      "glucose"
+    ]
+  }
+]
