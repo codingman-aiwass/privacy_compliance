@@ -1,0 +1,2334 @@
+[
+    {
+        "data-cn": "网络状态",
+        "data-en": "Network status"
+    },
+    {
+        "data-cn": "配置",
+        "data-en": "configure"
+    },
+    {
+        "data-cn": "BSSID",
+        "data-en": "BSSID"
+    },
+    {
+        "data-cn": "分享状态",
+        "data-en": "Sharing status"
+    },
+    {
+        "data-cn": "请求",
+        "data-en": "request"
+    },
+    {
+        "data-cn": "血氧",
+        "data-en": "Blood oxygen"
+    },
+    {
+        "data-cn": "住址",
+        "data-en": "address"
+    },
+    {
+        "data-cn": "指令",
+        "data-en": "instructions"
+    },
+    {
+        "data-cn": "OPENID",
+        "data-en": "OPENID"
+    },
+    {
+        "data-cn": "作息",
+        "data-en": "timetable"
+    },
+    {
+        "data-cn": "商品评价",
+        "data-en": "Product evaluation"
+    },
+    {
+        "data-cn": "信用卡",
+        "data-en": "Credit Card"
+    },
+    {
+        "data-cn": "软件特征",
+        "data-en": "Software features"
+    },
+    {
+        "data-cn": "导航",
+        "data-en": "Navigation"
+    },
+    {
+        "data-cn": "睡眠时长",
+        "data-en": "Sleep duration"
+    },
+    {
+        "data-cn": "SPACE ID",
+        "data-en": "SPACE ID"
+    },
+    {
+        "data-cn": "习惯",
+        "data-en": "habit"
+    },
+    {
+        "data-cn": "硬件数据",
+        "data-en": "Hardware data"
+    },
+    {
+        "data-cn": "异常数据",
+        "data-en": "Abnormal data"
+    },
+    {
+        "data-cn": "照片",
+        "data-en": "Photo"
+    },
+    {
+        "data-cn": "NAS",
+        "data-en": "NAS"
+    },
+    {
+        "data-cn": "系统版本",
+        "data-en": "System version"
+    },
+    {
+        "data-cn": "资质",
+        "data-en": "qualifications"
+    },
+    {
+        "data-cn": "用户",
+        "data-en": "user"
+    },
+    {
+        "data-cn": "查询记录",
+        "data-en": "Query Records"
+    },
+    {
+        "data-cn": "房型",
+        "data-en": "room type"
+    },
+    {
+        "data-cn": "商品",
+        "data-en": "commodity"
+    },
+    {
+        "data-cn": "参数",
+        "data-en": "parameter"
+    },
+    {
+        "data-cn": "应用列表",
+        "data-en": "Application List"
+    },
+    {
+        "data-cn": "咨询记录",
+        "data-en": "Consultation records"
+    },
+    {
+        "data-cn": "ROM",
+        "data-en": "ROM"
+    },
+    {
+        "data-cn": "咨询记录",
+        "data-en": "Consultation records"
+    },
+    {
+        "data-cn": "镜头型号",
+        "data-en": "Lens model"
+    },
+        {
+        "data-cn": "出生日期",
+        "data-en": "birthdate"
+    },
+    {
+        "data-cn": "提供者",
+        "data-en": "Provider"
+    },
+    {
+        "data-cn": "异常状态",
+        "data-en": "Abnormal state"
+    },
+    {
+        "data-cn": "系统配置",
+        "data-en": "system configuration"
+    },
+    {
+        "data-cn": "国家",
+        "data-en": "country"
+    },
+    {
+        "data-cn": "掩码",
+        "data-en": "Mask"
+    },
+    {
+        "data-cn": "日志",
+        "data-en": "log"
+    },
+    {
+        "data-cn": "监测",
+        "data-en": "monitor"
+    },
+    {
+        "data-cn": "异常堆栈",
+        "data-en": "Exception Stack"
+    },
+    {
+        "data-cn": "分享",
+        "data-en": "share"
+    },
+    {
+        "data-cn": "区域",
+        "data-en": "region"
+    },
+    {
+        "data-cn": "关注列表",
+        "data-en": "Follow List"
+    },
+    {
+        "data-cn": "麦克风",
+        "data-en": "Microphone"
+    },
+    {
+        "data-cn": "人脸",
+        "data-en": "Face"
+    },
+    {
+        "data-cn": "图像",
+        "data-en": "image"
+    },
+    {
+        "data-cn": "IESI",
+        "data-en": "IESI"
+    },
+    {
+        "data-cn": "支付",
+        "data-en": "payment"
+    },
+    {
+        "data-cn": "声纹",
+        "data-en": "voiceprint"
+    },
+    {
+        "data-cn": "信用代码",
+        "data-en": "Credit code"
+    },
+    {
+        "data-cn": "机构代码",
+        "data-en": "Institution code"
+    },
+    {
+        "data-cn": "外部存储",
+        "data-en": "External storage"
+    },
+    {
+        "data-cn": "工单",
+        "data-en": "Work Order"
+    },
+    {
+        "data-cn": "设置",
+        "data-en": "set up"
+    },
+    {
+        "data-cn": "注册日期",
+        "data-en": "Registration date"
+    },
+    {
+        "data-cn": "注册",
+        "data-en": "sign in"
+    },
+    {
+        "data-cn": "机器编码",
+        "data-en": "Machine coding"
+    },
+    {
+        "data-cn": "开户行",
+        "data-en": "Opening bank"
+    },
+    {
+        "data-cn": "阅读喜好",
+        "data-en": "Reading preferences"
+    },
+    {
+        "data-cn": "速度",
+        "data-en": "speed"
+    },
+    {
+        "data-cn": "呼吸频率",
+        "data-en": "Respiratory rate"
+    },
+    {
+        "data-cn": "物品价值",
+        "data-en": "Item value"
+    },
+    {
+        "data-cn": "广告ID",
+        "data-en": "Advertising ID"
+    },
+    {
+        "data-cn": "网页记录",
+        "data-en": "Web page records"
+    },
+    {
+        "data-cn": "错误",
+        "data-en": "error"
+    },
+    {
+        "data-cn": "地图",
+        "data-en": "Map"
+    },
+    {
+        "data-cn": "搜索关键字",
+        "data-en": "search keyword"
+    },
+    {
+        "data-cn": "骨量",
+        "data-en": "Bone mass"
+    },
+    {
+        "data-cn": "互动",
+        "data-en": "interaction"
+    },
+    {
+        "data-cn": "订阅",
+        "data-en": "subscribe"
+    },
+    {
+        "data-cn": "场景指令",
+        "data-en": "Scene instructions"
+    },
+    {
+        "data-cn": "银行卡",
+        "data-en": "bank card"
+    },
+    {
+        "data-cn": "财产",
+        "data-en": "property"
+    },
+    {
+        "data-cn": "交易金额",
+        "data-en": "amounts"
+    },
+    {
+        "data-cn": "资料",
+        "data-en": "data"
+    },
+    {
+        "data-cn": "账户",
+        "data-en": "account"
+    },
+    {
+        "data-cn": "面容",
+        "data-en": "face"
+    },
+    {
+        "data-cn": "行程",
+        "data-en": "trip"
+    },
+    {
+        "data-cn": "胎压",
+        "data-en": "Tire pressure"
+    },
+    {
+        "data-cn": "会话",
+        "data-en": "conversation"
+    },
+    {
+        "data-cn": "睡眠报告",
+        "data-en": "Sleep Report"
+    },
+    {
+        "data-cn": "帐号ID",
+        "data-en": "Account ID"
+    },
+    {
+        "data-cn": "报障",
+        "data-en": "Reporting obstacles"
+    },
+    {
+        "data-cn": "问题",
+        "data-en": "problem"
+    },
+    {
+        "data-cn": "报表",
+        "data-en": "report form"
+    },
+    {
+        "data-cn": "WIFI",
+        "data-en": "WIFI"
+    },
+    {
+        "data-cn": "存储",
+        "data-en": "storage"
+    },
+    {
+        "data-cn": "分配",
+        "data-en": "distribution"
+    },
+    {
+        "data-cn": "GAID",
+        "data-en": "GAID"
+    },
+    {
+        "data-cn": "交流",
+        "data-en": "communication"
+    },
+    {
+        "data-cn": "访问日期",
+        "data-en": "Access Date"
+    },
+    {
+        "data-cn": "名单",
+        "data-en": "name list"
+    },
+    {
+        "data-cn": "预约",
+        "data-en": "make an appointment"
+    },
+    {
+        "data-cn": "SSL",
+        "data-en": "SSL"
+    },
+    {
+        "data-cn": "会员名",
+        "data-en": "Member Name"
+    },
+    {
+        "data-cn": "榜单",
+        "data-en": "List"
+    },
+    {
+        "data-cn": "关注",
+        "data-en": "follow"
+    },
+    {
+        "data-cn": "余额",
+        "data-en": "balance"
+    },
+    {
+        "data-cn": "电话",
+        "data-en": "Telephone"
+    },
+    {
+        "data-cn": "验证码",
+        "data-en": "Verification Code"
+    },
+    {
+        "data-cn": "食材",
+        "data-en": "Ingredients"
+    },
+    {
+        "data-cn": "语音会话",
+        "data-en": "Voice conversation"
+    },
+    {
+        "data-cn": "购买凭证",
+        "data-en": "Purchase voucher"
+    },
+    {
+        "data-cn": "热度",
+        "data-en": "heat degree"
+    },
+        {
+        "data-cn": "头像",
+        "data-en": "avatar"
+    },
+    {
+        "data-cn": "文件大小",
+        "data-en": "file size"
+    },
+    {
+        "data-cn": "日历",
+        "data-en": "calendar"
+    },
+    {
+        "data-cn": "邮件记录",
+        "data-en": "Mail records"
+    },
+    {
+        "data-cn": "互动记录",
+        "data-en": "Interactive recording"
+    },
+    {
+        "data-cn": "名字",
+        "data-en": "name"
+    },
+    {
+        "data-cn": "登陆状态",
+        "data-en": "Login status"
+    },
+    {
+        "data-cn": "训练记录",
+        "data-en": "Training Record"
+    },
+    {
+        "data-cn": "体内水分",
+        "data-en": "Body moisture"
+    },
+    {
+        "data-cn": "生物特征",
+        "data-en": "biosignature"
+    },
+    {
+        "data-cn": "体脂率",
+        "data-en": "Body fat percentage"
+    },
+    {
+        "data-cn": "内存",
+        "data-en": "Memory"
+    },
+    {
+        "data-cn": "定时记录",
+        "data-en": "Timed recording"
+    },
+    {
+        "data-cn": "短信",
+        "data-en": "short message"
+    },
+    {
+        "data-cn": "OPENUDID",
+        "data-en": "OpenUDID"
+    },
+    {
+        "data-cn": "预约",
+        "data-en": "make an appointment"
+    },
+    {
+        "data-cn": "省份",
+        "data-en": "province"
+    },
+    {
+        "data-cn": "频率",
+        "data-en": "frequency"
+    },
+    {
+        "data-cn": "昵称",
+        "data-en": "nickname"
+    },
+    {
+        "data-cn": "剪贴板",
+        "data-en": "clipboard"
+    },
+    {
+        "data-cn": "佩戴状态",
+        "data-en": "Wearing status"
+    },
+    {
+        "data-cn": "通话状态",
+        "data-en": "Call status"
+    },
+    {
+        "data-cn": "行踪轨迹",
+        "data-en": "Trajectory"
+    },
+    {
+        "data-cn": "肥胖水平",
+        "data-en": "Obesity level"
+    },
+        {
+        "data-cn": "隶属部门",
+        "data-en": "Affiliated department"
+    },
+    {
+        "data-cn": "手机机型",
+        "data-en": "Mobile phone model"
+    },
+    {
+        "data-cn": "通讯录",
+        "data-en": "mail list"
+    },
+    {
+        "data-cn": "民族",
+        "data-en": "nation"
+    },
+    {
+        "data-cn": "登录",
+        "data-en": "Sign in"
+    },
+    {
+        "data-cn": "声音",
+        "data-en": "voice"
+    },
+    {
+        "data-cn": "密码",
+        "data-en": "password"
+    },
+    {
+        "data-cn": "文章",
+        "data-en": "article"
+    },
+    {
+        "data-cn": "运动状态",
+        "data-en": "motion state "
+    },
+    {
+        "data-cn": "性别",
+        "data-en": "Gender"
+    },
+    {
+        "data-cn": "FCM",
+        "data-en": "FCM"
+    },
+    {
+        "data-cn": "组织认证",
+        "data-en": "Organizational certification"
+    },
+    {
+        "data-cn": "帐户",
+        "data-en": "account"
+    },
+    {
+        "data-cn": "链接",
+        "data-en": "link"
+    },
+    {
+        "data-cn": "相机",
+        "data-en": "camera"
+    },
+    {
+        "data-cn": "蓝牙",
+        "data-en": "Bluetooth"
+    },
+    {
+        "data-cn": "RSSI",
+        "data-en": "RSSI"
+    },
+    {
+        "data-cn": "帐号",
+        "data-en": "accounts"
+    },
+    {
+        "data-cn": "群体标签",
+        "data-en": "Group labels"
+    },
+    {
+        "data-cn": "学历",
+        "data-en": "education"
+    },
+    {
+        "data-cn": "留言",
+        "data-en": "Leaving a message."
+    },
+    {
+        "data-cn": "续航里程",
+        "data-en": "Range"
+    },
+    {
+        "data-cn": "时间",
+        "data-en": "time"
+    },
+    {
+        "data-cn": "跳跃模式",
+        "data-en": "Jump mode"
+    },
+    {
+        "data-cn": "查询",
+        "data-en": "query"
+    },
+    {
+        "data-cn": "睡眠状态",
+        "data-en": "Sleep state"
+    },
+    {
+        "data-cn": "关注关系",
+        "data-en": "Focus on relationships"
+    },
+    {
+        "data-cn": "收件",
+        "data-en": "Receiving"
+    },
+    {
+        "data-cn": "银行帐号",
+        "data-en": "Bank account number"
+    },
+    {
+        "data-cn": "呼吸率",
+        "data-en": "Respiratory rate"
+    },
+    {
+        "data-cn": "ID",
+        "data-en": "ID"
+    },
+    {
+        "data-cn": "图片",
+        "data-en": "picture"
+    },
+    {
+        "data-cn": "画报",
+        "data-en": "Pictorial newspaper"
+    },
+    {
+        "data-cn": "播放时长",
+        "data-en": "Playback duration"
+    },
+    {
+        "data-cn": "浏览器",
+        "data-en": "browser"
+    },
+    {
+        "data-cn": "泄露",
+        "data-en": "leakage"
+    },
+    {
+        "data-cn": "报错",
+        "data-en": "report errors"
+    },
+    {
+        "data-cn": "跟帖",
+        "data-en": "comment "
+    },
+    {
+        "data-cn": "加购",
+        "data-en": "Add Purchase"
+    },
+    {
+        "data-cn": "心率",
+        "data-en": "heart rate"
+    },
+    {
+        "data-cn": "欺诈",
+        "data-en": "cheat"
+    },
+    {
+        "data-cn": "脂肪率",
+        "data-en": "Fat percentage"
+    },
+    {
+        "data-cn": "VAID",
+        "data-en": "VAID"
+    },
+    {
+        "data-cn": "对账",
+        "data-en": "Reconciliation"
+    },
+    {
+        "data-cn": "企业",
+        "data-en": "company"
+    },
+    {
+        "data-cn": "录音",
+        "data-en": "sound recording"
+    },
+    {
+        "data-cn": "语音",
+        "data-en": "voice"
+    },
+    {
+        "data-cn": "固件",
+        "data-en": "firmware"
+    },
+    {
+        "data-cn": "车型",
+        "data-en": "Vehicle model"
+    },
+    {
+        "data-cn": "沸点",
+        "data-en": "boiling point"
+    },
+    {
+        "data-cn": "状态",
+        "data-en": "state"
+    },
+    {
+        "data-cn": "车辆",
+        "data-en": "vehicle"
+    },
+    {
+        "data-cn": "成交",
+        "data-en": "deal"
+    },
+    {
+        "data-cn": "有效期限",
+        "data-en": "Validity period"
+    },
+    {
+        "data-cn": "点赞",
+        "data-en": "give the thumbs-up"
+    },
+    {
+        "data-cn": "指纹",
+        "data-en": "fingerprint"
+    },
+    {
+        "data-cn": "验证KEY",
+        "data-en": "Verify KEY"
+    },
+    {
+        "data-cn": "部门",
+        "data-en": "department"
+    },
+    {
+        "data-cn": "加速度",
+        "data-en": "acceleration"
+    },
+    {
+        "data-cn": "家庭成员",
+        "data-en": "family member"
+    },
+    {
+        "data-cn": "卡号",
+        "data-en": "Card number"
+    },
+    {
+        "data-cn": "评论",
+        "data-en": "comment"
+    },
+    {
+        "data-cn": "任职",
+        "data-en": "Appointment"
+    },
+    {
+        "data-cn": "音频",
+        "data-en": "audio frequency"
+    },
+    {
+        "data-cn": "会员身份",
+        "data-en": "Membership status"
+    },
+    {
+        "data-cn": "发票",
+        "data-en": "invoice"
+    },
+    {
+        "data-cn": "使用频率",
+        "data-en": "Usage frequency"
+    },
+    {
+        "data-cn": "使用情况",
+        "data-en": "Usage"
+    },
+    {
+        "data-cn": "解锁次数",
+        "data-en": "Unlocking times"
+    },
+    {
+        "data-cn": "年龄",
+        "data-en": "Age"
+    },
+    {
+        "data-cn": "版本",
+        "data-en": "edition"
+    },
+    {
+        "data-cn": "用户标识",
+        "data-en": "user id"
+    },
+    {
+        "data-cn": "用户ID",
+        "data-en": "user id"
+    },
+    {
+        "data-cn": "身体指标",
+        "data-en": "Physical indicators"
+    },
+    {
+        "data-cn": "通知开关",
+        "data-en": "Notification toggle"
+    },
+    {
+        "data-cn": "体脂指标",
+        "data-en": "Body fat index"
+    },
+    {
+        "data-cn": "当地天气",
+        "data-en": "Local weather"
+    },
+    {
+        "data-cn": "发布",
+        "data-en": "release"
+    },
+    {
+        "data-cn": "脉搏",
+        "data-en": "pulse"
+    },
+    {
+        "data-cn": "文章评论",
+        "data-en": "Article comments"
+    },
+    {
+        "data-cn": "设备",
+        "data-en": "device"
+    },
+    {
+        "data-cn": "服务日志",
+        "data-en": "Service log"
+    },
+    {
+        "data-cn": "网络ID",
+        "data-en": "Network ID"
+    },
+    {
+        "data-cn": "文字指令",
+        "data-en": "Textual instruction"
+    },
+    {
+        "data-cn": "时区",
+        "data-en": "time zone"
+    },
+    {
+        "data-cn": "联系",
+        "data-en": "contact"
+    },
+    {
+        "data-cn": "血压",
+        "data-en": "blood pressure"
+    },
+    {
+        "data-cn": "收货人",
+        "data-en": "consignee"
+    },
+    {
+        "data-cn": "无线连接",
+        "data-en": "Wireless connection"
+    },
+    {
+        "data-cn": "脂肪",
+        "data-en": "Fat"
+    },
+    {
+        "data-cn": "沟通",
+        "data-en": "communicate"
+    },
+    {
+        "data-cn": "肌肉含量",
+        "data-en": "Muscle content"
+    },
+    {
+        "data-cn": "容量",
+        "data-en": "capacity"
+    },
+    {
+        "data-cn": "INSTANC",
+        "data-en": "INSTANC"
+    },
+    {
+        "data-cn": "跳跃次数",
+        "data-en": "hop count"
+    },
+    {
+        "data-cn": "页面提示",
+        "data-en": "Page prompt"
+    },
+    {
+        "data-cn": "心率",
+        "data-en": "heart rate"
+    },
+    {
+        "data-cn": "定位",
+        "data-en": "location"
+    },
+    {
+        "data-cn": "睡眠质量",
+        "data-en": "sleep quality"
+    },
+    {
+        "data-cn": "组织名",
+        "data-en": "Organization name"
+    },
+    {
+        "data-cn": "手机号码",
+        "data-en": "phone number"
+    },
+    {
+        "data-cn": "访问量",
+        "data-en": "Visits"
+    },
+    {
+        "data-cn": "反馈联系",
+        "data-en": "Feedback Contact"
+    },
+    {
+        "data-cn": "网络环境",
+        "data-en": "network environment "
+    },
+    {
+        "data-cn": "赔付",
+        "data-en": "Compensation"
+    },
+    {
+        "data-cn": "聊天",
+        "data-en": "chat"
+    },
+    {
+        "data-cn": "证件",
+        "data-en": "certificates"
+    },
+        {
+        "data-cn": "GUID",
+        "data-en": "GUID"
+    },
+    {
+        "data-cn": "点击记录",
+        "data-en": "Click Record"
+    },
+    {
+        "data-cn": "睡眠记录",
+        "data-en": "Sleep recording"
+    },
+    {
+        "data-cn": "崩溃",
+        "data-en": "collapse"
+    },
+    {
+        "data-cn": "脸部图像",
+        "data-en": "Facial images"
+    },
+    {
+        "data-cn": "网络变化",
+        "data-en": "Network changes"
+    },
+    {
+        "data-cn": "厂商",
+        "data-en": "manufacturer"
+    },
+    {
+        "data-cn": "运行界面",
+        "data-en": "Run interface"
+    },
+    {
+        "data-cn": "会员等级",
+        "data-en": "Membership level"
+    },
+    {
+        "data-cn": "菜谱",
+        "data-en": "menu"
+    },
+    {
+        "data-cn": "文档",
+        "data-en": "file"
+    },
+    {
+        "data-cn": "录制",
+        "data-en": "Recording"
+    },
+    {
+        "data-cn": "语音命令",
+        "data-en": "Voice commands"
+    },
+    {
+        "data-cn": "崩溃报告",
+        "data-en": "Crash report"
+    },
+    {
+        "data-cn": "网关",
+        "data-en": "gateway"
+    },
+    {
+        "data-cn": "行业",
+        "data-en": "industry"
+    },
+    {
+        "data-cn": "会员",
+        "data-en": "member"
+    },
+    {
+        "data-cn": "序列码",
+        "data-en": "sequence code"
+    },
+    {
+        "data-cn": "联网",
+        "data-en": "networking"
+    },
+    {
+        "data-cn": "包裹",
+        "data-en": "package"
+    },
+    {
+        "data-cn": "电子签名",
+        "data-en": "electronic signature "
+    },
+    {
+        "data-cn": "收款",
+        "data-en": "Collection"
+    },
+    {
+        "data-cn": "CPU",
+        "data-en": "CPU"
+    },
+    {
+        "data-cn": "钱包",
+        "data-en": "wallet"
+    },
+    {
+        "data-cn": "体型",
+        "data-en": "shape"
+    },
+    {
+        "data-cn": "触发事件",
+        "data-en": "Trigger Event"
+    },
+    {
+        "data-cn": "识别码",
+        "data-en": "Identification code"
+    },
+    {
+        "data-cn": "BMR",
+        "data-en": "BMR"
+    },
+    {
+        "data-cn": "肌肤监测",
+        "data-en": "Skin monitoring"
+    },
+    {
+        "data-cn": "屏幕显示",
+        "data-en": "Screen display"
+    },
+    {
+        "data-cn": "票务",
+        "data-en": "Ticketing"
+    },
+    {
+        "data-cn": "监控",
+        "data-en": "monitor"
+    },
+    {
+        "data-cn": "风险测评",
+        "data-en": "risk evaluation"
+    },
+    {
+        "data-cn": "数字证书",
+        "data-en": "Digital Certificate"
+    },
+    {
+        "data-cn": "搜索",
+        "data-en": "search"
+    },
+    {
+        "data-cn": "购买",
+        "data-en": "buy"
+    },
+    {
+        "data-cn": "ANDROID ID",
+        "data-en": "ANDROID ID"
+    },
+    {
+        "data-cn": "ANDRIODID",
+        "data-en": "ANDROID ID"
+    },
+    {
+        "data-cn": "收缩压",
+        "data-en": "systolic pressure"
+    },
+    {
+        "data-cn": "金融账户",
+        "data-en": "financial account"
+    },
+    {
+        "data-cn": "账户会员名",
+        "data-en": "Account member name"
+    },
+    {
+        "data-cn": "行为",
+        "data-en": "action"
+    },
+    {
+        "data-cn": "浏览时长",
+        "data-en": "Browse duration"
+    },
+    {
+        "data-cn": "次数",
+        "data-en": "frequency"
+    },
+    {
+        "data-cn": "购物车记录",
+        "data-en": "Shopping Cart Record"
+    },
+    {
+        "data-cn": "睡眠状况",
+        "data-en": "Sleep status"
+    },
+    {
+        "data-cn": "人数",
+        "data-en": "people number"
+    },
+    {
+        "data-cn": "物流",
+        "data-en": "logistics"
+    },
+    {
+        "data-cn": "程序包名",
+        "data-en": "Package Name"
+    },
+    {
+        "data-cn": "看过记录",
+        "data-en": "Read record"
+    },
+    {
+        "data-cn": "轨迹",
+        "data-en": "trajectory"
+    },
+    {
+        "data-cn": "屏幕尺寸",
+        "data-en": "Screen size"
+    },
+    {
+        "data-cn": "评分",
+        "data-en": "score"
+    },
+    {
+        "data-cn": "步数",
+        "data-en": "Steps"
+    },
+    {
+        "data-cn": "WLAN",
+        "data-en": "WLAN"
+    },
+    {
+        "data-cn": "家庭住址",
+        "data-en": "Home address"
+    },
+    {
+        "data-cn": "舒张压",
+        "data-en": "diastolic pressure"
+    },
+    {
+        "data-cn": "用户名",
+        "data-en": "user name"
+    },
+    {
+        "data-cn": "职级",
+        "data-en": "Rank"
+    },
+    {
+        "data-cn": "UTID",
+        "data-en": "UTID"
+    },
+    {
+        "data-cn": "户籍",
+        "data-en": "Registered residence"
+    },
+    {
+        "data-cn": "操作记录",
+        "data-en": "operation record"
+    },
+    {
+        "data-cn": "开关状态",
+        "data-en": "Switch status"
+    },
+    {
+        "data-cn": "主营行业",
+        "data-en": "Main industry"
+    },
+    {
+        "data-cn": "操作系统",
+        "data-en": "operating system"
+    },
+    {
+        "data-cn": "账号绑定",
+        "data-en": "account binding"
+    },
+    {
+        "data-cn": "设备型号",
+        "data-en": "Equipment model"
+    },
+    {
+        "data-cn": "序列号",
+        "data-en": "serial number"
+    },
+    {
+        "data-cn": "自动息屏",
+        "data-en": "Automatic screen rest"
+    },
+    {
+        "data-cn": "睡眠周期",
+        "data-en": "Sleep cycle"
+    },
+    {
+        "data-cn": "语音交互",
+        "data-en": "Voice interaction"
+    },
+    {
+        "data-cn": "业务事件",
+        "data-en": "Business Events"
+    },
+    {
+        "data-cn": "MIUI",
+        "data-en": "MIUI"
+    },
+    {
+        "data-cn": "历史",
+        "data-en": "history"
+    },
+    {
+        "data-cn": "IDFA",
+        "data-en": "IDFA"
+    },
+    {
+        "data-cn": "IDFV",
+        "data-en": "IDFV"
+    },
+    {
+        "data-cn": "行踪生理",
+        "data-en": "Traveling Physiology"
+    },
+    {
+        "data-cn": "睡眠",
+        "data-en": "sleep"
+    },
+    {
+        "data-cn": "应用版本",
+        "data-en": "Application version"
+    },
+    {
+        "data-cn": "GPS",
+        "data-en": "GPS"
+    },
+    {
+        "data-cn": "口令",
+        "data-en": "Password"
+    },
+    {
+        "data-cn": "SSID",
+        "data-en": "SSID"
+    },
+    {
+        "data-cn": "居住地",
+        "data-en": "residence place"
+    },
+    {
+        "data-cn": "缩放比例",
+        "data-en": "Zoom ratio"
+    },
+    {
+        "data-cn": "体重",
+        "data-en": "weight"
+    },
+    {
+        "data-cn": "远程模式",
+        "data-en": "Remote mode"
+    },
+    {
+        "data-cn": "通话记录",
+        "data-en": "Call logs"
+    },
+    {
+        "data-cn": "搜索次数",
+        "data-en": "Search Times"
+    },
+    {
+        "data-cn": "位置",
+        "data-en": "position"
+    },
+    {
+        "data-cn": "路况",
+        "data-en": "traffic"
+    },
+    {
+        "data-cn": "开户人",
+        "data-en": "Account Holder"
+    },
+    {
+        "data-cn": "局域网模式",
+        "data-en": "LAN mode"
+    },
+    {
+        "data-cn": "军官证",
+        "data-en": "officers certificate"
+    },
+    {
+        "data-cn": "弹幕",
+        "data-en": "bullet chat"
+    },
+    {
+        "data-cn": "热点",
+        "data-en": "hotspot"
+    },
+    {
+        "data-cn": "故障码",
+        "data-en": "Fault code"
+    },
+    {
+        "data-cn": "姓名",
+        "data-en": "full name"
+    },
+        {
+        "data-cn": "讨论",
+        "data-en": "discuss"
+    },
+    {
+        "data-cn": "近程",
+        "data-en": "Short range"
+    },
+    {
+        "data-cn": "运行状态",
+        "data-en": "running state "
+    },
+    {
+        "data-cn": "通话",
+        "data-en": "conversation"
+    },
+    {
+        "data-cn": "通信",
+        "data-en": "signal communication"
+    },
+    {
+        "data-cn": "收藏",
+        "data-en": "Collection"
+    },
+    {
+        "data-cn": "观影偏好",
+        "data-en": "Viewing preferences"
+    },
+    {
+        "data-cn": "统计数据",
+        "data-en": "statistical data"
+    },
+    {
+        "data-cn": "下单",
+        "data-en": "place an order"
+    },
+    {
+        "data-cn": "护照",
+        "data-en": "passport"
+    },
+    {
+        "data-cn": "设备类别",
+        "data-en": "Equipment category"
+    },
+    {
+        "data-cn": "肌肤",
+        "data-en": "skin and flesh"
+    },
+    {
+        "data-cn": "存储卡",
+        "data-en": "Memory card"
+    },
+    {
+        "data-cn": "内容",
+        "data-en": "content"
+    },
+    {
+        "data-cn": "体温",
+        "data-en": "temperature"
+    },
+    {
+        "data-cn": "行车轨迹",
+        "data-en": "Driving trajectory"
+    },
+    {
+        "data-cn": "路由标志",
+        "data-en": "Routing flag"
+    },
+    {
+        "data-cn": "过敏史",
+        "data-en": "Allergy history"
+    },
+    {
+        "data-cn": "诊疗",
+        "data-en": "Diagnosis and treatment"
+    },
+    {
+        "data-cn": "配送",
+        "data-en": "Delivery"
+    },
+    {
+        "data-cn": "库存",
+        "data-en": "stock"
+    },
+    {
+        "data-cn": "网页活动",
+        "data-en": "Web activity"
+    },
+    {
+        "data-cn": "收藏记录",
+        "data-en": "Favorite Records"
+    },
+    {
+        "data-cn": "SIM",
+        "data-en": "SIM"
+    },
+    {
+        "data-cn": "收件人",
+        "data-en": "addressee"
+    },
+    {
+        "data-cn": "引用网址",
+        "data-en": "Cited URL"
+    },
+    {
+        "data-cn": "睡醒",
+        "data-en": "Wake up from sleep"
+    },
+    {
+        "data-cn": "画面",
+        "data-en": "frame"
+    },
+    {
+        "data-cn": "安卓版本",
+        "data-en": "Android version"
+    },
+    {
+        "data-cn": "IMEI",
+        "data-en": "IMEI"
+    },
+    {
+        "data-cn": "网卡",
+        "data-en": "network card"
+    },
+    {
+        "data-cn": "还款金额",
+        "data-en": "Repayment amount"
+    },
+    {
+        "data-cn": "户口本",
+        "data-en": "Household registration book"
+    },
+    {
+        "data-cn": "收入",
+        "data-en": "income"
+    },
+    {
+        "data-cn": "MEID",
+        "data-en": "MEID"
+    },
+    {
+        "data-cn": "生活偏好",
+        "data-en": "Life preferences"
+    },
+    {
+        "data-cn": "国家码",
+        "data-en": "Country code"
+    },
+    {
+        "data-cn": "邮编",
+        "data-en": "Postal Code"
+    },
+    {
+        "data-cn": "安装列表",
+        "data-en": "Installation List"
+    },
+    {
+        "data-cn": "足迹",
+        "data-en": "footprint"
+    },
+    {
+        "data-cn": "跳绳次数",
+        "data-en": "Skipping rope times"
+    },
+    {
+        "data-cn": "环境",
+        "data-en": "environment"
+    },
+    {
+        "data-cn": "SN码",
+        "data-en": "SN code"
+    },
+    {
+        "data-cn": "录像",
+        "data-en": "videotape"
+    },
+    {
+        "data-cn": "消费偏好",
+        "data-en": "Consumer preferences"
+    },
+    {
+        "data-cn": "寄件",
+        "data-en": "Sending"
+    },
+    {
+        "data-cn": "记录",
+        "data-en": "record"
+    },
+    {
+        "data-cn": "身高",
+        "data-en": "height"
+    },
+    {
+        "data-cn": "购买日期",
+        "data-en": "Purchase date"
+    },
+    {
+        "data-cn": "铃声",
+        "data-en": "Ringing tone"
+    },
+    {
+        "data-cn": "收货",
+        "data-en": "Receipt"
+    },
+    {
+        "data-cn": "图文",
+        "data-en": "Image Text"
+    },
+    {
+        "data-cn": "温度",
+        "data-en": "temperature"
+    },
+    {
+        "data-cn": "邮箱",
+        "data-en": "mailbox"
+    },
+    {
+        "data-cn": "基站",
+        "data-en": "base station"
+    },
+    {
+        "data-cn": "交易对象",
+        "data-en": "Trading Partner"
+    },
+    {
+        "data-cn": "购机",
+        "data-en": "Purchase machine"
+    },
+    {
+        "data-cn": "进货单",
+        "data-en": "Purchase Order"
+    },
+    {
+        "data-cn": "轨迹",
+        "data-en": "trajectory"
+    },
+    {
+        "data-cn": "频次",
+        "data-en": "frequency"
+    },
+        {
+        "data-cn": "卡路里",
+        "data-en": "calorie"
+    },
+    {
+        "data-cn": "市场活动",
+        "data-en": "Marketing activities"
+    },
+        {
+        "data-cn": "关联链接",
+        "data-en": "Associated link"
+    },
+    {
+        "data-cn": "信用卡有效期",
+        "data-en": "Card Expiration Date"
+    },
+    {
+        "data-cn": "信用卡验证码",
+        "data-en": "CVV"
+    },
+    {
+        "data-cn": "信用卡类型",
+        "data-en": "Card type"
+    },
+    {
+        "data-cn": "配网",
+        "data-en": "Distribution network"
+    },
+    {
+        "data-cn": "文件记录",
+        "data-en": "files recording"
+    },
+    {
+        "data-cn": "手机号",
+        "data-en": "cellphone number"
+    },
+    {
+        "data-cn": "业务事件",
+        "data-en": "Business Events"
+    },
+    {
+        "data-cn": "API",
+        "data-en": "API"
+    },
+    {
+        "data-cn": "传感器",
+        "data-en": "sensor"
+    },
+    {
+        "data-cn": "AAID",
+        "data-en": "AAID"
+    },
+    {
+        "data-cn": "压力",
+        "data-en": "pressure"
+    },
+    {
+        "data-cn": "相册",
+        "data-en": "album"
+    },
+    {
+        "data-cn": "应用ID",
+        "data-en": "Application ID"
+    },
+    {
+        "data-cn": "通讯",
+        "data-en": "communication"
+    },
+    {
+        "data-cn": "性能",
+        "data-en": "performance"
+    },
+    {
+        "data-cn": "学校",
+        "data-en": "school"
+    },
+    {
+        "data-cn": "路由器",
+        "data-en": "Router"
+    },
+    {
+        "data-cn": "陀螺仪",
+        "data-en": "gyroscope"
+    },
+    {
+        "data-cn": "角色",
+        "data-en": "role"
+    },
+    {
+        "data-cn": "访问页面",
+        "data-en": "Accessing pages"
+    },
+    {
+        "data-cn": "点击",
+        "data-en": "click"
+    },
+        {
+        "data-cn": "身份证",
+        "data-en": "ID"
+    },
+    {
+        "data-cn": "地点",
+        "data-en": "place"
+    },
+    {
+        "data-cn": "邮政编码",
+        "data-en": "Postal Code"
+    },
+    {
+        "data-cn": "硬盘",
+        "data-en": "Hard drive"
+    },
+    {
+        "data-cn": "付款",
+        "data-en": "payment"
+    },
+    {
+        "data-cn": "专业",
+        "data-en": "major"
+    },
+    {
+        "data-cn": "音乐",
+        "data-en": "music"
+    },
+    {
+        "data-cn": "接收人",
+        "data-en": "Recipient"
+    },
+    {
+        "data-cn": "网络",
+        "data-en": "network"
+    },
+    {
+        "data-cn": "食材",
+        "data-en": "Ingredients"
+    },
+    {
+        "data-cn": "观演人",
+        "data-en": "Performer"
+    },
+    {
+        "data-cn": "SDK",
+        "data-en": "SDK"
+    },
+    {
+        "data-cn": "评价",
+        "data-en": "evaluate"
+    },
+    {
+        "data-cn": "BFM",
+        "data-en": "BFM"
+    },
+    {
+        "data-cn": "活动强度",
+        "data-en": "Activity intensity"
+    },
+    {
+        "data-cn": "制造商",
+        "data-en": "manufacturer"
+    },
+    {
+        "data-cn": "儿童",
+        "data-en": "children"
+    },
+    {
+        "data-cn": "经度",
+        "data-en": "longitude"
+    },
+    {
+        "data-cn": "纬度",
+        "data-en": "latitude"
+    },
+    {
+        "data-cn": "清晰度",
+        "data-en": "definition"
+    },
+    {
+        "data-cn": "标识码",
+        "data-en": "Identification code"
+    },
+    {
+        "data-cn": "COOKIE",
+        "data-en": "COOKIE"
+    },
+    {
+        "data-cn": "职位",
+        "data-en": "position"
+    },
+    {
+        "data-cn": "睡着",
+        "data-en": "Sleep"
+    },
+    {
+        "data-cn": "工作状态",
+        "data-en": "working condition "
+    },
+    {
+        "data-cn": "屏幕",
+        "data-en": "screen"
+    },
+    {
+        "data-cn": "阅读记录",
+        "data-en": "Reading records"
+    },
+    {
+        "data-cn": "建立",
+        "data-en": "establish"
+    },
+    {
+        "data-cn": "账号",
+        "data-en": "account number"
+    },
+    {
+        "data-cn": "反馈记录",
+        "data-en": "Feedback Record"
+    },
+    {
+        "data-cn": "播放记录",
+        "data-en": "Playback Record"
+    },
+    {
+        "data-cn": "生日",
+        "data-en": "birthday"
+    },
+    {
+        "data-cn": "地址",
+        "data-en": "address"
+    },
+    {
+        "data-cn": "副本",
+        "data-en": "copy"
+    },
+    {
+        "data-cn": "ICCID",
+        "data-en": "ICCID"
+    },
+    {
+        "data-cn": "车辆状态",
+        "data-en": "Vehicle status"
+    },
+    {
+        "data-cn": "电子邮箱",
+        "data-en": "E-mail"
+    },
+    {
+        "data-cn": "预约日期",
+        "data-en": "Appointment Date"
+    },
+        {
+        "data-cn": "工作模式",
+        "data-en": "Working mode"
+    },
+    {
+        "data-cn": "空调",
+        "data-en": "air conditioner"
+    },
+    {
+        "data-cn": "IP",
+        "data-en": "IP"
+    },
+    {
+        "data-cn": "实名",
+        "data-en": "Real name"
+    },
+    {
+        "data-cn": "点播",
+        "data-en": "on demand"
+    },
+    {
+        "data-cn": "软件列表",
+        "data-en": "Software List"
+    },
+    {
+        "data-cn": "年龄段",
+        "data-en": "age group"
+    },
+    {
+        "data-cn": "SMM",
+        "data-en": "SMM"
+    },
+    {
+        "data-cn": "视频",
+        "data-en": "video"
+    },
+    {
+        "data-cn": "记录路线",
+        "data-en": "Record Route"
+    },
+    {
+        "data-cn": "反馈",
+        "data-en": "feedback"
+    },
+    {
+        "data-cn": "语音指令",
+        "data-en": "Voice commands"
+    },
+    {
+        "data-cn": "点评",
+        "data-en": "comment"
+    },
+    {
+        "data-cn": "下载",
+        "data-en": "download"
+    },
+    {
+        "data-cn": "搜索记录",
+        "data-en": "Search Records"
+    },
+    {
+        "data-cn": "MAC",
+        "data-en": "MAC"
+    },
+    {
+        "data-cn": "APPLEI",
+        "data-en": "APPLEI"
+    },
+    {
+        "data-cn": "检索词",
+        "data-en": "Search term"
+    },
+    {
+        "data-cn": "通讯记录",
+        "data-en": "Communication records"
+    },
+    {
+        "data-cn": "BMI",
+        "data-en": "BMI"
+    },
+    {
+        "data-cn": "城市代码",
+        "data-en": "City code"
+    },
+    {
+        "data-cn": "网络代码",
+        "data-en": "Network code"
+    },
+    {
+        "data-cn": "浏览页面",
+        "data-en": "Browse Page"
+    },
+    {
+        "data-cn": "浏览时间",
+        "data-en": "Browse time"
+    },
+    {
+        "data-cn": "搜索时间",
+        "data-en": "search time"
+    },
+    {
+        "data-cn": "身份",
+        "data-en": "identity"
+    },
+    {
+        "data-cn": "城市",
+        "data-en": "city"
+    },
+    {
+        "data-cn": "慢性病史",
+        "data-en": "chronic illness "
+    },
+    {
+        "data-cn": "排障过程",
+        "data-en": "Obstacle removal process"
+    },
+    {
+        "data-cn": "媒体",
+        "data-en": "media"
+    },
+    {
+        "data-cn": "显示",
+        "data-en": "display"
+    },
+    {
+        "data-cn": "日期",
+        "data-en": "date"
+    },
+    {
+        "data-cn": "识别号",
+        "data-en": "Identification number"
+    },
+    {
+        "data-cn": "分辨率",
+        "data-en": "resolving power"
+    },
+    {
+        "data-cn": "录像日期",
+        "data-en": "Recording date"
+    },
+    {
+        "data-cn": "访问",
+        "data-en": "visit"
+    },
+    {
+        "data-cn": "观影记录",
+        "data-en": "Viewing Records"
+    },
+    {
+        "data-cn": "输入",
+        "data-en": "input"
+    },
+    {
+        "data-cn": "标识符",
+        "data-en": "identifier "
+    },
+    {
+        "data-cn": "信号强度",
+        "data-en": "signal intensity "
+    },
+    {
+        "data-cn": "故障",
+        "data-en": "fault"
+    },
+    {
+        "data-cn": "锻炼心率",
+        "data-en": "Exercise heart rate"
+    },
+    {
+        "data-cn": "浏览记录",
+        "data-en": "Browsing Records"
+    },
+    {
+        "data-cn": "浏览",
+        "data-en": "Browsing"
+    },
+    {
+        "data-cn": "应用状态",
+        "data-en": "Application status"
+    },
+    {
+        "data-cn": "信用卡卡号",
+        "data-en": "Credit card number"
+    },
+    {
+        "data-cn": "银行卡号",
+        "data-en": "Credit card number"
+    },
+    {
+        "data-cn": "过敏食材",
+        "data-en": "Allergic ingredients"
+    },
+    {
+        "data-cn": "宗教信仰",
+        "data-en": "religious belief"
+    },
+    {
+        "data-cn": "影评",
+        "data-en": "Film review"
+    },
+    {
+        "data-cn": "地区",
+        "data-en": "region"
+    },
+    {
+        "data-cn": "注销申请",
+        "data-en": "cancellation application"
+    },
+    {
+        "data-cn": "交易记录",
+        "data-en": "Transaction records"
+    },
+    {
+        "data-cn": "风速",
+        "data-en": "wind speed"
+    },
+    {
+        "data-cn": "识别符",
+        "data-en": "Identifier"
+    },
+    {
+        "data-cn": "国籍",
+        "data-en": "nationality"
+    },
+    {
+        "data-cn": "场景设置",
+        "data-en": "scene setting"
+    },
+    {
+        "data-cn": "画像",
+        "data-en": "portrait"
+    },
+    {
+        "data-cn": "ECV",
+        "data-en": "ECV"
+    },
+    {
+        "data-cn": "店铺",
+        "data-en": "shop"
+    },
+    {
+        "data-cn": "兴趣爱好",
+        "data-en": "hobby"
+    },
+    {
+        "data-cn": "共享",
+        "data-en": "share"
+    },
+    {
+        "data-cn": "名称",
+        "data-en": "name"
+    },
+    {
+        "data-cn": "授权",
+        "data-en": "to grant authorization"
+    },
+    {
+        "data-cn": "楼盘",
+        "data-en": "properties for sale"
+    },
+    {
+        "data-cn": "认证",
+        "data-en": "authentication"
+    },
+    {
+        "data-cn": "白名单",
+        "data-en": "Whitelist"
+    },
+    {
+        "data-cn": "醒来",
+        "data-en": "wake"
+    },
+    {
+        "data-cn": "广播",
+        "data-en": "radio broadcast"
+    },
+    {
+        "data-cn": "文字",
+        "data-en": "written words"
+    },
+    {
+        "data-cn": "天气",
+        "data-en": "weather"
+    },
+    {
+        "data-cn": "电子邮件",
+        "data-en": "Email"
+    },
+    {
+        "data-cn": "邮件",
+        "data-en": "Email"
+    },
+    {
+        "data-cn": "运行模式",
+        "data-en": "Operating mode"
+    },
+    {
+        "data-cn": "搜索词",
+        "data-en": "Search term"
+    },
+    {
+        "data-cn": "电量",
+        "data-en": "Electricity level"
+    },
+    {
+        "data-cn": "剪切板",
+        "data-en": "Shear plate"
+    },
+    {
+        "data-cn": "简介",
+        "data-en": "brief introduction"
+    },
+    {
+        "data-cn": "国家代码",
+        "data-en": "Country code"
+    },
+    {
+        "data-cn": "OAID",
+        "data-en": "OAID"
+    },
+    {
+        "data-cn": "交易",
+        "data-en": "transaction"
+    },
+    {
+        "data-cn": "银行",
+        "data-en": "bank"
+    },
+    {
+        "data-cn": "电池",
+        "data-en": "Battery"
+    },
+    {
+        "data-cn": "IMSI",
+        "data-en": "IMSI"
+    },
+    {
+        "data-cn": "开票",
+        "data-en": "Invoicing"
+    },
+    {
+        "data-cn": "备注",
+        "data-en": "remarks"
+    },
+        {
+        "data-cn": "面部",
+        "data-en": "face"
+    },
+    {
+        "data-cn": "交互",
+        "data-en": "interactive"
+    },
+    {
+        "data-cn": "关键词",
+        "data-en": "key word"
+    },
+        {
+        "data-cn": "分享链接",
+        "data-en": "Share Link"
+    },
+    {
+        "data-cn": "职业",
+        "data-en": "occupation"
+    },
+    {
+        "data-cn": "购买渠道",
+        "data-en": "Purchase channels"
+    },
+    {
+        "data-cn": "电压",
+        "data-en": "Voltage"
+    },
+    {
+        "data-cn": "语言",
+        "data-en": "language"
+    },
+    {
+        "data-cn": "身体评分",
+        "data-en": "Body Score"
+    },
+    {
+        "data-cn": "光线",
+        "data-en": "light"
+    },
+    {
+        "data-cn": "湿度",
+        "data-en": "humidity"
+    },
+    {
+        "data-cn": "行驶里程",
+        "data-en": "Mileage traveled"
+    },
+        {
+        "data-cn": "问卷答复",
+        "data-en": "Questionnaire response"
+    },
+    {
+        "data-cn": "存储状态",
+        "data-en": "Storage status"
+    },
+    {
+        "data-cn": "留言文件",
+        "data-en": "Message file"
+    },
+    {
+        "data-cn": "日程",
+        "data-en": "calendar"
+    },
+    {
+        "data-cn": "日程记录",
+        "data-en": "Schedule Record"
+    },
+    {
+        "data-cn": "行车记录",
+        "data-en": "Driving records"
+    },
+    {
+        "data-cn": "营业执照",
+        "data-en": "Business license"
+    },
+        {
+        "data-cn": "购物车",
+        "data-en": "Shopping Cart"
+    },
+    {
+        "data-cn": "订单",
+        "data-en": "order"
+    },
+    {
+        "data-cn": "里程",
+        "data-en": "mileage"
+    },
+    {
+        "data-cn": "通信记录",
+        "data-en": "Communication records"
+    },
+    {
+        "data-cn": "水质",
+        "data-en": "Water Quality"
+    },
+    {
+        "data-cn": "税号",
+        "data-en": "duty paragraph"
+    },
+    {
+        "data-cn": "登陆名",
+        "data-en": "Login Name"
+    },
+    {
+        "data-cn": "健康",
+        "data-en": "healthy"
+    },
+    {
+        "data-cn": "心跳频率",
+        "data-en": "heart rate "
+    },
+    {
+        "data-cn": "文件",
+        "data-en": "file"
+    },
+    {
+        "data-cn": "联系人",
+        "data-en": "contacts"
+    },
+    {
+        "data-cn": "检索",
+        "data-en": "retrieval"
+    },
+    {
+        "data-cn": "特征",
+        "data-en": "features"
+    },
+    {
+        "data-cn": "聊天记录",
+        "data-en": "Chat records"
+    },
+    {
+        "data-cn": "磁场",
+        "data-en": "magnetic field"
+    },
+    {
+        "data-cn": "偏好特征",
+        "data-en": "Preference characteristics"
+    },
+    {
+        "data-cn": "订购人",
+        "data-en": "Orderer"
+    },
+    {
+        "data-cn": "锻炼时长",
+        "data-en": "Exercise duration"
+    },
+    {
+        "data-cn": "行车",
+        "data-en": "Driving"
+    },
+    {
+        "data-cn": "认证公函",
+        "data-en": "Certification Official Letter"
+    },
+    {
+        "data-cn": "血糖",
+        "data-en": "blood sugar"
+    },
+    {
+        "data-cn": "DNS",
+        "data-en": "DNS"
+    }
+]

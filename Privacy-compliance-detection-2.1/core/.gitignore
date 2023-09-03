@@ -1,0 +1,16 @@
+model/
+logsPath/
+
+final_res/
+
+config/
+
+ResultSaveDir/
+find_data_points.jar
+
+PrivacyPolicySaveDir/
+.vscode/
+.idea/
+.history/
+target/
+Privacypolicy_txt/

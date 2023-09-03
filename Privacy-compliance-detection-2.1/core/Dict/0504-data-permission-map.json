@@ -1,0 +1,5837 @@
+{
+  "count": 575,
+  "result": [
+    {
+      "data": {
+        "data-cn": "网络状态",
+        "data-en": "Network status"
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "配置",
+        "data-en": "configure"
+      },
+      "permission": [
+        [
+          "OVERRIDE_WIFI_CONFIG",
+          "WiFi config",
+          "WiFi配置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "BSSID",
+        "data-en": "BSSID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "分享状态",
+        "data-en": "Sharing status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "请求",
+        "data-en": "request"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "血氧",
+        "data-en": "Blood oxygen"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "住址",
+        "data-en": "address"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "指令",
+        "data-en": "instructions"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "OPENID",
+        "data-en": "OPENID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "作息",
+        "data-en": "timetable"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "商品评价",
+        "data-en": "Product evaluation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "信用卡",
+        "data-en": "Credit Card"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "软件特征",
+        "data-en": "Software features"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "导航",
+        "data-en": "Navigation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠时长",
+        "data-en": "Sleep duration"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SPACE ID",
+        "data-en": "SPACE ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "习惯",
+        "data-en": "habit"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "硬件数据",
+        "data-en": "Hardware data"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_DATA_SYNC",
+          "foreground service data sync",
+          "前台服务数据同步"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_APP_USER_DATA",
+          "app user data control",
+          "应用程序用户数据控件"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_APP_USER_DATA",
+          "app user data control",
+          "应用程序用户数据控件"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_METERED_DATA",
+          "metered data",
+          "计量数据"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIPE_DATA",
+          "wipe data",
+          "清除数据"
+        ],
+        [
+          "READ_ASSISTANT_APP_SEARCH_DATA",
+          "Assistant data",
+          "助理数据"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "异常数据",
+        "data-en": "Abnormal data"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_DATA_SYNC",
+          "foreground service data sync",
+          "前台服务数据同步"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_METERED_DATA",
+          "metered data",
+          "计量数据"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIPE_DATA",
+          "wipe data",
+          "清除数据"
+        ],
+        [
+          "READ_ASSISTANT_APP_SEARCH_DATA",
+          "Assistant data",
+          "助理数据"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "照片",
+        "data-en": "Photo"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "NAS",
+        "data-en": "NAS"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "系统版本",
+        "data-en": "System version"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "资质",
+        "data-en": "qualifications"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "用户",
+        "data-en": "user"
+      },
+      "permission": [
+        [
+          "READ_USER_DICTIONARY",
+          "read user dictionary",
+          "读取用户词典"
+        ],
+        [
+          "WRITE_USER_DICTIONARY",
+          "write user dictionary",
+          "写入用户词典"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_ACROSS_USERS",
+          "user management",
+          "用户管理"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_ACROSS_USERS",
+          "user management",
+          "用户管理"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_APP_USER_DATA",
+          "app user data control",
+          "应用程序用户数据控件"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MODIFY_USERS",
+          "users",
+          "用户"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MODIFY_USERS",
+          "users",
+          "用户"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_USERS",
+          "users",
+          "用户"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_USERS",
+          "users",
+          "用户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "查询记录",
+        "data-en": "Query Records"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "房型",
+        "data-en": "room type"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "商品",
+        "data-en": "commodity"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "参数",
+        "data-en": "parameter"
+      },
+      "permission": [
+        [
+          "BIND_INPUT_METHOD",
+          "input method",
+          "输入法"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "应用列表",
+        "data-en": "Application List"
+      },
+      "permission": [
+        [
+          "REQUEST_COMPANION_PROFILE_APP_STREAMING",
+          "app streaming",
+          "应用程序流"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "咨询记录",
+        "data-en": "Consultation records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ROM",
+        "data-en": "ROM"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "咨询记录",
+        "data-en": "Consultation records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "镜头型号",
+        "data-en": "Lens model"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "出生日期",
+        "data-en": "birthdate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "提供者",
+        "data-en": "Provider"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "异常状态",
+        "data-en": "Abnormal state"
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "READ_INPUT_STATE",
+          "Input state",
+          "输入状态"
+        ],
+        [
+          "SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE",
+          "keyguard locked state",
+          "订阅锁屏状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "系统配置",
+        "data-en": "system configuration"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_SYSTEM_EXEMPTED",
+          "system exempted",
+          "系统豁免"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_QUERY_SYSTEM_UPDATES",
+          "query system updates",
+          "查询系统更新"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_APPS",
+          "system apps",
+          "系统应用"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_DIALOGS",
+          "system dialogs",
+          "系统对话框"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_UPDATES",
+          "system updates",
+          "系统更新"
+        ],
+        [
+          "MOUNT_FORMAT_FILESYSTEMS",
+          "format filesystems",
+          "格式化文件系统"
+        ],
+        [
+          "MOUNT_UNMOUNT_FILESYSTEMS",
+          "unmount filesystems",
+          "卸载文件系统"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "国家",
+        "data-en": "country"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "掩码",
+        "data-en": "Mask"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "日志",
+        "data-en": "log"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "监测",
+        "data-en": "monitor"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "异常堆栈",
+        "data-en": "Exception Stack"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "分享",
+        "data-en": "share"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "区域",
+        "data-en": "region"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "关注列表",
+        "data-en": "Follow List"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "麦克风",
+        "data-en": "Microphone"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_MICROPHONE",
+          "microphone",
+          "麦克风"
+        ],
+        [
+          "FOREGROUND_SERVICE_MICROPHONE",
+          "microphone",
+          "麦克风"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MICROPHONE",
+          "microphone",
+          "麦克风"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MICROPHONE",
+          "microphone",
+          "麦克风"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "人脸",
+        "data-en": "Face"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "图像",
+        "data-en": "image"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "IESI",
+        "data-en": "IESI"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "支付",
+        "data-en": "payment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "声纹",
+        "data-en": "voiceprint"
+      },
+      "permission": [
+        [
+          "USE_FINGERPRINT",
+          "use fingerprint",
+          "使用指纹识别"
+        ],
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "信用代码",
+        "data-en": "Credit code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "机构代码",
+        "data-en": "Institution code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "外部存储",
+        "data-en": "External storage"
+      },
+      "permission": [
+        [
+          "READ_EXTERNAL_STORAGE",
+          "read external storage",
+          "读取外部存储"
+        ],
+        [
+          "WRITE_EXTERNAL_STORAGE",
+          "write external storage",
+          "写入外部存储"
+        ],
+        [
+          "MANAGE_EXTERNAL_STORAGE",
+          "external storage",
+          "外部存储器"
+        ],
+        [
+          "MANAGE_EXTERNAL_STORAGE",
+          "external storage",
+          "外部存储器"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "工单",
+        "data-en": "Work Order"
+      },
+      "permission": [
+        [
+          "WRITE_VOICEMAIL",
+          "voice mail",
+          "语音邮件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "设置",
+        "data-en": "set up"
+      },
+      "permission": [
+        [
+          "WRITE_SETTINGS",
+          "write settings",
+          "写入设置"
+        ],
+        [
+          "BIND_QUICK_SETTINGS_TILE",
+          "settings",
+          "设置"
+        ],
+        [
+          "LAUNCH_MULTI_PANE_SETTINGS_DEEP_LINK",
+          "launch settings",
+          "启动设置"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SETTINGS",
+          "settings",
+          "设置"
+        ],
+        [
+          "READ_SYNC_SETTINGS",
+          "sync settings",
+          "同步设置"
+        ],
+        [
+          "WRITE_APN_SETTINGS",
+          "APN settings",
+          "APN设置"
+        ],
+        [
+          "WRITE_SECURE_SETTINGS",
+          "secure settings",
+          "安全设置"
+        ],
+        [
+          "WRITE_SYNC_SETTINGS",
+          "sync settings",
+          "同步设置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "注册日期",
+        "data-en": "Registration date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "机器编码",
+        "data-en": "Machine coding"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "开户行",
+        "data-en": "Opening bank"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "阅读喜好",
+        "data-en": "Reading preferences"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "速度",
+        "data-en": "speed"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "呼吸频率",
+        "data-en": "Respiratory rate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "物品价值",
+        "data-en": "Item value"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "广告ID",
+        "data-en": "Advertising ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网页记录",
+        "data-en": "Web page records"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "错误",
+        "data-en": "error"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "地图",
+        "data-en": "Map"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "搜索关键字",
+        "data-en": "search keyword"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "骨量",
+        "data-en": "Bone mass"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "互动",
+        "data-en": "interaction"
+      },
+      "permission": [
+        [
+          "ACTIVITY_RECOGNITION",
+          "activity recognition",
+          "活动识别"
+        ],
+        [
+          "BIND_TV_INTERACTIVE_APP",
+          "tv interactive",
+          "电视互动"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "订阅",
+        "data-en": "subscribe"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "场景指令",
+        "data-en": "Scene instructions"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "银行卡",
+        "data-en": "bank card"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "财产",
+        "data-en": "property"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "交易金额",
+        "data-en": "amounts"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "资料",
+        "data-en": "data"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_DATA_SYNC",
+          "foreground service data sync",
+          "前台服务数据同步"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_APP_USER_DATA",
+          "app user data control",
+          "应用程序用户数据控件"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_METERED_DATA",
+          "metered data",
+          "计量数据"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIPE_DATA",
+          "wipe data",
+          "清除数据"
+        ],
+        [
+          "READ_ASSISTANT_APP_SEARCH_DATA",
+          "Assistant data",
+          "助理数据"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "账户",
+        "data-en": "account"
+      },
+      "permission": [
+        [
+          "ACCOUNT_MANAGER",
+          "account manager",
+          "账户管理器"
+        ],
+        [
+          "GET_ACCOUNTS_PRIVILEGED",
+          "privileged accounts",
+          "特权帐户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "面容",
+        "data-en": "face"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "行程",
+        "data-en": "trip"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "胎压",
+        "data-en": "Tire pressure"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "会话",
+        "data-en": "conversation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠报告",
+        "data-en": "Sleep Report"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "帐号ID",
+        "data-en": "Account ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "报障",
+        "data-en": "Reporting obstacles"
+      },
+      "permission": [
+        [
+          "CALL_PHONE",
+          "call phone",
+          "拨打电话"
+        ],
+        [
+          "ANSWER_PHONE_CALLS",
+          "answer calls",
+          "接听电话"
+        ],
+        [
+          "CALL_PRIVILEGED",
+          "call privileged",
+          "拨打紧急电话"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "问题",
+        "data-en": "problem"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "报表",
+        "data-en": "report form"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "WIFI",
+        "data-en": "WIFI"
+      },
+      "permission": [
+        [
+          "NEARBY_WIFI_DEVICES",
+          "nearby WiFi",
+          "附近的WiFi"
+        ],
+        [
+          "OVERRIDE_WIFI_CONFIG",
+          "WiFi config",
+          "WiFi配置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "存储",
+        "data-en": "storage"
+      },
+      "permission": [
+        [
+          "READ_EXTERNAL_STORAGE",
+          "read external storage",
+          "读取外部存储"
+        ],
+        [
+          "WRITE_EXTERNAL_STORAGE",
+          "write external storage",
+          "写入外部存储"
+        ],
+        [
+          "MANAGE_EXTERNAL_STORAGE",
+          "external storage",
+          "外部存储器"
+        ],
+        [
+          "MANAGE_EXTERNAL_STORAGE",
+          "external storage",
+          "外部存储器"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "分配",
+        "data-en": "distribution"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "GAID",
+        "data-en": "GAID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "交流",
+        "data-en": "communication"
+      },
+      "permission": [
+        [
+          "READ_SOCIAL_STREAM",
+          "read social stream",
+          "读取社交流"
+        ],
+        [
+          "WRITE_SOCIAL_STREAM",
+          "write social stream",
+          "写入社交流"
+        ],
+        [
+          "BIND_TELECOM_CONNECTION_SERVICE",
+          "telecom",
+          "电信"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "访问日期",
+        "data-en": "Access Date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "名单",
+        "data-en": "name list"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "预约",
+        "data-en": "make an appointment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SSL",
+        "data-en": "SSL"
+      },
+      "permission": [
+        [
+          "BIND_VPN_SERVICE",
+          "vpn",
+          "虚拟专用网络"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_VPN",
+          "VPN",
+          "虚拟专用网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "会员名",
+        "data-en": "Member Name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "榜单",
+        "data-en": "List"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "关注",
+        "data-en": "follow"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "余额",
+        "data-en": "balance"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电话",
+        "data-en": "Telephone"
+      },
+      "permission": [
+        [
+          "CALL_PHONE",
+          "call phone",
+          "拨打电话"
+        ],
+        [
+          "ANSWER_PHONE_CALLS",
+          "answer calls",
+          "接听电话"
+        ],
+        [
+          "FOREGROUND_SERVICE_PHONE_CALL",
+          "phone call",
+          "电话"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_CALLS",
+          "calls",
+          "电话"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "验证码",
+        "data-en": "Verification Code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "食材",
+        "data-en": "Ingredients"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "语音会话",
+        "data-en": "Voice conversation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购买凭证",
+        "data-en": "Purchase voucher"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "热度",
+        "data-en": "heat degree"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "头像",
+        "data-en": "head portrait"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "文件大小",
+        "data-en": "file size"
+      },
+      "permission": [
+        [
+          "GET_PACKAGE_SIZE",
+          "package size",
+          "包装尺寸"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "日历",
+        "data-en": "calendar"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "邮件记录",
+        "data-en": "Mail records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "互动记录",
+        "data-en": "Interactive recording"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "名字",
+        "data-en": "name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "登陆状态",
+        "data-en": "Login status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "训练记录",
+        "data-en": "Training Record"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "体内水分",
+        "data-en": "Body moisture"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "生物特征",
+        "data-en": "biosignature"
+      },
+      "permission": [
+        [
+          "USE_BIOMETRIC",
+          "biometric",
+          "生物特征"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "功能",
+        "data-en": "function"
+      },
+      "permission": [
+        [
+          "CHANGE_COMPONENT_ENABLED_STATE",
+          "component",
+          "组件启用"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES",
+          "debugging features",
+          "调试功能"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "体脂率",
+        "data-en": "Body fat percentage"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "内存",
+        "data-en": "Memory"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "定时记录",
+        "data-en": "Timed recording"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "短信",
+        "data-en": "short message"
+      },
+      "permission": [
+        [
+          "READ_SMS",
+          "read SMS",
+          "读取短信"
+        ],
+        [
+          "SEND_SMS",
+          "send SMS",
+          "发送短信"
+        ],
+        [
+          "RECEIVE_SMS",
+          "receive SMS",
+          "接收短信"
+        ],
+        [
+          "BIND_CARRIER_MESSAGING_CLIENT_SERVICE",
+          "carrier messaging client",
+          "运营商短信客户端"
+        ],
+        [
+          "BIND_CARRIER_MESSAGING_SERVICE",
+          "carrier messaging",
+          "运营商短信"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SMS",
+          "SMS",
+          "短信"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "OPENUDID",
+        "data-en": "OpenUDID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "预约",
+        "data-en": "make an appointment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "省份",
+        "data-en": "province"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "频率",
+        "data-en": "frequency"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "昵称",
+        "data-en": "nickname"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "剪贴板",
+        "data-en": "clipboard"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "佩戴状态",
+        "data-en": "Wearing status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通话状态",
+        "data-en": "Call status"
+      },
+      "permission": [
+        [
+          "ACCESS_WIFI_STATE",
+          "wifi state",
+          "Wi-Fi 状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "行踪轨迹",
+        "data-en": "Trajectory"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "肥胖水平",
+        "data-en": "Obesity level"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "隶属部门",
+        "data-en": "Affiliated department"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "手机机型",
+        "data-en": "Mobile phone model"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通讯录",
+        "data-en": "mail list"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "民族",
+        "data-en": "nation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "登录",
+        "data-en": "Sign in"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "声音",
+        "data-en": "voice"
+      },
+      "permission": [
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "密码",
+        "data-en": "password"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_RESET_PASSWORD",
+          "reset password",
+          "重置密码"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_RESET_PASSWORD",
+          "reset password",
+          "重置密码"
+        ],
+        [
+          "REQUEST_PASSWORD_COMPLEXITY",
+          "password complexity",
+          "密码复杂性"
+        ],
+        [
+          "REQUEST_PASSWORD_COMPLEXITY",
+          "password complexity",
+          "密码复杂性"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "文章",
+        "data-en": "article"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "运动状态",
+        "data-en": "motion state "
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "READ_INPUT_STATE",
+          "Input state",
+          "输入状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "性别",
+        "data-en": "Gender"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "FCM",
+        "data-en": "FCM"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "组织认证",
+        "data-en": "Organizational certification"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "帐户",
+        "data-en": "account"
+      },
+      "permission": [
+        [
+          "GET_ACCOUNTS_PRIVILEGED",
+          "privileged accounts",
+          "特权帐户"
+        ],
+        [
+          "GET_ACCOUNTS_PRIVILEGED",
+          "privileged accounts",
+          "特权帐户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "链接",
+        "data-en": "link"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "相机",
+        "data-en": "camera"
+      },
+      "permission": [
+        [
+          "FLASHLIGHT",
+          "flashlight",
+          "手电筒"
+        ],
+        [
+          "CAMERA",
+          "camera",
+          "相机"
+        ],
+        [
+          "CAMERA",
+          "camera",
+          "相机"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_CAMERA",
+          "camera",
+          "照相机"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_CAMERA",
+          "camera",
+          "照相机"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "蓝牙",
+        "data-en": "Bluetooth"
+      },
+      "permission": [
+        [
+          "NFC",
+          "NFC",
+          "NFC"
+        ],
+        [
+          "BLUETOOTH",
+          "bluetooth",
+          "蓝牙"
+        ],
+        [
+          "BLUETOOTH",
+          "bluetooth",
+          "蓝牙"
+        ],
+        [
+          "BLUETOOTH_ADMIN",
+          "bluetooth admin",
+          "蓝牙管理员"
+        ],
+        [
+          "BLUETOOTH_ADVERTISE",
+          "bluetooth advertise",
+          "蓝牙广播"
+        ],
+        [
+          "BLUETOOTH_CONNECT",
+          "bluetooth connect",
+          "蓝牙连接"
+        ],
+        [
+          "BLUETOOTH_PRIVILEGED",
+          "bluetooth privileged",
+          "蓝牙特权"
+        ],
+        [
+          "BLUETOOTH_SCAN",
+          "bluetooth scan",
+          "蓝牙扫描"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_BLUETOOTH",
+          "bluetooth",
+          "蓝牙"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_BLUETOOTH",
+          "bluetooth",
+          "蓝牙"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "RSSI",
+        "data-en": "RSSI"
+      },
+      "permission": [
+        [
+          "UWB_RANGING",
+          "UWB ranging",
+          "UWB定位"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "帐号",
+        "data-en": "accounts"
+      },
+      "permission": [
+        [
+          "GET_ACCOUNTS_PRIVILEGED",
+          "privileged accounts",
+          "特权帐户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "群体标签",
+        "data-en": "Group labels"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "学历",
+        "data-en": "education"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "留言",
+        "data-en": "Leaving a message."
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "续航里程",
+        "data-en": "Range"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "时间",
+        "data-en": "time"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_TIME",
+          "time",
+          "时间"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_TIME",
+          "time",
+          "时间"
+        ],
+        [
+          "SET_TIME",
+          "time setting",
+          "时间设置"
+        ],
+        [
+          "SET_TIME",
+          "time setting",
+          "时间设置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "跳跃模式",
+        "data-en": "Jump mode"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "查询",
+        "data-en": "query"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠状态",
+        "data-en": "Sleep state"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "关注关系",
+        "data-en": "Focus on relationships"
+      },
+      "permission": [
+        [
+          "TURN_SCREEN_ON",
+          "screen on",
+          "点亮屏幕"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "收件",
+        "data-en": "Receiving"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "银行帐号",
+        "data-en": "Bank account number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "呼吸率",
+        "data-en": "Respiratory rate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ID",
+        "data-en": "ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "图片",
+        "data-en": "picture"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "画报",
+        "data-en": "Pictorial newspaper"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "播放时长",
+        "data-en": "Playback duration"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "浏览器",
+        "data-en": "browser"
+      },
+      "permission": [
+        [
+          "BIND_INPUT_METHOD",
+          "input method",
+          "输入法"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_INPUT_METHODS",
+          "input methods",
+          "输入法"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "泄露",
+        "data-en": "leakage"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "报错",
+        "data-en": "report errors"
+      },
+      "permission": [
+        [
+          "ACCESS_BLOBS_ACROSS_USERS",
+          "across user blobs",
+          "跨用户blob"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_OVERRIDE_APN",
+          "override",
+          "override"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "跟帖",
+        "data-en": "comment "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "加购",
+        "data-en": "Add Purchase"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "心率",
+        "data-en": "heart rate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "欺诈",
+        "data-en": "cheat"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "脂肪率",
+        "data-en": "Fat percentage"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "VAID",
+        "data-en": "VAID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "对账",
+        "data-en": "Reconciliation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "企业",
+        "data-en": "company"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "录音",
+        "data-en": "sound recording"
+      },
+      "permission": [
+        [
+          "RECORD_AUDIO",
+          "record audio",
+          "录音"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "语音",
+        "data-en": "voice"
+      },
+      "permission": [
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ],
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "固件",
+        "data-en": "firmware"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "车型",
+        "data-en": "Vehicle model"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "沸点",
+        "data-en": "boiling point"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "状态",
+        "data-en": "state"
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "ACCESS_WIFI_STATE",
+          "wifi state",
+          "Wi-Fi 状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "READ_BASIC_PHONE_STATE",
+          "Phone state",
+          "电话状态"
+        ],
+        [
+          "READ_INPUT_STATE",
+          "Input state",
+          "输入状态"
+        ],
+        [
+          "SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE",
+          "keyguard locked state",
+          "订阅锁屏状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "车辆",
+        "data-en": "vehicle"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "成交",
+        "data-en": "deal"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "有效期限",
+        "data-en": "Validity period"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "点赞",
+        "data-en": "give the thumbs-up"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "指纹",
+        "data-en": "fingerprint"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "验证KEY",
+        "data-en": "Verify KEY"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "部门",
+        "data-en": "department"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "加速度",
+        "data-en": "acceleration"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "家庭成员",
+        "data-en": "family member"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "卡号",
+        "data-en": "Card number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "评论",
+        "data-en": "comment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "任职",
+        "data-en": "Appointment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "音频",
+        "data-en": "audio frequency"
+      },
+      "permission": [
+        [
+          "MODIFY_AUDIO_SETTINGS",
+          "modify audio settings",
+          "修改音频设置"
+        ],
+        [
+          "CAPTURE_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ],
+        [
+          "CAPTURE_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "会员身份",
+        "data-en": "Membership status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "发票",
+        "data-en": "invoice"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "使用频率",
+        "data-en": "Usage frequency"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "使用情况",
+        "data-en": "Usage"
+      },
+      "permission": [
+        [
+          "PACKAGE_USAGE_STATS",
+          "App usage",
+          "应用程序使用情况"
+        ],
+        [
+          "START_VIEW_PERMISSION_USAGE",
+          "view permission usage",
+          "查看权限使用情况"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "解锁次数",
+        "data-en": "Unlocking times"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "年龄",
+        "data-en": "Age"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "版本",
+        "data-en": "edition"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "用户标识",
+        "data-en": "user id"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_MODIFY_USERS",
+          "users",
+          "用户"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_USERS",
+          "users",
+          "用户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "用户ID",
+        "data-en": "user id"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_MODIFY_USERS",
+          "users",
+          "用户"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_USERS",
+          "users",
+          "用户"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "身体指标",
+        "data-en": "Physical indicators"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通知开关",
+        "data-en": "Notification toggle"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "体脂指标",
+        "data-en": "Body fat index"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "当地天气",
+        "data-en": "Local weather"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "发布",
+        "data-en": "release"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "脉搏",
+        "data-en": "pulse"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "文章评论",
+        "data-en": "Article comments"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "设备",
+        "data-en": "device"
+      },
+      "permission": [
+        [
+          "BIND_COMPANION_DEVICE_SERVICE",
+          "companion device",
+          "配套设备"
+        ],
+        [
+          "BIND_COMPANION_DEVICE_SERVICE",
+          "companion device",
+          "配套设备"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "服务日志",
+        "data-en": "Service log"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_BACKUP_SERVICE",
+          "backup service",
+          "备份服务"
+        ],
+        [
+          "WRITE_GSERVICES",
+          "Gservices",
+          "Google服务"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "网络ID",
+        "data-en": "Network ID"
+      },
+      "permission": [
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "文字指令",
+        "data-en": "Textual instruction"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "时区",
+        "data-en": "time zone"
+      },
+      "permission": [
+        [
+          "SET_TIME_ZONE",
+          "time zone setting",
+          "时区设置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "联系",
+        "data-en": "contact"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "血压",
+        "data-en": "blood pressure"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收货人",
+        "data-en": "consignee"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "无线连接",
+        "data-en": "Wireless connection"
+      },
+      "permission": [
+        [
+          "BLUETOOTH_CONNECT",
+          "bluetooth connect",
+          "蓝牙连接"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "脂肪",
+        "data-en": "Fat"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "沟通",
+        "data-en": "communicate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "肌肉含量",
+        "data-en": "Muscle content"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "容量",
+        "data-en": "capacity"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "INSTANC",
+        "data-en": "INSTANC"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "跳跃次数",
+        "data-en": "hop count"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "页面提示",
+        "data-en": "Page prompt"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "心率",
+        "data-en": "heart rate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "定位",
+        "data-en": "location"
+      },
+      "permission": [
+        [
+          "ACCESS_BACKGROUND_LOCATION",
+          "background location",
+          "后台定位"
+        ],
+        [
+          "ACCESS_COARSE_LOCATION",
+          "coarse location",
+          "粗略位置"
+        ],
+        [
+          "CONTROL_LOCATION_UPDATES",
+          "control location updates",
+          "控制位置信息更新"
+        ],
+        [
+          "FOREGROUND_SERVICE_LOCATION",
+          "location",
+          "位置"
+        ],
+        [
+          "INSTALL_LOCATION_PROVIDER",
+          "location provider",
+          "位置提供程序"
+        ],
+        [
+          "LOCATION_HARDWARE",
+          "location hardware",
+          "硬件地址"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_LOCATION",
+          "location",
+          "地方"
+        ],
+        [
+          "UWB_RANGING",
+          "UWB ranging",
+          "UWB定位"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "睡眠质量",
+        "data-en": "sleep quality"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "组织名",
+        "data-en": "Organization name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "手机号码",
+        "data-en": "phone number"
+      },
+      "permission": [
+        [
+          "READ_PHONE_NUMBERS",
+          "phone numbers",
+          "电话号码"
+        ],
+        [
+          "READ_PHONE_NUMBERS",
+          "phone numbers",
+          "电话号码"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "访问量",
+        "data-en": "Visits"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "反馈联系",
+        "data-en": "Feedback Contact"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网络环境",
+        "data-en": "network environment "
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "CHANGE_WIFI_MULTICAST_STATE",
+          "multicast",
+          "多播"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "赔付",
+        "data-en": "Compensation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "聊天",
+        "data-en": "chat"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "证件",
+        "data-en": "certificates"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_CERTIFICATES",
+          "certificates",
+          "证书"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "GUID",
+        "data-en": "GUID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "点击记录",
+        "data-en": "Click Record"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠记录",
+        "data-en": "Sleep recording"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "崩溃",
+        "data-en": "collapse"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "脸部图像",
+        "data-en": "Facial images"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网络变化",
+        "data-en": "Network changes"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "厂商",
+        "data-en": "manufacturer"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "运行界面",
+        "data-en": "Run interface"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "会员等级",
+        "data-en": "Membership level"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "菜谱",
+        "data-en": "menu"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "文档",
+        "data-en": "file"
+      },
+      "permission": [
+        [
+          "DELETE_CACHE_FILES",
+          "delete cache files",
+          "删除缓存文件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "录制",
+        "data-en": "Recording"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "语音命令",
+        "data-en": "Voice commands"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "崩溃报告",
+        "data-en": "Crash report"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网关",
+        "data-en": "gateway"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "行业",
+        "data-en": "industry"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "会员",
+        "data-en": "member"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "序列码",
+        "data-en": "sequence code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "联网",
+        "data-en": "networking"
+      },
+      "permission": [
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "CHANGE_WIFI_MULTICAST_STATE",
+          "multicast",
+          "多播"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "包裹",
+        "data-en": "package"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电子签名",
+        "data-en": "electronic signature "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收款",
+        "data-en": "Collection"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "CPU",
+        "data-en": "CPU"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "钱包",
+        "data-en": "wallet"
+      },
+      "permission": [
+        [
+          "BIND_QUICK_ACCESS_WALLET_SERVICE",
+          "wallet",
+          "钱包"
+        ],
+        [
+          "BIND_QUICK_ACCESS_WALLET_SERVICE",
+          "wallet",
+          "钱包"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "体型",
+        "data-en": "shape"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "触发事件",
+        "data-en": "Trigger Event"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "识别码",
+        "data-en": "Identification code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "BMR",
+        "data-en": "BMR"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "肌肤监测",
+        "data-en": "Skin monitoring"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "屏幕显示",
+        "data-en": "Screen display"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_DISPLAY",
+          "display",
+          "陈列"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "票务",
+        "data-en": "Ticketing"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "监控",
+        "data-en": "monitor"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "风险测评",
+        "data-en": "risk evaluation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "数字证书",
+        "data-en": "Digital Certificate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "搜索",
+        "data-en": "search"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购买",
+        "data-en": "buy"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ANDROID ID",
+        "data-en": "ANDROID ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ANDRIOD ID",
+        "data-en": "ANDROID ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收缩压",
+        "data-en": "systolic pressure"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "浏览时长",
+        "data-en": "Browse duration"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "次数",
+        "data-en": "frequency"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购物车记录",
+        "data-en": "Shopping Cart Record"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠状况",
+        "data-en": "Sleep status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "人数",
+        "data-en": "people number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "物流",
+        "data-en": "logistics"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "程序包名",
+        "data-en": "Package Name"
+      },
+      "permission": [
+        [
+          "INSTALL_PACKAGES",
+          "install packages",
+          "安装程序包"
+        ],
+        [
+          "REQUEST_INSTALL_PACKAGES",
+          "install packages",
+          "安装程序包"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "看过记录",
+        "data-en": "Read record"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "轨迹",
+        "data-en": "trajectory"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "屏幕尺寸",
+        "data-en": "Screen size"
+      },
+      "permission": [
+        [
+          "BIND_SCREENING_SERVICE",
+          "screening",
+          "屏幕"
+        ],
+        [
+          "GET_PACKAGE_SIZE",
+          "package size",
+          "包装尺寸"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "评分",
+        "data-en": "score"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "步数",
+        "data-en": "Steps"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "WLAN",
+        "data-en": "WLAN"
+      },
+      "permission": [
+        [
+          "NEARBY_WIFI_DEVICES",
+          "nearby WiFi",
+          "附近的WiFi"
+        ],
+        [
+          "OVERRIDE_WIFI_CONFIG",
+          "WiFi config",
+          "WiFi配置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "家庭住址",
+        "data-en": "Home address"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "舒张压",
+        "data-en": "diastolic pressure"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "用户名",
+        "data-en": "user name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "职级",
+        "data-en": "Rank"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "UTID",
+        "data-en": "UTID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "户籍",
+        "data-en": "Registered residence"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "操作记录",
+        "data-en": "operation record"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "开关状态",
+        "data-en": "Switch status"
+      },
+      "permission": [
+        [
+          "ACCESS_WIFI_STATE",
+          "wifi state",
+          "Wi-Fi 状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "主营行业",
+        "data-en": "Main industry"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "操作系统",
+        "data-en": "operating system"
+      },
+      "permission": [
+        [
+          "EXECUTE_APP_ACTION",
+          "execute app action",
+          "执行应用程序操作"
+        ],
+        [
+          "FOREGROUND_SERVICE_SYSTEM_EXEMPTED",
+          "system exempted",
+          "系统豁免"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_APPS",
+          "system apps",
+          "系统应用"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_DIALOGS",
+          "system dialogs",
+          "系统对话框"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_DIALOGS",
+          "system dialogs",
+          "系统对话框"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SYSTEM_UPDATES",
+          "system updates",
+          "系统更新"
+        ],
+        [
+          "MOUNT_FORMAT_FILESYSTEMS",
+          "format filesystems",
+          "格式化文件系统"
+        ],
+        [
+          "MOUNT_UNMOUNT_FILESYSTEMS",
+          "unmount filesystems",
+          "卸载文件系统"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "账号绑定",
+        "data-en": "account binding"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "设备型号",
+        "data-en": "Equipment model"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "序列号",
+        "data-en": "serial number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "自动息屏",
+        "data-en": "Automatic screen rest"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠周期",
+        "data-en": "Sleep cycle"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "语音交互",
+        "data-en": "Voice interaction"
+      },
+      "permission": [
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "业务事件",
+        "data-en": "Business Events"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "MIUI",
+        "data-en": "MIUI"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "历史",
+        "data-en": "history"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "IDFA",
+        "data-en": "IDFA"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "行踪生理",
+        "data-en": "Traveling Physiology"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡眠",
+        "data-en": "sleep"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "应用版本",
+        "data-en": "Application version"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "GPS",
+        "data-en": "GPS"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "口令",
+        "data-en": "Password"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_RESET_PASSWORD",
+          "reset password",
+          "重置密码"
+        ],
+        [
+          "REQUEST_PASSWORD_COMPLEXITY",
+          "password complexity",
+          "密码复杂性"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "SSID",
+        "data-en": "SSID"
+      },
+      "permission": [
+        [
+          "USE_SIP",
+          "use SIP",
+          "使用互联网电话"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_RESTRICT_PRIVATE_DNS",
+          "restrict private DNS",
+          "限制私有DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ],
+        [
+          "WRITE_APN_SETTINGS",
+          "APN settings",
+          "APN设置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "居住地",
+        "data-en": "residence place"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "缩放比例",
+        "data-en": "Zoom ratio"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "体重",
+        "data-en": "weight"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "远程模式",
+        "data-en": "Remote mode"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通话记录",
+        "data-en": "Call logs"
+      },
+      "permission": [
+        [
+          "READ_CALL_LOG",
+          "read call log",
+          "读取通话记录"
+        ],
+        [
+          "WRITE_CALL_LOG",
+          "write call log",
+          "写入通话记录"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "搜索次数",
+        "data-en": "Search Times"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "位置",
+        "data-en": "position"
+      },
+      "permission": [
+        [
+          "ACCESS_COARSE_LOCATION",
+          "coarse location",
+          "粗略位置"
+        ],
+        [
+          "ACCESS_FINE_LOCATION",
+          "fine location",
+          "精确位置"
+        ],
+        [
+          "FOREGROUND_SERVICE_LOCATION",
+          "location",
+          "位置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "路况",
+        "data-en": "traffic"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "开户人",
+        "data-en": "Account Holder"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "局域网模式",
+        "data-en": "LAN mode"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_AIRPLANE_MODE",
+          "airplane mode control",
+          "飞机模式控制"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "军官证",
+        "data-en": "officers certificate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "弹幕",
+        "data-en": "bullet chat"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "热点",
+        "data-en": "hotspot"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "故障码",
+        "data-en": "Fault code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "姓名",
+        "data-en": "full name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "讨论",
+        "data-en": "discuss"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "近程",
+        "data-en": "Short range"
+      },
+      "permission": [
+        [
+          "BIND_REMOTEVIEWS",
+          "remote",
+          "远程"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "运行状态",
+        "data-en": "running state "
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ],
+        [
+          "READ_INPUT_STATE",
+          "Input state",
+          "输入状态"
+        ],
+        [
+          "SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE",
+          "keyguard locked state",
+          "订阅锁屏状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "通话",
+        "data-en": "conversation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通信",
+        "data-en": "signal communication"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "收藏",
+        "data-en": "Collection"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "观影偏好",
+        "data-en": "Viewing preferences"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "统计数据",
+        "data-en": "statistical data"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_DATA_SYNC",
+          "foreground service data sync",
+          "前台服务数据同步"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_METERED_DATA",
+          "metered data",
+          "计量数据"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_METERED_DATA",
+          "metered data",
+          "计量数据"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIPE_DATA",
+          "wipe data",
+          "清除数据"
+        ],
+        [
+          "READ_ASSISTANT_APP_SEARCH_DATA",
+          "Assistant data",
+          "助理数据"
+        ],
+        [
+          "READ_ASSISTANT_APP_SEARCH_DATA",
+          "Assistant data",
+          "助理数据"
+        ],
+        [
+          "READ_SYNC_STATS",
+          "sync stats",
+          "同步统计数据"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "下单",
+        "data-en": "place an order"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "护照",
+        "data-en": "passport"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "设备类别",
+        "data-en": "Equipment category"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "肌肤",
+        "data-en": "skin and flesh"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "存储卡",
+        "data-en": "Memory card"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "内容",
+        "data-en": "content"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_SCREEN_CONTENT",
+          "screen content",
+          "屏幕内容"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "体温",
+        "data-en": "temperature"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "行车轨迹",
+        "data-en": "Driving trajectory"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "路由标志",
+        "data-en": "Routing flag"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "过敏史",
+        "data-en": "Allergy history"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "诊疗",
+        "data-en": "Diagnosis and treatment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "配送",
+        "data-en": "Delivery"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "库存",
+        "data-en": "stock"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网页活动",
+        "data-en": "Web activity"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收藏记录",
+        "data-en": "Favorite Records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SIM",
+        "data-en": "SIM"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收件人",
+        "data-en": "addressee"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "引用网址",
+        "data-en": "Cited URL"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡醒",
+        "data-en": "Wake up from sleep"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "画面",
+        "data-en": "frame"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "安卓版本",
+        "data-en": "Android version"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "IMEI",
+        "data-en": "IMEI"
+      },
+      "permission": [
+        [
+          "READ_CONTACTS",
+          "read contacts",
+          "读取联系人"
+        ],
+        [
+          "READ_EXTERNAL_STORAGE",
+          "read external storage",
+          "读取外部存储"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "网卡",
+        "data-en": "network card"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "还款金额",
+        "data-en": "Repayment amount"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "户口本",
+        "data-en": "Household registration book"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "收入",
+        "data-en": "income"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "MEID",
+        "data-en": "MEID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "生活偏好",
+        "data-en": "Life preferences"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "国家码",
+        "data-en": "Country code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "邮编",
+        "data-en": "Postal Code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "安装列表",
+        "data-en": "Installation List"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "足迹",
+        "data-en": "footprint"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "跳绳次数",
+        "data-en": "Skipping rope times"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "环境",
+        "data-en": "environment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SN码",
+        "data-en": "SN code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "录像",
+        "data-en": "videotape"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "消费偏好",
+        "data-en": "Consumer preferences"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "寄件",
+        "data-en": "Sending"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "记录",
+        "data-en": "record"
+      },
+      "permission": [
+        [
+          "RECORD_AUDIO",
+          "record audio",
+          "录音"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "身高",
+        "data-en": "height"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购买日期",
+        "data-en": "Purchase date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "铃声",
+        "data-en": "Ringing tone"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_WALLPAPER",
+          "wallpaper",
+          "壁纸"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "收货",
+        "data-en": "Receipt"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "图文",
+        "data-en": "Image Text"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "温度",
+        "data-en": "temperature"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "邮箱",
+        "data-en": "mailbox"
+      },
+      "permission": [
+        [
+          "WRITE_VOICEMAIL",
+          "voice mail",
+          "语音邮件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "基站",
+        "data-en": "base station"
+      },
+      "permission": [
+        [
+          "BIND_NFC_SERVICE",
+          "NFC",
+          "近场通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "交易对象",
+        "data-en": "Trading Partner"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购机",
+        "data-en": "Purchase machine"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "进货单",
+        "data-en": "Purchase Order"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "轨迹",
+        "data-en": "trajectory"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "频次",
+        "data-en": "frequency"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "卡路里",
+        "data-en": "calorie"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "市场活动",
+        "data-en": "Marketing activities"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "关联链接",
+        "data-en": "Associated link"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "信用卡有效期",
+        "data-en": "Card Expiration Date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "信用卡验证码",
+        "data-en": "CVV"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "信用卡类型",
+        "data-en": "Card type"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "配网",
+        "data-en": "Distribution network"
+      },
+      "permission": [
+        [
+          "BIND_TELECOM_CONNECTION_SERVICE",
+          "telecom",
+          "电信"
+        ],
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "CHANGE_WIFI_MULTICAST_STATE",
+          "multicast",
+          "多播"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "文件记录",
+        "data-en": "files recording"
+      },
+      "permission": [
+        [
+          "READ_MEDIA_AUDIO",
+          "Audio files",
+          "音频文件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "手机号",
+        "data-en": "cellphone number"
+      },
+      "permission": [
+        [
+          "READ_PHONE_NUMBERS",
+          "phone numbers",
+          "电话号码"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "业务事件",
+        "data-en": "Business Events"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "API",
+        "data-en": "API"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "传感器",
+        "data-en": "sensor"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "AAID",
+        "data-en": "AAID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "压力",
+        "data-en": "pressure"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "相册",
+        "data-en": "album"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "应用ID",
+        "data-en": "Application ID"
+      },
+      "permission": [
+        [
+          "REQUEST_COMPANION_PROFILE_APP_STREAMING",
+          "app streaming",
+          "应用程序流"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "通讯",
+        "data-en": "communication"
+      },
+      "permission": [
+        [
+          "BIND_NFC_SERVICE",
+          "NFC",
+          "近场通讯"
+        ],
+        [
+          "BIND_TELECOM_CONNECTION_SERVICE",
+          "telecom",
+          "电信"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "性能",
+        "data-en": "performance"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "学校",
+        "data-en": "school"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "路由器",
+        "data-en": "Router"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "陀螺仪",
+        "data-en": "gyroscope"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "角色",
+        "data-en": "role"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "访问页面",
+        "data-en": "Accessing pages"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "点击",
+        "data-en": "click"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "身份证",
+        "data-en": "ID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "地点",
+        "data-en": "place"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "邮政编码",
+        "data-en": "Postal Code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "硬盘",
+        "data-en": "Hard drive"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "付款",
+        "data-en": "payment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "专业",
+        "data-en": "major"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "音乐",
+        "data-en": "music"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "接收人",
+        "data-en": "Recipient"
+      },
+      "permission": [
+        [
+          "SEND_SMS",
+          "send SMS",
+          "发送短信"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "网络",
+        "data-en": "network"
+      },
+      "permission": [
+        [
+          "ACCESS_NETWORK_STATE",
+          "network state",
+          "网络状态"
+        ],
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "CHANGE_WIFI_MULTICAST_STATE",
+          "multicast",
+          "多播"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "食材",
+        "data-en": "Ingredients"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "观演人",
+        "data-en": "Performer"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SDK",
+        "data-en": "SDK"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "评价",
+        "data-en": "evaluate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "BFM",
+        "data-en": "BFM"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "活动强度",
+        "data-en": "Activity intensity"
+      },
+      "permission": [
+        [
+          "ACTIVITY_RECOGNITION",
+          "activity recognition",
+          "活动识别"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "制造商",
+        "data-en": "manufacturer"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "儿童",
+        "data-en": "children"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "经度",
+        "data-en": "longitude"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "纬度",
+        "data-en": "latitude"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "清晰度",
+        "data-en": "definition"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "标识码",
+        "data-en": "Identification code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "COOKIE",
+        "data-en": "COOKIE"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "职位",
+        "data-en": "position"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "睡着",
+        "data-en": "Sleep"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "工作状态",
+        "data-en": "working condition "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "屏幕",
+        "data-en": "screen"
+      },
+      "permission": [
+        [
+          "BIND_SCREENING_SERVICE",
+          "screening",
+          "屏幕"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SCREEN_CAPTURE",
+          "screen capture",
+          "截屏"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_SCREEN_CONTENT",
+          "screen content",
+          "屏幕内容"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "阅读记录",
+        "data-en": "Reading records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "建立",
+        "data-en": "establish"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "账号",
+        "data-en": "account number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "反馈记录",
+        "data-en": "Feedback Record"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "播放记录",
+        "data-en": "Playback Record"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "生日",
+        "data-en": "birthday"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "地址",
+        "data-en": "address"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "副本",
+        "data-en": "copy"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ICCID",
+        "data-en": "ICCID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "车辆状态",
+        "data-en": "Vehicle status"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电子邮箱",
+        "data-en": "E-mail"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "预约日期",
+        "data-en": "Appointment Date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "工作模式",
+        "data-en": "Working mode"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "空调",
+        "data-en": "air conditioner"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "IP",
+        "data-en": "IP"
+      },
+      "permission": [
+        [
+          "USE_SIP",
+          "use SIP",
+          "使用互联网电话"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_RESTRICT_PRIVATE_DNS",
+          "restrict private DNS",
+          "限制私有DNS"
+        ],
+        [
+          "WRITE_APN_SETTINGS",
+          "APN settings",
+          "APN设置"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "实名",
+        "data-en": "Real name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "点播",
+        "data-en": "on demand"
+      },
+      "permission": [
+        [
+          "CAPTURE_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_AUDIO_OUTPUT",
+          "audio output",
+          "音频输出"
+        ],
+        [
+          "TURN_SCREEN_ON",
+          "screen on",
+          "点亮屏幕"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "软件列表",
+        "data-en": "Software List"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "年龄段",
+        "data-en": "age group"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "SMM",
+        "data-en": "SMM"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "视频",
+        "data-en": "video"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "记录路线",
+        "data-en": "Record Route"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "反馈",
+        "data-en": "feedback"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "语音指令",
+        "data-en": "Voice commands"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "点评",
+        "data-en": "comment"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "下载",
+        "data-en": "download"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "搜索记录",
+        "data-en": "Search Records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "MAC",
+        "data-en": "MAC"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_WIFI",
+          "Wi-Fi",
+          "无线局域网"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "APPLEI",
+        "data-en": "APPLEI"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "检索词",
+        "data-en": "Search term"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通讯记录",
+        "data-en": "Communication records"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "BMI",
+        "data-en": "BMI"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "城市代码",
+        "data-en": "City code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "网络代码",
+        "data-en": "Network code"
+      },
+      "permission": [
+        [
+          "CHANGE_NETWORK_STATE",
+          "network",
+          "网络"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_MOBILE_NETWORK",
+          "network",
+          "网络"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "浏览页面",
+        "data-en": "Browse Page"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "身份",
+        "data-en": "identity"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_ORGANIZATION_IDENTITY",
+          "identity",
+          "身份"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_ORGANIZATION_IDENTITY",
+          "identity",
+          "身份"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "城市",
+        "data-en": "city"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "慢性病史",
+        "data-en": "chronic illness "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "排障过程",
+        "data-en": "Obstacle removal process"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "媒体",
+        "data-en": "media"
+      },
+      "permission": [
+        [
+          "ACCESS_MEDIA_LOCATION",
+          "media location",
+          "媒体位置"
+        ],
+        [
+          "FOREGROUND_SERVICE_MEDIA_PLAYBACK",
+          "media playback",
+          "媒体播放"
+        ],
+        [
+          "FOREGROUND_SERVICE_MEDIA_PROJECTION",
+          "media projection",
+          "媒体投影"
+        ],
+        [
+          "FOREGROUND_SERVICE_MEDIA_PROJECTION",
+          "media projection",
+          "媒体投影"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PHYSICAL_MEDIA",
+          "media",
+          "媒体"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PHYSICAL_MEDIA",
+          "media",
+          "媒体"
+        ],
+        [
+          "MANAGE_MEDIA",
+          "media",
+          "媒体"
+        ],
+        [
+          "MANAGE_MEDIA",
+          "media",
+          "媒体"
+        ],
+        [
+          "MEDIA_CONTENT_CONTROL",
+          "media control",
+          "媒体控制"
+        ],
+        [
+          "READ_MEDIA_VISUAL_USER_SELECTED",
+          "Selected media",
+          "所选媒体"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "显示",
+        "data-en": "display"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_DISPLAY",
+          "display",
+          "陈列"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "日期",
+        "data-en": "date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "识别号",
+        "data-en": "Identification number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "分辨率",
+        "data-en": "resolving power"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "录像日期",
+        "data-en": "Recording date"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "访问",
+        "data-en": "visit"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "观影记录",
+        "data-en": "Viewing Records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "输入",
+        "data-en": "input"
+      },
+      "permission": [
+        [
+          "BIND_INPUT_METHOD",
+          "input method",
+          "输入法"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_INPUT_METHODS",
+          "input methods",
+          "输入法"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "标识符",
+        "data-en": "identifier "
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_DEVICE_IDENTIFIERS",
+          "identifiers",
+          "标识符"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "信号强度",
+        "data-en": "signal intensity "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "故障",
+        "data-en": "fault"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "锻炼心率",
+        "data-en": "Exercise heart rate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "浏览记录",
+        "data-en": "Browsing Records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "浏览",
+        "data-en": "Browsing"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "应用状态",
+        "data-en": "Application status"
+      },
+      "permission": [
+        [
+          "REQUEST_COMPANION_PROFILE_APP_STREAMING",
+          "app streaming",
+          "应用程序流"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "信用卡卡号",
+        "data-en": "Credit card number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "银行卡号",
+        "data-en": "Credit card number"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "过敏食材",
+        "data-en": "Allergic ingredients"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "宗教信仰",
+        "data-en": "religious belief"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "影评",
+        "data-en": "Film review"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "地区",
+        "data-en": "region"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "注销申请",
+        "data-en": "cancellation application"
+      },
+      "permission": [
+        [
+          "POST_NOTIFICATIONS",
+          "Notifications",
+          "通知"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "交易记录",
+        "data-en": "Transaction records"
+      },
+      "permission": [
+        [
+          "MANAGE_DOCUMENTS",
+          "documents",
+          "文件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "风速",
+        "data-en": "wind speed"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "识别符",
+        "data-en": "Identifier"
+      },
+      "permission": [
+        [
+          "ACTIVITY_RECOGNITION",
+          "activity recognition",
+          "活动识别"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_DEVICE_IDENTIFIERS",
+          "identifiers",
+          "标识符"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_NEARBY_COMMUNICATION",
+          "communication",
+          "通讯"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "国籍",
+        "data-en": "nationality"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "场景设置",
+        "data-en": "scene setting"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "画像",
+        "data-en": "portrait"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "ECV",
+        "data-en": "ECV"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "店铺",
+        "data-en": "shop"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "兴趣爱好",
+        "data-en": "hobby"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "共享",
+        "data-en": "share"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "名称",
+        "data-en": "name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "授权",
+        "data-en": "to grant authorization"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "楼盘",
+        "data-en": "properties for sale"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "认证",
+        "data-en": "authentication"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "白名单",
+        "data-en": "Whitelist"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "醒来",
+        "data-en": "wake"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "广播",
+        "data-en": "radio broadcast"
+      },
+      "permission": [
+        [
+          "BLUETOOTH_ADVERTISE",
+          "bluetooth advertise",
+          "蓝牙广播"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "文字",
+        "data-en": "written words"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "天气",
+        "data-en": "weather"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电子邮件",
+        "data-en": "E-mail"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "运行模式",
+        "data-en": "Operating mode"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_AIRPLANE_MODE",
+          "airplane mode control",
+          "飞机模式控制"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "搜索词",
+        "data-en": "Search term"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电量",
+        "data-en": "Electricity level"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "剪切板",
+        "data-en": "Shear plate"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "简介",
+        "data-en": "brief introduction"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "国家代码",
+        "data-en": "Country code"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "OAID",
+        "data-en": "OAID"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "交易",
+        "data-en": "transaction"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "银行",
+        "data-en": "bank"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电池",
+        "data-en": "Battery"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "IMSI",
+        "data-en": "IMSI"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "开票",
+        "data-en": "Invoicing"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "备注",
+        "data-en": "remarks"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "面部",
+        "data-en": "face"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "交互",
+        "data-en": "interactive"
+      },
+      "permission": [
+        [
+          "BIND_VOICE_INTERACTION",
+          "voice",
+          "语音交互"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILE_INTERACTION",
+          "interaction",
+          "交互"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "关键词",
+        "data-en": "key word"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "分享链接",
+        "data-en": "Share Link"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "职业",
+        "data-en": "occupation"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购买渠道",
+        "data-en": "Purchase channels"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "电压",
+        "data-en": "Voltage"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "语言",
+        "data-en": "language"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "身体评分",
+        "data-en": "Body Score"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "光线",
+        "data-en": "light"
+      },
+      "permission": [
+        [
+          "FLASHLIGHT",
+          "flashlight",
+          "手电筒"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "湿度",
+        "data-en": "humidity"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "行驶里程",
+        "data-en": "Mileage traveled"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "问卷答复",
+        "data-en": "Questionnaire response"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "存储状态",
+        "data-en": "Storage status"
+      },
+      "permission": [
+        [
+          "ACCESS_WIFI_STATE",
+          "wifi state",
+          "Wi-Fi 状态"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PACKAGE_STATE",
+          "state",
+          "状态"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "留言文件",
+        "data-en": "Message file"
+      },
+      "permission": [
+        [
+          "DELETE_CACHE_FILES",
+          "delete cache files",
+          "删除缓存文件"
+        ],
+        [
+          "MANAGE_DOCUMENTS",
+          "documents",
+          "文件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "日程记录",
+        "data-en": "Schedule Record"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "行车记录",
+        "data-en": "Driving records"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_NETWORK_LOGGING",
+          "logging",
+          "记录"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "营业执照",
+        "data-en": "Business license"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "购物车",
+        "data-en": "Shopping Cart"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "订单",
+        "data-en": "order"
+      },
+      "permission": [
+        [
+          "REORDER_TASKS",
+          "reorder tasks",
+          "重新排序任务"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "里程",
+        "data-en": "mileage"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "通信记录",
+        "data-en": "Communication records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "水质",
+        "data-en": "Water Quality"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "税号",
+        "data-en": "duty paragraph"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "登陆名",
+        "data-en": "Login Name"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "健康",
+        "data-en": "healthy"
+      },
+      "permission": [
+        [
+          "FOREGROUND_SERVICE_HEALTH",
+          "health",
+          "健康"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "心跳频率",
+        "data-en": "heart rate "
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "文件",
+        "data-en": "file"
+      },
+      "permission": [
+        [
+          "DELETE_CACHE_FILES",
+          "delete cache files",
+          "删除缓存文件"
+        ],
+        [
+          "INTERACT_ACROSS_PROFILES",
+          "interact across profiles",
+          "跨配置文件交互"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PROFILES",
+          "profiles",
+          "配置文件"
+        ],
+        [
+          "MANAGE_DOCUMENTS",
+          "documents",
+          "文件"
+        ],
+        [
+          "READ_MEDIA_AUDIO",
+          "Audio files",
+          "音频文件"
+        ],
+        [
+          "READ_MEDIA_IMAGES",
+          "Image files",
+          "图像文件"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "联系人",
+        "data-en": "contacts"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "检索",
+        "data-en": "retrieval"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "特征",
+        "data-en": "features"
+      },
+      "permission": [
+        [
+          "MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES",
+          "debugging features",
+          "调试功能"
+        ]
+      ]
+    },
+    {
+      "data": {
+        "data-cn": "聊天记录",
+        "data-en": "Chat records"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "磁场",
+        "data-en": "magnetic field"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "偏好特征",
+        "data-en": "Preference characteristics"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "订购人",
+        "data-en": "Orderer"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "锻炼时长",
+        "data-en": "Exercise duration"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "行车",
+        "data-en": "Driving"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "认证公函",
+        "data-en": "Certification Official Letter"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "血糖",
+        "data-en": "blood sugar"
+      },
+      "permission": []
+    },
+    {
+      "data": {
+        "data-cn": "DNS",
+        "data-en": "DNS"
+      },
+      "permission": [
+        [
+          "USE_SIP",
+          "use SIP",
+          "使用互联网电话"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_PRIVATE_DNS",
+          "dns",
+          "DNS"
+        ],
+        [
+          "MANAGE_DEVICE_POLICY_RESTRICT_PRIVATE_DNS",
+          "restrict private DNS",
+          "限制私有DNS"
+        ],
+        [
+          "WRITE_APN_SETTINGS",
+          "APN settings",
+          "APN设置"
+        ]
+      ]
+    }
+  ]
+}

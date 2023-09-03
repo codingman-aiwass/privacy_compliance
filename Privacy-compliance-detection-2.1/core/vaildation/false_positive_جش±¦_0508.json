@@ -1,0 +1,1077 @@
+[
+  {
+    "data-item-count": 158,
+    "fp-count": 13,
+    "fp_items": [
+      "user avatar",
+      "address",
+      "address component",
+      "address",
+      "address component",
+      "comment content",
+      "address",
+      "add address",
+      "add address result",
+      "address",
+      "address",
+      "address",
+      "recv bitrate"
+    ]
+  },
+  [
+    {
+      "clazz": "com.taobao.android.address.wrapper.weex.WVAddressModule",
+      "method": "<com.taobao.android.address.wrapper.weex.WVAddressModule: void userChoosedAddress(android.app.Activity,java.lang.String)>",
+      "privacy_data_items": [
+        "select address type",
+        "address type"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,int)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend3.gateway.request.b",
+      "method": "<com.taobao.tao.recommend3.gateway.request.b: java.lang.String a()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.nys",
+      "method": "<tb.nys: java.util.Map a(boolean,java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "user avatar"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "user avatar"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.ucc.base.BaseUccServiceProvider",
+      "method": "<com.ali.user.open.ucc.base.BaseUccServiceProvider: java.util.Map buildSessionInfo(java.lang.String,java.lang.String)>",
+      "privacy_data_items": [
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: int b(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area group",
+        "country group",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.editionswitcher.b",
+      "method": "<com.taobao.android.editionswitcher.b: void a(android.content.Context,com.taobao.android.editionswitcher.PositionInfo)>",
+      "privacy_data_items": [
+        "pref key real city code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend2.model.remote.a",
+      "method": "<com.taobao.tao.recommend2.model.remote.a: java.util.Map a()>",
+      "privacy_data_items": [
+        "city code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.search.sf.datasource.c",
+      "method": "<com.taobao.search.sf.datasource.c: void b(java.util.Map)>",
+      "privacy_data_items": [
+        "city code",
+        "country num"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.kuv",
+      "method": "<tb.kuv: java.lang.String a()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.location.AMapLocation",
+      "method": "<com.amap.api.location.AMapLocation: org.json.JSONObject toJson(int)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,double)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: int e(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "address",
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": [
+        "address"
+      ]
+    },
+    {
+      "clazz": "com.taobao.tao.adapter.biz.plugins.a",
+      "method": "<com.taobao.tao.adapter.biz.plugins.a: boolean a(com.taobao.share.globalmodel.b)>",
+      "privacy_data_items": [
+        "avatar path"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.amap.api.col.s.ah",
+      "method": "<com.amap.api.col.s.ah: com.amap.api.services.geocoder.RegeocodeAddress c(java.lang.String)>",
+      "privacy_data_items": [
+        "roadinter",
+        "address component"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "org.json.JSONArray optJSONArray(java.lang.String)"
+      ],
+      "false-positive": [
+        "address component"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.alicart.core.event.f",
+      "method": "<com.alibaba.android.alicart.core.event.f: void <clinit>()>",
+      "privacy_data_items": [
+        "cart submit",
+        "cart group submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: void b(org.json.JSONArray)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "address",
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": [
+        "address"
+      ]
+    },
+    {
+      "clazz": "com.amap.api.mapcore.util.bw",
+      "method": "<com.amap.api.mapcore.util.bw: java.util.List a(org.json.JSONObject,android.content.Context)>",
+      "privacy_data_items": [
+        "offlinemapinfo with province",
+        "province"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "org.json.JSONArray optJSONArray(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.buy.internal.a",
+      "method": "<com.taobao.android.buy.internal.a: void c(com.taobao.android.buy.internal.b)>",
+      "privacy_data_items": [
+        "submit callback",
+        "submit rpc param"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend3.util.c",
+      "method": "<com.taobao.tao.recommend3.util.c: java.lang.String b()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.c",
+      "method": "<com.loc.c: int c(java.lang.String,java.util.List,android.os.Bundle)>",
+      "privacy_data_items": [
+        "citycode",
+        "district"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONArray optJSONArray(java.lang.String)",
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.address.wrapper.weex.WVAddressModule",
+      "method": "<com.taobao.android.address.wrapper.weex.WVAddressModule: void executeActivityResult(android.app.Activity,android.content.Intent,boolean)>",
+      "privacy_data_items": [
+        "select address type"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,java.lang.String)",
+        "android.content.Intent putExtra(java.lang.String,int)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.AbstractProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.AbstractProfileOpenPoint: void refreshProfile(com.taobao.messagesdkwrapper.messagesdk.profile.model.Profile)>",
+      "privacy_data_items": [
+        "avatar decoration",
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.etao.feimagesearch.newresult.perf.b",
+      "method": "<com.etao.feimagesearch.newresult.perf.b: void a()>",
+      "privacy_data_items": [
+        "net recv size"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "boolean add(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.home.component.utils.j",
+      "method": "<com.taobao.android.home.component.utils.j: java.lang.String b()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.xiaomi.push.cw",
+      "method": "<com.xiaomi.push.cw: java.util.ArrayList a(java.util.ArrayList)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "province",
+        "city"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint: void refreshProfile(com.taobao.messagesdkwrapper.messagesdk.profile.model.Profile)>",
+      "privacy_data_items": [
+        "avatar decoration",
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.login4android.weex.WVUserModule",
+      "method": "<com.taobao.login4android.weex.WVUserModule: void getUser(java.lang.String,android.taobao.windvane.jsbridge.WVCallBackContext)>",
+      "privacy_data_items": [
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.mik",
+      "method": "<tb.mik: void a(java.util.HashMap)>",
+      "privacy_data_items": [
+        "city code",
+        "country num"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object remove(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.nlg",
+      "method": "<tb.nlg: java.lang.String a()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.c",
+      "method": "<com.loc.c: int a(java.lang.String,java.util.List,android.os.Bundle)>",
+      "privacy_data_items": [
+        "address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alipay.android.phone.inside.commonbiz.ids.OutsideConfig",
+      "method": "<com.alipay.android.phone.inside.commonbiz.ids.OutsideConfig: void a(org.json.JSONObject)>",
+      "privacy_data_items": [
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.history.AccountHistoryManager",
+      "method": "<com.ali.user.open.history.AccountHistoryManager: java.lang.String toJSONString(java.util.List)>",
+      "privacy_data_items": [
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.taolivehome.utils.Constants$1",
+      "method": "<com.taobao.taolivehome.utils.Constants$1: void <init>()>",
+      "privacy_data_items": [
+        "cross street",
+        "taolive cross street"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.official.platform.OfficialViewMap",
+      "method": "<com.taobao.message.official.platform.OfficialViewMap: void viewMap(com.taobao.messagesdkwrapper.messagesdk.msg.model.Message,com.taobao.message.official.platform.OfficialDataMerger$MergeData,java.lang.String)>",
+      "privacy_data_items": [
+        "avatar action url",
+        "avatar"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.mytaobao.newSettingV2.data.a",
+      "method": "<com.taobao.mytaobao.newSettingV2.data.a: void <init>()>",
+      "privacy_data_items": [
+        "country area"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.fg",
+      "method": "<com.loc.fg: com.loc.eo a(java.lang.String)>",
+      "privacy_data_items": [
+        "country",
+        "street number",
+        "province",
+        "citycode",
+        "city",
+        "street",
+        "district",
+        "address component"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject optJSONObject(java.lang.String)",
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [
+        "address component"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.giu",
+      "method": "<tb.giu: void <init>()>",
+      "privacy_data_items": [
+        "init clear speed flag",
+        "init statistics submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.d",
+      "method": "<com.huawei.hms.framework.network.grs.b.d: int b(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area group",
+        "country group",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.launcher.biz.launcher.el",
+      "method": "<com.taobao.android.launcher.biz.launcher.el: void a(android.content.Context,java.lang.String)>",
+      "privacy_data_items": [
+        "speed flag",
+        "be speed version"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.ogi",
+      "method": "<tb.ogi: void onEvent(java.lang.String,java.lang.Object)>",
+      "privacy_data_items": [
+        "comment content"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [
+        "comment content"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.history.AccountHistoryManager",
+      "method": "<com.ali.user.open.history.AccountHistoryManager: java.util.List parseObject(java.lang.String)>",
+      "privacy_data_items": [
+        "email"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.editionswitcher.b",
+      "method": "<com.taobao.android.editionswitcher.b: void a(android.content.Context,com.taobao.android.editionswitcher.request.HomeLocationResult)>",
+      "privacy_data_items": [
+        "pref key real city code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.unionpay.a",
+      "method": "<com.unionpay.a: java.lang.String a(android.content.Context,boolean,java.lang.String)>",
+      "privacy_data_items": [
+        "country",
+        "vendor capacity"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.homepage.request.a",
+      "method": "<com.taobao.homepage.request.a: java.util.Map a()>",
+      "privacy_data_items": [
+        "city code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "io.unicorn.plugin.platformview.PlatformViewInput",
+      "method": "<io.unicorn.plugin.platformview.PlatformViewInput: void <clinit>()>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "email"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil: void removeViewMapLastMessageInfoV2(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation)>",
+      "privacy_data_items": [
+        "last msg sender avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object remove(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.i",
+      "method": "<com.loc.i: java.lang.String b(com.amap.api.location.AMapLocation)>",
+      "privacy_data_items": [
+        "country",
+        "city code",
+        "address",
+        "province",
+        "city",
+        "street",
+        "district",
+        "street num"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.c",
+      "method": "<com.huawei.hms.framework.network.grs.b.c: java.util.List a(org.json.JSONArray,org.json.JSONObject)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.hem",
+      "method": "<tb.hem: void <clinit>()>",
+      "privacy_data_items": [
+        "submit",
+        "add address",
+        "verification code",
+        "add address result",
+        "confirm town address"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "add address",
+        "add address result"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.android.launcher.common.c",
+      "method": "<com.taobao.android.launcher.common.c: java.util.HashMap a(java.lang.String)>",
+      "privacy_data_items": [
+        "speed flag"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.aok$a",
+      "method": "<tb.aok$a: void onLocationChanged(android.location.Location)>",
+      "privacy_data_items": [
+        "country",
+        "city code",
+        "address",
+        "province",
+        "city",
+        "address line",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.nmq",
+      "method": "<tb.nmq: java.util.Map a(com.taobao.android.address.model.AddressInfo)>",
+      "privacy_data_items": [
+        "global city code",
+        "global province code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.all.ViewMapConfigUtil: com.taobao.message.datasdk.facade.model.ConversationViewMap convertConversationViewMapV2(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation)>",
+      "privacy_data_items": [
+        "avatar url",
+        "last msg sender avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: java.util.List a(org.json.JSONArray)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country",
+        "country or area"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend2.model.remote.RecommendParams",
+      "method": "<com.taobao.tao.recommend2.model.remote.RecommendParams: java.lang.String getEdition()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: int c(java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "country or area group",
+        "country group"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.browser.jsbridge.WVLocationProxy",
+      "method": "<com.taobao.browser.jsbridge.WVLocationProxy: void dealLocationData(com.taobao.location.common.TBLocationDTO)>",
+      "privacy_data_items": [
+        "city code",
+        "city",
+        "address line"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "mtopsdk.mtop.util.MtopStatistics",
+      "method": "<mtopsdk.mtop.util.MtopStatistics: void doCommitStatsTask()>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "datum speed",
+        "speed bucket"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: java.util.Map a(java.util.List,com.huawei.hms.framework.network.grs.GrsBaseInfo,java.lang.String)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "no country",
+        "no route country"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.huawei.hms.framework.network.grs.b.a",
+      "method": "<com.huawei.hms.framework.network.grs.b.a: void a(com.huawei.hms.framework.network.grs.GrsBaseInfo)>",
+      "privacy_data_items": [],
+      "3rd_party_privacy_data_items": [
+        "no country",
+        "no route country"
+      ],
+      "method_contain_privacy_item": [
+        ""
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint",
+      "method": "<com.taobao.message.datasdk.facade.inter.impl.viewmap.message.ImBcMessageProfileOpenPoint: void setMessageViewMap(com.taobao.messagesdkwrapper.messagesdk.msg.model.Conversation,java.util.List,java.util.List)>",
+      "privacy_data_items": [
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "boolean containsKey(java.lang.Object)",
+        "java.lang.Object get(java.lang.Object)",
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.git",
+      "method": "<tb.git: void <init>()>",
+      "privacy_data_items": [
+        "init clear speed flag",
+        "init statistics submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.autonavi.amap.mapcore.Inner_3dMap_location",
+      "method": "<com.autonavi.amap.mapcore.Inner_3dMap_location: org.json.JSONObject toJson(int)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)",
+        "org.json.JSONObject put(java.lang.String,double)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.loc.fj",
+      "method": "<com.loc.fj: void a(com.amap.api.location.AMapLocation,org.json.JSONObject)>",
+      "privacy_data_items": [
+        "country",
+        "address",
+        "citycode",
+        "province",
+        "city",
+        "street",
+        "district",
+        "speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.String optString(java.lang.String)",
+        "java.lang.String optString(java.lang.String,java.lang.String)"
+      ],
+      "false-positive": [
+        "address"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.mediaplay.player.j",
+      "method": "<com.taobao.mediaplay.player.j: boolean onInfo(tv.danmaku.ijk.media.player.IMediaPlayer,long,long,long,java.lang.Object)>",
+      "privacy_data_items": [
+        "last media speed mean",
+        "last media speed max"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "boolean containsKey(java.lang.Object)",
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.trtc.impl.e",
+      "method": "<com.taobao.trtc.impl.e: com.taobao.trtc.api.TrtcDefines$n d(java.lang.String)>",
+      "privacy_data_items": [
+        "recv fps",
+        "recv bitrate"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [
+        "recv bitrate"
+      ],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend3.remote.RecommendV5Params",
+      "method": "<com.taobao.tao.recommend3.remote.RecommendV5Params: java.lang.String getEdition()>",
+      "privacy_data_items": [
+        "country num code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.alibaba.android.icart.core.event.i",
+      "method": "<com.alibaba.android.icart.core.event.i: void <clinit>()>",
+      "privacy_data_items": [
+        "cart submit",
+        "cart group submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "tb.giv",
+      "method": "<tb.giv: void <init>()>",
+      "privacy_data_items": [
+        "init clear speed flag",
+        "init statistics submit"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.ali.user.open.util.SessionUtils",
+      "method": "<com.ali.user.open.util.SessionUtils: java.lang.String toInternalSessionJSON(com.ali.user.open.session.InternalSession)>",
+      "privacy_data_items": [
+        "avatar url"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "org.json.JSONObject put(java.lang.String,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.flexbox.layoutmanager.component.r$b",
+      "method": "<com.taobao.tao.flexbox.layoutmanager.component.r$b: void a(android.content.Context,java.util.HashMap)>",
+      "privacy_data_items": [
+        "min page speed"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object get(java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    },
+    {
+      "clazz": "com.taobao.tao.recommend2.model.remote.RecommendParams",
+      "method": "<com.taobao.tao.recommend2.model.remote.RecommendParams: java.util.Map build()>",
+      "privacy_data_items": [
+        "city code"
+      ],
+      "3rd_party_privacy_data_items": [],
+      "method_contain_privacy_item": [
+        "java.lang.Object put(java.lang.Object,java.lang.Object)"
+      ],
+      "false-positive": [],
+      "3-false-positive": []
+    }
+  ]
+]
