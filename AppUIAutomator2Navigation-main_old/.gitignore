@@ -1,0 +1,8 @@
+/dumpjson/
+/__pycache__/
+/PrivacyData/
+/Log/
+/.idea/
+/SavedInstance/
+*.pyc
+.DS_Store

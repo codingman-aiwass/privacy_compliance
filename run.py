@@ -2,12 +2,9 @@ import configparser
 import getopt
 import os
 import pickle
-import shutil
 import signal
 import subprocess
 import sys
-import platform
-import json
 
 from configobj import ConfigObj
 
@@ -91,34 +88,7 @@ else:
         elif opt in ("-c", "--config"):
             config_settings = get_config_settings(arg)
 
-
 # 默认情况下,直接按顺序执行
-
-def get_OS_type():
-    sys_platform = platform.platform().lower()
-    os_type = ''
-    if "windows" in sys_platform:
-        os_type = 'win'
-    elif "darwin" in sys_platform or 'mac' in sys_platform:
-        os_type = 'mac'
-    elif "linux" in sys_platform:
-        os_type = 'linux'
-    else:
-        print('Unknown OS,regard as linux...')
-        os_type = 'linux'
-    return os_type
-
-
-def determine_aapt(os_type):
-    # Modify the properties file
-    props = ConfigObj('RunningConfig.properties', encoding='UTF8')
-
-    # Modify the 'apk' setting in the properties file
-    props['aapt'] = './config/build-tools-{}/aapt'.format(os_type)
-
-    # Save the modified properties file
-    with open('RunningConfig.properties', 'wb') as prop_file:
-        props.write(prop_file)
 
 
 print('input apks to analysis(give absolute path)...')
@@ -128,146 +98,36 @@ cur_path = os.getcwd()
 
 # if config_settings['code_inspection'] == 'true':
 os.chdir('./Privacy-compliance-detection-2.1/core')
-# 确定使用哪一种aapt
-determine_aapt(get_OS_type())
-os_type = get_OS_type()
-if os_type in ['linux', 'mac']:
-    execute_cmd_with_timeout('sh static-run.sh')
-elif os_type == 'win':
-    print('code inspection module do not support win now...')
+execute_cmd_with_timeout('sh static-run.sh')
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
-
 if config_settings['get_pp_from_app_store'] == 'true':
     execute_cmd_with_timeout('python3 get_urls.py')
 else:
-    # 动态运行获取隐私政策
-    os.chdir('./AppUIAutomator2Navigation-main')
-    with open('apk_pkgName.txt') as f:
-        content = f.readlines()
-    pkgName_appName_list = [item.rstrip('\n') for item in content]
-    for pkgName_appName in pkgName_appName_list:
-        try:
-            pkgName, appName = pkgName_appName.split(' | ')
-            appName = appName.strip('\'')
-            # 判断操作系统版本,分win和linux/mac
-            os_type = get_OS_type()
-            if os_type in ['linux', 'mac']:
-                execute_cmd_with_timeout(
-                    './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-            else:
-                execute_cmd_with_timeout(
-                    './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-        except Exception:
-            print('error occurred, continue...')
-    os.chdir(cur_path)
-    # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
-    apps_folders = os.listdir('./AppUIAutomator2Navigation/collectData')
-    app_dict = {}
-    app_set = set()
-    app_pp = {}
-    for app_folder in apps_folders:
-        if app_folder == '.DS_Store':
-            continue
-        app = app_folder[:app_folder.index('-')]
-        if app not in app_set:
-            app_set.add(app)
-            app_dict[app] = [app_folder]
-        else:
-            app_dict[app].append(app_folder)
-    for key, val in app_dict.items():
-        for folder in val:
-            dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder)
-            if 'PrivacyPolicy' not in dirs:
-                continue
-            elif 'PrivacyPolicy' in dirs:
-                # 找到了隐私政策，break 返回
-                pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/')[
-                    0]
-                with open(
-                        './AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/' + pp_file) as f:
-                    pp_url = f.readlines()[0].strip(',\n')
-                if 'html' in pp_url:
-                    app_pp[key] = pp_url[:pp_url.index('html') + 4]
-                elif 'htm' in pp_url:
-                    app_pp[key] = pp_url[:pp_url.index('htm') + 3]
-                break
-    # app_pp 中存放隐私政策url和包名
-    with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
-        json.dump(app_pp, f, indent=4, ensure_ascii=True)
-    with open('pkgName_url.json', 'w') as f:
-        json.dump(app_pp, f, indent=4, ensure_ascii=True)
-    # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
-    apps_missing_pp = app_set - set(app_pp.keys())
-    with open('apps_missing_pp_url.txt','w',encoding='utf8') as f:
-        for item in apps_missing_pp:
-            f.write(item)
-            f.write('\n')
+    # 动态运行
+    # TODO 此处需要加上动态隐私政策探索模块
+    pass
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
-if 'Privacypolicy_txt' not in os.listdir():
-    os.mkdir('Privacypolicy_txt')
-if 'PrivacyPolicySaveDir' not in os.listdir():
-    os.mkdir('PrivacyPolicySaveDir')
 execute_cmd_with_timeout('python3 privacy-policy-main.py')
 execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
 os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
     os.chdir('./context_sensitive_privacy_data_location')
-    if 'tmp-output' in os.listdir():
-        shutil.rmtree('tmp-output')
-        os.mkdir('tmp-output')
-    if 'tmp-output' not in os.listdir():
-        os.mkdir('tmp-output')
-    if 'final_res_log_dir' in os.listdir():
-        shutil.rmtree('final_res_log_dir')
-        os.mkdir('final_res_log_dir')
-    if 'final_res_log_dir' not in os.listdir():
-        os.mkdir('final_res_log_dir')
     execute_cmd_with_timeout('python3 run_jar.py')
     execute_cmd_with_timeout('python3 run_UI_static.py')
     os.chdir(cur_path)
 
-if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
-    print('this module has been run before...')
-    # os.chdir('./AppUIAutomator2Navigation-main')
-    # with open('apk_pkgName.txt') as f:
-    #     content = f.readlines()
-    # pkgName_appName_list = [item.rstrip('\n') for item in content]
-    # for pkgName_appName in pkgName_appName_list:
-    #     try:
-    #         pkgName, appName = pkgName_appName.split(' | ')
-    #         # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
-    #         # 判断操作系统版本,分win和linux/mac
-    #         os_type = get_OS_type()
-    #         if os_type in ['linux', 'mac']:
-    #             execute_cmd_with_timeout(
-    #                 './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-    #         else:
-    #             execute_cmd_with_timeout(
-    #                 './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-    #     except Exception:
-    #         print('error occurred, continue...')
-    # os.chdir(cur_path)
-elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
-    print("config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
-    os.chdir('./AppUIAutomator2Navigation')
+if config_settings['ui_dynamic'] == 'true':
+    os.chdir('./AppUIAutomator2Navigation-main')
     with open('apk_pkgName.txt') as f:
         content = f.readlines()
-    pkgName_appName_list = [item.rstrip('\n') for item in content]
-    for pkgName_appName in pkgName_appName_list:
+    pkgName_list = [item.rstrip('\n') for item in content]
+    for pkgName in pkgName_list:
         try:
-            pkgName, appName = pkgName_appName.split(' | ')
-            appName = appName.strip('\'')
-            # 判断操作系统版本,分win和linux/mac
-            os_type = get_OS_type()
-            if os_type in ['linux', 'mac']:
-                execute_cmd_with_timeout(
-                    './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-            else:
-                execute_cmd_with_timeout(
-                    'PowerShell.exe .\run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+            # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
+            execute_cmd_with_timeout('./run.sh {}'.format(pkgName))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
