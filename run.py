@@ -128,25 +128,29 @@ cur_path = os.getcwd()
 os.chdir('./Privacy-compliance-detection-2.1/core')
 # 确定使用哪一种aapt
 determine_aapt(get_OS_type())
-execute_cmd_with_timeout('sh static-run.sh')
+os_type = get_OS_type()
+if os_type in ['linux','mac']:
+    execute_cmd_with_timeout('sh static-run.sh')
+else:
+    execute_cmd_with_timeout('sh static-run.ps1')
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
 if config_settings['get_pp_from_app_store'] == 'true':
-    execute_cmd_with_timeout('python3 get_urls.py')
+    execute_cmd_with_timeout('python get_urls.py')
 else:
     # 动态运行
     # TODO 此处需要加上动态隐私政策探索模块
     pass
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
-execute_cmd_with_timeout('python3 privacy-policy-main.py')
-execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
+execute_cmd_with_timeout('python privacy-policy-main.py')
+execute_cmd_with_timeout('python report_data_in_pp_and_program.py')
 os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
     os.chdir('./context_sensitive_privacy_data_location')
-    execute_cmd_with_timeout('python3 run_jar.py')
-    execute_cmd_with_timeout('python3 run_UI_static.py')
+    execute_cmd_with_timeout('python run_jar.py')
+    execute_cmd_with_timeout('python run_UI_static.py')
     os.chdir(cur_path)
 
 if config_settings['ui_dynamic'] == 'true':
@@ -157,15 +161,20 @@ if config_settings['ui_dynamic'] == 'true':
     for pkgName in pkgName_list:
         try:
             # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
-            execute_cmd_with_timeout('./run.sh {}'.format(pkgName))
+            # 判断操作系统版本,分win和linux/mac
+            os_type = get_OS_type()
+            if os_type in['linux','mac']:
+                execute_cmd_with_timeout('./run.sh {}'.format(pkgName))
+            else:
+                execute_cmd_with_timeout('./run.ps1 {}'.format(pkgName))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
 
 os.chdir('./context_sensitive_privacy_data_location')
-execute_cmd_with_timeout('python3 get_dynamic_res.py')
+execute_cmd_with_timeout('python get_dynamic_res.py')
 # integrate(config_settings)
 # 保存字典config_settings,然后让integrate log读取
 with open('config_settings.pkl', 'wb') as f:
     pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
-execute_cmd_with_timeout('python3 integrate_log.py')
+execute_cmd_with_timeout('python integrate_log.py')
