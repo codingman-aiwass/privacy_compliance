@@ -5,6 +5,7 @@ import pickle
 import signal
 import subprocess
 import sys
+import platform
 
 from configobj import ConfigObj
 
@@ -88,7 +89,34 @@ else:
         elif opt in ("-c", "--config"):
             config_settings = get_config_settings(arg)
 
+
 # 默认情况下,直接按顺序执行
+
+def get_OS_type():
+    sys_platform = platform.platform().lower()
+    os_type = ''
+    if "windows" in sys_platform:
+        os_type = 'win'
+    elif "darwin" in sys_platform:
+        os_type = 'mac'
+    elif "linux" in sys_platform:
+        os_type = 'linux'
+    else:
+        print('Unknown OS,regard as linux...')
+        os_type = 'linux'
+    return os_type
+
+
+def determine_aapt(os_type):
+    # Modify the properties file
+    props = ConfigObj('RunningConfig.properties', encoding='UTF8')
+
+    # Modify the 'apk' setting in the properties file
+    props['aapt'] = './config/build-tools-{}/aapt'.format(os_type)
+
+    # Save the modified properties file
+    with open('RunningConfig.properties', 'wb') as prop_file:
+        props.write(prop_file)
 
 
 print('input apks to analysis(give absolute path)...')
@@ -98,6 +126,8 @@ cur_path = os.getcwd()
 
 # if config_settings['code_inspection'] == 'true':
 os.chdir('./Privacy-compliance-detection-2.1/core')
+# 确定使用哪一种aapt
+determine_aapt(get_OS_type())
 execute_cmd_with_timeout('sh static-run.sh')
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
