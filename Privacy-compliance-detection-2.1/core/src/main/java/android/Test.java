@@ -115,7 +115,10 @@ public class Test {
             // } catch (Exception e) {
             //     e.printStackTrace();
             // }
+            System.out.println(apkList);
             System.out.println(GetApkPackageName.get(apkList));
+            System.out.println(GetApkPackageName.getAppName(apkList));
+            System.out.println("=========");
         }
 
     }

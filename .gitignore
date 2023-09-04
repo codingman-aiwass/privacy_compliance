@@ -1,3 +1,5 @@
 apks/
 __pycache__/
 .DS_Store
+test.py
+.history
