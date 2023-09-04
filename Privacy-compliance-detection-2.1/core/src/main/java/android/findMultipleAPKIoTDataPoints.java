@@ -134,13 +134,15 @@ public class findMultipleAPKIoTDataPoints {
             for(String apk:totalApks){
                 ProcessManifest processManifest;
                 String apkPackageName = null;
+                String apkName = null;
                 try {
                     processManifest = new ProcessManifest(apk);
                     apkPackageName = processManifest.getPackageName();
+                    apkName = GetApkPackageName.getAppName(apk);
                     
                     // System.out.println(apk);
                     // System.out.println(apkPackageName);
-                    pkgWriter.write(apkPackageName);
+                    pkgWriter.write(apkPackageName + " | " + apkName);
                     pkgWriter.newLine();
                     pkgWriter.flush();
                 } catch (XmlPullParserException e) {

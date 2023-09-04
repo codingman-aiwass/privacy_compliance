@@ -17,7 +17,7 @@ def get_ends_with_suffix_files_in_folder(folder, suffix) -> list:
 
 # 对于静态UI分析
 # 首先,需要运行run_jar批量处理apk
-# execute_cmd_with_timeout('python3 run_jar.py')
+# execute_cmd_with_timeout('python run_jar.py')
 
 # 其次,需要依次循环调用data_item_infer和label_new_or_old进行标记
 # 需要读取输出结果文件夹里的文件
@@ -47,11 +47,11 @@ for output_json in output_jsons:
 output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')
 
 for output_json in output_jsons:
-    execute_cmd_with_timeout('python3 data_item_infer.py {} {}'.format(output_json, output_json[:output_json.index(
+    execute_cmd_with_timeout('python data_item_infer.py {} {}'.format(output_json, output_json[:output_json.index(
         "_")] + '_static_output_filtered.json'))
 
 output_filtered_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output_filtered.json')
 for output_filtered_json in output_filtered_jsons:
-    execute_cmd_with_timeout('python3 label_new_or_old.py {} {}'.format(output_filtered_json, output_filtered_json[
+    execute_cmd_with_timeout('python label_new_or_old.py {} {}'.format(output_filtered_json, output_filtered_json[
                                                                                               :output_filtered_json.index(
                                                                                                   "_")] + '_static_output_filtered_labeled.json'))

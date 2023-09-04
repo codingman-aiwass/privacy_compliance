@@ -9,6 +9,8 @@ from dealWithInputAndOutput import get_settings_by_section_and_name
 dynamic_log_path = get_settings_by_section_and_name('dynamic-setting', 'json_log_path')
 
 _, outputdir, _ = get_run_jar_settings()
+
+
 # 从dumpjson文件夹里的一堆log中找出时间最久的log
 def get_log():
     prefix_set = set()
@@ -44,12 +46,12 @@ for key, val in app_name_log_dict.items():
     shutil.copyfile(dynamic_log_path + '/' + val, new_name)
 
     execute_cmd_with_timeout(
-        'python3 integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
+        'python integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
 
     execute_cmd_with_timeout(
-        'python3 data_item_infer.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
-                                                  outputdir + '/' + key + '_dynamic_output_filtered.json'))
+        'python data_item_infer.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
+                                                 outputdir + '/' + key + '_dynamic_output_filtered.json'))
 
     execute_cmd_with_timeout(
-        'python3 label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
-                                                   outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
+        'python label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
+                                                  outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
