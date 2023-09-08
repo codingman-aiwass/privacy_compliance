@@ -5,6 +5,7 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -15,13 +16,14 @@ public class ReadApks {
         // 判断输入的apk参数是否包含多个apk的绝对路径,或者包含多个文件夹的绝对路径
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader("./RunningConfig.properties"));
+            properties.load(new FileReader("RunningConfig.properties"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String apkPath = properties.getProperty("apk", "");
+        String apkPath = Paths.get(properties.getProperty("apk", "")).toString();
+//        String apkPath = properties.getProperty("apk", "");
         String[] apks = apkPath.split(";");
         if (apks.length == 1) {
             // 说明只输入了一个绝对路径,判断这个绝对路径是apk的还是文件夹的
