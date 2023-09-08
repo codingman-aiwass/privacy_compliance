@@ -13,8 +13,10 @@ _, outputdir, _ = get_run_jar_settings()
 def get_log():
     prefix_set = set()
     for file_name in os.listdir(dynamic_log_path):
+        if file_name.startswith('.'):
+            continue
         # print(file_name[file_name.index('&time') + 5 :file_name.index('.json') - 1])
-        prefix_set.add(file_name[:file_name.index('_')])
+        prefix_set.add(file_name[:file_name.index('-')])
     prefix_dict = {}
     for prefix in prefix_set:
         timestamp = 0
@@ -23,10 +25,12 @@ def get_log():
                 continue
             if file_name.startswith(prefix):
                 # print(file_name)
-                cur_timestamp = file_name[file_name.index('&time') + 5:file_name.index('.json') - 4]
+                cur_timestamp = file_name[file_name.index('-') + 1:]
+                tmp = cur_timestamp.split('-')
+                cur_timestamp = int(tmp[0] + tmp[1])
                 if int(cur_timestamp) > timestamp:
                     timestamp = int(cur_timestamp)
-                    prefix_dict[prefix] = file_name
+                    prefix_dict[prefix] = file_name + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + file_name + '/Dumpjson')[0]
 
     # print(prefix_dict)
     return prefix_dict
