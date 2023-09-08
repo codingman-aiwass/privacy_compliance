@@ -1,25 +1,22 @@
 package android;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import org.xmlpull.v1.XmlPullParserException;
 import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.options.Options;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+
 import java.io.*;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-import org.xmlpull.v1.XmlPullParserException;
+import java.util.concurrent.*;
 
 public class findMultipleAPKIoTDataPoints {
     public static String logsPath = "";
@@ -33,16 +30,18 @@ public class findMultipleAPKIoTDataPoints {
     public static Set<Object> thirdPartyList;
     public static Set<String> privacyItemList;
     public static int privacy_item_num_threshold = 2;
-    public static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd_HH:mm:ss");
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss");
     // 从配置文件中读取的apkPath 可以是若干个apk文件的绝对路径,也可以是若干个包含许多apk文件的文件夹的绝对路径
     public static String apkPath = "";
+
+    public static String aapt = "";
 
     static {
         dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         // 读取properties文件
         interestAPIproperties = new Properties();
         try {
-            interestAPIproperties.load(new FileReader("./config/interestedAPIs.properties"));
+            interestAPIproperties.load(new FileReader("config" + File.separator + "interestedAPIs.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,12 +49,12 @@ public class findMultipleAPKIoTDataPoints {
         // 读取第三方列表
         thirdPartyProperties = new Properties();
         try {
-            thirdPartyProperties.load(new FileReader("./config/3rd_sdks.properties"));
+            thirdPartyProperties.load(new FileReader("config" + File.separator + "3rd_sdks.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
         thirdPartyList = thirdPartyProperties.keySet();
-        privacyItemList = readTxt("./config/privacy_items.txt");
+        privacyItemList = readTxt("config" + File.separator + "privacy_items.txt");
     }
 
     static {
@@ -129,7 +128,7 @@ public class findMultipleAPKIoTDataPoints {
                 }
             }
 //             在此处保存所指定的所有apk的包名列表到动态app分析里
-            BufferedWriter pkgWriter = new BufferedWriter(new FileWriter("../../AppUIAutomator2Navigation-main/apk_pkgName.txt"));
+            BufferedWriter pkgWriter = new BufferedWriter(new FileWriter(".." + File.separator + ".." + File.separator + "AppUIAutomator2Navigation" + File.separator + "apk_pkgName.txt"));
 
             for(String apk:totalApks){
                 ProcessManifest processManifest;
@@ -224,12 +223,19 @@ public class findMultipleAPKIoTDataPoints {
 
     public static void setUpConfig() throws IOException {
         Properties properties = new Properties();
-        properties.load(new FileReader("./RunningConfig.properties"));
-        printToFile = Boolean.parseBoolean(properties.getProperty("printToFile", "true"));
-        logsPath = properties.getProperty("logsPath", "");
-        androidJar = properties.getProperty("AndroidJar", "");
-        resultSavePath = properties.getProperty("resultSavePath", "");
-        apkPath = properties.getProperty("apk", "");
+
+        try (FileInputStream fileInputStream = new FileInputStream("RunningConfig.properties")) {
+            properties.load(fileInputStream);
+            printToFile = Boolean.parseBoolean(properties.getProperty("printToFile", "true"));
+            logsPath = Paths.get(properties.getProperty("logsPath", "")).toString();
+            androidJar = Paths.get(properties.getProperty("AndroidJar", "")).toString();
+            resultSavePath = Paths.get(properties.getProperty("resultSavePath", "")).toString();
+            apkPath = Paths.get(properties.getProperty("apk", "")).toString();
+            aapt = Paths.get(properties.getProperty("aapt", "")).toString();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void initSootConfig(String apkPath) {
