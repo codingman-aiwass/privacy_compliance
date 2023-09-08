@@ -4,7 +4,7 @@ from uiautomator2 import Device
 class Config(object):
     def __init__(self):
         with open('tmp.txt') as f:
-            pkgName = f.readline()
+            pkgName, appName, depth = f.readline().split(";")
         self.CLICK_MAX_CNT = 4
         self.sleep_time_sec = 2
         self.device = None
@@ -37,7 +37,7 @@ class Config(object):
         return Config._instance
 
     @classmethod
-    def get_instance(cls,*args, **kwargs):
+    def get_instance(cls, *args, **kwargs):
         if not hasattr(Config, '_instance'):
             Config._instance = Config(*args, **kwargs)
         return Config._instance

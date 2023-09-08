@@ -6,6 +6,7 @@ import signal
 import subprocess
 import sys
 import platform
+import json
 
 from configobj import ConfigObj
 
@@ -129,18 +130,66 @@ os.chdir('./Privacy-compliance-detection-2.1/core')
 # 确定使用哪一种aapt
 determine_aapt(get_OS_type())
 os_type = get_OS_type()
-if os_type in ['linux','mac']:
+if os_type in ['linux', 'mac']:
     execute_cmd_with_timeout('sh static-run.sh')
-else:
-    execute_cmd_with_timeout('sh static-run.ps1')
+elif os_type == 'win':
+    print('code inspection module do not support win now...')
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
+
 if config_settings['get_pp_from_app_store'] == 'true':
     execute_cmd_with_timeout('python get_urls.py')
 else:
-    # 动态运行
-    # TODO 此处需要加上动态隐私政策探索模块
-    pass
+    # 动态运行获取隐私政策
+    os.chdir('./AppUIAutomator2Navigation-main')
+    with open('apk_pkgName.txt') as f:
+        content = f.readlines()
+    pkgName_appName_list = [item.rstrip('\n') for item in content]
+    for pkgName_appName in pkgName_appName_list:
+        try:
+            pkgName, appName = pkgName_appName.split(' | ')
+            # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 需要配置
+            # 判断操作系统版本,分win和linux/mac
+            os_type = get_OS_type()
+            if os_type in ['linux', 'mac']:
+                execute_cmd_with_timeout(
+                    './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+            else:
+                execute_cmd_with_timeout(
+                    './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+        except Exception:
+            print('error occurred, continue...')
+    os.chdir(cur_path)
+    # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
+    apps_folders = os.listdir('./AppUIAutomator2Navigation/collectData')
+    app_dict = {}
+    app_set = set()
+    app_pp = {}
+    for app_folder in apps_folders:
+        if app_folder == '.DS_Store':
+            continue
+        app = app_folder[:app_folder.index('-')]
+        if app not in app_set:
+            app_set.add(app)
+            app_dict[app] = [app_folder]
+        else:
+            app_dict[app].append(app_folder)
+    for key, val in app_dict.items():
+        for folder in val:
+            dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder)
+            if 'PrivacyPolicy' not in dirs:
+                continue
+            elif 'PrivacyPolicy' in dirs:
+                pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/')[
+                    0]
+                with open(
+                        './AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/' + pp_file) as f:
+                    pp_url = f.readlines()[0].strip(',\n')
+                app_pp[key] = pp_url
+                break
+    # app_pp 中存放隐私政策url和包名
+    with open('pkgName_url.json', 'w') as f:
+        json.dump(app_pp, f, indent=4, ensure_ascii=True)
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
 execute_cmd_with_timeout('python privacy-policy-main.py')
@@ -153,20 +202,45 @@ if config_settings['ui_static'] == 'true':
     execute_cmd_with_timeout('python run_UI_static.py')
     os.chdir(cur_path)
 
-if config_settings['ui_dynamic'] == 'true':
+if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_app_store'] == 'true':
+    print('this module has been run before...')
+    pass
+    # os.chdir('./AppUIAutomator2Navigation-main')
+    # with open('apk_pkgName.txt') as f:
+    #     content = f.readlines()
+    # pkgName_appName_list = [item.rstrip('\n') for item in content]
+    # for pkgName_appName in pkgName_appName_list:
+    #     try:
+    #         pkgName, appName = pkgName_appName.split(' | ')
+    #         # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
+    #         # 判断操作系统版本,分win和linux/mac
+    #         os_type = get_OS_type()
+    #         if os_type in ['linux', 'mac']:
+    #             execute_cmd_with_timeout(
+    #                 './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+    #         else:
+    #             execute_cmd_with_timeout(
+    #                 './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+    #     except Exception:
+    #         print('error occurred, continue...')
+    # os.chdir(cur_path)
+elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_app_store'] == 'false':
     os.chdir('./AppUIAutomator2Navigation-main')
     with open('apk_pkgName.txt') as f:
         content = f.readlines()
-    pkgName_list = [item.rstrip('\n') for item in content]
-    for pkgName in pkgName_list:
+    pkgName_appName_list = [item.rstrip('\n') for item in content]
+    for pkgName_appName in pkgName_appName_list:
         try:
+            pkgName, appName = pkgName_appName.split(' | ')
             # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
             # 判断操作系统版本,分win和linux/mac
             os_type = get_OS_type()
-            if os_type in['linux','mac']:
-                execute_cmd_with_timeout('./run.sh {}'.format(pkgName))
+            if os_type in ['linux', 'mac']:
+                execute_cmd_with_timeout(
+                    './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
             else:
-                execute_cmd_with_timeout('./run.ps1 {}'.format(pkgName))
+                execute_cmd_with_timeout(
+                    './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
