@@ -1,3 +1,6 @@
+chcp 65001
+$env:JAVA_TOOL_OPTIONS = "-Dfile.encoding=UTF-8"
+
 if (-not (Test-Path "$PWD/logsPath")) {
     New-Item -ItemType Directory -Path "$PWD/logsPath"
 }

@@ -13,6 +13,7 @@ import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.options.Options;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -128,7 +129,7 @@ public class findMultipleAPKIoTDataPoints {
                 }
             }
 //             在此处保存所指定的所有apk的包名列表到动态app分析里
-            BufferedWriter pkgWriter = new BufferedWriter(new FileWriter(".." + File.separator + ".." + File.separator + "AppUIAutomator2Navigation" + File.separator + "apk_pkgName.txt"));
+            BufferedWriter pkgWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(".." + File.separator + ".." + File.separator + "AppUIAutomator2Navigation" + File.separator + "apk_pkgName.txt")), StandardCharsets.UTF_8));
 
             for(String apk:totalApks){
                 ProcessManifest processManifest;
