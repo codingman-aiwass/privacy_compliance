@@ -79,7 +79,7 @@ if len(opts) == 0:
                        'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
                        'pp_print_sensitive_item': 'true', 'pp_print_others': 'true', 'pp_print_long_sentences': 'true',
                        'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
-                       'get_pp_from_app_store': 'true', 'get_pp_from_dynamically_running_app': 'false',
+                       'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
                        'dynamic_ui_depth': '3', 'dynamic_pp_parsing': 'true'}
 
 else:
@@ -116,7 +116,7 @@ def determine_aapt(os_type):
     props['aapt'] = './config/build-tools-{}/aapt'.format(os_type)
 
     # Save the modified properties file
-    with open('RunningConfig.properties', 'wb') as prop_file:
+    with open('RunningConfig.properties', 'wb',encoding='UTF8') as prop_file:
         props.write(prop_file)
 
 
@@ -133,7 +133,7 @@ os_type = get_OS_type()
 if os_type in ['linux', 'mac']:
     execute_cmd_with_timeout('sh static-run.sh')
 elif os_type == 'win':
-    print('code inspection module do not support win now...')
+    execute_cmd_with_timeout('PowerShell.exe .\static-run.ps1')
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
 
@@ -141,7 +141,7 @@ if config_settings['get_pp_from_app_store'] == 'true':
     execute_cmd_with_timeout('python get_urls.py')
 else:
     # 动态运行获取隐私政策
-    os.chdir('./AppUIAutomator2Navigation-main')
+    os.chdir('./AppUIAutomator2Navigation')
     with open('apk_pkgName.txt') as f:
         content = f.readlines()
     pkgName_appName_list = [item.rstrip('\n') for item in content]
@@ -156,7 +156,7 @@ else:
                     './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
             else:
                 execute_cmd_with_timeout(
-                    './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    'PowerShell.exe ./run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
