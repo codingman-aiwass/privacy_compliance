@@ -32,8 +32,23 @@ def get_log():
                 cur_timestamp = int(tmp[0] + tmp[1])
                 if int(cur_timestamp) > timestamp:
                     timestamp = int(cur_timestamp)
-                    prefix_dict[prefix] = file_name + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + file_name + '/Dumpjson')[0]
-
+                    # 此处需要选择一个Dumpjson文件夹里的json，最后用于整合。我们选择时间最久的那个。
+                    # 由于这个文件夹里面可能不止一个json，不能单纯的只把第一个拿出来。
+                    dumpjson_folder = file_name + '/Dumpjson/'
+                    jsons = os.listdir(dynamic_log_path + '/' + dumpjson_folder)
+                    if len(jsons) == 1 and jsons[0].endswith('.json'):
+                        prefix_dict[prefix] = file_name + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + file_name + '/Dumpjson')[0]
+                    else:
+                        # 此时Dumpjson中有多个json日志，挑选时间最长的那一个
+                        time_stamp = 0
+                        target_json = ''
+                        for json_file in jsons:
+                            if json_file.endswith('json'):
+                                cur_time = int(json_file[json_file.index('&time') + 5:json_file.index('s.json')])
+                                if cur_time >= time_stamp:
+                                    time_stamp = cur_time
+                                    target_json = json_file
+                        prefix_dict[prefix] = dumpjson_folder + target_json
     # print(prefix_dict)
     return prefix_dict
 
