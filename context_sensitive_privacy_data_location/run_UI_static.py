@@ -42,16 +42,17 @@ for output_json in output_jsons:
         shutil.copyfile(output_json, new_name)
     except shutil.SameFileError:
         print('{} and {} is the same file...'.format(output_json,new_name))
+        print('-------------------')
 
 
 output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')
 
 for output_json in output_jsons:
-    execute_cmd_with_timeout('python data_item_infer.py {} {}'.format(output_json, output_json[:output_json.index(
+    execute_cmd_with_timeout('python3 data_item_infer.py {} {}'.format(output_json, output_json[:output_json.index(
         "_")] + '_static_output_filtered.json'))
 
 output_filtered_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output_filtered.json')
 for output_filtered_json in output_filtered_jsons:
-    execute_cmd_with_timeout('python label_new_or_old.py {} {}'.format(output_filtered_json, output_filtered_json[
+    execute_cmd_with_timeout('python3 label_new_or_old.py {} {}'.format(output_filtered_json, output_filtered_json[
                                                                                               :output_filtered_json.index(
                                                                                                   "_")] + '_static_output_filtered_labeled.json'))
