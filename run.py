@@ -81,7 +81,7 @@ if len(opts) == 0:
                        'pp_print_sensitive_item': 'true', 'pp_print_others': 'true', 'pp_print_long_sentences': 'true',
                        'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
                        'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
-                       'dynamic_ui_depth': '3', 'dynamic_pp_parsing': 'true'}
+                       'dynamic_ui_depth': '3'}
 
 else:
     for opt, arg in opts:
