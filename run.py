@@ -215,11 +215,11 @@ os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
     os.chdir('./context_sensitive_privacy_data_location')
-    if 'tmp_output' in os.listdir():
-        shutil.rmtree('tmp_output')
-        os.mkdir('tmp_output')
-    if 'tmp_output' not in os.listdir():
-        os.mkdir('tmp_output')
+    if 'tmp-output' in os.listdir():
+        shutil.rmtree('tmp-output')
+        os.mkdir('tmp-output')
+    if 'tmp-output' not in os.listdir():
+        os.mkdir('tmp-output')
     if 'final_res_log_dir' in os.listdir():
         shutil.rmtree('final_res_log_dir')
         os.mkdir('final_res_log_dir')
