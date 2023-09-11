@@ -42,6 +42,7 @@ for output_json in output_jsons:
         shutil.copyfile(output_json, new_name)
     except shutil.SameFileError:
         print('{} and {} is the same file...'.format(output_json,new_name))
+        print('-------------------')
 
 
 output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')

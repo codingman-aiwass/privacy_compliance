@@ -3,7 +3,7 @@ import sys
 from dealWithInputAndOutput import get_input_args
 
 
-def read_dynamic_json(input_file: str, output_file: str):
+def read_dynamic_json(input_file, output_file):
     """
     Read the dynamic result, convert to the static form.
     :param input_file: the file path of dynamic result.
