@@ -91,14 +91,14 @@ else:
             config_settings = get_config_settings(arg)
 
 os.chdir('./context_sensitive_privacy_data_location')
-# execute_cmd_with_timeout('python3 --version')
-# execute_cmd_with_timeout('pip3 list | grep hanlp')
+execute_cmd_with_timeout('python3 --version')
+execute_cmd_with_timeout('pip3 list | grep hanlp')
 
-# execute_cmd_with_timeout('python3 run_UI_static.py')
+execute_cmd_with_timeout('python3 run_UI_static.py')
 
 # execute_cmd_with_timeout('python3 get_dynamic_res.py')
-# integrate(config_settings)
-# 保存字典config_settings,然后让integrate log读取
-with open('config_settings.pkl', 'wb') as f:
-    pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
-execute_cmd_with_timeout('python3 integrate_log.py')
+# # integrate(config_settings)
+# # 保存字典config_settings,然后让integrate log读取
+# with open('config_settings.pkl', 'wb') as f:
+#     pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
+# execute_cmd_with_timeout('python3 integrate_log.py')

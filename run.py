@@ -2,6 +2,7 @@ import configparser
 import getopt
 import os
 import pickle
+import shutil
 import signal
 import subprocess
 import sys
@@ -148,6 +149,7 @@ else:
     for pkgName_appName in pkgName_appName_list:
         try:
             pkgName, appName = pkgName_appName.split(' | ')
+            appName = appName.strip('\'')
             # 判断操作系统版本,分win和linux/mac
             os_type = get_OS_type()
             if os_type in ['linux', 'mac']:
@@ -155,7 +157,7 @@ else:
                     './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
             else:
                 execute_cmd_with_timeout(
-                    './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    'PowerShell.exe .\run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
@@ -203,19 +205,32 @@ else:
             f.write('\n')
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
+if 'Privacypolicy_txt' not in os.listdir():
+    os.mkdir('Privacypolicy_txt')
+if 'PrivacyPolicySaveDir' not in os.listdir():
+    os.mkdir('PrivacyPolicySaveDir')
 execute_cmd_with_timeout('python3 privacy-policy-main.py')
 execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
 os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
     os.chdir('./context_sensitive_privacy_data_location')
+    if 'tmp_output' in os.listdir():
+        shutil.rmtree('tmp_output')
+        os.mkdir('tmp_output')
+    if 'tmp_output' not in os.listdir():
+        os.mkdir('tmp_output')
+    if 'final_res_log_dir' in os.listdir():
+        shutil.rmtree('final_res_log_dir')
+        os.mkdir('final_res_log_dir')
+    if 'final_res_log_dir' not in os.listdir():
+        os.mkdir('final_res_log_dir')
     execute_cmd_with_timeout('python3 run_jar.py')
     execute_cmd_with_timeout('python3 run_UI_static.py')
     os.chdir(cur_path)
 
-if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_app_store'] == 'true':
+if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
     print('this module has been run before...')
-    pass
     # os.chdir('./AppUIAutomator2Navigation-main')
     # with open('apk_pkgName.txt') as f:
     #     content = f.readlines()
@@ -235,7 +250,8 @@ if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_app_
     #     except Exception:
     #         print('error occurred, continue...')
     # os.chdir(cur_path)
-elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_app_store'] == 'false':
+elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
+    print("config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
     os.chdir('./AppUIAutomator2Navigation')
     with open('apk_pkgName.txt') as f:
         content = f.readlines()
@@ -243,7 +259,7 @@ elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_ap
     for pkgName_appName in pkgName_appName_list:
         try:
             pkgName, appName = pkgName_appName.split(' | ')
-            # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
+            appName = appName.strip('\'')
             # 判断操作系统版本,分win和linux/mac
             os_type = get_OS_type()
             if os_type in ['linux', 'mac']:
