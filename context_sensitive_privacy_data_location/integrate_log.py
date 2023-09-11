@@ -72,7 +72,7 @@ for app_name, jsons in prefix_dict.items():
 
         final_res = []
         pairs_1 = []
-        # 检查哪一些text不在隐私政策中
+        # 检查哪一些text在隐私政策中
         # 检查佳涛的
         if text_label_pairs_1 is not None:
             for text, label in text_label_pairs_1:
