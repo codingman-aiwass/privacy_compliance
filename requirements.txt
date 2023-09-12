@@ -1,0 +1,10 @@
+spacy==3.5.0
+jieba==0.42.1
+bs4
+alibabacloud-alimt20181012==1.1.0
+alibabacloud-tea==0.3.2
+hanlp
+Privacy-compliance-detection-2.1/core/model/zh_core_web_trf-3.5.0-py3-none-any.whl
+Privacy-compliance-detection-2.1/core/model/zh_core_web_md-3.5.0-py3-none-any.whl
+configobj
+configparser
