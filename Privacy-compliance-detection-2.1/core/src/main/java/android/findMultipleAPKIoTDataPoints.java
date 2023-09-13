@@ -1,23 +1,27 @@
 package android;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import org.xmlpull.v1.XmlPullParserException;
 import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.options.Options;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+import org.xmlpull.v1.XmlPullParserException;
 
 public class findMultipleAPKIoTDataPoints {
     public static String logsPath = "";
@@ -139,7 +143,7 @@ public class findMultipleAPKIoTDataPoints {
                     processManifest = new ProcessManifest(apk);
                     apkPackageName = processManifest.getPackageName();
                     apkName = GetApkPackageName.getAppName(apk);
-                    
+
                     // System.out.println(apk);
                     // System.out.println(apkPackageName);
                     pkgWriter.write(apkPackageName + " | " + apkName);
@@ -201,7 +205,7 @@ public class findMultipleAPKIoTDataPoints {
     }
 
     public static void runSingleAnalysisWithTimeout(String appPath, boolean printToFile, String resultSavePath,
-            long timeoutInSeconds) {
+                                                    long timeoutInSeconds) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<?> future = executor.submit(() -> {
             try {
@@ -262,6 +266,8 @@ public class findMultipleAPKIoTDataPoints {
 
         Scene.v().loadNecessaryClasses();
         PackManager.v().runPacks();
+        // 加载apk相关信息，为后续使用isAppDeveloperClass()作准备
+        ComponentManager.getInstance().parseApkForComponents(apkPath);
     }
 
     private static boolean isExcludeClass(SootClass sootClass) {
@@ -325,14 +331,24 @@ public class findMultipleAPKIoTDataPoints {
                     for (Unit unit : units) {
                         boolean is3rdParty = false;
                         ++index;
-                        for (Object o : thirdPartyList) {
-                            String thirdPartyLibraryName = (String) o;
-                            if (packageName.startsWith(thirdPartyLibraryName)) {
-                                is3rdParty = true;
-                                ++third_party_sdk_cnt;
-                                break;
-                            }
+                        // 这个for-loop根据3rd_sdk.properties里的包名判断是否第三方
+                        // 改用isAppDeveloperClass()
+
+                        // for (Object o : thirdPartyList) {
+                        //     String thirdPartyLibraryName = (String) o;
+                        //     if (packageName.startsWith(thirdPartyLibraryName)) {
+                        //         is3rdParty = true;
+                        //         ++third_party_sdk_cnt;
+                        //         break;
+                        //     }
+                        // }
+                        boolean isAppDeveloperClazz = ComponentManager.getInstance().isAppDeveloperClass(className);
+                        if(isAppDeveloperClazz){
+                            is3rdParty = true;
+                            ++third_party_sdk_cnt;
                         }
+
+
                         Stmt stmt = (Stmt) unit;
                         HashSet<String> stmtHashset = new HashSet<>();
                         List<ValueBox> useBoxes = stmt.getUseBoxes();
@@ -613,7 +629,7 @@ public class findMultipleAPKIoTDataPoints {
                 return;
             }
             System.out.println("End initSootConfig()");
-            
+
             checker(apkResult, apkResult_2);
 
             outStream.close();
