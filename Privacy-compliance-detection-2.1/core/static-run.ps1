@@ -18,4 +18,4 @@ if (-not (Test-Path "$PWD/final_res/pp_missing")) {
 }
 
 Write-Host "Start static analysis..."
-java -jar find_data_points.jar
+java -jar -Xmx16G find_data_points.jar
