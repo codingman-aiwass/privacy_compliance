@@ -11,6 +11,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -33,16 +35,18 @@ public class findMultipleAPKIoTDataPoints {
     public static Set<Object> thirdPartyList;
     public static Set<String> privacyItemList;
     public static int privacy_item_num_threshold = 2;
-    public static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd_HH:mm:ss");
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd_HH-mm-ss");
     // 从配置文件中读取的apkPath 可以是若干个apk文件的绝对路径,也可以是若干个包含许多apk文件的文件夹的绝对路径
     public static String apkPath = "";
+
+    public static String aapt = "";
 
     static {
         dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
         // 读取properties文件
         interestAPIproperties = new Properties();
         try {
-            interestAPIproperties.load(new FileReader("./config/interestedAPIs.properties"));
+            interestAPIproperties.load(new FileReader("config" + File.separator + "interestedAPIs.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,12 +54,12 @@ public class findMultipleAPKIoTDataPoints {
         // 读取第三方列表
         thirdPartyProperties = new Properties();
         try {
-            thirdPartyProperties.load(new FileReader("./config/3rd_sdks.properties"));
+            thirdPartyProperties.load(new FileReader("config" + File.separator + "3rd_sdks.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
         thirdPartyList = thirdPartyProperties.keySet();
-        privacyItemList = readTxt("./config/privacy_items.txt");
+        privacyItemList = readTxt("config" + File.separator + "privacy_items.txt");
     }
 
     static {
@@ -129,18 +133,20 @@ public class findMultipleAPKIoTDataPoints {
                 }
             }
 //             在此处保存所指定的所有apk的包名列表到动态app分析里
-            BufferedWriter pkgWriter = new BufferedWriter(new FileWriter("../../AppUIAutomator2Navigation-main/apk_pkgName.txt"));
+            BufferedWriter pkgWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(".." + File.separator + ".." + File.separator + "AppUIAutomator2Navigation" + File.separator + "apk_pkgName.txt")), StandardCharsets.UTF_8));
 
             for(String apk:totalApks){
                 ProcessManifest processManifest;
                 String apkPackageName = null;
+                String apkName = null;
                 try {
                     processManifest = new ProcessManifest(apk);
                     apkPackageName = processManifest.getPackageName();
-                    
+                    apkName = GetApkPackageName.getAppName(apk);
+
                     // System.out.println(apk);
                     // System.out.println(apkPackageName);
-                    pkgWriter.write(apkPackageName);
+                    pkgWriter.write(apkPackageName + " | " + apkName);
                     pkgWriter.newLine();
                     pkgWriter.flush();
                 } catch (XmlPullParserException e) {
@@ -199,7 +205,7 @@ public class findMultipleAPKIoTDataPoints {
     }
 
     public static void runSingleAnalysisWithTimeout(String appPath, boolean printToFile, String resultSavePath,
-            long timeoutInSeconds) {
+                                                    long timeoutInSeconds) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<?> future = executor.submit(() -> {
             try {
@@ -222,12 +228,19 @@ public class findMultipleAPKIoTDataPoints {
 
     public static void setUpConfig() throws IOException {
         Properties properties = new Properties();
-        properties.load(new FileReader("./RunningConfig.properties"));
-        printToFile = Boolean.parseBoolean(properties.getProperty("printToFile", "true"));
-        logsPath = properties.getProperty("logsPath", "");
-        androidJar = properties.getProperty("AndroidJar", "");
-        resultSavePath = properties.getProperty("resultSavePath", "");
-        apkPath = properties.getProperty("apk", "");
+
+        try (FileInputStream fileInputStream = new FileInputStream("RunningConfig.properties")) {
+            properties.load(fileInputStream);
+            printToFile = Boolean.parseBoolean(properties.getProperty("printToFile", "true"));
+            logsPath = Paths.get(properties.getProperty("logsPath", "")).toString();
+            androidJar = Paths.get(properties.getProperty("AndroidJar", "")).toString();
+            resultSavePath = Paths.get(properties.getProperty("resultSavePath", "")).toString();
+            apkPath = Paths.get(properties.getProperty("apk", "")).toString();
+            aapt = Paths.get(properties.getProperty("aapt", "")).toString();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void initSootConfig(String apkPath) {
@@ -253,6 +266,8 @@ public class findMultipleAPKIoTDataPoints {
 
         Scene.v().loadNecessaryClasses();
         PackManager.v().runPacks();
+        // 加载apk相关信息，为后续使用isAppDeveloperClass()作准备
+        ComponentManager.getInstance().parseApkForComponents(apkPath);
     }
 
     private static boolean isExcludeClass(SootClass sootClass) {
@@ -316,14 +331,24 @@ public class findMultipleAPKIoTDataPoints {
                     for (Unit unit : units) {
                         boolean is3rdParty = false;
                         ++index;
-                        for (Object o : thirdPartyList) {
-                            String thirdPartyLibraryName = (String) o;
-                            if (packageName.startsWith(thirdPartyLibraryName)) {
-                                is3rdParty = true;
-                                ++third_party_sdk_cnt;
-                                break;
-                            }
+                        // 这个for-loop根据3rd_sdk.properties里的包名判断是否第三方
+                        // 改用isAppDeveloperClass()
+
+                        // for (Object o : thirdPartyList) {
+                        //     String thirdPartyLibraryName = (String) o;
+                        //     if (packageName.startsWith(thirdPartyLibraryName)) {
+                        //         is3rdParty = true;
+                        //         ++third_party_sdk_cnt;
+                        //         break;
+                        //     }
+                        // }
+                        boolean isAppDeveloperClazz = ComponentManager.getInstance().isAppDeveloperClass(className);
+                        if(isAppDeveloperClazz){
+                            is3rdParty = true;
+                            ++third_party_sdk_cnt;
                         }
+
+
                         Stmt stmt = (Stmt) unit;
                         HashSet<String> stmtHashset = new HashSet<>();
                         List<ValueBox> useBoxes = stmt.getUseBoxes();
@@ -604,7 +629,7 @@ public class findMultipleAPKIoTDataPoints {
                 return;
             }
             System.out.println("End initSootConfig()");
-            
+
             checker(apkResult, apkResult_2);
 
             outStream.close();
