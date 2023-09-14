@@ -73,8 +73,8 @@ tesseract:  https://github.com/tesseract-ocr/tesseract
 
 Config what app to dynamically test in `apk_pkgName.txt` . It should be package name and name of the app.
 
-- `cd uiautomator2 && pip install .`
-- `cd ../ && pip install -r requirements.txt`
+- `pip install ../Privacy-compliance-detection-2.1/core/model/uiautomator2-2.16.23-py3-none-any.whl`
+- `pip install -r requirements.txt`
 
 Run `python3 test_integrate.py`
 
@@ -105,18 +105,17 @@ You can set outputdir and apks to analysis and other config in the RunningConfig
 
 
 **'''One command run'''**
-
+- Make sure you are at./privacy_compliance.
 - Run `pip install -r requirements.txt`
-- `cd uiautomator2 && pip install .`
 - `cd AppUIAutomator2Navigation && pip install -r requirements.txt`
-- Make sure you are at./privacy_compliance, first, and then if you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py`
+- If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py`
 
 #### Note
 
 Make sure the file directory structure is like this:
 
 - $(pwd)
-  - AppUIAutomator2Navigation-main
+  - AppUIAutomator2Navigation
   - context_sensitive_privacy_data_location
   - Privacy-compliance-detection-2.1
   - run.py
