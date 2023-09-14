@@ -75,20 +75,26 @@ for app_name, jsons in prefix_dict.items():
         # 检查哪一些text在隐私政策中
         # 检查佳涛的
         if text_label_pairs_1 is not None:
-            for text, label in text_label_pairs_1:
+            for text in text_label_pairs_1:
+            # for text, label in text_label_pairs_1:
                 for pp_item in data_cn_total:
                     if text in pp_item:
                         # print(text, label)
-                        pairs_1.append((text, label))
+                        # pairs_1.append((text, label))
+                        pairs_1.append(text)
+
 
         # 检查东鹏的
         pairs_2 = []
         if text_label_pairs_2 is not None:
-            for text, label in text_label_pairs_2:
+            for text['text'] in text_label_pairs_2:
+            # for text, label in text_label_pairs_2:
                 for pp_item in data_cn_total:
                     if text in pp_item:
                         # print(text, label)
-                        pairs_2.append((text, label))
+                        # pairs_2.append((text, label))
+                        pairs_2.append(text)
+
         # TODO 此处可以根据config的配置情况,使用if-else判断输出什么log
         data_item = {}
         if config_settings['code_inspection'] == 'true':

@@ -58,7 +58,7 @@ def config_apks_to_analysis(apks):
         props.write(prop_file)
 
 
-def execute_cmd_with_timeout(cmd, timeout=600):
+def execute_cmd_with_timeout(cmd, timeout=1800):
     p = subprocess.Popen(cmd, stderr=subprocess.STDOUT, shell=True)
     try:
         p.wait(timeout)
