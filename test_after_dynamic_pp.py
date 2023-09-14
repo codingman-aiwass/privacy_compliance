@@ -121,14 +121,14 @@ def determine_aapt(os_type):
         props.write(prop_file)
 cur_path = os.getcwd()
 
-os.chdir('./Privacy-compliance-detection-2.1/core')
-if 'Privacypolicy_txt' not in os.listdir():
-    os.mkdir('Privacypolicy_txt')
-if 'PrivacyPolicySaveDir' not in os.listdir():
-    os.mkdir('PrivacyPolicySaveDir')
-execute_cmd_with_timeout('python3 privacy-policy-main.py')
-execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
-os.chdir(cur_path)
+# os.chdir('./Privacy-compliance-detection-2.1/core')
+# if 'Privacypolicy_txt' not in os.listdir():
+#     os.mkdir('Privacypolicy_txt')
+# if 'PrivacyPolicySaveDir' not in os.listdir():
+#     os.mkdir('PrivacyPolicySaveDir')
+# execute_cmd_with_timeout('python3 privacy-policy-main.py')
+# execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
+# os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
     os.chdir('./context_sensitive_privacy_data_location')
@@ -187,10 +187,10 @@ elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dy
             print('error occurred, continue...')
     os.chdir(cur_path)
 
-os.chdir('./context_sensitive_privacy_data_location')
-execute_cmd_with_timeout('python3 get_dynamic_res.py')
-# integrate(config_settings)
-# 保存字典config_settings,然后让integrate log读取
-with open('config_settings.pkl', 'wb') as f:
-    pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
-execute_cmd_with_timeout('python3 integrate_log.py')
+# os.chdir('./context_sensitive_privacy_data_location')
+# execute_cmd_with_timeout('python3 get_dynamic_res.py')
+# # integrate(config_settings)
+# # 保存字典config_settings,然后让integrate log读取
+# with open('config_settings.pkl', 'wb') as f:
+#     pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
+# execute_cmd_with_timeout('python3 integrate_log.py')
