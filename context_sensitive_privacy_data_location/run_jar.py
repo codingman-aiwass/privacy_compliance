@@ -76,7 +76,7 @@ def traverse_decompile(directory):
     for fileName in apk_name_list:
         print(fileName)
         if not os.path.exists(fileName[:-4] + '_decompile'):
-            os.system(r'java -jar {} {}'.format(decompile_jar_path, fileName))
+            os.system(r'java -jar -Xmx16G {} {}'.format(decompile_jar_path, fileName))
 
 
 # run output
@@ -93,7 +93,7 @@ def traverse_output(directory):
     for fileName in apk_name_list:
         print(fileName)
         try:
-            execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
+            execute_cmd_with_timeout(r'java -jar -Xmx16G {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
         except Exception as e:
             print(e)
 
