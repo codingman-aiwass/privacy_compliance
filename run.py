@@ -66,6 +66,31 @@ def execute_cmd_with_timeout(cmd, timeout=1800):
         p.send_signal(signal.SIGINT)
         p.wait()
 
+def get_OS_type():
+    sys_platform = platform.platform().lower()
+    os_type = ''
+    if "windows" in sys_platform:
+        os_type = 'win'
+    elif "darwin" in sys_platform or 'mac' in sys_platform:
+        os_type = 'mac'
+    elif "linux" in sys_platform:
+        os_type = 'linux'
+    else:
+        print('Unknown OS,regard as linux...')
+        os_type = 'linux'
+    return os_type
+
+def determine_aapt(os_type):
+    # Modify the properties file
+    props = ConfigObj('RunningConfig.properties', encoding='UTF8')
+
+    # Modify the 'apk' setting in the properties file
+    props['aapt'] = './config/build-tools-{}/aapt'.format(os_type)
+
+    # Save the modified properties file
+    with open('RunningConfig.properties', 'wb') as prop_file:
+        props.write(prop_file)
+
 
 input_argv = sys.argv[1:]
 try:
@@ -81,7 +106,7 @@ if len(opts) == 0:
                        'pp_print_sensitive_item': 'true', 'pp_print_others': 'true', 'pp_print_long_sentences': 'true',
                        'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
                        'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
-                       'dynamic_ui_depth': '3', 'dynamic_pp_parsing': 'true'}
+                       'dynamic_ui_depth': '3'}
 
 else:
     for opt, arg in opts:
@@ -94,35 +119,8 @@ else:
 
 # 默认情况下,直接按顺序执行
 
-def get_OS_type():
-    sys_platform = platform.platform().lower()
-    os_type = ''
-    if "windows" in sys_platform:
-        os_type = 'win'
-    elif "darwin" in sys_platform or 'mac' in sys_platform:
-        os_type = 'mac'
-    elif "linux" in sys_platform:
-        os_type = 'linux'
-    else:
-        print('Unknown OS,regard as linux...')
-        os_type = 'linux'
-    return os_type
-
-
-def determine_aapt(os_type):
-    # Modify the properties file
-    props = ConfigObj('RunningConfig.properties', encoding='UTF8')
-
-    # Modify the 'apk' setting in the properties file
-    props['aapt'] = './config/build-tools-{}/aapt'.format(os_type)
-
-    # Save the modified properties file
-    with open('RunningConfig.properties', 'wb') as prop_file:
-        props.write(prop_file)
-
-
 print('input apks to analysis(give absolute path)...')
-apk_path = input()
+apk_path = input().replace("\\","/")
 config_apks_to_analysis(apk_path)
 cur_path = os.getcwd()
 
@@ -132,14 +130,17 @@ os.chdir('./Privacy-compliance-detection-2.1/core')
 determine_aapt(get_OS_type())
 os_type = get_OS_type()
 if os_type in ['linux', 'mac']:
-    execute_cmd_with_timeout('sh static-run.sh')
+    execute_cmd_with_timeout('sh static-run.sh',3600)
 elif os_type == 'win':
-    execute_cmd_with_timeout('PowerShell.exe .\static-run.ps1')
+    execute_cmd_with_timeout('PowerShell.exe .\static-run.ps1',3600)
 print('finish code_inspection of apk.')
 os.chdir(cur_path)
 
 if config_settings['get_pp_from_app_store'] == 'true':
-    execute_cmd_with_timeout('python3 get_urls.py')
+    if os_type == 'win':
+        execute_cmd_with_timeout('python get_urls.py')
+    elif os_type in ['mac','linux']:
+        execute_cmd_with_timeout('python3 get_urls.py')
 else:
     # 动态运行获取隐私政策
     os.chdir('./AppUIAutomator2Navigation')
@@ -157,7 +158,7 @@ else:
                     './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
             else:
                 execute_cmd_with_timeout(
-                    'PowerShell.exe .\run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    'PowerShell.exe ./run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
@@ -209,8 +210,12 @@ if 'Privacypolicy_txt' not in os.listdir():
     os.mkdir('Privacypolicy_txt')
 if 'PrivacyPolicySaveDir' not in os.listdir():
     os.mkdir('PrivacyPolicySaveDir')
-execute_cmd_with_timeout('python3 privacy-policy-main.py')
-execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
+if os_type == 'win':
+    execute_cmd_with_timeout('python privacy-policy-main.py')
+    execute_cmd_with_timeout('python report_data_in_pp_and_program.py')
+elif os_type in ['linux','mac']:
+    execute_cmd_with_timeout('python3 privacy-policy-main.py')
+    execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
 os.chdir(cur_path)
 
 if config_settings['ui_static'] == 'true':
@@ -225,31 +230,16 @@ if config_settings['ui_static'] == 'true':
         os.mkdir('final_res_log_dir')
     if 'final_res_log_dir' not in os.listdir():
         os.mkdir('final_res_log_dir')
-    execute_cmd_with_timeout('python3 run_jar.py')
-    execute_cmd_with_timeout('python3 run_UI_static.py')
+    if os_type == 'win':
+        execute_cmd_with_timeout('python run_jar.py')
+        execute_cmd_with_timeout('python run_UI_static.py')
+    elif os_type in ['linux','mac']:
+        execute_cmd_with_timeout('python3 run_jar.py')
+        execute_cmd_with_timeout('python3 run_UI_static.py')
     os.chdir(cur_path)
 
 if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
     print('this module has been run before...')
-    # os.chdir('./AppUIAutomator2Navigation-main')
-    # with open('apk_pkgName.txt') as f:
-    #     content = f.readlines()
-    # pkgName_appName_list = [item.rstrip('\n') for item in content]
-    # for pkgName_appName in pkgName_appName_list:
-    #     try:
-    #         pkgName, appName = pkgName_appName.split(' | ')
-    #         # TODO 还有'get_pp_from_dynamically_running_app', 'dynamic_ui_depth', 'dynamic_pp_parsing'需要配置
-    #         # 判断操作系统版本,分win和linux/mac
-    #         os_type = get_OS_type()
-    #         if os_type in ['linux', 'mac']:
-    #             execute_cmd_with_timeout(
-    #                 './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-    #         else:
-    #             execute_cmd_with_timeout(
-    #                 './run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
-    #     except Exception:
-    #         print('error occurred, continue...')
-    # os.chdir(cur_path)
 elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
     print("config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
     os.chdir('./AppUIAutomator2Navigation')
@@ -273,9 +263,17 @@ elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dy
     os.chdir(cur_path)
 
 os.chdir('./context_sensitive_privacy_data_location')
-execute_cmd_with_timeout('python3 get_dynamic_res.py')
+if os_type == 'win':
+    execute_cmd_with_timeout('python get_dynamic_res.py')
+elif os_type in ['linux','mac']:
+    execute_cmd_with_timeout('python3 get_dynamic_res.py')
 # integrate(config_settings)
 # 保存字典config_settings,然后让integrate log读取
 with open('config_settings.pkl', 'wb') as f:
     pickle.dump(config_settings, f, pickle.HIGHEST_PROTOCOL)
-execute_cmd_with_timeout('python3 integrate_log.py')
+
+if os_type == 'win':
+    execute_cmd_with_timeout('python integrate_log.py')
+elif os_type in ['linux','mac']:
+    execute_cmd_with_timeout('python3 integrate_log.py')
+

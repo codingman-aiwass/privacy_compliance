@@ -2,9 +2,24 @@ import json
 import os
 import shutil
 import re
+import platform
 
 from dealWithInputAndOutput import get_run_jar_settings
 from run_jar import execute_cmd_with_timeout
+
+def get_OS_type():
+    sys_platform = platform.platform().lower()
+    os_type = ''
+    if "windows" in sys_platform:
+        os_type = 'win'
+    elif "darwin" in sys_platform or 'mac' in sys_platform:
+        os_type = 'mac'
+    elif "linux" in sys_platform:
+        os_type = 'linux'
+    else:
+        print('Unknown OS,regard as linux...')
+        os_type = 'linux'
+    return os_type
 
 
 def get_ends_with_suffix_files_in_folder(folder, suffix) -> list:
@@ -47,11 +62,17 @@ for output_json in output_jsons:
 
 output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')
 print(output_jsons)
+os_type = get_OS_type()
 for output_json in output_jsons:
     print('output_json',output_json,'static_output_filtered_labeled.json',output_json[:output_json.index(
         "_")] + '_static_output_filtered_labeled.json')
-    execute_cmd_with_timeout('python3 data_item_infer_new.py {} {}'.format(output_json, output_json[:output_json.index(
-        "_")] + '_static_output_filtered_labeled.json'))
+    if os_type == 'win':
+        execute_cmd_with_timeout('python data_item_infer_new.py {} {}'.format(output_json, output_json[:output_json.index(
+            "_")] + '_static_output_filtered_labeled.json'))
+    elif os_type in ['mac','linux']:
+        execute_cmd_with_timeout(
+            'python3 data_item_infer_new.py {} {}'.format(output_json, output_json[:output_json.index(
+                "_")] + '_static_output_filtered_labeled.json'))
 print("=============================")
 # output_filtered_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output_filtered.json')
 # print(output_filtered_jsons)
