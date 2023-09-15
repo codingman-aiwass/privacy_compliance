@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from lxml import etree
 import requests
 import re
@@ -34,48 +35,57 @@ def get_pp_from_tencent(pkg_name):
         return None
 
 
-def get_pkg_names():
+def get_pkg_names_from_code_inspection():
     logs = os.listdir('./Privacy-compliance-detection-2.1/core/' + get_log_in_properties(
         './Privacy-compliance-detection-2.1/core/RunningConfig.properties', 'resultSavePath')[2:])
     logs = [item[:-len('_method_scope.json')] for item in logs]
     return logs
 
+def get_pkg_names_from_apk_pkgNametxt():
+    with open('./AppUIAutomator2Navigation/apk_pkgName.txt')as f:
+        lines = f.readlines()
+    pkg_name_list = []
+    for line in lines:
+        pkg_name_list.append(line.split(' | ')[0])
+    return pkg_name_list
 
-choice = True
-if os.path.exists('./Privacy-compliance-detection-2.1/core/pkgName_url.json'):
-    print('pkgName_url exists,enter y to get privacy policy url from app store,n to exit.')
-    input_ = input()
-    if input_ == 'y':
-        choice = True
-    elif input_ == 'n':
-        choice = False
-    else:
-        print('error input...')
-if choice:
 
-    pkg_names = get_pkg_names()
+if __name__ == '__main__':
+    choice = True
+    if os.path.exists('./Privacy-compliance-detection-2.1/core/pkgName_url.json'):
+        print('pkgName_url exists,enter y to get privacy policy url from app store again,n to reuse privacy policy urls in pkgName_url.json.')
+        input_ = input()
+        if input_ == 'y':
+            choice = True
+        elif input_ == 'n':
+            choice = False
+        else:
+            print('error input...')
+    if choice:
 
-    pp_urls = {}
-    missing_urls = []
-    for pkg_name in pkg_names:
-        if len(pkg_name) > 3:
-            pp_url = get_pp_from_tencent(pkg_name)
-            if pp_url is None:
-                pp_url = get_pp_from_mi_store(pkg_name)
+        pkg_names = get_pkg_names_from_apk_pkgNametxt()
+
+        pp_urls = {}
+        missing_urls = []
+        for pkg_name in pkg_names:
+            if len(pkg_name) > 3:
+                pp_url = get_pp_from_tencent(pkg_name)
                 if pp_url is None:
-                    print('{} not in store...'.format(pkg_name))
-                    missing_urls.append(pkg_name)
+                    pp_url = get_pp_from_mi_store(pkg_name)
+                    if pp_url is None:
+                        print('{} not in store...'.format(pkg_name))
+                        missing_urls.append(pkg_name)
+                    else:
+                        pp_urls[pkg_name] = pp_url
+                        # print(pp_url)
                 else:
                     pp_urls[pkg_name] = pp_url
                     # print(pp_url)
-            else:
-                pp_urls[pkg_name] = pp_url
-                # print(pp_url)
 
-    with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
-        json.dump(pp_urls, f, indent=4)
-    if len(missing_urls) > 0:
-        with open('./missing_pp_url_apps.txt', 'w') as f:
-            for app in missing_urls:
-                f.write(app)
-                f.write('\n')
+        with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
+            json.dump(pp_urls, f, indent=4)
+        if len(missing_urls) > 0:
+            with open('./apps_missing_pp_url.txt', 'w') as f:
+                for app in missing_urls:
+                    f.write(app)
+                    f.write('\n')
