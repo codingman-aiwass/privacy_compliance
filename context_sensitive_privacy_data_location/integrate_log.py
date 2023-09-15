@@ -52,9 +52,13 @@ for app_name, jsons in prefix_dict.items():
             data = json.load(f)
         output_objects = data["outputObjects"]
         if 'static' in json_file:
-            text_label_pairs_1 = [(obj["text"], obj["label"]) for obj in output_objects]
+            # text_label_pairs_1 = [(obj["text"], obj["label"]) for obj in output_objects]
+            text_label_pairs_1 = [(obj["text"]) for obj in output_objects]
+
         elif 'dynamic' in json_file:
-            text_label_pairs_2 = [(obj["text"], obj["label"]) for obj in output_objects]
+            # text_label_pairs_2 = [(obj["text"], obj["label"]) for obj in output_objects]
+            text_label_pairs_2 = [(obj["text"]) for obj in output_objects]
+
 
     # 读取我之前的pp_missing结果,准备加入最后的汇总文件里
     try:
@@ -72,28 +76,39 @@ for app_name, jsons in prefix_dict.items():
 
         final_res = []
         pairs_1 = []
-        # 检查哪一些text在隐私政策中
+        # 检查哪一些text不在隐私政策中
         # 检查佳涛的
         if text_label_pairs_1 is not None:
             for text in text_label_pairs_1:
+                flag = True
             # for text, label in text_label_pairs_1:
                 for pp_item in data_cn_total:
                     if text in pp_item:
                         # print(text, label)
                         # pairs_1.append((text, label))
-                        pairs_1.append(text)
+                        # pairs_1.append(text)
+                        flag = False
+                        break
+                if flag is True:
+                    pairs_1.append(text)
+                
 
 
         # 检查东鹏的
         pairs_2 = []
         if text_label_pairs_2 is not None:
-            for text['text'] in text_label_pairs_2:
+            for text in text_label_pairs_2:
+                flag = True
             # for text, label in text_label_pairs_2:
                 for pp_item in data_cn_total:
                     if text in pp_item:
                         # print(text, label)
                         # pairs_2.append((text, label))
-                        pairs_2.append(text)
+                        # pairs_2.append(text)
+                        flag = False
+                        break
+                if flag is True:
+                    pairs_2.append(text)
 
         # TODO 此处可以根据config的配置情况,使用if-else判断输出什么log
         data_item = {}

@@ -206,6 +206,12 @@ else:
             f.write('\n')
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
+if 'Privacypolicy_txt' in os.listdir():
+    shutil.rmtree('Privacypolicy_txt')
+    os.mkdir('Privacypolicy_txt')
+if 'PrivacyPolicySaveDir' in os.listdir():
+    shutil.rmtree('PrivacyPolicySaveDir')
+    os.mkdir('PrivacyPolicySaveDir')
 if 'Privacypolicy_txt' not in os.listdir():
     os.mkdir('Privacypolicy_txt')
 if 'PrivacyPolicySaveDir' not in os.listdir():
@@ -235,7 +241,9 @@ if config_settings['ui_static'] == 'true':
         execute_cmd_with_timeout('python run_UI_static.py')
     elif os_type in ['linux','mac']:
         execute_cmd_with_timeout('python3 run_jar.py')
+        print('execute python3 run_UI_static.py ....')
         execute_cmd_with_timeout('python3 run_UI_static.py')
+        print('execute run_UI_static over...')
     os.chdir(cur_path)
 
 if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
@@ -261,6 +269,9 @@ elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dy
         except Exception:
             print('error occurred, continue...')
     os.chdir(cur_path)
+else:
+    print('did not execute ui_dynamic...')
+    print(config_settings['ui_dynamic'],config_settings['get_pp_from_dynamically_running_app'])
 
 os.chdir('./context_sensitive_privacy_data_location')
 if os_type == 'win':
