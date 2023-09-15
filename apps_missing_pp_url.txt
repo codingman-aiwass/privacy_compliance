@@ -1,3 +1,0 @@
-com.taobao.trip
-com.taobao.aliAuction
-com.alicloud.databox
