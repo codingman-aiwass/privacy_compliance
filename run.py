@@ -10,7 +10,8 @@ import platform
 import json
 
 from configobj import ConfigObj
-
+from get_urls import get_pkg_names_from_input_list
+from get_urls import get_pp_from_app_store
 
 # from context_sensitive_privacy_data_location.integrate_log import main as integrate
 
@@ -193,17 +194,27 @@ else:
                 elif 'htm' in pp_url:
                     app_pp[key] = pp_url[:pp_url.index('htm') + 3]
                 break
-    # app_pp 中存放隐私政策url和包名
-    with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
-        json.dump(app_pp, f, indent=4, ensure_ascii=True)
-    with open('pkgName_url.json', 'w') as f:
-        json.dump(app_pp, f, indent=4, ensure_ascii=True)
     # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
     apps_missing_pp = app_set - set(app_pp.keys())
-    with open('apps_missing_pp_url.txt','w',encoding='utf8') as f:
+    with open('dynamic_apps_missing_pp_url.txt','w',encoding='utf8') as f:
         for item in apps_missing_pp:
             f.write(item)
             f.write('\n')
+    if len(apps_missing_pp) > 0:
+        # 说明有隐私政策动态分析没有找到，去app store获取
+        print('find pp missing,try to get from app store...')
+        pp_urls,missing_urls = get_pp_from_app_store(get_pkg_names_from_input_list(list(apps_missing_pp)))
+        app_pp.update(pp_urls)
+    # app_pp 中存放隐私政策url和包名
+    with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
+        json.dump(app_pp, f, indent=4, ensure_ascii=True)
+    # 输出仍然找不到的隐私政策
+    if len(missing_urls) > 0:
+        with open('apps_still_missing_pp_urls.txt','w') as f:
+            for item in missing_urls:
+                f.write(item)
+                f.write('\n')
+
 
 os.chdir('./Privacy-compliance-detection-2.1/core')
 if 'Privacypolicy_txt' in os.listdir():

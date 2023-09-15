@@ -48,6 +48,27 @@ def get_pkg_names_from_apk_pkgNametxt():
     for line in lines:
         pkg_name_list.append(line.split(' | ')[0])
     return pkg_name_list
+def get_pkg_names_from_input_list(pkg_name_list):
+    return pkg_name_list
+
+def get_pp_from_app_store(pkg_names):
+    pp_urls = {}
+    missing_urls = []
+    for pkg_name in pkg_names:
+        if len(pkg_name) > 3:
+            pp_url = get_pp_from_tencent(pkg_name)
+            if pp_url is None:
+                pp_url = get_pp_from_mi_store(pkg_name)
+                if pp_url is None:
+                    print('{} not in store...'.format(pkg_name))
+                    missing_urls.append(pkg_name)
+                else:
+                    pp_urls[pkg_name] = pp_url
+                    # print(pp_url)
+            else:
+                pp_urls[pkg_name] = pp_url
+                # print(pp_url)
+    return pp_urls,missing_urls
 
 
 if __name__ == '__main__':
@@ -63,24 +84,25 @@ if __name__ == '__main__':
             print('error input...')
     if choice:
 
-        pkg_names = get_pkg_names_from_apk_pkgNametxt()
+        # pkg_names = get_pkg_names_from_apk_pkgNametxt()
 
-        pp_urls = {}
-        missing_urls = []
-        for pkg_name in pkg_names:
-            if len(pkg_name) > 3:
-                pp_url = get_pp_from_tencent(pkg_name)
-                if pp_url is None:
-                    pp_url = get_pp_from_mi_store(pkg_name)
-                    if pp_url is None:
-                        print('{} not in store...'.format(pkg_name))
-                        missing_urls.append(pkg_name)
-                    else:
-                        pp_urls[pkg_name] = pp_url
-                        # print(pp_url)
-                else:
-                    pp_urls[pkg_name] = pp_url
-                    # print(pp_url)
+        # pp_urls = {}
+        # missing_urls = []
+        # for pkg_name in pkg_names:
+        #     if len(pkg_name) > 3:
+        #         pp_url = get_pp_from_tencent(pkg_name)
+        #         if pp_url is None:
+        #             pp_url = get_pp_from_mi_store(pkg_name)
+        #             if pp_url is None:
+        #                 print('{} not in store...'.format(pkg_name))
+        #                 missing_urls.append(pkg_name)
+        #             else:
+        #                 pp_urls[pkg_name] = pp_url
+        #                 # print(pp_url)
+        #         else:
+        #             pp_urls[pkg_name] = pp_url
+        #             # print(pp_url)
+        pp_urls,missing_urls = get_pp_from_app_store(get_pkg_names_from_apk_pkgNametxt())
 
         with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
             json.dump(pp_urls, f, indent=4)
