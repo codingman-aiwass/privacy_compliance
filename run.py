@@ -166,17 +166,19 @@ else:
     # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
     apps_folders = os.listdir('./AppUIAutomator2Navigation/collectData')
     app_dict = {}
-    app_set = set()
+    # 改为从AppUIAutomator2Navigation中获取应用名
+    with open('./AppUIAutomator2Navigation/apk_pkgName.txt') as f:
+        content = f.readlines()
+        content = [content.split(' | ')[0] for content in content]
+        app_set = list(content)
+
     app_pp = {}
     for app_folder in apps_folders:
         if app_folder == '.DS_Store':
             continue
         app = app_folder[:app_folder.index('-')]
-        if app not in app_set:
-            app_set.add(app)
+        if app in app_set:
             app_dict[app] = [app_folder]
-        else:
-            app_dict[app].append(app_folder)
     for key, val in app_dict.items():
         for folder in val:
             dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder)
@@ -195,7 +197,7 @@ else:
                     app_pp[key] = pp_url[:pp_url.index('htm') + 3]
                 break
     # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
-    apps_missing_pp = app_set - set(app_pp.keys())
+    apps_missing_pp = set(app_set) - set(app_pp.keys())
     with open('dynamic_apps_missing_pp_url.txt','w',encoding='utf8') as f:
         for item in apps_missing_pp:
             f.write(item)

@@ -31,12 +31,17 @@ _, outputdir, _ = get_run_jar_settings()
 
 # 从dumpjson文件夹里的一堆log中找出时间最久的log
 def get_log():
-    prefix_set = set()
-    for file_name in os.listdir(dynamic_log_path):
-        if file_name.startswith('.'):
-            continue
-        # print(file_name[file_name.index('&time') + 5 :file_name.index('.json') - 1])
-        prefix_set.add(file_name[:file_name.index('-')])
+    # 将从os.listdir()获取的文件夹列表改为从apk_pkgName.txt里获取
+    with open('../AppUIAutomator2Navigation/apk_pkgName.txt') as f:
+        content = f.readlines()
+        content = [content.split(' | ')[0] for content in content]
+        prefix_set = set(content)
+    # prefix_set = set()
+    # for file_name in os.listdir(dynamic_log_path):
+    #     if file_name.startswith('.'):
+    #         continue
+    #     # print(file_name[file_name.index('&time') + 5 :file_name.index('.json') - 1])
+    #     prefix_set.add(file_name[:file_name.index('-')])
     prefix_dict = {}
     for prefix in prefix_set:
         timestamp = 0
