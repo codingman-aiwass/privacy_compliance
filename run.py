@@ -103,7 +103,7 @@ def get_apks_num(apk_path):
             files = os.listdir(single_path)
             apk_files = [apk_file for apk_file in files if apk_file.endswith('.apk')]
             app_set.update(apk_files)
-    print(app_set)
+    # print(app_set)
     return len(app_set)
 
 
@@ -174,11 +174,14 @@ if __name__ == '__main__':
                 # 判断操作系统版本,分win和linux/mac
                 os_type = get_OS_type()
                 if os_type in ['linux', 'mac']:
-                    execute_cmd_with_timeout(
-                        './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    # execute_cmd_with_timeout(
+                    #     './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    execute_cmd_with_timeout('python3 run.py {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
                 else:
-                    execute_cmd_with_timeout(
-                        'PowerShell.exe ./run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    # execute_cmd_with_timeout(
+                    #     'PowerShell.exe ./run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                    execute_cmd_with_timeout('python run.py {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+
             except Exception:
                 print('error occurred, continue...')
         os.chdir(cur_path)
@@ -297,7 +300,7 @@ if __name__ == '__main__':
                         './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
                 else:
                     execute_cmd_with_timeout(
-                        'PowerShell.exe .\run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
+                        'PowerShell.exe ./run.ps1 {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
             except Exception:
                 print('error occurred, continue...')
         os.chdir(cur_path)
