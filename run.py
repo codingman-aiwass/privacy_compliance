@@ -106,6 +106,10 @@ def get_apks_num(apk_path):
     # print(app_set)
     return len(app_set)
 
+def clear_app_cache(app_package_name):
+    print('正在清除应用包名为{}的数据。。。')
+    execute_cmd_with_timeout('adb shell pm clear {}'.format(app_package_name))
+    print('清除完毕。')
 
 
 if __name__ == '__main__':
@@ -173,6 +177,8 @@ if __name__ == '__main__':
                 appName = appName.strip('\'')
                 # 判断操作系统版本,分win和linux/mac
                 os_type = get_OS_type()
+                # 清除app缓存数据
+                clear_app_cache(pkgName)
                 if os_type in ['linux', 'mac']:
                     # execute_cmd_with_timeout(
                     #     './run.sh {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth']))
@@ -229,15 +235,15 @@ if __name__ == '__main__':
             print('find pp missing,try to get from app store...')
             pp_urls,missing_urls = get_pp_from_app_store(get_pkg_names_from_input_list(list(apps_missing_pp)))
             app_pp.update(pp_urls)
+            # 输出仍然找不到的隐私政策
+            if len(missing_urls) > 0:
+                with open('apps_still_missing_pp_urls.txt','w') as f:
+                    for item in missing_urls:
+                        f.write(item)
+                        f.write('\n')
         # app_pp 中存放隐私政策url和包名
         with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=True)
-        # 输出仍然找不到的隐私政策
-        if len(missing_urls) > 0:
-            with open('apps_still_missing_pp_urls.txt','w') as f:
-                for item in missing_urls:
-                    f.write(item)
-                    f.write('\n')
 
 
     os.chdir('./Privacy-compliance-detection-2.1/core')
