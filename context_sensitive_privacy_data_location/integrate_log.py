@@ -28,10 +28,12 @@ pp_compliance_dir, final_res_log_dir = get_settings_by_section_and_name('static-
                                                                         'pp_compliance_dir',
                                                                         'final_res_log_dir')
 # 把output文件夹中以相同包名开头的归为一类,方便遍历整合
-prefix_set = set()
+# 为了避免之前的分析结果混入本次分析，读取apk_pkgName.txt，获取里面的所有包名，只整合这里面含有的包名
+with open('../AppUIAutomator2Navigation/apk_pkgName.txt') as f:
+    content = f.readlines()
+    content = [content.split(' | ')[0] for content in content]
+    prefix_set = set(content)
 prefix_dict = {}
-for file_name in os.listdir(outputdir):
-    prefix_set.add(file_name[:file_name.index('_')])
 for prefix in prefix_set:
     prefix_dict[prefix] = []
 for prefix in prefix_set:
@@ -39,7 +41,20 @@ for prefix in prefix_set:
         if file_name.startswith(prefix) and file_name.endswith('_output_filtered_labeled.json'):
             prefix_dict[prefix].append(file_name)
 
+# 原有的读取tmp-output下所有的文件并归类到一个字典功能
+# prefix_set = set()
+# prefix_dict = {}
+# for file_name in os.listdir(outputdir):
+#     prefix_set.add(file_name[:file_name.index('_')])
+# for prefix in prefix_set:
+#     prefix_dict[prefix] = []
+# for prefix in prefix_set:
+#     for file_name in os.listdir(outputdir):
+#         if file_name.startswith(prefix) and file_name.endswith('_output_filtered_labeled.json'):
+#             prefix_dict[prefix].append(file_name)
 # print(prefix_dict)
+
+
 # 开始遍历字典
 for app_name, jsons in prefix_dict.items():
     if len(jsons) == 0:

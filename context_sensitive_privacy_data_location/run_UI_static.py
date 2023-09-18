@@ -37,6 +37,7 @@ if __name__ == '__main__':
 
     # 其次,需要依次循环调用data_item_infer和label_new_or_old进行标记
     # 需要读取输出结果文件夹里的文件
+    os_type = get_OS_type()
     _, outputdir, _ = get_run_jar_settings()
     output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_output.json')
     # 读取json文件里的包名,修改文件名
@@ -50,7 +51,11 @@ if __name__ == '__main__':
         # if re.compile(r'\b\d+\b').search(output_json):
         #     continue
         # os.rename(output_json, appName + output_json[output_json.index('_'):])
+        if os_type == 'win':
+            output_json = output_json.replace('\\','/')
         new_name = output_json[:output_json.rindex('/') + 1] + appName + '_static' + output_json[output_json.rindex('_output'):]
+        print('new name {}================='.format(new_name))
+        print('output_json {}========================='.format(output_json))
         print('in run_UI_static.py----------')
         print('output_json:',output_json)
         print('new_name',new_name)
@@ -64,7 +69,6 @@ if __name__ == '__main__':
 
     output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')
     print(output_jsons)
-    os_type = get_OS_type()
     print('run_UI_static start...')
     print('os_type_in_run_UI_static.py...',os_type)
     print('os_type in [mac,linux]',os_type in ['mac','linux'])
