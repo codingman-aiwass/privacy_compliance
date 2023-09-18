@@ -69,7 +69,7 @@ uiautomator2:https://github.com/openatx/uiautomator2
 
 frida: https://github.com/frida/frida
 
-tesseract:  https://github.com/tesseract-ocr/tesseract
+tesseract:  https://github.com/tesseract-ocr/tesseract. Make sure the version should not lower than 5.2.1.
 
 Config what app to dynamically test in `apk_pkgName.txt` . It should be package name and name of the app.
 
