@@ -107,7 +107,7 @@ def get_apks_num(apk_path):
     return len(app_set)
 
 def clear_app_cache(app_package_name):
-    print('正在清除应用包名为{}的数据。。。')
+    print('正在清除应用包名为{}的数据。。。'.format(app_package_name))
     execute_cmd_with_timeout('adb shell pm clear {}'.format(app_package_name))
     print('清除完毕。')
 
@@ -198,34 +198,35 @@ if __name__ == '__main__':
         with open('./AppUIAutomator2Navigation/apk_pkgName.txt') as f:
             content = f.readlines()
             content = [content.split(' | ')[0] for content in content]
-            app_set = list(content)
+            app_set = set(content)
+            print('app_set:'.format(app_set))
 
+        apps_missing_pp = set()
         app_pp = {}
         for app_folder in apps_folders:
             if app_folder == '.DS_Store':
                 continue
             app = app_folder[:app_folder.index('-')]
             if app in app_set:
-                app_dict[app] = [app_folder]
+                app_dict[app] = app_folder
         for key, val in app_dict.items():
-            for folder in val:
-                dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder)
-                if 'PrivacyPolicy' not in dirs:
-                    continue
-                elif 'PrivacyPolicy' in dirs:
-                    # 找到了隐私政策，break 返回
-                    pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/')[
-                        0]
-                    with open(
-                            './AppUIAutomator2Navigation/collectData' + '/' + folder + '/PrivacyPolicy/' + pp_file) as f:
-                        pp_url = f.readlines()[0].strip(',\n')
-                    if 'html' in pp_url:
-                        app_pp[key] = pp_url[:pp_url.index('html') + 4]
-                    elif 'htm' in pp_url:
-                        app_pp[key] = pp_url[:pp_url.index('htm') + 3]
-                    break
+            dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
+            if 'PrivacyPolicy' not in dirs:
+                apps_missing_pp.add(key)
+                continue
+            elif 'PrivacyPolicy' in dirs:
+                # 找到了隐私政策
+                pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/')[
+                    0]
+                with open(
+                        './AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/' + pp_file) as f:
+                    pp_url = f.readlines()[0].strip(',\n')
+                if 'html' in pp_url:
+                    app_pp[key] = pp_url[:pp_url.index('html') + 4]
+                elif 'htm' in pp_url:
+                    app_pp[key] = pp_url[:pp_url.index('htm') + 3]
         # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
-        apps_missing_pp = set(app_set) - set(app_pp.keys())
+        # apps_missing_pp = app_set - set(app_pp.keys())
         with open('dynamic_apps_missing_pp_url.txt','w',encoding='utf8') as f:
             for item in apps_missing_pp:
                 f.write(item)
