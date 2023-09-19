@@ -55,12 +55,27 @@ def get_pp_from_app_store(pkg_names):
     pp_urls = {}
     missing_urls = []
     for pkg_name in pkg_names:
+        pp_url = None
         if len(pkg_name) > 3:
-            pp_url = get_pp_from_tencent(pkg_name)
+            try:
+                pp_url = get_pp_from_tencent(pkg_name)
+            except Exception:
+                print('==========================================')
+                print('error occurred in get_pp_from_tencent...')
+                print('missing app is {}'.format(pkg_name))
+                print('==========================================')
             if pp_url is None:
-                pp_url = get_pp_from_mi_store(pkg_name)
+                try:
+                    pp_url = get_pp_from_mi_store(pkg_name)
+                except Exception:
+                    print('==========================================')
+                    print('error occurred in get_pp_from_mi_store...')
+                    print('missing app is {}'.format(pkg_name))
+                    print('==========================================')
                 if pp_url is None:
+                    print('==========================================')
                     print('{} not in store...'.format(pkg_name))
+                    print('==========================================')
                     missing_urls.append(pkg_name)
                 else:
                     pp_urls[pkg_name] = pp_url
