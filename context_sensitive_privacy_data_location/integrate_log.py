@@ -88,7 +88,8 @@ for app_name, jsons in prefix_dict.items():
 
             # TODO 此处还需要细分各类情况.比如声明权限信息 SDK信息,等等.需要多设置几个变量接收
             pp_compliance = pp[2]
-
+        with open(pp_compliance_dir + '/' + app_name + '_sdk.json', 'r') as f:
+            pp_sdk = json.load(f)
         final_res = []
         pairs_1 = []
         # 检查哪一些text不在隐私政策中
@@ -137,6 +138,9 @@ for app_name, jsons in prefix_dict.items():
             data_item['permission_list'] = permission_list
         if config_settings['pp_print_sensitive_item'] == 'true':
             data_item['pp_data_items'] = data_cn_total
+        #  暂时把sdk信息放在这里
+        if config_settings['pp_print_sdk_info'] == 'true':
+            data_item['pp_sdk_info'] = pp_sdk
         if config_settings['pp_print_others'] == 'true':
             data_item['compliance_analysis_part_1'] = {}
             data_item['compliance_analysis_part_1']['data_recall'] = pp_compliance['compliance-analysis'][
