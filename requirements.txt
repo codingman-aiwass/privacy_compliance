@@ -9,3 +9,5 @@ Privacy-compliance-detection-2.1/core/model/zh_core_web_md-3.5.0-py3-none-any.wh
 Privacy-compliance-detection-2.1/core/model/uiautomator2-2.16.23-py3-none-any.whl
 configobj
 configparser
+chardet
+selenium

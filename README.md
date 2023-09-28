@@ -54,6 +54,9 @@ In order to get logs and results, you need to do the following steps:
 - `pip install alibabacloud_alimt20181012==1.1.0`
 - `pip install alibabacloud_teaopenai==0.3.2`
 - `pip install hanlp`
+- `pip install selenium`
+-  Install WebDriver according to the web browser in your system. Google Chrome Driver is here: https://googlechromelabs.github.io/chrome-for-testing/
+- `pip install charset`
 - `python3 privacy-policy-main.py`
 
 
@@ -119,8 +122,9 @@ Make sure the file directory structure is like this:
   - context_sensitive_privacy_data_location
   - Privacy-compliance-detection-2.1
   - run.py
-  - missing_pp_url_apps.txt
+  - get_urls.py
   - config.ini
+  - requirements.txt
 
 **Final integrate logs lie in ./context_sensitive_privacy_data_location/final_res_log_dir**
 

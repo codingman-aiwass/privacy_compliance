@@ -1,9 +1,9 @@
 import json
-import requests
 import re
-import csv
 from bs4 import BeautifulSoup
 from bs4 import element
+from selenium_driver import driver
+from SDK_analysis import run_SDK_analysis
 def read_txt_file(file_path):
 # 打开文件
     with open(file_path, 'r') as f:
@@ -18,10 +18,7 @@ def read_json_file(file_path):
     with open(file_path,'r',encoding='utf-8')as f:
         data = json.load(f)
     f.close()
-    print(data)
     return data
-false_url_ch = []
-false_url = []
 def has_chinese_char(text):
     pattern = re.compile(r'[\u4e00-\u9fa5]')
     match = pattern.search(text)
@@ -29,35 +26,17 @@ def has_chinese_char(text):
         return True
     else:
         return False
-def html_save(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        html_content = response.content
-        soup = BeautifulSoup(html_content, 'html.parser')
-        # print(html_content)
-        if has_chinese_char(str(html_content)) == False:
-            false_url_ch.append(url)
-        #with open("D:/pythonProject3_SRL2/temp_html_result/" + str(i) + '.html', 'w', encoding='utf-8') as f:
-         #   f.write(str(soup))
-    # 在这里对HTML文件进行处理
-    else:
-        print("请求失败!" + url)
-        false_url.append(url)
 def html_response_soup(url):
     try:
-        response = requests.get(url)
-        if response.status_code == 200:
-            html_content = response.content
-            soup = BeautifulSoup(html_content, 'html.parser')
-            # print(html_content)
+        soup = driver.get_privacypolicy_html(url)
+        if soup:
             return soup
         else:
-            print("请求"+url+"失败!")
+            print("获取网页"+url+"失败！")
             return None
     except Exception as e:
         print("请求"+str(url)+"失败："+str(e))
         return None
-
 def extract_chinese(text):
     pattern = re.compile(r'[\u4e00-\u9fa5]')
     # 匹配所有中文字符的正则表达式，范围为Unicode编码中的中文字符
@@ -147,7 +126,6 @@ def pingjie(result_list):
     return pingjie_merge(new_result)
 def html_handle2(soup):
     title_tag = soup.title
-    #print(soup)
     body_tag =soup.body
     result = []
     for c in body_tag.contents:
@@ -189,6 +167,10 @@ def redirection_judge(soup):
     else:
         return False
 def url_analysis(url):
+    '''
+    :param url: 隐私政策链接
+    :return: 在Privacypolicy_txt目录下，生成以页面title命名的txt隐私政策文本
+    '''
     soup = html_response_soup(url)
     if soup:
         try:
@@ -218,12 +200,17 @@ def url_analysis(url):
                     print(str(url) + "解析成功" + name)
             except Exception as e:
                 print(str(url)+"解析失败！失败原因："+str(e))
-#8.30解决url重定向问题,修改url_analysis2
 def url_analysis2(url,packagename):
+    '''
+    :param url: 隐私政策链接
+    :param packagename: 应用程序对应的包名
+    :return: 在Privacypolicy_txt目录下生成，以对应包名命名的txt隐私政策文本
+    '''
     soup = html_response_soup(url)
     if soup:
         try:
             name, result = html_handle(soup)
+            SDK_result = run_SDK_analysis(soup=soup)
             if result:
                 result = pingjie(nbsp_rechange(result))
                 if len(result)>4:
@@ -241,9 +228,15 @@ def url_analysis2(url,packagename):
                                 f.write("%s\n" % i)
                         f.close()
                         print(str(url) + "解析成功" + packagename)
+            if SDK_result:
+                print("sdk解析成功！")
+            with open('PrivacyPolicySaveDir/' + packagename + "_sdk.json", 'w', encoding='utf-8') as f:
+                json.dump(SDK_result, f, ensure_ascii=False, indent=2)
+            f.close()
         except:
             try:
                 name, res = html_handle2(soup)
+                SDK_result = run_SDK_analysis(soup=soup)
                 if res:
                     res = pingjie(nbsp_rechange(res))
                     with open('Privacypolicy_txt/' + packagename + ".txt", 'w', encoding='utf-8') as f:
@@ -262,6 +255,11 @@ def url_analysis2(url,packagename):
                                     f.write("%s\n" % i)
                             f.close()
                             print(str(url) + "解析成功" + packagename)
+                if SDK_result:
+                    print("sdk解析成功！")
+                with open('PrivacyPolicySaveDir/'+packagename+"_sdk.json",'w',encoding='utf-8')as f:
+                    json.dump(SDK_result, f, ensure_ascii=False, indent=2)
+                f.close()
             except Exception as e:
                 print(str(url)+"解析失败！失败原因："+str(e))
 def run_url_analysis(filepath):
@@ -277,7 +275,6 @@ def run_url_analysis(filepath):
             for key in packagename_url_dict:
                 url_analysis2(packagename_url_dict[key],key)
                 #print(packagename_url_dict[key])
-#8.20更新
 
 if __name__ == '__main__':
     '''
@@ -286,7 +283,7 @@ if __name__ == '__main__':
         url_analysis(url)    '''
     #read_json_file('temp/pkgName_url.json')
     #总体调试
-    #run_url_analysis('temp/pkgName_url.json')
+    run_url_analysis('pkgName_url.json')
     #单个调试
     #url_analysis2("https://h5.m.youku.com/app/flsm.html",'com.youku.phone')
     #table_static(html_response_soup('https://www.xiaohongshu.com/crown/community/third_checklist'))
