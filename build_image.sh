@@ -1,0 +1,1 @@
+docker build -t privacy_compliance_image .
