@@ -16,16 +16,9 @@ class Createdriver():
         #cmd = [currentPath + "/chrome.bat"]
         #subprocess.Popen(cmd)
         #options = webdriver.ChromeOptions()
-
-        options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--no-sandbox')
+        options = Options()
         options.add_argument("--disable-popup-blocking")
-        options.add_argument("--disable-extensions")
-        # options = Options()
-        # options.add_argument("--disable-popup-blocking")
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         driver = webdriver.Chrome(options=options)
         return driver
 class Privacypolicy(Createdriver):
@@ -68,5 +61,3 @@ class Privacypolicy(Createdriver):
         '''
         self.driver.quit()
 driver = Privacypolicy()
-if __name__ == '__main__':
-    print(driver.get_privacypolicy_html("https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html"))

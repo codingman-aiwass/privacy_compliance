@@ -7,8 +7,6 @@ import time
 import math
 import bs4.element
 from selenium_driver import driver
-from urllib.parse import urlparse
-from urllib.parse import urljoin
 table_false = 0
 def text_format(text):
     text = text.replace(" ", '')
@@ -70,15 +68,9 @@ def rowspan_judge(table):
         rows = table.find_all('tr')
         for row in rows:
             cells = row.find_all(['td', 'th'])
-            for cell in cells:#如果该值大于1，则表明发生行合并
+            for cell in cells:
                 if 'rowspan' in cell.attrs:
-                    try:
-                        if int(cell.attrs['rowspan'])<2:
-                            return False
-                        else:
-                            return True
-                    except:
-                        return True
+                    return True
     return False
 def count_row_column(rows):
     '''
@@ -110,17 +102,11 @@ def colspan_judge(tds):
     :return: 如果该行进行了列合并，则返回true
     '''
     for td in tds:
-        if 'colspan'in td.attrs:#如果该值大于1则表明发生了列合并
+        if td.get('colspan'):
             #print("该行进行了列合并"+td.get_text())
-            try:
-                if int(td.attrs['colspan'])<2:
-                    return False
-                else:
-                    return True
-            except:
-                return True
+            return True
     return False
-def table_headers_find(row,i,count_column,false_colspan = None):
+def table_headers_find(row,i,count_column):
     '''
 
     :param row: 表格的一行
@@ -142,13 +128,6 @@ def table_headers_find(row,i,count_column,false_colspan = None):
             if i == 0:
                 if count_column[i]<count_column[i+1] and colspan_judge(tds):#第一行情况
                     return ['colspan']
-                else:#第一行为表头，非列合并
-                    for td in tds:
-                        th_td_list.append(text_format(td.get_text()))
-                    if th_td_list and len(list(set(th_td_list))) == len(th_td_list):#防止明明是列合并，但colspan判断失效
-                        return th_td_list
-                    else:
-                        return['false_colspan']
             else:
                 if i+1 == len(count_column):
                     return []
@@ -156,30 +135,12 @@ def table_headers_find(row,i,count_column,false_colspan = None):
                     try:
                         if count_column[i]>count_column[i-1] and count_column[i] == count_column[i+1]:#如果该行和前面行不一样列数，同时又和后面列数相同，则该行为表头
                             for td in tds:
-                                th_td_list.append(text_format(td.get_text()))
-                            if th_td_list and len(list(set(th_td_list))) == len(th_td_list):  # 防止明明是列合并，但colspan判断失效
-                                return th_td_list
-                            else:
-                                return ['false_colspan']
+                                th_td_list.append(td.get_text())
+                            return th_td_list
                         elif count_column[i]<count_column[i-1] and count_column[i] == count_column[i+1]:
                             for td in tds:
-                                th_td_list.append(text_format(td.get_text()))
-                            if th_td_list and len(list(set(th_td_list))) == len(th_td_list):  # 防止明明是列合并，但colspan判断失效
-                                return th_td_list
-                            else:
-                                return ['false_colspan']
-                        elif false_colspan:#前一行判断为colspan，但列数一样的行
-                            for td in tds:
-                                th_td_list.append(text_format(td.get_text()))
-                            if th_td_list and len(list(set(th_td_list))) == len(th_td_list):  # 防止明明是列合并，但colspan判断失效
-                                temp_new_list_20 = [s for s in th_td_list if len(s)>20]
-                                if temp_new_list_20:
-                                    return []
-                                temp_new_list_38 = [s for s in th_td_list if 3<len(s)<8]
-                                if len(temp_new_list_38)>len(th_td_list)/2-1:
-                                    return th_td_list
-                            else:
-                                return ['false_colspan']
+                                th_td_list.append(td.get_text())
+                            return th_td_list
                     except:
                         print("")
     return []
@@ -221,49 +182,24 @@ def td_dict_write(td_list,th_dict,i,count_column):
     except:
         return False
     return {}
-def table_headers_thead(thead):
-    th_list = []
-    tds = thead.find_all('td')
-    if tds:
-        for td in tds:
-            th_list.append(td.get_text())
-    return th_list
 def table_handle_no_rowspan(table):
     table_dict_list = []
     rows = table.find_all('tr')
     count_column, aver = count_row_column(rows)
-    thead_flag = 0
-    th_list = []
     for i in range(0, len(rows)):
         sdk_dict = {}
-        if thead_flag == 0:
-            thead = table.find('thead')
-            if thead:
-                th_list = table_headers_thead(thead)
-                thead_flag = 1
-            else:
-                thead_flag = -1
-        if thead_flag == -1 or thead_flag == 1:
-            if 'false_colspan' in th_list:
-                # 表示发生了列合并，则该行不写，并且下一行作为新表头？这里有个问题是，我记得有的是中间断开了，但是并没有产生新的表
-                th_list = table_headers_find(rows[i], i, count_column,false_colspan=True)# 该行为合并列行
-            else:
-                th_list = table_headers_find(rows[i], i, count_column)
-        if th_list and 'colspan' not in th_list and 'false_colspan' not in th_list and len(th_list)>1:
+        th_list = table_headers_find(rows[i], i, count_column)
+        if th_list and 'colspan' not in th_list:
             for th in th_list:
                 sdk_dict[th] = None
             sdk_dict['url-list'] = None
             if len(sdk_dict) > 1:  # 防止合并列的情况
-                table_dict_list.append(dict(sdk_dict))
+                table_dict_list.append(sdk_dict)
             else:
                 print("表头只有一个值")
         else:
             if len(table_dict_list) > 0:
                 td_list, url_list = table_td_extract(rows[i])
-                # 增加新的行的数据的判断，防止出现列合并，但colspan判断失败的现象
-                if td_list and len(list(set(td_list)))<len(td_list):
-                    th_list = ['false_colspan'] #发生了列合并
-                    continue
                 # 找到最近的表头
                 nearly_th_dict = find_th_dict(table_dict_list, aver)
                 if len(nearly_th_dict) == 0:
@@ -272,16 +208,9 @@ def table_handle_no_rowspan(table):
                 if url_list:
                     sdk_dict_temp['url-list'] = url_list
                 if sdk_dict_temp:
-                    table_dict_list.append(dict(sdk_dict_temp))
+                    table_dict_list.append(sdk_dict_temp)
                 #else:
                  #   print("写入行数据失败")
-    #删除表头
-    try:
-        for dict_item in table_dict_list:
-            if all(value is None for value in dict_item.values()):
-                table_dict_list.remove(dict_item)
-    except Exception as e:
-        print(e)
     return table_dict_list
 def table_handle_rowspan(table):
     table_dict_list_row = []
@@ -296,7 +225,7 @@ def tables_handle(soup):
     tables = soup.find_all('table')
     if tables:
         for table in tables:
-            if rowspan_judge(table):#判断是否有行合并
+            if rowspan_judge(table):
                 rowspan_count +=1
                 temp_ro = table_handle_rowspan(table)[:]
                 all_table_dict_list.extend(temp_ro)
@@ -416,7 +345,7 @@ def sdk_title_judge(text):
     key_word = ["第三方","sdk","共享","合作","运营","关联"]
     #小写处理
     text = text.lower()
-    if check_elements(text,key_word,0,6):
+    if check_elements(text,key_word,0,3):
         return True
     return False
 def rule_cut(s):
@@ -489,20 +418,7 @@ def remove_duplicates(lst):
             urls.add(d.get('url'))
             unique_lst.append(d)
     return unique_lst
-def relative_url_judge(base_url,relative_url):
-    try:
-        parsed_href = urlparse(relative_url)
-        if not parsed_href.scheme:
-            absolute_url = urljoin(base_url, relative_url)
-        #print("相对路径")
-            return absolute_url
-        else:
-            return relative_url
-        #print("绝对路径")
-    except:
-        return relative_url
-
-def sdk_link_judge(url,links):
+def sdk_link_judge(links):
     '''
     :param links: 标记为超链接的节点列表
     :return: 判定为sdk描述链接的列表
@@ -510,38 +426,23 @@ def sdk_link_judge(url,links):
     url_dict = {'description':None,'url':None,'soup':None,'table-result':None,'display-result':None}
     sdk_word_url_dict_list = []
     for link in links:
-        son_url = None
-        if url!=None:
-            son_url = relative_url_judge(url,link.get('href'))
-        if son_url ==None:
-            son_url = link.get('href')
-        if is_valid_url(son_url):
+        if is_valid_url(link.get('href')):
             title = link.get_text()
             # 通过链接的名字判断是不是，如果能判断，则
             if sdk_title_judge(title):
                 url_dict['description'] = title
-                url_dict['url'] = son_url
+                url_dict['url'] = link.get('href')
                 temp = dict(url_dict)
                 sdk_word_url_dict_list.append(temp)
             else:
                 parent_tag = link.parent
                 # 通过父节点中对链接的描述判断
-                temp_p =parent_tag.get_text()
                 if len(parent_tag.get_text())<45:
                     if sdk_title_judge(parent_tag.get_text()):
                         url_dict['description'] = parent_tag.get_text()
-                        url_dict['url'] = son_url
+                        url_dict['url'] = link.get('href')
                         temp = dict(url_dict)
                         sdk_word_url_dict_list.append(temp)
-                    else:
-                        grand_parent = parent_tag.parent
-                        temp_p2 = grand_parent.get_text()
-                        if len(grand_parent.get_text())<45:
-                            if sdk_title_judge(grand_parent.get_text()):
-                                url_dict['description'] = grand_parent.get_text()
-                                url_dict['url'] = son_url
-                                temp = dict(url_dict)
-                                sdk_word_url_dict_list.append(temp)
     sdk_word_url_dict_list = remove_duplicates(sdk_word_url_dict_list)
     #如果description与url相等，那么如果列表长度大于2，则删除该元素
     for d in sdk_word_url_dict_list:
@@ -565,77 +466,22 @@ def sdk_soup_judge(links):
             url_list.append(link.get('href'))
     if url_list:
         for url in url_list:
-            if url == 'https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202112201639_51546.html':
-                print(url)
             try:
                 soup = driver.get_privacypolicy_html(url)
                 temp = soup.get_text()
                 if check_elements(temp,key_word):
-                    if "权限列表" in temp and "安卓" in temp:
-                        continue
-                    #增加一个不是隐私政策页面，也不是权限列表页面
-                    if temp.count("儿童")>3:
-                        continue
-                    else:
-                        url_dict['url'] = url
-                        url_dict['soup'] = soup
-                        sdk_url_soup_dict_list.append(dict(url_dict))
+                    url_dict['url'] = url
+                    url_dict['soup'] = soup
+                    sdk_url_soup_dict_list.append(url_dict)
             except Exception as e:
                 print(e)
     return sdk_url_soup_dict_list
-def futher_display_dict_handle(display_dict_list):
-    count_d = []
-    for dis_dict in display_dict_list:
-        count_d.append(len(dis_dict.items()))
-    average = sum(count_d)/len(count_d)
-    if average == display_dict_list[0]:
-        return display_dict_list
-    for i in range(0,len(count_d)):
-        if count_d[i]>=average:
-            temp_dict = dict(display_dict_list[i])
-            temp_key_list = list(temp_dict.keys())
-            break
-    for i in range(0,len(count_d)):
-        if count_d[i]<average:
-            longest_key = None
-            longest_len = 0
-            for key,value in display_dict_list[i].items():
-                if isinstance(value,str) and len(value) >longest_len:
-                    longest_key =key
-                    longest_len = len(value)
-            temp_str = display_dict_list[i].copy()[longest_key]
-            key_list = list(dict(display_dict_list[i]).keys())
-            if 'text' not in key_list:
-                key_list.append('text')
-            temp_key_list = [x for x in temp_key_list if x not in key_list]
-            result_split =[]
-            #result_split = [temp_str.split(k)[0]+k+temp_str.split(k)[1] for k in temp_key_list]
-            for k in temp_key_list:
-                flag = temp_str.split(k)
-                if len(flag)>1:
-                    result_split.append(flag[0])
-                    result_split.append(k)
-                    temp_str=flag[1]
-                if k== temp_key_list[-1]:
-                    result_split.append(temp_str)
-            for a in range(0,len(result_split)):
-                if a==0:
-                    display_dict_list[i][longest_key] = result_split[a]
-                else:
-                    if result_split[a] in temp_key_list:
-                        try:
-                            display_dict_list[i][result_split[a]] = result_split[a+1]
-                        except:
-                            pass
-    return display_dict_list
 def display_handle(soup):
     display_dict_list = []
     display_bs_point = positioning_display_div(soup)
     display_list = display_text_extract(display_bs_point)
     if display_list:
         display_dict_list = display_list_change_dictlist(display_list)
-        #对形成的结果进一步处理
-        display_dict_list = futher_display_dict_handle(display_dict_list)
     return display_dict_list
 def run_table_handle(url=None,soup = None):
     '''
@@ -662,27 +508,24 @@ def run_display_handle(url=None,soup = None):
     #for i in display_dict_list_result:
      #   print(i)
     return display_dict_list_result
-def run_sdk_link_judge(url=None,soup = None):
+def run_sdk_link_judge(soup):
     '''
     :param soup: 隐私政策soup文件
     :return: 判定为sdk子链接的soup文件列表
     '''
-    if soup ==None:
-        soup = driver.get_privacypolicy_html(url)
-    if soup:
-        links = soup.find_all('a')
-        sdk_dict_list = sdk_link_judge(url,links)
-        try:
-            if sdk_dict_list:#从原页面链接描述判定
-                for d in sdk_dict_list:
-                    sdk_soup = driver.get_privacypolicy_html(d['url'])
-                    if sdk_soup:
-                        d['soup'] = sdk_soup
-            else:
-            #从子页面文本描述判定
-                sdk_dict_list.extend(sdk_soup_judge(links))
-        except Exception as e:
-            print(e)
+    links = soup.find_all('a')
+    sdk_dict_list = sdk_link_judge(links)
+    try:
+        if sdk_dict_list:#从原页面链接描述判定
+            for d in sdk_dict_list:
+                sdk_soup = driver.get_privacypolicy_html(d['url'])
+                if sdk_soup:
+                    d['soup'] = soup
+        else:
+        #从子页面文本描述判定
+            sdk_dict_list.extend(sdk_soup_judge(links))
+    except Exception as e:
+        print(e)
     return sdk_dict_list
 link_result = []
 def run_SDK_analysis(url = None,soup = None):
@@ -691,45 +534,43 @@ def run_SDK_analysis(url = None,soup = None):
     :param soup: 隐私政策页面soup
     :return: 返回sdk字典形式列表
     '''
-    final_result = {'sdk-url-list':[],'table-result-len':None,'table-url':[],'table-result':[],'display-result-len':None,'display-url':[],'display-result':[],'false-url':[]}
+    final_result = {'table-result-len':None,'table-url':[],'table-result':[],'display-result-len':None,'display-url':[],'display-result':[],'false-url':[]}
     if soup == None:
         soup = driver.get_privacypolicy_html(url)
-    if soup:#隐私政策链接
-        sdk_dict_list = run_sdk_link_judge(url,soup)
+    if soup:#判断有无sdk子链接
+        sdk_dict_list = run_sdk_link_judge(soup)
         sdk_dict_list = remove_duplicates(sdk_dict_list)
-        if sdk_dict_list:#判断有无sdk子链接
+        if sdk_dict_list:
             for sdk_dict in sdk_dict_list:
-                try:
-                    final_result["sdk-url-list"].append({'description':sdk_dict['description'],'url':sdk_dict['url']})
-                except:
-                    final_result["sdk-url-list"].append({'description':None, 'url': sdk_dict['url']})
-                    # table处理
+                #table处理
                 try:
                     print(sdk_dict['url'])
-                    table_dict_list = run_table_handle(url = url,soup = sdk_dict['soup'])#解析子链接soup文件：表格解析
+                    table_dict_list = run_table_handle(url = sdk_dict['url'])#解析子链接soup文件：表格解析
                     if table_dict_list:
                         try:
-                            final_result['table-url'].append({'description':sdk_dict['description'],'url':sdk_dict['url']})
+                            final_result['table-url'].append([sdk_dict['description'],sdk_dict['url']])
                         except:
-                            final_result['table-url'].append({'description':None, 'url': sdk_dict['url']})
+                            final_result['table-url'].append([sdk_dict['url']])
                         final_result['table-result'].extend(table_dict_list)
                     else:# 不是，则判断是否为陈列形式
-                        display_dict_list = run_display_handle(url = url,soup = sdk_dict['soup'])
+                        display_dict_list = run_display_handle(url = sdk_dict['url'])
                         if display_dict_list:
                             try:
-                                final_result['display-url'].append({'description':sdk_dict['description'],'url':sdk_dict['url']})
+                                final_result['display-url'].append([sdk_dict['description'], sdk_dict['url']])
                             except:
-                                final_result['display-url'].append({'description':None, 'url': sdk_dict['url']})
-                            final_result['display-result'].extend(display_dict_list)
+                                final_result['display-url'].append([sdk_dict['url']])
+                            final_result['display-result'].append(display_dict_list)
                         else:
                             try:
-                                final_result['false-url'].append({'description':sdk_dict['description'],'url':sdk_dict['url']})
+                                final_result['false-url'].append([sdk_dict['description'], sdk_dict['url']])
                             except:
-                                final_result['false-url'].append({'description':None, 'url': sdk_dict['url']})
+                                final_result['false-url'].append([sdk_dict['url']])
                 except Exception as e:
                     print(e)
-        else:#无sdk子链接
-            #llm模块
+                    #是，则解析陈列形式
+                #不是，则导入llm
+        #无，则查看原页面中的形式，是列表/陈述形式/llm
+        else:
             print("无sdk子链接！")
     else:
         print("隐私政策sdk分析失败！错误链接")
@@ -738,37 +579,27 @@ def run_SDK_analysis(url = None,soup = None):
     return final_result
 def random_50():
     filepath = "D:\\中山\\隐私合规\\PrivacyLegal"
-    #filepath = "D:\\pythonProject3_SRL2\\random50\\soup"
     filename_list = os.listdir(filepath)
     count = 0
-    flag = 0
     for i in filename_list:
         try:
             print(i)
-            flag +=1
             soup = get_html_soup(filepath+"\\"+i)
             if soup:
                 result = run_SDK_analysis(soup = soup)
             if result:
                 count +=1
-                with open("D:\\中山\\隐私合规\\PrivacyLegal_sdk_analysis\\"+i[:-5]+".json",'w',encoding='utf-8')as f:
+                with open("random_50_9_24/"+i[:-5]+".json",'w',encoding='utf-8')as f:
                     json.dump(result,f,ensure_ascii=False,indent=2)
                 f.close()
                 print("已完成")
             if count==200:
                 break
-            print(count)
         except Exception as e:
             print(e)
 if __name__ == '__main__':
-    '''
     start_time = time.time()
     random_50()
     end_time = time.time()
     total_time = end_time - start_time
     print("程序运行时间：", total_time, "秒")
-    '''
-    result = run_table_handle(url = "https://terms.alicdn.com/legal-agreement/terms/privacy_description_of_sharing/20230210162254258/20230210162254258.html")
-    with open('temp_sdk_result/com.tmall.wireless_sdk.json','w',encoding='utf-8')as f:
-        json.dump(result,f,ensure_ascii=False,indent=2)#盒马漏掉了一个sdk链接，陈列形式的。
-    f.close()
