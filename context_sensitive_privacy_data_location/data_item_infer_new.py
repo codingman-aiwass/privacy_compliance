@@ -4,6 +4,9 @@ import sys
 import hanlp
 import re
 from typing import List
+import os
+if 'NVIDIA_VISIBLE_DEVICES' in os.environ:
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # 强制使用cpu
 
 
 tok = hanlp.load(hanlp.pretrained.tok.COARSE_ELECTRA_SMALL_ZH)
