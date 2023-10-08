@@ -95,6 +95,7 @@ def determine_aapt(os_type):
     with open('RunningConfig.properties', 'wb') as prop_file:
         props.write(prop_file)
 
+
 # 通过给定的apk路径，判断该路径下有多少个apk文件。该apk_path中可能会有多个路径，彼此之间用;隔开。
 def get_apks_num(apk_path):
     pathes = apk_path.split(';')
@@ -116,6 +117,15 @@ def clear_app_cache(app_package_name):
     print('清除完毕。')
 
 
+def clear_all_files_in_folder(folder):
+    # 删除传入的文件夹里所有的文件
+    for root, dirs, files in os.walk(folder, topdown=False):
+        for name in files:
+            os.remove(os.path.join(root, name))
+        for name in dirs:
+            os.rmdir(os.path.join(root, name))
+
+
 if __name__ == '__main__':
     input_argv = sys.argv[1:]
     try:
@@ -132,7 +142,7 @@ if __name__ == '__main__':
                            'pp_print_long_sentences': 'true',
                            'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
                            'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
-                           'dynamic_ui_depth': '3', 'dynamic_run_time': '600'}
+                           'dynamic_ui_depth': '3', 'dynamic_run_time': '600', 'run_in_docker': 'true'}
 
     else:
         for opt, arg in opts:
@@ -142,10 +152,12 @@ if __name__ == '__main__':
             elif opt in ("-c", "--config"):
                 config_settings = get_config_settings(arg)
 
-    # 默认情况下,直接按顺序执行
-
-    print('input apks to analysis(give absolute path)...')
-    apk_path = input().replace("\\", "/")
+    # 默认情况下,直接按顺序执行,判断是否在docker中执行
+    if config_settings['run_in_docker'] == 'true':
+        apk_path = (os.getcwd() + os.path.sep + 'apks').replace('\\', '/')
+    elif config_settings['run_in_docker'] == 'false':
+        print('input apks to analysis(give absolute path)...')
+        apk_path = input().replace("\\", "/")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
 
@@ -158,6 +170,9 @@ if __name__ == '__main__':
     # 通过查看指定的路径下有多少个apk，根据apk的个数确定超时中断时间。
     total_apks_to_analysis = get_apks_num(apk_path)
     if os_type in ['linux', 'mac']:
+        # 防止因为换行符问题报错
+        print("执行sed -i 's/\r$//' static-run.sh")
+        execute_cmd_with_timeout("sed -i 's/\r$//' static-run.sh")
         execute_cmd_with_timeout('sh static-run.sh', 3600 * total_apks_to_analysis)
     elif os_type == 'win':
         execute_cmd_with_timeout('PowerShell.exe .\static-run.ps1', 3600 * total_apks_to_analysis)
@@ -185,10 +200,12 @@ if __name__ == '__main__':
                 clear_app_cache(pkgName)
                 if os_type in ['linux', 'mac']:
                     execute_cmd_with_timeout(
-                        'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']))
+                        'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                                                            config_settings['dynamic_run_time']))
                 else:
                     execute_cmd_with_timeout(
-                        'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']))
+                        'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                                                           config_settings['dynamic_run_time']))
 
             except Exception:
                 print(Exception)
@@ -202,7 +219,7 @@ if __name__ == '__main__':
             content = f.readlines()
             content = [content.split(' | ')[0] for content in content]
             app_set = set(content)
-            print('app_set:'.format(app_set))
+            print('app_set:{}'.format(app_set))
 
         apps_missing_pp = set()
         app_pp = {}
@@ -212,9 +229,12 @@ if __name__ == '__main__':
             app = app_folder[:app_folder.index('-')]
             if app in app_set:
                 app_dict[app] = app_folder
+        print('app_dict')
+        print(app_dict)
         for key, val in app_dict.items():
             dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
             if 'PrivacyPolicy' not in dirs:
+                print('privacy policy not in ', val)
                 apps_missing_pp.add(key)
                 continue
             elif 'PrivacyPolicy' in dirs:
@@ -225,15 +245,32 @@ if __name__ == '__main__':
                         './AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/' + pp_file) as f:
                     content = f.readlines()
                     content = [item.strip('\n') for item in content]
-                    print(content)
+                    print('content in txt file of PrivacyPolicy', content)
                     pp_url = content
+                    print('pp_url:', pp_url)
                     if len(pp_url) == 1:
-                        if 'html' in pp_url:
-                            app_pp[key] = pp_url[:pp_url.index('html') + 4]
-                        elif 'htm' in pp_url:
-                            app_pp[key] = pp_url[:pp_url.index('htm') + 3]
+                        if 'html' in pp_url[0]:
+                            app_pp[key] = pp_url[0][:pp_url[0].index('html') + 4]
+                        elif 'htm' in pp_url[0]:
+                            app_pp[key] = pp_url[0][:pp_url[0].index('htm') + 3]
                     elif len(pp_url) > 1:
-                        app_pp[key] = pp_url
+                        # TODO 目前先在我这边，对于获取到了多个URL链接的，只保留以.html/htm结尾的，或者含有html/htm的链接
+                        # 从这里开始=======
+                        for url in pp_url:
+                            if url.endswith('html') or url.endswith('htm'):
+                                app_pp[key] = url
+                                break
+                            if 'html' in url or 'htm' in url:
+                                app_pp[key] = url
+                        # 如果最终app_pp中不含有key，说明找到的全部都不是隐私政策URL，等于没找到隐私政策
+                        if key not in app_pp or type(app_pp[key]) != str:
+                            print('privacy policy not in ', val)
+                            apps_missing_pp.add(key)
+                        # TODO 到这里结束========
+
+                        # 下面这行语句会保留所有的URL到一个列表中,是原本做法。
+                        # app_pp[key] = pp_url
+
         # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
         # apps_missing_pp = app_set - set(app_pp.keys())
         with open('dynamic_apps_missing_pp_url.txt', 'w', encoding='utf8') as f:
@@ -252,16 +289,21 @@ if __name__ == '__main__':
                         f.write(item)
                         f.write('\n')
         # app_pp 中存放隐私政策url和包名
+
         with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=True)
-
+        print(app_pp)
     os.chdir('./Privacy-compliance-detection-2.1/core')
     if 'Privacypolicy_txt' in os.listdir():
-        shutil.rmtree('Privacypolicy_txt')
-        os.mkdir('Privacypolicy_txt')
+        # 此处改成删除Privacypolicy_txt下的所有文件
+        # shutil.rmtree('Privacypolicy_txt')
+        # os.mkdir('Privacypolicy_txt')
+        clear_all_files_in_folder('./Privacypolicy_txt')
     if 'PrivacyPolicySaveDir' in os.listdir():
-        shutil.rmtree('PrivacyPolicySaveDir')
-        os.mkdir('PrivacyPolicySaveDir')
+        # shutil.rmtree('PrivacyPolicySaveDir')
+        # os.mkdir('PrivacyPolicySaveDir')
+        # 同理，不直接使用rmtree
+        clear_all_files_in_folder('./PrivacyPolicySaveDir')
     if 'Privacypolicy_txt' not in os.listdir():
         os.mkdir('Privacypolicy_txt')
     if 'PrivacyPolicySaveDir' not in os.listdir():
@@ -280,13 +322,17 @@ if __name__ == '__main__':
     if config_settings['ui_static'] == 'true':
         os.chdir('./context_sensitive_privacy_data_location')
         if 'tmp-output' in os.listdir():
-            shutil.rmtree('tmp-output')
-            os.mkdir('tmp-output')
+            # shutil.rmtree('tmp-output')
+            # os.mkdir('tmp-output')
+            # 同理，不直接使用rmtree
+            clear_all_files_in_folder('./tmp-output')
         if 'tmp-output' not in os.listdir():
             os.mkdir('tmp-output')
         if 'final_res_log_dir' in os.listdir():
-            shutil.rmtree('final_res_log_dir')
-            os.mkdir('final_res_log_dir')
+            # shutil.rmtree('final_res_log_dir')
+            # os.mkdir('final_res_log_dir')
+            # 同理，不直接使用rmtree
+            clear_all_files_in_folder('./final_res_log_dir')
         if 'final_res_log_dir' not in os.listdir():
             os.mkdir('final_res_log_dir')
         if os_type == 'win':
@@ -343,4 +389,3 @@ if __name__ == '__main__':
         execute_cmd_with_timeout('python integrate_log.py')
     elif os_type in ['linux', 'mac']:
         execute_cmd_with_timeout('python3 integrate_log.py')
-

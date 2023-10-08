@@ -20,5 +20,6 @@ if [ ! -d "$(pwd)/final_res/pp_missing" ]; then
 fi
 
 echo "Start static analysis..."
-java -jar find_data_points.jar
+java -jar -Xmx16G find_data_points.jar
+#java -jar find_data_points.jar
 
