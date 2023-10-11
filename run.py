@@ -10,6 +10,8 @@ import platform
 import json
 
 from configobj import ConfigObj
+
+from AppUIAutomator2Navigation.stop_and_run_uiautomator import rerun_uiautomator2
 from get_urls import get_pkg_names_from_input_list
 from get_urls import get_pp_from_app_store
 
@@ -198,14 +200,16 @@ if __name__ == '__main__':
                 os_type = get_OS_type()
                 # 清除app缓存数据
                 clear_app_cache(pkgName)
+                # 重启uiautomator2
+                rerun_uiautomator2()
                 if os_type in ['linux', 'mac']:
                     execute_cmd_with_timeout(
                         'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                            config_settings['dynamic_run_time']))
+                                                            config_settings['dynamic_run_time']),timeout=int(config_settings['dynamic_run_time']))
                 else:
                     execute_cmd_with_timeout(
                         'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                           config_settings['dynamic_run_time']))
+                                                           config_settings['dynamic_run_time']),timeout=int(config_settings['dynamic_run_time']))
 
             except Exception:
                 print(Exception)
@@ -363,11 +367,11 @@ if __name__ == '__main__':
                 if os_type in ['linux', 'mac']:
                     execute_cmd_with_timeout(
                         'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                            config_settings['test_time']))
+                                                            config_settings['dynamic_run_time']))
                 else:
                     execute_cmd_with_timeout(
                         'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                           config_settings['test_time']))
+                                                           config_settings['dynamic_run_time']))
             except Exception:
                 print('error occurred, continue...')
         os.chdir(cur_path)
