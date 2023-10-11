@@ -409,6 +409,8 @@ if __name__ == '__main__':
     get_privacy_policy(os_type,config_settings,cur_path)
     # 分析隐私政策
     analysis_privacy_policy(total_apks_to_analysis,os_type)
+    # 静态UI分析
+    static_UI_analysis(total_apks_to_analysis,config_settings,os_type)
     # 动态测试
     dynamic_app_test(config_settings,cur_path,os_type)
     # 整理最终log
