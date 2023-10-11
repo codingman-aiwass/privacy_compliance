@@ -127,8 +127,8 @@ def clear_all_files_in_folder(folder):
         for name in dirs:
             os.rmdir(os.path.join(root, name))
 
-
-if __name__ == '__main__':
+# 运行整套工具之前，完成必要的初始化。
+def initSettings():
     input_argv = sys.argv[1:]
     try:
         opts, args = getopt.getopt(input_argv, "hc:", ["config="])
@@ -162,15 +162,16 @@ if __name__ == '__main__':
         apk_path = input().replace("\\", "/")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
+    total_apks_to_analysis = get_apks_num(apk_path)
+    return config_settings,cur_path,apk_path,get_OS_type(),total_apks_to_analysis
 
-    # if config_settings['code_inspection'] == 'true':
+# 运行code_inspection部分
+def run_code_inspection(cur_path,total_apks_to_analysis,os_type):
     os.chdir('./Privacy-compliance-detection-2.1/core')
     # 确定使用哪一种aapt
-    determine_aapt(get_OS_type())
-    os_type = get_OS_type()
+    determine_aapt(os_type)
     # 这里需要改为根据需要分析的apk的数量决定超时时间。写死3600的话就只会跑3600s就退出。剩下的app就没法继续分析。
     # 通过查看指定的路径下有多少个apk，根据apk的个数确定超时中断时间。
-    total_apks_to_analysis = get_apks_num(apk_path)
     if os_type in ['linux', 'mac']:
         # 防止因为换行符问题报错
         print("执行sed -i 's/\r$//' static-run.sh")
@@ -181,6 +182,8 @@ if __name__ == '__main__':
     print('finish code_inspection of apk.')
     os.chdir(cur_path)
 
+# 运行隐私政策获取模块
+def get_privacy_policy(os_type,config_settings,cur_path):
     if config_settings['get_pp_from_app_store'] == 'true':
         if os_type == 'win':
             execute_cmd_with_timeout('python get_urls.py')
@@ -196,8 +199,6 @@ if __name__ == '__main__':
             try:
                 pkgName, appName = pkgName_appName.split(' | ')
                 appName = appName.strip('\'')
-                # 判断操作系统版本,分win和linux/mac
-                os_type = get_OS_type()
                 # 清除app缓存数据
                 clear_app_cache(pkgName)
                 # 重启uiautomator2
@@ -297,16 +298,14 @@ if __name__ == '__main__':
         with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=True)
         print(app_pp)
+    os.chdir(cur_path)
+
+# 隐私政策分析模块
+def analysis_privacy_policy(total_apks_to_analysis,os_type):
     os.chdir('./Privacy-compliance-detection-2.1/core')
     if 'Privacypolicy_txt' in os.listdir():
-        # 此处改成删除Privacypolicy_txt下的所有文件
-        # shutil.rmtree('Privacypolicy_txt')
-        # os.mkdir('Privacypolicy_txt')
         clear_all_files_in_folder('./Privacypolicy_txt')
     if 'PrivacyPolicySaveDir' in os.listdir():
-        # shutil.rmtree('PrivacyPolicySaveDir')
-        # os.mkdir('PrivacyPolicySaveDir')
-        # 同理，不直接使用rmtree
         clear_all_files_in_folder('./PrivacyPolicySaveDir')
     if 'Privacypolicy_txt' not in os.listdir():
         os.mkdir('Privacypolicy_txt')
@@ -314,15 +313,17 @@ if __name__ == '__main__':
         os.mkdir('PrivacyPolicySaveDir')
     try:
         if os_type == 'win':
-            execute_cmd_with_timeout('python privacy-policy-main.py')
-            execute_cmd_with_timeout('python report_data_in_pp_and_program.py')
+            execute_cmd_with_timeout('python privacy-policy-main.py',timeout=total_apks_to_analysis * 600)
+            execute_cmd_with_timeout('python report_data_in_pp_and_program.py',timeout=total_apks_to_analysis * 600)
         elif os_type in ['linux', 'mac']:
-            execute_cmd_with_timeout('python3 privacy-policy-main.py')
-            execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py')
+            execute_cmd_with_timeout('python3 privacy-policy-main.py',timeout=total_apks_to_analysis * 600)
+            execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py',timeout=total_apks_to_analysis * 600)
     except UnboundLocalError:
         print('隐私政策解析失败，continue。。。')
     os.chdir(cur_path)
 
+# 静态UI分析模块
+def static_UI_analysis(total_apks_to_analysis,config_settings,os_type):
     if config_settings['ui_static'] == 'true':
         os.chdir('./context_sensitive_privacy_data_location')
         if 'tmp-output' in os.listdir():
@@ -349,6 +350,8 @@ if __name__ == '__main__':
             print('execute run_UI_static over...')
         os.chdir(cur_path)
 
+# 动态APP测试模块，可能不会运行
+def dynamic_app_test(config_settings,cur_path,os_type):
     if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
         print('this module has been run before...')
     elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
@@ -379,6 +382,8 @@ if __name__ == '__main__':
         print('did not execute ui_dynamic...')
         print(config_settings['ui_dynamic'], config_settings['get_pp_from_dynamically_running_app'])
 
+# 输出最终log
+def printFinalLog(os_type):
     os.chdir('./context_sensitive_privacy_data_location')
     if os_type == 'win':
         execute_cmd_with_timeout('python get_dynamic_res.py')
@@ -393,3 +398,18 @@ if __name__ == '__main__':
         execute_cmd_with_timeout('python integrate_log.py')
     elif os_type in ['linux', 'mac']:
         execute_cmd_with_timeout('python3 integrate_log.py')
+    os.chdir(cur_path)
+
+if __name__ == '__main__':
+    # 初始化
+    config_settings,cur_path,apk_path,os_type,total_apks_to_analysis = initSettings()
+    # 运行code_inspection
+    run_code_inspection(cur_path,total_apks_to_analysis,os_type)
+    # 获取隐私政策
+    get_privacy_policy(os_type,config_settings,cur_path)
+    # 分析隐私政策
+    analysis_privacy_policy(total_apks_to_analysis,os_type)
+    # 动态测试
+    dynamic_app_test(config_settings,cur_path,os_type)
+    # 整理最终log
+    printFinalLog(os_type)
