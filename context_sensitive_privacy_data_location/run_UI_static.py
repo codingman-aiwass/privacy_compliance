@@ -42,7 +42,7 @@ if __name__ == '__main__':
     output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_output.json')
     # 读取json文件里的包名,修改文件名
     for output_json in output_jsons:
-        with open(output_json, 'r') as f:
+        with open(output_json,'r',encoding='utf-8') as f:
             content = json.load(f)
         appName = content.get('AppName')
         if 'dynamic' in output_json:

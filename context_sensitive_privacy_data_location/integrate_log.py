@@ -29,7 +29,7 @@ pp_compliance_dir, final_res_log_dir = get_settings_by_section_and_name('static-
                                                                         'final_res_log_dir')
 # 把output文件夹中以相同包名开头的归为一类,方便遍历整合
 # 为了避免之前的分析结果混入本次分析，读取apk_pkgName.txt，获取里面的所有包名，只整合这里面含有的包名
-with open('../AppUIAutomator2Navigation/apk_pkgName.txt') as f:
+with open('../AppUIAutomator2Navigation/apk_pkgName.txt','r',encoding='utf-8') as f:
     content = f.readlines()
     content = [content.split(' | ')[0] for content in content]
     prefix_set = set(content)
@@ -63,7 +63,7 @@ for app_name, jsons in prefix_dict.items():
     text_label_pairs_2 = None
     # 通过这个循环读取了静态/动态的JSON结果
     for json_file in jsons:
-        with open(outputdir + '/' + json_file) as f:
+        with open(outputdir + '/' + json_file,'r',encoding='utf-8') as f:
             data = json.load(f)
         output_objects = data["outputObjects"]
         if 'static' in json_file:
@@ -77,18 +77,18 @@ for app_name, jsons in prefix_dict.items():
 
     # 读取我之前的pp_missing结果,准备加入最后的汇总文件里
     try:
-        with open(pp_missing_dir + '/' + app_name + '_pp_missing_items.json', 'r') as f:
+        with open(pp_missing_dir + '/' + app_name + '_pp_missing_items.json','r',encoding='utf-8') as f:
             pp_missing = json.load(f)
             pp_missing_items = pp_missing[1]
         # 读取佳颖的隐私政策中冗长的句子，以及另外几个不合规的分析
-        with open(pp_compliance_dir + '/' + app_name + '.json', 'r') as f:
+        with open(pp_compliance_dir + '/' + app_name + '.json','r',encoding='utf-8') as f:
             pp = json.load(f)
             data_cn_total = pp[0]['data-cn-total']
             permission_list = pp[0]['permission_list']
 
             # TODO 此处还需要细分各类情况.比如声明权限信息 SDK信息,等等.需要多设置几个变量接收
             pp_compliance = pp[2]
-        with open(pp_compliance_dir + '/' + app_name + '_sdk.json', 'r') as f:
+        with open(pp_compliance_dir + '/' + app_name + '_sdk.json', 'r',encoding='utf-8') as f:
             pp_sdk = json.load(f)
         final_res = []
         pairs_1 = []

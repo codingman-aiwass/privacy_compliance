@@ -192,7 +192,7 @@ def get_privacy_policy(os_type,config_settings,cur_path):
     else:
         # 动态运行获取隐私政策
         os.chdir('./AppUIAutomator2Navigation')
-        with open('apk_pkgName.txt') as f:
+        with open('apk_pkgName.txt','r',encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]
         for pkgName_appName in pkgName_appName_list:
@@ -247,7 +247,7 @@ def get_privacy_policy(os_type,config_settings,cur_path):
                 pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/')[
                     0]
                 with open(
-                        './AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/' + pp_file) as f:
+                        './AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/' + pp_file,'r',encoding='utf-8') as f:
                     content = f.readlines()
                     content = [item.strip('\n') for item in content]
                     print('content in txt file of PrivacyPolicy', content)
@@ -289,13 +289,13 @@ def get_privacy_policy(os_type,config_settings,cur_path):
             app_pp.update(pp_urls)
             # 输出仍然找不到的隐私政策
             if len(missing_urls) > 0:
-                with open('apps_still_missing_pp_urls.txt', 'w') as f:
+                with open('apps_still_missing_pp_urls.txt', 'w',encoding='utf-8') as f:
                     for item in missing_urls:
                         f.write(item)
                         f.write('\n')
         # app_pp 中存放隐私政策url和包名
 
-        with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
+        with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w',encoding='utf-8') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=True)
         print(app_pp)
     os.chdir(cur_path)
@@ -358,7 +358,7 @@ def dynamic_app_test(config_settings,cur_path,os_type):
         print(
             "config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
         os.chdir('./AppUIAutomator2Navigation')
-        with open('apk_pkgName.txt') as f:
+        with open('apk_pkgName.txt','r',encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]
         for pkgName_appName in pkgName_appName_list:
