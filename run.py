@@ -2,7 +2,7 @@ import configparser
 import getopt
 import os
 import pickle
-import shutil
+import threading
 import signal
 import subprocess
 import sys
@@ -401,17 +401,58 @@ def printFinalLog(os_type):
     os.chdir(cur_path)
 
 if __name__ == '__main__':
+    # code_inspection 最先执行，可以和 获取隐私政策部分、静态UI分析、动态测试 并行执行，分析隐私政策部分 必须在 获取隐私政策 后才能执行
+    # 即可以并行的部分：run_code_inspection、 get_privacy_policy、 static_UI_analysis、 dynamic_app_test,
+    # 分析隐私政策和整理最终log需要放在最后，顺序执行
+    # 初始化放在最前，不和其他部分并行
+
     # 初始化
     config_settings,cur_path,apk_path,os_type,total_apks_to_analysis = initSettings()
-    # 运行code_inspection
-    run_code_inspection(cur_path,total_apks_to_analysis,os_type)
-    # 获取隐私政策
-    get_privacy_policy(os_type,config_settings,cur_path)
-    # 分析隐私政策
-    analysis_privacy_policy(total_apks_to_analysis,os_type)
-    # 静态UI分析
-    static_UI_analysis(total_apks_to_analysis,config_settings,os_type)
-    # 动态测试
-    dynamic_app_test(config_settings,cur_path,os_type)
-    # 整理最终log
+
+    # 创建线程
+    threads = []
+
+    # 创建并启动线程1：run_code_inspection
+    thread1 = threading.Thread(target=run_code_inspection, args=(cur_path, total_apks_to_analysis, os_type))
+    threads.append(thread1)
+    thread1.start()
+
+    # 创建并启动线程2：get_privacy_policy
+    thread2 = threading.Thread(target=get_privacy_policy, args=(os_type, config_settings, cur_path))
+    threads.append(thread2)
+    thread2.start()
+
+    # 创建并启动线程3：static_UI_analysis
+    thread3 = threading.Thread(target=static_UI_analysis, args=(total_apks_to_analysis, config_settings, os_type))
+    threads.append(thread3)
+    thread3.start()
+
+    # 创建并启动线程4：dynamic_app_test
+    thread4 = threading.Thread(target=dynamic_app_test, args=(config_settings, cur_path, os_type))
+    threads.append(thread4)
+    thread4.start()
+
+    # 等待所有线程完成
+    for thread in threads:
+        thread.join()
+
+    # 执行分析隐私政策
+    analysis_privacy_policy(total_apks_to_analysis, os_type)
+
+    # 执行整理最终log
     printFinalLog(os_type)
+
+    # # 运行code_inspection
+    # run_code_inspection(cur_path,total_apks_to_analysis,os_type)
+    # # 获取隐私政策
+    # get_privacy_policy(os_type,config_settings,cur_path)
+    # # 静态UI分析
+    # static_UI_analysis(total_apks_to_analysis,config_settings,os_type)
+    # # 动态测试
+    # dynamic_app_test(config_settings,cur_path,os_type)
+    #
+    # # 分析隐私政策
+    # analysis_privacy_policy(total_apks_to_analysis, os_type)
+    #
+    # # 整理最终log
+    # printFinalLog(os_type)
