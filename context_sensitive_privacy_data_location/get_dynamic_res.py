@@ -48,6 +48,9 @@ def get_log():
         for file_name in os.listdir(dynamic_log_path):
             if file_name.startswith('.'):
                 continue
+            # 判断是否是文件夹。不是文件夹的也跳过
+            if not os.path.isdir(os.path.join(dynamic_log_path,file_name)):
+                continue
             if file_name.startswith(prefix):
                 # print(file_name)
                 cur_timestamp = file_name[file_name.index('-') + 1:]
