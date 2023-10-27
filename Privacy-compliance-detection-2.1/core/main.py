@@ -1,6 +1,4 @@
 import os
-if 'NVIDIA_VISIBLE_DEVICES' in os.environ:
-    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # 强制使用cpu
 from run_privacypolicy import run_write_json
 from url_analysis import run_url_analysis
 from compliance_analysis import run_compliance_analysis

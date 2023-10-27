@@ -140,8 +140,8 @@ def run_permission_handle(data_cn_total,sentence_list,url):
     '''
     #优先显示子url中提取的危险权限
     permission_url_list = run_permission_son_url_extract(url)
-    print("子页面权限：")
-    print(permission_url_list)
+    #print("子页面权限：")
+    #print(permission_url_list)
     #if permission_url_list:两个方法取并集
        # return permission_url_list
     #数据项间接获取权限
@@ -157,9 +157,9 @@ def run_permission_handle(data_cn_total,sentence_list,url):
                 permission_txt_list.append(p)
     if permission_txt_list:
         permi_list = permission_text_description_resp(permission_txt_list)
-        print(permission_txt_list)
-        print("文本对应权限：")
-        print(permi_list)
+        #print(permission_txt_list)
+        #print("文本对应权限：")
+        #print(permi_list)
     #result = list(set(permi_list+permission_list))数据项匹配权限方法
     result = list(set(permi_list + permission_url_list))
     re_result = []
@@ -188,20 +188,24 @@ def permission_son_html_url(url):
     :return: 返回权限声明页面的html对象
     '''
     pp_soup = html_response_soup(url)
-    links = pp_soup.find_all('a')
-    if not links:
-        pp_soup = redirection_judge(pp_soup)
+    try:
         links = pp_soup.find_all('a')
-    for link in links:
-        if is_valid_url(link.get('href')):
-            permission_soup = html_response_soup(link.get('href'))
-            try:
-                text = permission_soup.get_text()
-                if "权限列表" in text and "安卓" in text:
-                    #print(link.get('href'))
-                    return permission_soup
-            except:
-                continue
+        if not links:
+            pp_soup = redirection_judge(pp_soup)
+            links = pp_soup.find_all('a')
+        for link in links:
+            if is_valid_url(link.get('href')):
+                permission_soup = html_response_soup(link.get('href'))
+                try:
+                    text = permission_soup.get_text()
+                    if "权限列表" in text and "安卓" in text:
+                        #print(link.get('href'))
+                        return permission_soup
+                except:
+                    continue
+    except Exception as e:
+        print("爬取权限子链接"+url+"失败")
+        print(e)
     return False
 def permission_son_html_extract(permission_soup):
     permission_list = []

@@ -1,2 +1,2 @@
 Copy-Item -Path $env:USERPROFILE\.android\adbkey -Destination .\adbkey
-docker build -t privacy_compliance_image:v1.0 .
+docker build -f Dockerfile.test -t privacy_compliance_image:v1.0 .

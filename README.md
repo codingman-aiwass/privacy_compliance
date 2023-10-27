@@ -53,7 +53,7 @@ In order to get logs and results, you need to do the following steps:
 - `pip install bs4`
 - `pip install alibabacloud_alimt20181012==1.1.0`
 - `pip install alibabacloud_teaopenai==0.3.2`
-- `pip install hanlp`
+- `pip install hanlp[full] -U`
 - `pip install selenium`
 -  Install WebDriver according to the web browser in your system. Google Chrome Driver is here: https://googlechromelabs.github.io/chrome-for-testing/
 - `pip install charset`
@@ -64,7 +64,7 @@ In order to get logs and results, you need to do the following steps:
 
 Change directory to AppUIAutomator2Navigation first.
 
-Make sure to has a real mobile phone and well setup  and python3.10.10. 
+Make sure to has a real mobile phone and well setup  and python3.8. 
 
 You need to set up Frida-server in your phone, and set up tesseract and Chinese simplified language package in your computer. **Attention: The version of frida in your computer should be equal to frida-server in your phone!**
 
@@ -76,7 +76,6 @@ tesseract:  https://github.com/tesseract-ocr/tesseract. Make sure the version sh
 
 Config what app to dynamically test in `apk_pkgName.txt` . It should be package name and name of the app.
 
-- `pip install ../Privacy-compliance-detection-2.1/core/model/uiautomator2-2.16.23-py3-none-any.whl`
 - `pip install -r requirements.txt`
 
 Run `python3 test_integrate.py`
@@ -101,7 +100,7 @@ Change directory to Privacy-compliance-detection-2.1/core first.
 Change to context_sensitive_privacy_data_location First.
 
 You can set outputdir and apks to analysis and other config in the RunningConfig.ini
-
+- Run `pip3 install hanlp[full] -U`
 - Run `python3 run_jar.py`
 - Run `python3 run_UI_static.py`
 
