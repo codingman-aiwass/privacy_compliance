@@ -235,7 +235,15 @@ public class findMultipleAPKIoTDataPoints {
             logsPath = Paths.get(properties.getProperty("logsPath", "")).toString();
             androidJar = Paths.get(properties.getProperty("AndroidJar", "")).toString();
             resultSavePath = Paths.get(properties.getProperty("resultSavePath", "")).toString();
-            apkPath = Paths.get(properties.getProperty("apk", "")).toString();
+            String[] apks = properties.getProperty("apk", "").split(";");
+            StringBuilder sb = new StringBuilder();
+            for (String apk : apks) {
+                sb.append(Paths.get(apk));
+                sb.append(";");
+            }
+//            apkPath = Paths.get(properties.getProperty("apk", "")).toString();
+            apkPath = sb.toString().substring(0,sb.toString().length() - 1);
+            System.out.println(apkPath);
             aapt = Paths.get(properties.getProperty("aapt", "")).toString();
 
         } catch (IOException e) {

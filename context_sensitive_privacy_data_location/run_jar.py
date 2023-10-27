@@ -52,7 +52,7 @@ def traverse(directory):
         print(fileName)
         try:
             # execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, "/""+fileName+"/"", r'H:\SDKPrivacyLegal\demoApps\googleApps'))
-            execute_cmd_with_timeout(r'java -jar {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
+            execute_cmd_with_timeout(r'java -jar -Xmx16G {} {} {} {}'.format(jar_path, android_sdk_path, fileName, output_dir))
         except Exception as e:
             print(e)
 

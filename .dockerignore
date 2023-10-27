@@ -13,3 +13,5 @@
 !prepareInDocker.sh
 !model
 !requirements_docker.txt
+!requirements_yolov5.txt
+!adbkey.pub

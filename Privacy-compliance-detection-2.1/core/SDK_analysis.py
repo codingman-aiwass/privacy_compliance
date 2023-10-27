@@ -7,6 +7,8 @@ import time
 import math
 import bs4.element
 from selenium_driver import driver
+from urllib.parse import urlparse
+from urllib.parse import urljoin
 table_false = 0
 def text_format(text):
     text = text.replace(" ", '')
@@ -182,13 +184,30 @@ def td_dict_write(td_list,th_dict,i,count_column):
     except:
         return False
     return {}
+def table_headers_thead(thead):
+    th_list = []
+    tds = thead.find_all('td')
+    if tds:
+        for td in tds:
+            th_list.append(td.get_text())
+    return th_list
 def table_handle_no_rowspan(table):
     table_dict_list = []
     rows = table.find_all('tr')
+    th_list = []
     count_column, aver = count_row_column(rows)
+    thead_flag = 0
     for i in range(0, len(rows)):
         sdk_dict = {}
-        th_list = table_headers_find(rows[i], i, count_column)
+        if thead_flag == 0:
+            thead = table.find('thead')
+            if thead:
+                th_list = table_headers_thead(thead)
+                thead_flag = 1
+            else:
+                thead_flag = -1
+        else:
+            th_list = table_headers_find(rows[i], i, count_column)
         if th_list and 'colspan' not in th_list:
             for th in th_list:
                 sdk_dict[th] = None
@@ -345,7 +364,7 @@ def sdk_title_judge(text):
     key_word = ["第三方","sdk","共享","合作","运营","关联"]
     #小写处理
     text = text.lower()
-    if check_elements(text,key_word,0,3):
+    if check_elements(text,key_word,0,6):
         return True
     return False
 def rule_cut(s):
@@ -418,7 +437,20 @@ def remove_duplicates(lst):
             urls.add(d.get('url'))
             unique_lst.append(d)
     return unique_lst
-def sdk_link_judge(links):
+def relative_url_judge(base_url,relative_url):
+    try:
+        parsed_href = urlparse(relative_url)
+        if not parsed_href.scheme:
+            absolute_url = urljoin(base_url, relative_url)
+        #print("相对路径")
+            return absolute_url
+        else:
+            return relative_url
+        #print("绝对路径")
+    except:
+        return relative_url
+
+def sdk_link_judge(url,links):
     '''
     :param links: 标记为超链接的节点列表
     :return: 判定为sdk描述链接的列表
@@ -426,12 +458,17 @@ def sdk_link_judge(links):
     url_dict = {'description':None,'url':None,'soup':None,'table-result':None,'display-result':None}
     sdk_word_url_dict_list = []
     for link in links:
-        if is_valid_url(link.get('href')):
+        son_url = None
+        if url!=None:
+            son_url = relative_url_judge(url,link.get('href'))
+        if son_url ==None:
+            son_url = link.get('href')
+        if is_valid_url(son_url):
             title = link.get_text()
             # 通过链接的名字判断是不是，如果能判断，则
             if sdk_title_judge(title):
                 url_dict['description'] = title
-                url_dict['url'] = link.get('href')
+                url_dict['url'] = son_url
                 temp = dict(url_dict)
                 sdk_word_url_dict_list.append(temp)
             else:
@@ -440,7 +477,7 @@ def sdk_link_judge(links):
                 if len(parent_tag.get_text())<45:
                     if sdk_title_judge(parent_tag.get_text()):
                         url_dict['description'] = parent_tag.get_text()
-                        url_dict['url'] = link.get('href')
+                        url_dict['url'] = son_url
                         temp = dict(url_dict)
                         sdk_word_url_dict_list.append(temp)
     sdk_word_url_dict_list = remove_duplicates(sdk_word_url_dict_list)
@@ -508,13 +545,13 @@ def run_display_handle(url=None,soup = None):
     #for i in display_dict_list_result:
      #   print(i)
     return display_dict_list_result
-def run_sdk_link_judge(soup):
+def run_sdk_link_judge(url=None,soup = None):
     '''
     :param soup: 隐私政策soup文件
     :return: 判定为sdk子链接的soup文件列表
     '''
     links = soup.find_all('a')
-    sdk_dict_list = sdk_link_judge(links)
+    sdk_dict_list = sdk_link_judge(url,links)
     try:
         if sdk_dict_list:#从原页面链接描述判定
             for d in sdk_dict_list:
@@ -537,10 +574,10 @@ def run_SDK_analysis(url = None,soup = None):
     final_result = {'table-result-len':None,'table-url':[],'table-result':[],'display-result-len':None,'display-url':[],'display-result':[],'false-url':[]}
     if soup == None:
         soup = driver.get_privacypolicy_html(url)
-    if soup:#判断有无sdk子链接
-        sdk_dict_list = run_sdk_link_judge(soup)
+    if soup:#隐私政策链接
+        sdk_dict_list = run_sdk_link_judge(url,soup)
         sdk_dict_list = remove_duplicates(sdk_dict_list)
-        if sdk_dict_list:
+        if sdk_dict_list:#判断有无sdk子链接
             for sdk_dict in sdk_dict_list:
                 #table处理
                 try:
@@ -567,10 +604,8 @@ def run_SDK_analysis(url = None,soup = None):
                                 final_result['false-url'].append([sdk_dict['url']])
                 except Exception as e:
                     print(e)
-                    #是，则解析陈列形式
-                #不是，则导入llm
-        #无，则查看原页面中的形式，是列表/陈述形式/llm
-        else:
+        else:#无sdk子链接
+            #llm模块
             print("无sdk子链接！")
     else:
         print("隐私政策sdk分析失败！错误链接")
@@ -598,8 +633,11 @@ def random_50():
         except Exception as e:
             print(e)
 if __name__ == '__main__':
+    '''
     start_time = time.time()
     random_50()
     end_time = time.time()
     total_time = end_time - start_time
-    print("程序运行时间：", total_time, "秒")
+    print("程序运行时间：", total_time, "秒") '''
+    print(run_SDK_analysis(url = 'https://html5.moji.com/tpd/agreement/privacy-zh_CN.html'))
+    #relative_url_judge('https://html5.moji.com/tpd/agreement/privacy-zh_CN.html','./partners_info.html')

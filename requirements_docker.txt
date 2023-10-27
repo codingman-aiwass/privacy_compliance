@@ -6,14 +6,13 @@ alibabacloud-tea==0.3.2
 hanlp
 zh_core_web_trf-3.5.0-py3-none-any.whl
 zh_core_web_md-3.5.0-py3-none-any.whl
-uiautomator2-2.16.23-py3-none-any.whl
 configobj
 configparser
 chardet
 selenium
-frida==16.1.3
+frida==15.1.24
+frida-tools==10.6.2
 matplotlib==3.6.0
 networkx==3.1
-Pillow==9.2.0
 pytesseract==0.3.10
-uiautomator2==2.16.23
+uiautomator2==2.16.25

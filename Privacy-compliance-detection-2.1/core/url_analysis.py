@@ -1,5 +1,7 @@
 import json
 import re
+import time
+
 from bs4 import BeautifulSoup
 from bs4 import element
 from selenium_driver import driver
@@ -200,20 +202,73 @@ def url_analysis(url):
                     print(str(url) + "解析成功" + name)
             except Exception as e:
                 print(str(url)+"解析失败！失败原因："+str(e))
-def url_analysis2(url,packagename):
+def url_juudge(value):
+    if len(value[1])==1:
+        url = value[1][0]
+        soup = html_response_soup(url)
+        return soup, url
+    elif len(value[1])<1:
+        print("无有效输入隐私政策")
+        return False
+    else:
+        for u in value[1]:
+            soup = html_response_soup(u)
+            temp_text = soup.get_text()
+            if value[0].replace("视频","") in temp_text and '隐私政策' in temp_text:
+                return soup,u
+    return None,value[1][0]
+def clean_url_dict(packagename_url_dict):
+    def check_suffix(s):
+        suffix_list = ['css', 'js', 'ico','png','gif','webp','callback','aes','woff2','woff']
+        for suffix in suffix_list:
+            if s.endswith(suffix):
+                return -1
+            if suffix in s:
+                return 0
+        return 1
+    if isinstance(packagename_url_dict,dict):
+        result_dict ={}
+        for key in packagename_url_dict:
+            if len(packagename_url_dict[key][1])==1:
+                result_dict[key] = packagename_url_dict[key][:]
+                continue
+            else:
+                result_dict[key] = []
+                result_dict[key].append(packagename_url_dict[key][0])
+                temp = []
+                temp1 = []
+                for url in packagename_url_dict[key][1]:
+                    flag = check_suffix(url)
+                    if flag == 1:
+                         temp.append(url)
+                    if flag ==0:
+                        temp1.append(url)
+                if temp:#需要对这个再做一次清理，如果字符串从开头到后面超过多少个字符一样，则保留更长的那个
+                    if len(temp)>1:
+                        temp = list(set(temp))
+                    result_dict[key].append(temp[:])
+                else:
+                    if temp1:
+                        if len(temp1) > 1:
+                            temp1 = list(set(temp1))
+                        result_dict[key].append(temp1[:])
+    else:
+        print("输入错误")
+    return result_dict
+def url_analysis2(value_url,packagename):
     '''
     :param url: 隐私政策链接
     :param packagename: 应用程序对应的包名
     :return: 在Privacypolicy_txt目录下生成，以对应包名命名的txt隐私政策文本
     '''
-    soup = html_response_soup(url)
+    soup,url = url_juudge(value_url)
     if soup:
         try:
             name, result = html_handle(soup)
-            SDK_result = run_SDK_analysis(soup=soup)
+            SDK_result = run_SDK_analysis(url=url,soup=soup)
             if result:
                 result = pingjie(nbsp_rechange(result))
-                if len(result)>4:
+                if len(result)>4:#把url写到txt文件的名字里，这样后面权限处理模块就可以正常处理，并且可以不改动此页逻辑
                     with open('Privacypolicy_txt/'+packagename+".txt",'w',encoding='utf-8')as f:
                         for i in result:
                             f.write("%s\n" % i)
@@ -236,7 +291,7 @@ def url_analysis2(url,packagename):
         except:
             try:
                 name, res = html_handle2(soup)
-                SDK_result = run_SDK_analysis(soup=soup)
+                SDK_result = run_SDK_analysis(url=url,soup=soup)
                 if res:
                     res = pingjie(nbsp_rechange(res))
                     with open('Privacypolicy_txt/' + packagename + ".txt", 'w', encoding='utf-8') as f:
@@ -250,7 +305,7 @@ def url_analysis2(url,packagename):
                         name,res2 = html_handle2(soup)
                         if res2:
                             res2 = pingjie(nbsp_rechange(res2))
-                            with open('Privacypolicy_txt/' + packagename + ".txt", 'w', encoding='utf-8') as f:
+                            with open('Privacypolicy_txt/' + packagename +".txt", 'w', encoding='utf-8') as f:
                                 for i in res2:
                                     f.write("%s\n" % i)
                             f.close()
@@ -262,6 +317,10 @@ def url_analysis2(url,packagename):
                 f.close()
             except Exception as e:
                 print(str(url)+"解析失败！失败原因："+str(e))
+        return url
+    else:
+        print("无有效隐私政策链接输入"+url)
+        return None
 def run_url_analysis(filepath):
     #如果是url.txt文件
     if filepath.endswith('txt'):
@@ -270,12 +329,19 @@ def run_url_analysis(filepath):
             url_analysis(url)
     #如果是json文件：
     if filepath.endswith('json'):
+        new_pkgname_dict = {}
         packagename_url_dict = read_json_file(filepath)
         if packagename_url_dict:
-            for key in packagename_url_dict:
-                url_analysis2(packagename_url_dict[key],key)
-                #print(packagename_url_dict[key])
-
+            temp = clean_url_dict(packagename_url_dict)
+            for key in temp:
+                url = url_analysis2(temp[key],key)
+                time.sleep(2)
+                if url:
+                    new_pkgname_dict[key] = url
+        if new_pkgname_dict:
+            with open("result_pkgName_url.json",'w',encoding='utf-8')as f:
+                json.dump(new_pkgname_dict,f, ensure_ascii=False, indent=2)
+            f.close()
 if __name__ == '__main__':
     '''
     url_list = read_txt_file('url.txt')
@@ -284,6 +350,9 @@ if __name__ == '__main__':
     #read_json_file('temp/pkgName_url.json')
     #总体调试
     run_url_analysis('pkgName_url.json')
+    #优酷"https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202005141916_91107.html#Intent"
+    #爬取失败
     #单个调试
     #url_analysis2("https://h5.m.youku.com/app/flsm.html",'com.youku.phone')
     #table_static(html_response_soup('https://www.xiaohongshu.com/crown/community/third_checklist'))
+
