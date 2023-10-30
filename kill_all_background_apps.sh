@@ -1,0 +1,1 @@
+adb shell 'pm list packages -f -3' | sed -e "s/package://" | while read -r package; do adb shell 'am force-stop '"$package"; done
