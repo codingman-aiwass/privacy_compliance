@@ -149,7 +149,8 @@ def initSettings():
                            'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
                            'pp_print_long_sentences': 'true',
                            'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
-                           'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
+                           'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true','analysis_privacy_policy':'true',
+                           'run_ui_static':'true','run_dynamic_part':'true',
                            'dynamic_ui_depth': '3', 'dynamic_run_time': '600', 'run_in_docker': 'true',
                            'clear_cache': 'true', 'rerun_uiautomator2': 'true','clear_final_res_dir_before_run':'true',
                            'clear_tmp_output_dir_before_run':'true','multi-thread':"low"}
@@ -161,13 +162,17 @@ def initSettings():
             # elif opt == '-c':
             elif opt in ("-c", "--config"):
                 config_settings = get_config_settings(arg)
+                print('content of config_settings',config_settings)
 
     # 默认情况下,直接按顺序执行,判断是否在docker中执行
     if config_settings['run_in_docker'] == 'true':
         apk_path = (os.getcwd() + os.path.sep + 'apks').replace('\\', '/')
         # 执行初始化脚本，prepareInDocker.sh
-        execute_cmd_with_timeout("bash prepareInDocker.sh")
-        execute_cmd_with_timeout("bash prepareInDocker.sh")
+        if get_OS_type() in ['win','mac']:
+            execute_cmd_with_timeout("bash prepareInDocker.sh")
+            execute_cmd_with_timeout("bash prepareInDocker.sh")
+        elif get_OS_type() == 'linux':
+            execute_cmd_with_timeout("bash prepareInDocker_linux.sh")
 
     elif config_settings['run_in_docker'] == 'false':
         print('input apks to analysis(give absolute path)...')
@@ -381,9 +386,10 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
     # os.chdir(cur_path)
     print('finish get_privacy_policy at {}...'.format(time.ctime()))
 
-    print('start analysis_privacy_policy at {}...'.format(time.ctime()))
-    analysis_privacy_policy(total_apks_to_analysis, os_type,cur_path,log_folder_path)
-    print('end analysis_privacy_policy at {}...'.format(time.ctime()))
+    if config_settings['analysis_privacy_policy'] == 'true':
+        print('start analysis_privacy_policy at {}...'.format(time.ctime()))
+        analysis_privacy_policy(total_apks_to_analysis, os_type,cur_path,log_folder_path)
+        print('end analysis_privacy_policy at {}...'.format(time.ctime()))
 
 
 
@@ -436,7 +442,7 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
     print('start static_UI_analysis at {}...'.format(time.ctime()))
     stdout_file = log_folder_path + 'static_UI_analysis_output.log'
     stderr_file = log_folder_path + 'static_UI_analysis_error.log'
-    if config_settings['ui_static'] == 'true':
+    if config_settings['run_ui_static'] == 'true':
         # os.chdir('./context_sensitive_privacy_data_location')
         if 'tmp-output' in os.listdir(os.path.join(cur_path,'context_sensitive_privacy_data_location')):
             # shutil.rmtree('tmp-output')
@@ -488,11 +494,11 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
     stdout_file = log_folder_path + 'dynamic_app_test_output.log'
     stderr_file = log_folder_path + 'dynamic_app_test_error.log'
     print('start dynamic_app_test at {}...'.format(time.ctime()))
-    if config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
+    if config_settings['run_dynamic_part'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'true':
         print('this module has been run before...')
-    elif config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
+    elif config_settings['run_dynamic_part'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false':
         print(
-            "config_settings['ui_dynamic'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
+            "config_settings['run_dynamic_part'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
         # os.chdir('./AppUIAutomator2Navigation')
         # with open('apk_pkgName.txt', 'r', encoding='utf-8') as f:
         with open(os.path.join(cur_path,'AppUIAutomator2Navigation','apk_pkgName.txt'),'r',encoding='utf-8') as f:
@@ -534,7 +540,7 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
         # os.chdir(cur_path)
     else:
         print('did not execute ui_dynamic...')
-        print(config_settings['ui_dynamic'], config_settings['get_pp_from_dynamically_running_app'])
+        print(config_settings['run_dynamic_part'], config_settings['get_pp_from_dynamically_running_app'])
     print('end dynamic_app_test at {}...'.format(time.ctime()))
 
 
@@ -546,7 +552,7 @@ def printFinalLog(os_type, config_settings,total_apks,cur_path):
     os.chdir('./context_sensitive_privacy_data_location')
     print(f'after os.chdir,now at {os.getcwd()}...')
     if os_type == 'win':
-        execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py', timeout=total_apks_to_analysis * 600,
+        execute_cmd_with_timeout('python report_data_in_pp_and_program.py', timeout=total_apks_to_analysis * 600,
                                  cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
         execute_cmd_with_timeout('python get_dynamic_res.py',timeout=total_apks * 600)
     elif os_type in ['linux', 'mac']:
@@ -588,7 +594,7 @@ if __name__ == '__main__':
         analysis_privacy_policy(total_apks_to_analysis, os_type)
 
         # 整理最终log
-        printFinalLog(os_type)
+        printFinalLog(os_type, config_settings,total_apks_to_analysis,cur_path)
     elif config_settings['multi-thread'] == 'low':
         # 同时允许两个组件并行执行
         # 创建线程
@@ -628,14 +634,13 @@ if __name__ == '__main__':
 
     elif config_settings['multi-thread'] == 'high':
         # 同时允许三个组件并行执行
-        # 同时允许两个组件并行执行
         # 创建线程
         threads = []
 
         # 创建并启动线程1：run_code_inspection
         thread1 = threading.Thread(target=run_code_inspection,
                                    args=(cur_path, total_apks_to_analysis, os_type, log_folder_path))
-        # threads.append(thread1)
+        threads.append(thread1)
         thread1.start()
 
         # 创建并启动线程2：get_privacy_policy

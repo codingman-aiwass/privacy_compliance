@@ -45,10 +45,6 @@ FROM nullptr001/ubuntu_miniconda_dependencies
 #RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 #&& update-alternatives --install /usr/local/lib/python3.10/dist-packages/pip pip3 /usr/local/lib/python3.10/dist-packages/pip 1
 
-COPY chi_sim.traineddata  /usr/share/tesseract-ocr/4.00/tessdata/chi_sim.traineddata
-# 使docker容器被手机信任
-COPY adbkey /root/.android/adbkey
-COPY adbkey.pub /root/.android/adbkey.pub
 # Set the working directory
 WORKDIR /app
 
@@ -59,10 +55,14 @@ SHELL ["/bin/bash", "-c"]
 RUN /root/miniconda3/envs/py380/bin/pip3 install -r /app/requirements_docker.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && /root/miniconda3/envs/py380/bin/pip3 install --upgrade requests urllib3 chardet -i https://pypi.tuna.tsinghua.edu.cn/simple && /root/miniconda3/envs/py380/bin/pip3 install hanlp[full] -U -i https://pypi.tuna.tsinghua.edu.cn/simple
 COPY ["requirements_yolov5.txt","/app/"]
 RUN /root/miniconda3/envs/py380/bin/pip3 install -r /app/requirements_yolov5.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-#COPY . /app
+COPY chi_sim.traineddata  /usr/share/tesseract-ocr/4.00/tessdata/chi_sim.traineddata
+# 使docker容器被手机信任
+COPY adbkey /root/.android/adbkey
+COPY adbkey.pub /root/.android/adbkey.pub
+COPY . /app
 # 在这一步首先执行adb connect 连接设备。需要在执行dockerfile之前，获取到手机的IP地址，并且断开主机上的adb-server
 # 在主机执行adb shell ip -f inet addr show wlan0 | findstr inet，返回值是 inet 192.168.137.88/24 brd 192.168.137.255 scope global wlan0。需要通过正则表达式只获取192.168.137.88/24部分。
 # 并在主机上执行 adb tcpip 12005,确定端口号，再在主机上执行adb connect IP:12005,再adb kill-server。
 # 进入容器，并执行adb connect IP:12005
 # 参考链接：https://wangqianhong.com/2021/01/docker%E5%AE%B9%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%BB%E6%9C%BA%E4%B8%8A%E7%9A%84android%E6%89%8B%E6%9C%BA/
-#CMD ["/bin/bash"]
+CMD ["/bin/bash"]

@@ -11,6 +11,7 @@
 !chi_sim.traineddata
 !IP.txt
 !prepareInDocker.sh
+!prepareInDocker_linux.sh
 !model
 !requirements_docker.txt
 !requirements_yolov5.txt
