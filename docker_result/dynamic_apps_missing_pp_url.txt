@@ -1,7 +1,2 @@
 com.youku.phone
-com.taobao.taobao
-com.alibaba.cloudmail
-com.alibaba.android.rimet
-com.taobao.trip
-com.alicom.smartdail
 com.taobao.movie.android
