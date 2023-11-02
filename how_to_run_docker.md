@@ -2,7 +2,7 @@
 1. Python3
 2. Docker
 3. adb tool
-4. A real phone with frida-server version 15.1.24 plugged in your machine, and they are in the same Wi-Fi network. And you should use command `adb devices` in your local machine and make the phone trust your machine first.
+4. A real phone with frida-server version 15.1.24 plugged in your machine, and they are in the same Wi-Fi network. And you should use delete ~/.android folder and execute command `adb devices` in your local machine and make the phone trust your machine first. You can do this with the following steps: 1. run `rm -rf ~/.android` 2. run `adb devces` and press allowing debug with this machine all the time.
 
 ### Setup && RUN
 1. Find the config.ini file in ./privacy_compliance, and change the value of run_in_docker to 'true'.
