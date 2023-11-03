@@ -49,7 +49,8 @@ if __name__ == '__main__':
         prepareADB()
     # prepareADB()
     # 复制需要分析的apk文件到apks文件夹里
-    subprocess.run(['adb','kill-server'],shell=True)
+    print('run adb kill-server')
+    subprocess.run("bash kill_adb_server.sh",shell=True)
     directories = input(
         "please input absolute path of apk(s)/folder(s) contained apk(s),seperated by ; e.g. /Users/apks;/Users/apks/test.apk\n")
     apk_name_set = set()
