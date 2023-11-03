@@ -1,1 +1,0 @@
-adb shell dumpsys activity | grep "Run" | grep -o -E "com./."

@@ -11,7 +11,7 @@ import sys
 import threading
 import time
 import traceback
-
+import io
 from configobj import ConfigObj
 
 from AppUIAutomator2Navigation.stop_and_run_uiautomator import rerun_uiautomator2
@@ -173,6 +173,8 @@ def initSettings():
             execute_cmd_with_timeout("bash prepareInDocker.sh")
         elif get_OS_type() == 'linux':
             execute_cmd_with_timeout("bash prepareInDocker_linux.sh")
+        # 清空正在运行的第三方应用程序和Google Chrome
+        execute_cmd_with_timeout("sh kill_all_background_apps.sh")
 
     elif config_settings['run_in_docker'] == 'false':
         print('input apks to analysis(give absolute path)...')
@@ -265,11 +267,16 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                         #                     config_settings['dynamic_run_time']],
                         #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                         #                    timeout=int(config_settings['dynamic_run_time']),stderr=stderr,stdout=stdout)
-
+                    # 运行结束后，使用adb关闭该应用的进程
+                    execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                    time.sleep(2)
                 except Exception as e:
                     print(e)
                     traceback.print_exc()
                     print('error occurred, continue...')
+                    # 使用adb关闭该应用的进程
+                    execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                    time.sleep(2)
         # os.chdir(cur_path)
         # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
         apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation','collectData'))
@@ -396,8 +403,8 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
 # 隐私政策分析模块
 def analysis_privacy_policy(total_apks_to_analysis, os_type,cur_path,log_folder_path):
     print('start analysis_privacy_policy at {}...'.format(time.ctime()))
-    # stdout_file = log_folder_path + 'analysis_privacy_policy_output.log'
-    # stderr_file = log_folder_path + 'analysis_privacy_policy_error.log'
+    stdout_file = log_folder_path + 'analysis_privacy_policy_output.log'
+    stderr_file = log_folder_path + 'analysis_privacy_policy_error.log'
     # os.chdir('./Privacy-compliance-detection-2.1/core')
     if 'Privacypolicy_txt' in os.listdir(os.path.join(cur_path,'Privacy-compliance-detection-2.1','core')):
         # clear_all_files_in_folder('./Privacypolicy_txt')
@@ -412,25 +419,17 @@ def analysis_privacy_policy(total_apks_to_analysis, os_type,cur_path,log_folder_
         os.mkdir(os.path.join(cur_path,'Privacy-compliance-detection-2.1','core','PrivacyPolicySaveDir'))
     try:
         if os_type == 'win':
-            execute_cmd_with_timeout('python privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
-            # execute_cmd_with_timeout('python report_data_in_pp_and_program.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
-            # with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-            #     subprocess.run(['python', 'privacy-policy-main.py'],
-            #                    cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
-            #                    timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
-            #     subprocess.run(['python', 'report_data_in_pp_and_program.py'],
-            #                    cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
-            #                    timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
+            # execute_cmd_with_timeout('python privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
+            with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                subprocess.run(['python', 'privacy-policy-main.py'],
+                               cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
+                               timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
         elif os_type in ['linux', 'mac']:
-            execute_cmd_with_timeout('python3 privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
-            # execute_cmd_with_timeout('python3 report_data_in_pp_and_program.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
-            # with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-            #     subprocess.run(['python3', 'privacy-policy-main.py'],
-            #                    cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
-            #                    timeout=total_apks_to_analysis * 600,stdout=stdout,stderr=stderr)
-            #     subprocess.run(['python3', 'report_data_in_pp_and_program.py'],
-            #                    cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
-            #                    timeout=total_apks_to_analysis * 600,stdout=stdout,stderr=stderr)
+            # execute_cmd_with_timeout('python3 privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
+            with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                subprocess.run(['python3', 'privacy-policy-main.py'],
+                               cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
+                               timeout=total_apks_to_analysis * 600,stdout=stdout,stderr=stderr)
     except UnboundLocalError:
         print('隐私政策解析失败，continue。。。')
     # os.chdir(cur_path)
@@ -533,9 +532,15 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
                     #                     config_settings['dynamic_run_time']],
                     #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                     #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
+                # 运行结束后，使用adb关闭该应用的进程
+                execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                time.sleep(2)
             except Exception as e:
                 print(e)
                 traceback.print_exc()
+                # 运行结束后，使用adb关闭该应用的进程
+                execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                time.sleep(2)
                 print('error occurred, continue...')
         # os.chdir(cur_path)
     else:
