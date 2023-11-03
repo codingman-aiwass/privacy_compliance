@@ -16,3 +16,6 @@
 !requirements_docker.txt
 !requirements_yolov5.txt
 !adbkey.pub
+!kill_all_background_apps.sh
+!kill_adb_server.sh
+!kill_app.sh

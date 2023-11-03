@@ -14,6 +14,5 @@ else
 fi
 # 更改换行符格式
 sed -i 's/\r$//' ./Privacy-compliance-detection-2.1/core/static-run.sh
-#sed -i 's/\r$//' ./AppUIAutomator2Navigation/run.sh
 exit
 #该脚本运行结束以后就可以在docker中运行python3 run.py了
