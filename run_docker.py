@@ -1,9 +1,9 @@
+import configparser
 import platform
 import subprocess
 import re
 import os
 import shutil
-
 
 def prepareADB():
     # 调用命令行程序并获取输出
@@ -43,14 +43,35 @@ def get_OS_type():
     return os_type
 
 
+def determine_host_os_type(os_type):
+    config = configparser.ConfigParser()
+    config.read(
+        './docker_result/config.ini')  # Replace 'config.ini' with the path to your INI file
+
+    # Modify the 'apk' setting in the INI file
+    config.set('running_settings', 'host_machine_os_type',
+               os_type)  # Replace 'section_name' with the appropriate section name in your INI file
+
+    # Save the modified INI file
+    with open('./docker_result/config.ini',
+              'w') as config_file:  # Replace 'config.ini' with the path to your INI file
+        config.write(config_file)
+    
+
+
 if __name__ == '__main__':
     os_type = get_OS_type()
+    determine_host_os_type(os_type)
+    # 往config.ini中添加host_machine_os_type一项，方便在docker中运行的时候选择不同的prepareInDocker.sh
     if os_type in ['win', 'mac']:
         prepareADB()
+        print('run adb kill-server')
+        subprocess.run("powershell.exe kill_adb_server.ps1",shell=True)
     # prepareADB()
     # 复制需要分析的apk文件到apks文件夹里
-    print('run adb kill-server')
-    subprocess.run("bash kill_adb_server.sh",shell=True)
+    elif os_type == 'linux':
+        print('run adb kill-server')
+        subprocess.run("bash kill_adb_server.sh",shell=True)
     directories = input(
         "please input absolute path of apk(s)/folder(s) contained apk(s),seperated by ; e.g. /Users/apks;/Users/apks/test.apk\n")
     apk_name_set = set()
@@ -85,10 +106,10 @@ if __name__ == '__main__':
     # 判断docker容器是否存在
 
     # 根据操作系统判断该调用什么命令行启动docker
-    win_command = f'docker run -it --name privacy_compliance -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py --gpus all privacy_compliance_image:v1.0'
-    mac_command = f'docker run -it --name privacy_compliance -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py --gpus all privacy_compliance_image:v1.0'
+    win_command = f'docker run -it --name privacy_compliance -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py -v {curdir}/run.sh:/app/run.sh --gpus all privacy_compliance_image:v1.0'
+    mac_command = f'docker run -it --name privacy_compliance -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py -v {curdir}/run.sh:/app/run.sh --gpus all privacy_compliance_image:v1.0'
     # linux端暂时不使用--privileged 方法
-    linux_command = f'docker run -it --privileged --name privacy_compliance -v /dev/bus/usb:/dev/bus/usb -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py --gpus all privacy_compliance_image:v1.0'
+    linux_command = f'docker run -it --privileged --name privacy_compliance -v /dev/bus/usb:/dev/bus/usb -v {curdir}/docker_result/logs:/app/logs  -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/IP.txt:/app/IP.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks -v {curdir}/run.py:/app/run.py -v {curdir}/run.sh:/app/run.sh --gpus all privacy_compliance_image:v1.0'
     # linux_command = f'docker run -it --name privacy_compliance --privileged -v /dev/bus/usb:/dev/bus/usb -v {curdir}/docker_result/code_inspection_result/logsPath:/app/Privacy-compliance-detection-2.1/core/logsPath -v {curdir}/docker_result/code_inspection_result/ResultSaveDir:/app/Privacy-compliance-detection-2.1/core/ResultSaveDir -v {curdir}/docker_result/code_inspection_result/pp_missing:/app/Privacy-compliance-detection-2.1/core/final_res/pp_missing -v {curdir}/docker_result/dynamic_run_result:/app/AppUIAutomator2Navigation/collectData -v {curdir}/docker_result/privacy_policy_analysis_result:/app/Privacy-compliance-detection-2.1/core/PrivacyPolicySaveDir -v {curdir}/docker_result/static_UI_run_result:/app/context_sensitive_privacy_data_location/tmp-output -v {curdir}/docker_result/final_result:/app/context_sensitive_privacy_data_location/final_res_log_dir -v {curdir}/docker_result/apps_still_missing_pp_urls.txt:/app/docker_result/apps_still_missing_pp_urls.txt -v {curdir}/docker_result/config.ini:/app/config.ini -v {curdir}/docker_result/dynamic_apps_missing_pp_url.txt:/app/dynamic_apps_missing_pp_url.txt -v {curdir}/prepareInDocker.sh:/app/prepareInDocker.sh -v {curdir}/apks:/app/apks --gpus all privacy_compliance_image'
     if os_type == 'win':
         subprocess.run('PowerShell.exe .\check_remove_container.ps1',shell=True)

@@ -1,2 +1,1 @@
-com.youku.phone
-com.taobao.movie.android
+com.citic21.user
