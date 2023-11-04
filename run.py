@@ -2,6 +2,7 @@ import configparser
 import datetime
 import getopt
 import json
+import logging
 import os
 import pickle
 import platform
@@ -76,6 +77,41 @@ def execute_cmd_with_timeout(cmd, timeout=1800,cwd=None):
         p.send_signal(signal.SIGINT)
         p.wait()
 
+def execute_cmd_with_timeout_and_log(cmd, timeout=1800, cwd=None,log_path=None):
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+    # 创建文件处理器
+    if log_path is None:
+        file_handler = logging.FileHandler('app.log')
+    else:
+        file_handler = logging.FileHandler(log_path)
+    file_handler.setFormatter(formatter)
+
+    # 将文件处理器添加到日志记录器
+    logger.addHandler(file_handler)
+
+    if cwd is None:
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    else:
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, cwd=cwd)
+
+    try:
+        stdout, stderr = p.communicate(timeout=timeout)
+        stdout = stdout.decode('utf-8')
+        stderr = stderr.decode('utf-8')
+
+        if stdout:
+            logger.info("Command output:\n%s", stdout)
+        if stderr:
+            logger.error("Command error:\n%s", stderr)
+
+        p.wait()
+    except subprocess.TimeoutExpired:
+        p.send_signal(signal.SIGINT)
+        p.wait()
+        logger.error("Command execution timed out.")
 
 def get_OS_type():
     sys_platform = platform.platform().lower()
@@ -153,7 +189,7 @@ def initSettings():
                            'run_ui_static':'true','run_dynamic_part':'true',
                            'dynamic_ui_depth': '3', 'dynamic_run_time': '600', 'run_in_docker': 'true',
                            'clear_cache': 'true', 'rerun_uiautomator2': 'true','clear_final_res_dir_before_run':'true',
-                           'clear_tmp_output_dir_before_run':'true','multi-thread':"low"}
+                           'clear_tmp_output_dir_before_run':'true','multi-thread':"low",'host_machine_os_type':'linux'}
 
     else:
         for opt, arg in opts:
@@ -167,18 +203,26 @@ def initSettings():
     # 默认情况下,直接按顺序执行,判断是否在docker中执行
     if config_settings['run_in_docker'] == 'true':
         apk_path = (os.getcwd() + os.path.sep + 'apks').replace('\\', '/')
+        host_machine_os_type = config_settings['host_machine_os_type']
         # 执行初始化脚本，prepareInDocker.sh
-        if get_OS_type() in ['win','mac']:
+        if host_machine_os_type in ['win','mac']:
+            # 在run_docker时判断宿主机操作系统的类型，并在config.ini中添加host_os_type一栏，从这里获取操作系统的类型，并判断执行哪一个prepareInDocker.sh
             execute_cmd_with_timeout("bash prepareInDocker.sh")
             execute_cmd_with_timeout("bash prepareInDocker.sh")
-        elif get_OS_type() == 'linux':
+        elif host_machine_os_type == 'linux':
             execute_cmd_with_timeout("bash prepareInDocker_linux.sh")
-        # 清空正在运行的第三方应用程序和Google Chrome
-        execute_cmd_with_timeout("sh kill_all_background_apps.sh")
 
     elif config_settings['run_in_docker'] == 'false':
         print('input apks to analysis(give absolute path)...')
         apk_path = input().replace("\\", "/")
+    # 清空正在运行的第三方应用程序和Google Chrome
+    # 非docker环境下也需要清除后台所有程序
+    if get_OS_type() in ['mac','linux']:
+        print('kill all background apps in unix-like os!')
+        execute_cmd_with_timeout("sh kill_all_background_apps.sh")
+    elif get_OS_type() == 'win':
+        print('kill all background apps in win!')
+        execute_cmd_with_timeout("powershell.exe kill_all_background_apps.ps1")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
     total_apks_to_analysis = get_apks_num(apk_path)
@@ -257,6 +301,11 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                         #     subprocess.run(["python3", "run.py",pkgName,appName,config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']],
                         #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                         #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
+                        # execute_cmd_with_timeout_and_log(
+                        #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                        #                                        config_settings['dynamic_run_time']),
+                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                        #     log_path=log_folder_path + 'dynamic_run_output.log')
                     else:
                         execute_cmd_with_timeout(
                             'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
@@ -267,15 +316,22 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                         #                     config_settings['dynamic_run_time']],
                         #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                         #                    timeout=int(config_settings['dynamic_run_time']),stderr=stderr,stdout=stdout)
+                        # execute_cmd_with_timeout_and_log(
+                        #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                        #                                        config_settings['dynamic_run_time']),
+                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                        #     log_path=log_folder_path + 'dynamic_run_output.log')
                     # 运行结束后，使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                    execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                    print(f'kill_app.sh in dynamic_run in try..,kill {pkgName}')
                     time.sleep(2)
                 except Exception as e:
                     print(e)
                     traceback.print_exc()
                     print('error occurred, continue...')
                     # 使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                    execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                    print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
                     time.sleep(2)
         # os.chdir(cur_path)
         # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
@@ -533,15 +589,17 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
                     #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                     #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
                 # 运行结束后，使用adb关闭该应用的进程
-                execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
+                execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                print(f'kill_app.sh in dynamic_run try..,kill {pkgName}')
                 time.sleep(2)
             except Exception as e:
                 print(e)
                 traceback.print_exc()
                 # 运行结束后，使用adb关闭该应用的进程
-                execute_cmd_with_timeout(f"sh kill_apk.sh {pkgName}")
-                time.sleep(2)
                 print('error occurred, continue...')
+                execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
+                time.sleep(2)
         # os.chdir(cur_path)
     else:
         print('did not execute ui_dynamic...')

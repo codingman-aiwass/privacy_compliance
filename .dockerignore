@@ -19,3 +19,4 @@
 !kill_all_background_apps.sh
 !kill_adb_server.sh
 !kill_app.sh
+!run.sh
