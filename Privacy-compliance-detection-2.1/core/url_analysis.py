@@ -335,7 +335,7 @@ def run_url_analysis(filepath):
             temp = clean_url_dict(packagename_url_dict)
             for key in temp:
                 url = url_analysis2(temp[key],key)
-                time.sleep(2)
+                #time.sleep(2)
                 if url:
                     new_pkgname_dict[key] = url
         if new_pkgname_dict:
