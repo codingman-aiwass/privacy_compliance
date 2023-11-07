@@ -12,7 +12,6 @@ import sys
 import threading
 import time
 import traceback
-import io
 from configobj import ConfigObj
 
 from AppUIAutomator2Navigation.stop_and_run_uiautomator import rerun_uiautomator2
@@ -115,7 +114,6 @@ def execute_cmd_with_timeout_and_log(cmd, timeout=1800, cwd=None,log_path=None):
 
 def get_OS_type():
     sys_platform = platform.platform().lower()
-    os_type = ''
     if "windows" in sys_platform:
         os_type = 'win'
     elif "darwin" in sys_platform or 'mac' in sys_platform:
@@ -219,10 +217,11 @@ def initSettings():
     # 非docker环境下也需要清除后台所有程序
     if get_OS_type() in ['mac','linux']:
         print('kill all background apps in unix-like os!')
-        execute_cmd_with_timeout("sh kill_all_background_apps.sh")
+        subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
+        execute_cmd_with_timeout("bash kill_all_background_apps.sh")
     elif get_OS_type() == 'win':
         print('kill all background apps in win!')
-        execute_cmd_with_timeout("powershell.exe kill_all_background_apps.ps1")
+        execute_cmd_with_timeout("powershell.exe .\\kill_all_background_apps.ps1")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
     total_apks_to_analysis = get_apks_num(apk_path)
@@ -293,36 +292,31 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                     # 重启uiautomator2
                     rerun_uiautomator2()
                     if os_type in ['linux', 'mac']:
-                        execute_cmd_with_timeout(
-                            'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                                config_settings['dynamic_run_time']),
-                            timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        # with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                        #     subprocess.run(["python3", "run.py",pkgName,appName,config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']],
-                        #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                        #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
-                        # execute_cmd_with_timeout_and_log(
+                        # execute_cmd_with_timeout(
                         #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                        #                                        config_settings['dynamic_run_time']),
-                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                        #     log_path=log_folder_path + 'dynamic_run_output.log')
+                        #                                         config_settings['dynamic_run_time']),
+                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+
+                        with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                            subprocess.run(["python3", "run.py",pkgName,appName,config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']],
+                                           cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                           timeout=int(config_settings['dynamic_run_time'])  + 600,stdout=stdout,stderr=stderr)
                     else:
-                        execute_cmd_with_timeout(
-                            'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                               config_settings['dynamic_run_time']),
-                            timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        # with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                        #     subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                        #                     config_settings['dynamic_run_time']],
-                        #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                        #                    timeout=int(config_settings['dynamic_run_time']),stderr=stderr,stdout=stdout)
-                        # execute_cmd_with_timeout_and_log(
+                        # execute_cmd_with_timeout(
                         #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                        config_settings['dynamic_run_time']),
-                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                        #     log_path=log_folder_path + 'dynamic_run_output.log')
+                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+
+                        with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                            subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
+                                            config_settings['dynamic_run_time']],
+                                           cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                           timeout=int(config_settings['dynamic_run_time']) + 600,stderr=stderr,stdout=stdout)
+
                     # 运行结束后，使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                    # execute_cmd_with_timeout("sed -i 's/\r$//' kill_app.sh")
+                    # execute_cmd_with_timeout(f"bash kill_app.sh {pkgName}",cwd=cur_path)
+                    execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}",cwd=cur_path)
                     print(f'kill_app.sh in dynamic_run in try..,kill {pkgName}')
                     time.sleep(2)
                 except Exception as e:
@@ -330,7 +324,9 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                     traceback.print_exc()
                     print('error occurred, continue...')
                     # 使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                    # execute_cmd_with_timeout("sed -i 's/\r$//' kill_app.sh")
+                    # execute_cmd_with_timeout(f"bash kill_app.sh {pkgName}",cwd=cur_path)
+                    execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}",cwd=cur_path)
                     print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
                     time.sleep(2)
         # os.chdir(cur_path)
@@ -397,22 +393,6 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                             else:
                                 app_pp[key] = pp_url[:]
                     elif len(pp_url) > 1:
-                        # TODO 目前先在我这边，对于获取到了多个URL链接的，只保留含有.html/htm结尾的，或者含有html/htm的链接,或者不以.ico,.css,.png,.js,.1.1,.gif结尾.临时debug做法，后期需去除
-                        # 从这里开始=======
-                        # for url in pp_url:
-                        #     if url.endswith('html') or url.endswith('htm'):
-                        #         app_pp[key] = url
-                        #         break
-                        #     if 'html' in url or 'htm' in url:
-                        #         app_pp[key] = url
-                        #     # if not (url.endswith('.ico') or url.endswith('.css') or url.endswith('.png') or url.endswith('.gif') or url.endswith('.js') or url.endswith('.1.1') or url.endswith('.jpg') or url.endswith('.jpeg')):
-                        # # 如果最终app_pp中不含有key，说明找到的全部都不是隐私政策URL，等于没找到隐私政策
-                        # if key not in app_pp or type(app_pp[key]) != str:
-                        #     print('privacy policy not in ', val)
-                        #     apps_missing_pp.add(key)
-                        # TODO 到这里结束========
-
-                        # 下面这行语句会保留所有的URL到一个列表中,是原本做法,后期需要换回去。
                         app_pp[key] = pp_url[:]
 
         # 对app_pp和app_set集合做差集，得到缺失隐私政策的app
@@ -569,27 +549,30 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
                     rerun_uiautomator2()
                 # 判断操作系统版本,分win和linux/mac
                 if os_type in ['linux', 'mac']:
-                    # with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
-                    #     subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                    #                     config_settings['dynamic_run_time']],
-                    #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                    #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
-                    execute_cmd_with_timeout(
-                        'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                            config_settings['dynamic_run_time']),
-                        timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+                    with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
+                        subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
+                                        config_settings['dynamic_run_time']],
+                                       cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                       timeout=int(config_settings['dynamic_run_time']) + 600,stdout=stdout,stderr=stderr)
+                    # execute_cmd_with_timeout(
+                    #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                    #                                         config_settings['dynamic_run_time']),
+                    #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
                 else:
-                    execute_cmd_with_timeout(
-                        'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                                                           config_settings['dynamic_run_time']),
-                        timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                    # with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
-                    #     subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                    #                     config_settings['dynamic_run_time']],
-                    #                    cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                    #                    timeout=int(config_settings['dynamic_run_time']),stdout=stdout,stderr=stderr)
+                    # execute_cmd_with_timeout(
+                    #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                    #                                        config_settings['dynamic_run_time']),
+                    #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+
+                    with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
+                        subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
+                                        config_settings['dynamic_run_time']],
+                                       cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                       timeout=int(config_settings['dynamic_run_time']) + 600,stdout=stdout,stderr=stderr)
                 # 运行结束后，使用adb关闭该应用的进程
-                execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                # execute_cmd_with_timeout("sed -i 's/\r$//' kill_app.sh")
+                # execute_cmd_with_timeout(f"bash kill_app.sh {pkgName}",cwd=cur_path)
+                execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
                 print(f'kill_app.sh in dynamic_run try..,kill {pkgName}')
                 time.sleep(2)
             except Exception as e:
@@ -597,7 +580,9 @@ def dynamic_app_test(config_settings, cur_path, os_type,log_folder_path):
                 traceback.print_exc()
                 # 运行结束后，使用adb关闭该应用的进程
                 print('error occurred, continue...')
-                execute_cmd_with_timeout(f"sh kill_app.sh {pkgName}",cwd=cur_path)
+                # execute_cmd_with_timeout("sed -i 's/\r$//' kill_app.sh")
+                # execute_cmd_with_timeout(f"bash kill_app.sh {pkgName}",cwd=cur_path)
+                execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
                 print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
                 time.sleep(2)
         # os.chdir(cur_path)
