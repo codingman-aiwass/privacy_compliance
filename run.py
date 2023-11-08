@@ -215,9 +215,15 @@ def initSettings():
         apk_path = input().replace("\\", "/")
     # 清空正在运行的第三方应用程序和Google Chrome
     # 非docker环境下也需要清除后台所有程序
-    if get_OS_type() in ['mac','linux']:
+    if get_OS_type() == 'mac':
         print('kill all background apps in unix-like os!')
-        subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
+        # subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
+        execute_cmd_with_timeout("dos2unix *.sh")
+        execute_cmd_with_timeout("bash kill_all_background_apps.sh")
+    elif get_OS_type() == 'linux':
+        print('kill all background apps in unix-like os!')
+        subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
+        # execute_cmd_with_timeout("dos2unix *.sh")
         execute_cmd_with_timeout("bash kill_all_background_apps.sh")
     elif get_OS_type() == 'win':
         print('kill all background apps in win!')
