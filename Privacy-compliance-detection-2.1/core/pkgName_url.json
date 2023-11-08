@@ -1,108 +1,22 @@
 {
-    "com.citic21.user": [
-        "医鹿",
+    "com.shuqi.controller": [
+        "书旗小说",
         [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202106180940_39879.html",
-            "https://alihealth.taobao.com/setting_about_h5_static_page/app/rule"
-        ]
-    ],
-    "com.UCMobile": [
-        "UC浏览器",
-        [
-            "https://terms.alicdn.com/favicon.ico",
-            "https://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff2",
-            "https://umdc.alibaba-inc.com/ru.gif?t=328578146",
-            "https://terms.alicdn.com/legal-agreement/terms/c_platform_service_agreement/20230410160156152/20230410160156152.html",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/toptools.css",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/index_v1.css",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/cdnapp.css"
-        ]
-    ],
-    "com.taobao.qianniu": [
-        "千牛",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao202110312305_86914.html"
-        ]
-    ],
-    "com.cainiao.wireless": [
-        "菜鸟",
-        [
-            "https://page.cainiao.com/cn/docs/?spm=tars.cms-article.0.0.5b395b8975T9Li#/content/cainiaoapp_privacy_updated"
-        ]
-    ],
-    "com.tudou.android": [
-        "土豆视频",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202108201047_53044.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202108201047_53044.html#Intent"
-        ]
-    ],
-    "com.wudaokou.hippo": [
-        "盒马",
-        [
-            "https://g.alicdn.com/platform/monitor/2.41.3/index.js",
-            "https://log.mmstat.com/m.gif?logtype=1&title=",
-            "https://g.alicdn.com/alilog/??s/8.15.22/plugin/aplus_client.js",
-            "https://market.m.taobao.com/&scr=393x786&_p_url=https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202203300948_54070.html?spm=hemdefault.11124225.6429453315.1&cna=TZHDHc5PuVoCATr5cBYVwoYi&spm-url=hemdefault.11124225.6429453315.1&spm-cnt=a1zaa.8161610.0.0.7e09157587zuqs&aplus=&uxdata=1&sidx=aplusSidx&workno=0&cltime=1698472724886&p=1&o=android11&b=chrome103&s=393x786&w=webkit&ism=android&cache=cdd6898&lver=8.15.22&jsver=aplus_wap&pver=0.7.12&tag=0&stag=2&lstag=0&_slog=0",
             "https://g.alicdn.com/alilog/s/8.15.21/plugin/aplus_pubsub.js",
-            "https://g.alicdn.com/platform/common/s/1.1/monitor/index.js",
+            "https://g.alicdn.com/platform/monitor/2.41.3/index.js",
+            "https://wgo.mmstat.com/aes.1.1",
+            "https://log.mmstat.com/eg.js?t=1699376048626",
             "https://g.alicdn.com/platform/legal_online_agreement/1.2.32/linkPage.css",
-            "https://g.alicdn.com/platform/monitor-aes/0.11.17/index.js",
-            "https://terms.alicdn.com/favicon.ico",
-            "https://g.alicdn.com/platform/legal_online_agreement/1.2.32/agreementOnline.js",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202203300948_54070.html?spm=hemdefault.11124225.6429453315.1",
             "https://g.alicdn.com/alilog/mlog/aplus_v2.js",
-            "https://log.mmstat.com/eg.js?t=1698472724981",
+            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202107021010_42348.html",
+            "https://g.alicdn.com/platform/legal_online_agreement/1.2.32/agreementOnline.js",
+            "https://g.alicdn.com/platform/common/s/1.1/monitor/index.js",
+            "https://terms.alicdn.com/favicon.ico",
+            "https://g.alicdn.com/platform/monitor-aes/0.11.17/index.js",
+            "https://log.mmstat.com/m.gif?logtype=1&title=",
+            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202107021010_42348.html&cna=sFnRHfbWmQgCATr5cC9ME6DS&spm-cnt=a1zaa.8161610.0.0.2eb542aeY5TrEj&aplus=&uxdata=1&sidx=aplusSidx&workno=0&cltime=1699376048448&p=1&o=android12&b=chrome103&s=393x873&w=webkit&ism=android&cache=2e7cb00&lver=8.15.22&jsver=aplus_wap&pver=0.7.12&tag=0&stag=2&lstag=0&_slog=0",
+            "https://g.alicdn.com/alilog/??s/8.15.22/plugin/aplus_client.js",
             "https://wgo.mmstat.com/aes.1.1"
-        ]
-    ],
-    "com.taobao.mobile.dipei": [
-        "口碑",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202203111111_22487.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202203111111_22487.html#Intent"
-        ]
-    ],
-    "com.tmall.wireless": [
-        "手机天猫",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html"
-        ]
-    ],
-    "me.ele": [
-        "饿了么",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other201903051859_43484.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other201903051859_43484.html#Intent"
-        ]
-    ],
-    "com.autonavi.minimap": [
-        "高德地图",
-        [
-            "https://cache.gaode.com/activity/lowcode/h5/7CzYq8tT/index.html"
-        ]
-    ],
-    "com.taobao.movie.android": [
-        "淘票票",
-        [
-            "https://cftweb.3g.qq.com/privacy/privacyPolicy?content_id=2be521b1ab48a9217485fac65fbab8e2"
-        ]
-    ],
-    "com.youku.phone": [
-        "优酷视频",
-        [
-            "https://h5.m.youku.com/app/flsm.html"
-        ]
-    ],
-    "com.taobao.trip": [
-        "飞猪旅行",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/Flyingpig/Flyingpig201802061043_85261.html"
         ]
     ]
 }
