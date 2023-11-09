@@ -1,0 +1,3 @@
+https://dl.google.com/android/repository/commandlinetools-win-9123335_latest.zip
+https://dl.google.com/android/repository/commandlinetools-mac-9123335_latest.zip
+https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip

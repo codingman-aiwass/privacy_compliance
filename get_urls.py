@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+import time
+
 from lxml import etree
 import requests
 import re
@@ -53,36 +55,45 @@ def get_pkg_names_from_input_list(pkg_name_list):
 
 def get_pp_from_app_store(pkg_names):
     pp_urls = {}
-    missing_urls = []
+    missing_urls = set()
     for pkg_name in pkg_names:
         pp_url = None
+        # 重复请求5次，如果三次都没有拿到隐私政策，那就没办法了
+        cnt = 5
         if len(pkg_name) > 3:
-            try:
-                pp_url = get_pp_from_tencent(pkg_name)
-            except Exception:
-                print('==========================================')
-                print('error occurred in get_pp_from_tencent...')
-                print('missing app is {}'.format(pkg_name))
-                print('==========================================')
-            if pp_url is None:
+            while cnt >= 0:
                 try:
-                    pp_url = get_pp_from_mi_store(pkg_name)
+                    pp_url = get_pp_from_tencent(pkg_name)
                 except Exception:
                     print('==========================================')
-                    print('error occurred in get_pp_from_mi_store...')
+                    print('error occurred in get_pp_from_tencent...')
                     print('missing app is {}'.format(pkg_name))
                     print('==========================================')
                 if pp_url is None:
-                    print('==========================================')
-                    print('{} not in store...'.format(pkg_name))
-                    print('==========================================')
-                    missing_urls.append(pkg_name)
+                    try:
+                        pp_url = get_pp_from_mi_store(pkg_name)
+                    except Exception:
+                        print('==========================================')
+                        print('error occurred in get_pp_from_mi_store...')
+                        print('missing app is {}'.format(pkg_name))
+                        print('==========================================')
+                    if pp_url is None:
+                        print('==========================================')
+                        print('{} not in store...'.format(pkg_name))
+                        print('==========================================')
+                        missing_urls.add(pkg_name)
+                    else:
+                        pp_urls[pkg_name] = pp_url
+                        # print(pp_url)
                 else:
                     pp_urls[pkg_name] = pp_url
                     # print(pp_url)
-            else:
-                pp_urls[pkg_name] = pp_url
-                # print(pp_url)
+                if pp_url is None:
+                    cnt -= 1
+                    print(f'fail to find {pkg_name} in app store, try again...')
+                    time.sleep(3)
+                else:
+                    break
     return pp_urls,missing_urls
 
 
