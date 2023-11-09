@@ -297,12 +297,13 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                     clear_app_cache(pkgName)
                     # 重启uiautomator2
                     rerun_uiautomator2()
+                    # TODO 在不同操作系统中重启frida-server。
                     if os_type in ['linux', 'mac']:
                         # execute_cmd_with_timeout(
                         #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                         config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-
+                        # execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python3", "run.py",pkgName,appName,config_settings['dynamic_ui_depth'],config_settings['dynamic_run_time']],
                                            cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
@@ -312,7 +313,7 @@ def get_privacy_policy(os_type, config_settings, cur_path,total_apk,log_folder_p
                         #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                        config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-
+                        execute_cmd_with_timeout("bash restart_frida15.sh")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time']],
