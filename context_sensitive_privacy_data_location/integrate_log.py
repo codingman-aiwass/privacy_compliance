@@ -80,6 +80,9 @@ for app_name, jsons in prefix_dict.items():
         with open(pp_missing_dir + '/' + app_name + '_pp_missing_items.json','r',encoding='utf-8') as f:
             pp_missing = json.load(f)
             pp_missing_items = pp_missing[1]
+    except FileNotFoundError:
+        print('find no pp_missing_file: pp_missing_dir' + '/' + app_name + '_pp_missing_items.json')
+    try:
         # 读取佳颖的隐私政策中冗长的句子，以及另外几个不合规的分析
         with open(pp_compliance_dir + '/' + app_name + '.json','r',encoding='utf-8') as f:
             pp = json.load(f)
