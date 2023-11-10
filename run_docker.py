@@ -82,13 +82,11 @@ if __name__ == '__main__':
     if os_type in ['win', 'mac']:
         prepareADB()
         print('run adb kill-server')
-        subprocess.run("powershell.exe kill_adb_server.ps1",shell=True)
         subprocess.run("adb kill-server", shell=True)
     # prepareADB()
     # 复制需要分析的apk文件到apks文件夹里
     elif os_type == 'linux':
         print('run adb kill-server')
-        subprocess.run("bash kill_adb_server.sh",shell=True)
         subprocess.run("adb kill-server",shell=True)
     directories = input(
         "please input absolute path of apk(s)/folder(s) contained apk(s),seperated by ; e.g. /Users/apks;/Users/apks/test.apk\n")

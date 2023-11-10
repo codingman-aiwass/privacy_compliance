@@ -120,7 +120,7 @@ Make sure the file directory structure is like this:
   - requirements.txt
   - requirements_yolov5.txt
   
-**Final integrate logs lie in ./context_sensitive_privacy_data_location/final_res_log_dir**
+**Final integrate logs lie in final_res_log_dir**
 
 
 
