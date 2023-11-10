@@ -1,108 +1,66 @@
 {
-    "com.citic21.user": [
-        "医鹿",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202106180940_39879.html",
-            "https://alihealth.taobao.com/setting_about_h5_static_page/app/rule"
-        ]
-    ],
-    "com.UCMobile": [
-        "UC浏览器",
-        [
-            "https://terms.alicdn.com/favicon.ico",
-            "https://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff2",
-            "https://umdc.alibaba-inc.com/ru.gif?t=328578146",
-            "https://terms.alicdn.com/legal-agreement/terms/c_platform_service_agreement/20230410160156152/20230410160156152.html",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/toptools.css",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/index_v1.css",
-            "https://terms.alicdn.com/legal-agreement/templatecenter/documentCoop/css/cdnapp.css"
-        ]
-    ],
-    "com.taobao.qianniu": [
-        "千牛",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao202110312305_86914.html"
-        ]
-    ],
-    "com.cainiao.wireless": [
-        "菜鸟",
-        [
-            "https://page.cainiao.com/cn/docs/?spm=tars.cms-article.0.0.5b395b8975T9Li#/content/cainiaoapp_privacy_updated"
-        ]
-    ],
-    "com.tudou.android": [
-        "土豆视频",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202108201047_53044.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202108201047_53044.html#Intent"
-        ]
-    ],
-    "com.wudaokou.hippo": [
-        "盒马",
-        [
-            "https://g.alicdn.com/platform/monitor/2.41.3/index.js",
-            "https://log.mmstat.com/m.gif?logtype=1&title=",
-            "https://g.alicdn.com/alilog/??s/8.15.22/plugin/aplus_client.js",
-            "https://market.m.taobao.com/&scr=393x786&_p_url=https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202203300948_54070.html?spm=hemdefault.11124225.6429453315.1&cna=TZHDHc5PuVoCATr5cBYVwoYi&spm-url=hemdefault.11124225.6429453315.1&spm-cnt=a1zaa.8161610.0.0.7e09157587zuqs&aplus=&uxdata=1&sidx=aplusSidx&workno=0&cltime=1698472724886&p=1&o=android11&b=chrome103&s=393x786&w=webkit&ism=android&cache=cdd6898&lver=8.15.22&jsver=aplus_wap&pver=0.7.12&tag=0&stag=2&lstag=0&_slog=0",
-            "https://g.alicdn.com/alilog/s/8.15.21/plugin/aplus_pubsub.js",
-            "https://g.alicdn.com/platform/common/s/1.1/monitor/index.js",
-            "https://g.alicdn.com/platform/legal_online_agreement/1.2.32/linkPage.css",
-            "https://g.alicdn.com/platform/monitor-aes/0.11.17/index.js",
-            "https://terms.alicdn.com/favicon.ico",
-            "https://g.alicdn.com/platform/legal_online_agreement/1.2.32/agreementOnline.js",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202203300948_54070.html?spm=hemdefault.11124225.6429453315.1",
-            "https://g.alicdn.com/alilog/mlog/aplus_v2.js",
-            "https://log.mmstat.com/eg.js?t=1698472724981",
-            "https://wgo.mmstat.com/aes.1.1"
-        ]
-    ],
-    "com.taobao.mobile.dipei": [
-        "口碑",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202203111111_22487.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other202203111111_22487.html#Intent"
-        ]
-    ],
-    "com.tmall.wireless": [
-        "手机天猫",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html",
-            "https://terms.alicdn.com/legal-agreement/terms/privacy_policy_text/20230203100818784/20230203100818784.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html#Intent",
-            "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609301342_19559.html"
-        ]
-    ],
-    "me.ele": [
-        "饿了么",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other201903051859_43484.html",
-            "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_other/suit_bu1_other201903051859_43484.html#Intent"
-        ]
-    ],
-    "com.autonavi.minimap": [
-        "高德地图",
-        [
-            "https://cache.gaode.com/activity/lowcode/h5/7CzYq8tT/index.html"
-        ]
-    ],
     "com.taobao.movie.android": [
         "淘票票",
         [
-            "https://cftweb.3g.qq.com/privacy/privacyPolicy?content_id=2be521b1ab48a9217485fac65fbab8e2"
-        ]
-    ],
-    "com.youku.phone": [
-        "优酷视频",
-        [
-            "https://h5.m.youku.com/app/flsm.html"
-        ]
-    ],
-    "com.taobao.trip": [
-        "飞猪旅行",
-        [
-            "https://terms.alicdn.com/legal-agreement/terms/Flyingpig/Flyingpig201802061043_85261.html"
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/82440.f8c30425.js",
+            "https://retcode.alicdn.com/retcode/bl.js",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_load?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=4624&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=aaf5818&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/93225.508d36a6.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/31490.7db97f3b.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/35562.c022daec.js",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes&z=lorz5jfl",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_ttfb?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=596&c2=-12&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=a6724d6&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes&z=lorz5jfk&post_res=",
+            "https://arms-retcode.aliyuncs.com/r.png?t=pv&times=1&page=a1z2r.8073433&tag=1699581853233&release=2023_1108_2046&environment=prod&begin=1699581854976&c1=TAOBAO_ACCOUNT&c2=H5&uid=d6l18o4XrF9z6C5syj14ldgyU811&dt=",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_fmp?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=4314&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=f8efcf3&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/90694.8aa26236.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/88698.e95f5b71.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/99330.b2683121.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/33246.c12a84b9.js",
+            "https://oss.taopiaopiao.com/tfmind/article/30390?_=1699581853602&callback=callback",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/35991.6b15c6bc.js",
+            "https://log.mmstat.com/eg.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/89021.79779578.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/42969.949884d0.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/46128.d56f0495.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/77900.4a71f4c7.js",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_domload?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=3256&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=17189bd&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/53759.54569d70.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/8190.8c5597cd.js",
+            "https://log.mmstat.com/m.gif",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/14226.75664c38.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/45151.df3d33af.js",
+            "https://gw.alicdn.com/tfs/TB1ielmpoT1gK0jSZFrXXcNCXXa-128-128.ico",
+            "https://wgo.mmstat.com/dianying.article.article_view?gmkey=EXP&gokey=_f_t=false&article_type=ARTICLE&h5_build_version=2023_1108_2046&cache=45b5f54&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/dianying/pages/alfheim/content.979c2a91.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/98110.956176cb.js",
+            "https://gw.alicdn.com/i3/TB1OZ5gJVXXXXcMXpXXXXXXXXXX_.jpg_60x60Q50.jpg_.webp",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/22571.6e785090.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-cdn/min/aplus/202437607.js",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/90577.e37be16e.js",
+            "https://gw.alicdn.com/tfs/TB1Q2zRXuL2gK0jSZFmXXc7iXXa-120-120.png",
+            "https://g.alicdn.com/alipay-movie-client/movie-cdn/aplus/new-aplus.js",
+            "https://arms-retcode.aliyuncs.com/r.png?t=api&times=1&page=a1z2r.8073433&tag=1699581853233&release=2023_1108_2046&environment=prod&c1=TAOBAO_ACCOUNT&c2=H5&api=getArticleFromCDN&success=1&time=476&code=SUCCESS::",
+            "https://arms-retcode.aliyuncs.com/r.png?t=perf&times=1&page=a1z2r.8073433&tag=1699581853233&release=2023_1108_2046&environment=prod&begin=1699581851367&c1=TAOBAO_ACCOUNT&c2=H5&ctti=4314&dns=327&tcp=151&ssl=123&ttfb=37&trans=8&dom=2660&res=1353&firstbyte=517&fpt=584&tti=3243&ready=3259&load=4611&ct=4g&bandwidth=10&navtype=Other&fmp=4330&sr=393x873&vp=393x739&uid=d6l18o4XrF9z6C5syj14ldgyU811&sid=nslC1o58rzkz695Cdjpsm602zz0p&pid=cbzip5arh8@a4b44c7f166f2dc&_v=1.8.31&pv_id=4Llm8o1wr53zhz5CFj4hf4Ise4kU&sampling=1&z=lorz5jfm",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_load?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=1099&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=fa4ab90&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-cdn/aplus/new-aplus.js",
+            "https://gw.alicdn.com/tfs/TB1ielmpoT1gK0jSZFrXXcNCXXa-128-128.ico",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes&z=lorz6cm1&post_res=",
+            "https://arms-retcode.aliyuncs.com/r.png?t=perf&times=1&page=a1z2r.8073433&tag=1699581891397&release=2023_1108_2046&environment=prod&begin=1699581892242&c1=TAOBAO_ACCOUNT&c2=H5&ctti=896&dns=0&tcp=0&ssl=0&ttfb=1&trans=1&dom=367&res=719&firstbyte=7&fpt=8&tti=374&ready=378&load=1097&ct=4g&bandwidth=10&navtype=Other&fmp=904&sr=393x873&vp=393x739&uid=d6l18o4XrF9z6C5syj14ldgyU811&sid=kClL7obUrb1zeh66qcd4qa7p4aIh&pid=cbzip5arh8@86cf3629892ad53&_v=1.8.31&pv_id=hFl2IonprnXz6s6pdcpymdF3FFjU&sampling=1&z=lorz6cm3",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_fmp?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=896&spm=a1z2r.8073433.0.i0&platform=8&h5_build_version=2023_1108_2046&cache=c5157d6&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://arms-retcode.aliyuncs.com/r.png?t=api&times=1&page=a1z2r.8073433&tag=1699581891397&release=2023_1108_2046&environment=prod&c1=TAOBAO_ACCOUNT&c2=H5&api=getArticleFromCDN&success=1&time=230&code=SUCCESS::",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_domload?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=377&spm=a1z2r.8073433.unknown.d0&platform=8&h5_build_version=2023_1108_2046&cache=d649f47&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://wgo.mmstat.com/dianying.t_perf.__tpp_perf_ttfb?gmkey=OTHER&gokey=_f_t=false&wifi=unknown&os=Android&cost=10&c2=-2&spm=a1z2r.8073433.unknown.d0&platform=8&h5_build_version=2023_1108_2046&cache=397b63f&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://retcode.alicdn.com/retcode/bl.js",
+            "https://oss.taopiaopiao.com/tfmind/article/30390?_=1699581891607&callback=callback",
+            "https://wgo.mmstat.com/dianying.article.article_view?gmkey=EXP&gokey=_f_t=false&article_type=ARTICLE&h5_build_version=2023_1108_2046&cache=4cc15d&jsver=aplus.js&lver=1.7.10&customSdkId=202437607_20211215_105211&platformType=wap&device_model=Android&os=Android&os_version=12&language=zh-CN&o=android12&w=webkit&s=393x873&m=&ism=android&p=1&b=chrome103&tag=1&stag=-1&lstag=-1&_g_encode=utf-8&cna=nH3UHbDQs24CATr5cC3lFXpu&spm-cnt=a1z2r.8073433.0.0&logtype=2&_p_url=https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://arms-retcode.aliyuncs.com/r.png?t=pv&times=1&page=a1z2r.8073433&tag=1699581891397&release=2023_1108_2046&environment=prod&begin=1699581892338&c1=TAOBAO_ACCOUNT&c2=H5&uid=d6l18o4XrF9z6C5syj14ldgyU811&dt=",
+            "https://g.alicdn.com/alipay-movie-client/movie-cdn/min/aplus/202437607.js",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes&z=lorz6cm2",
+            "https://log.mmstat.com/m.gif",
+            "https://m.taopiaopiao.com/tickets/dianying/pages/alfheim/content.html?id=30390&displayType=plain&interact=no&hsb=yes",
+            "https://g.alicdn.com/alipay-movie-client/movie-h5-home/2023.11.08-2/35991.6b15c6bc.js"
         ]
     ]
 }
