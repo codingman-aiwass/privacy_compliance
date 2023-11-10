@@ -4,17 +4,18 @@
 - `static-run.sh` Shell script to start analyzing apks.
 - `RunningConfig.properties` Setting file to control file output directory. You can choose to analyze a single apk or apks in a folder. But do not change other setting like logsPath, AndroidJar, resultSavePath, printToFile.
 - `logsPath` Folder to store log files.
-
-  - Log files are named like apkName_output_info.log, for example, 阿里小号_output_info.log.
+  - Log files are named like apkName_output_info.log, for example, 阿里小号_output_info.log. 
     It contains start time of analysis, start of Soot Init, end of Soot Init, number of method this analysis collected, number of 3rd stmt collected, number of 1st party privacy data items, 3rd party privacy data items collected and total time cost(ms).
 - `ResultSaveDir` Folder to store result json files.
-
-  - Result json file are named like apkName_method_scope.json, for example, 阿里小号_method_scope.json.
+  - Result json file are named like apkName_method_scope.json, for example, 阿里小号_method_scope.json. 
     It contains all 1st privacy data items (privacy_data_items) collected and the class and method they are in, number of 1st privacy data items collected(num_of_privacy_data_items), number of common data items in this class and method, subsignature of the method call that contains 1st privacy data items, subsignature of the method call that contains common data items, 3rd party privacy data items collected, subsignature of the method call that contains 1st privacy data items, the number of 3rd party privacy data items.
-- `final_res/pp_missing` Folder to store each apk's privacy data items found in static analysis but not in privacy policy.
-  The first key-val dictionary shows the number of all privacy data items found in privacy policy(total_pp_data_items_cnt), the number of all privacy data items found by static analysis(total_program_data_items_cnt) and the number of privacy data items found by static analysis but not in privacy policy(in_program_but_not_in_pp). 
+- `final_res/pp_missing` Folder to store each apk's privacy data items found in static analysis but not in privacy policy. 
+  The first key-val dictionary shows the number of all privacy data items found in privacy policy(total_pp_data_items_cnt), the number of all privacy data items found by static analysis(total_program_data_items_cnt) and the number of privacy data items found by static analysis but not in privacy policy(in_program_but_not_in_pp). \
   Other dictionaries show the class and method the privacy data item in and the method subsinature of the method call containing the privacy data item and if it comes from 3rd party.
+
+
 - `privacy-policy-main.py` Enter the folder where the privacy policy text to be processed resides in the following format:
+  
 - `Privacy_Policy_approach.py`  Privacy policy text processing method to extract data-cn, purpose-cn and subject from a single sentence.
 - `url.txt` Write the privacy policy url to be resolved in line to this file.
 - `purpose_handle.py` purpose of extraction and refining (purpose-cn).
@@ -22,95 +23,88 @@
 - `run_privacypolicy.py` Process the (.txt) file, get the data item (data-cn-total), purpose (purpose-cn-total), subject (subject), and permission (permission_list), and output the json result.
 - `_translate.py` Process the (.txt) file, get the data item (data-cn-total), purpose (purpose-cn-total), subject (subject), and permission (permission_list), and output the json result.
 - `Privacypolicy_txt` Folder to store the privacy policy (.txt) to be processed.The text of the page privacy policy obtained by url parsing will also be included.
-- `Dict` Folder to store data item dictionaries and permission - related dictionaries
+- `Dict` Folder to store data item dictionaries and permission - related dictionaries 
 - `stopwords` Floder to store the stop glossary needed to process the privacy policy
 - `PrivacyPolicySaveDir` Floder to store the json processing result of the privacy policy
 - `model` stores the models that need to be installed to run the program
-- `missing_pp_url_apps.txt` stores those apps whose privacy policy urls are failed to fetch via python crawler. If you want to analyze them, you need to add it to the `Privacy-compliance-detection-2.1/core/pkgName_url.json` and run again.
+
 
 #### Prerequisites
 
 - openJDK8
-- python3.10
-- spacy==3.5.0
-- jieba==0.42.1
-- beautifulsoup4==4.12.2
-- alibabacloud-alimt20181012==1.1.0
-- alibabacloud-tea==0.3.2
-- hanlp
+- python3.8.0
+- adb tool
+
 
 #### Setup & Run
 
 In order to get logs and results, you need to do the following steps:
 
 ''' PrivacyPolicy_handle Setup&Run '''
-
-- Make sure the url is correctly written to the url.txt file.
+make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detection-2.1/core
 - `pip install spacy==3.5.0`
-- `pip install Privacy-compliance-detection-2.1/core/model/zh_core_web_trf-3.5.0-py3-none-any.whl`
-- `pip install Privacy-compliance-detection-2.1/core/model/zh_core_web_md-3.5.0-py3-none-any.whl`
+- `pip install model/zh_core_web_trf-3.5.0-py3-none-any.whl`
+- `pip install model/zh_core_web_md-3.5.0-py3-none-any.whl`
 - `pip install jieba`
 - `pip install bs4`
 - `pip install alibabacloud_alimt20181012==1.1.0`
 - `pip install alibabacloud_teaopenai==0.3.2`
-- `pip install hanlp[full] -U`
-- `pip install selenium`
--  Install WebDriver according to the web browser in your system. Google Chrome Driver is here: https://googlechromelabs.github.io/chrome-for-testing/
-- `pip install charset`
+- `pip install hanlp`
+- `pip install selinium`
+To run this module successfully, you also need to config the Chromedriver in your machine.
+- 
 - `python3 privacy-policy-main.py`
 
+If you want to run permission check via LLM, you can execute the script in ..(path)
+- Run `python3 xx.py`
+
+''' Static analysis Setup&Run '''
+make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detection-2.1/core
+- Open the `RunningConfig.properties` and add the absolute path of apk(s) or folder(s) after the `apk=` . Seperate each absolute path with ; . For example:`apk=/home/test/;/home/test_apk;/home/test_apks/淘宝联盟.apk;/home/youku.apk;`
+
+- Run `./static-run.sh` in current directory to start analysis.
+
+
+''' Compliance detection Setup&Run '''
+Make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detection-2.1/core
+Make sure you have run the above two module before.
+- Run `python3 report_data_in_pp_and_program.py` to start comparing.
 
 '''AppUIAutomator2Navigation Setup&&Run'''
+Make sure you are at {your workdir}/privacy_compliance/AppUIAutomator2Navigation
+Make sure to has a real mobile phone which has root permission.
+Make sure to have frida-server 15.1.24, and it should be located in /data/local/tmp and renamed frida15, i.e., you should have /data/local/tmp/frida15 in your android device plugged in the host machine.
+Make sure to install the latest tessearct and its language package in your local machine.
 
-Change directory to AppUIAutomator2Navigation first.
-
-Make sure to has a real mobile phone and well setup  and python3.8. 
-
-You need to set up Frida-server in your phone, and set up tesseract and Chinese simplified language package in your computer. **Attention: The version of frida in your computer should be equal to frida-server in your phone!**
-
-uiautomator2:https://github.com/openatx/uiautomator2
-
-frida: https://github.com/frida/frida
-
-tesseract:  https://github.com/tesseract-ocr/tesseract. Make sure the version should not lower than 5.2.1.
-
-Config what app to dynamically test in `apk_pkgName.txt` . It should be package name and name of the app.
-
-- `pip install -r requirements.txt`
+Config what apps to dynamically test in `apk_pkgName.txt`. It should be package name of the app.
+- Run `pip install -r requirements.txt`
+- Run `pip install -r requirements_yolov5.txt`
 
 Run `python3 test_integrate.py`
 
-
-''' Static analysis Setup&Run '''
-
-Change directory to Privacy-compliance-detection-2.1/core first.
-
-- Open the `RunningConfig.properties` and add the absolute path of apk(s) or folder(s) after the `apk=` . Seperate each absolute path with ; . For example:`apk=/home/test/;/home/test_apk;/home/test_apks/淘宝联盟.apk;/home/youku.apk;`
-- Run `sh static-run.sh` in current directory to start analysis.
-- Put all privacy policy analysis json file to the `PrivacyPolicySaveDir` directory. **Attention**: The naming of the privacy policy analysis json file **must be the same** as the name of the apk file. For example, there is an apk file named **taobao.apk** in `apks` folder, then there must be a privacy policy analysis json file named **taobao.json** in `PrivacyPolicySaveDir`.
-
-''' Compliance detection Setup&Run '''
-
-- Run `python3 report_data_in_pp_and_program.py` to start comparing.
-
-
-
 '''context_sensitive_privacy_data_location Setup&Run'''
 
-Change to context_sensitive_privacy_data_location First.
-
 You can set outputdir and apks to analysis and other config in the RunningConfig.ini
-- Run `pip3 install hanlp[full] -U`
+Run `pip install hanlp[full] -U`
+Run `pip install configobj`
+Run `pip install configparser`
+Run `pip install chardet`
+
 - Run `python3 run_jar.py`
 - Run `python3 run_UI_static.py`
 
-
-
-**'''One command run'''**
+'''One command run'''
+If you choose to run this, you **should not** change settings in above modules, i.e., you should not change settings in RunningConfig.ini and RunningConfig.properties.
+Make sure you are at `{your workdir}/privacy_compliance` first, and then run `python3 run.py -c config.ini` .
 - Make sure you are at./privacy_compliance.
 - Run `pip install -r requirements.txt`
-- `cd AppUIAutomator2Navigation && pip install -r requirements.txt`
-- If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py`
+- Run `pip install -r requirements_yolov5.txt`
+- Run `pip install hanlp[full] -U`
+- Install the ChromeDriver according to the chrome version in your local machine.
+- Install the tesseract and config its language package.
+
+- If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py
+
 
 #### Note
 
@@ -124,20 +118,23 @@ Make sure the file directory structure is like this:
   - get_urls.py
   - config.ini
   - requirements.txt
-
+  - requirements_yolov5.txt
+  
 **Final integrate logs lie in ./context_sensitive_privacy_data_location/final_res_log_dir**
+
+
 
 Make sure the files in the "model" directory are installed.
 It usually takes about 10 minutes for a single privacy policy to be processed. If an element is missing from the English list, the translation fails. Try again.
 
 There may be some error in Soot initialization and then you fail to get result.
-It seems like this in log file:
-"start initSootConfig()
-Error in initSootConfig...
-initSootConfig error info:null
-Exit singleAnalysis due to initSootConfigError...
-"
-You just need to delete the log file in `logsPath` directory and rerun `sh run.sh` for one or more times.
+It seems like this in log file: 
+"start initSootConfig() 
+Error in initSootConfig... 
+initSootConfig error info:null 
+Exit singleAnalysis due to initSootConfigError... 
+" 
+You just need to delete the log file in `logsPath` directory and rerun `./run.sh` for one or more times.
 
 If you found `Nothing to output to json file,exit...` in the end of log file, it means that the program find no privacy data item in this apk.
 
