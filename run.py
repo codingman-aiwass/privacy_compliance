@@ -189,7 +189,7 @@ def initSettings():
                            'analysis_privacy_policy': 'true',
                            'run_ui_static': 'true', 'run_dynamic_part': 'true',
                            'dynamic_ui_depth': '3', 'dynamic_run_time': '600', 'run_in_docker': 'false',
-                           'clear_cache': 'true', 'rerun_uiautomator2': 'true',
+                           'clear_cache': 'true', 'rerun_uiautomator2': 'true','restart_frida':'false',
                            'clear_final_res_dir_before_run': 'true',
                            'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low",
                            'host_machine_os_type': 'linux'}
@@ -225,23 +225,14 @@ def initSettings():
         # subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
         execute_cmd_with_timeout("dos2unix *.sh")
         execute_cmd_with_timeout("bash kill_all_background_apps.sh")
-        # 重启frida
-        execute_cmd_with_timeout("bash restart_frida15.sh",timeout=10)
     elif get_OS_type() == 'linux':
         print('kill all background apps in unix-like os!')
         subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
         # execute_cmd_with_timeout("dos2unix *.sh")
         execute_cmd_with_timeout("bash kill_all_background_apps.sh")
-        # 重启frida
-        execute_cmd_with_timeout("bash restart_frida15.sh",timeout=10)
     elif get_OS_type() == 'win':
         print('kill all background apps in win!')
         execute_cmd_with_timeout("powershell.exe .\\kill_all_background_apps.ps1")
-        # 重启frida
-        try:
-            execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1",timeout=10)
-        except Exception:
-            print("start frida done.")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
     total_apks_to_analysis = get_apks_num(apk_path)
@@ -330,6 +321,12 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                         config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+                        # 重启frida
+                        if config_settings['restart_frida'] == 'true':
+                            try:
+                                execute_cmd_with_timeout("bash restart_frida15.sh", timeout=10)
+                            except Exception:
+                                print("start frida done.")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time']],
@@ -337,6 +334,12 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                                            timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                            stderr=stderr)
                     else:
+                        # 重启frida
+                        if config_settings['restart_frida'] == 'true':
+                            try:
+                                execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1", timeout=10)
+                            except Exception:
+                                print("start frida done.")
                         # execute_cmd_with_timeout(
                         #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                        config_settings['dynamic_run_time']),
@@ -588,6 +591,12 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     rerun_uiautomator2()
                 # 判断操作系统版本,分win和linux/mac
                 if os_type in ['linux', 'mac']:
+                    # 重启frida
+                    if config_settings['restart_frida'] == 'true':
+                        try:
+                            execute_cmd_with_timeout("bash restart_frida15.sh", timeout=10)
+                        except Exception:
+                            print("start frida done.")
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                         config_settings['dynamic_run_time']],
@@ -599,6 +608,12 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     #                                         config_settings['dynamic_run_time']),
                     #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
                 else:
+                    # 重启frida
+                    if config_settings['restart_frida'] == 'true':
+                        try:
+                            execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1", timeout=10)
+                        except Exception:
+                            print("start frida done.")
                     # execute_cmd_with_timeout(
                     #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                     #                                        config_settings['dynamic_run_time']),
