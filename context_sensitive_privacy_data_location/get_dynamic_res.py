@@ -43,7 +43,9 @@ def get_log():
     #     # print(file_name[file_name.index('&time') + 5 :file_name.index('.json') - 1])
     #     prefix_set.add(file_name[:file_name.index('-')])
     prefix_dict = {}
+    prefix_folder_dict = {}
     for prefix in prefix_set:
+        prefix_folder_dict[prefix] = ''
         timestamp = 0
         for file_name in os.listdir(dynamic_log_path):
             if file_name.startswith('.'):
@@ -52,29 +54,31 @@ def get_log():
             if not os.path.isdir(os.path.join(dynamic_log_path,file_name)):
                 continue
             if file_name.startswith(prefix):
+                # 在找到了以所需要包名开头的文件夹时，还需要找出最新的那个，防止本次结果被以往的结果干扰。
                 # print(file_name)
                 cur_timestamp = file_name[file_name.index('-') + 1:]
                 tmp = cur_timestamp.split('-')
                 cur_timestamp = int(tmp[0] + tmp[1])
                 if int(cur_timestamp) > timestamp:
                     timestamp = int(cur_timestamp)
-                    # 此处需要选择一个Dumpjson文件夹里的json，最后用于整合。我们选择时间最久的那个。
-                    # 由于这个文件夹里面可能不止一个json，不能单纯的只把第一个拿出来。
-                    dumpjson_folder = file_name + '/Dumpjson/'
-                    jsons = os.listdir(dynamic_log_path + '/' + dumpjson_folder)
-                    if len(jsons) == 1 and jsons[0].endswith('.json'):
-                        prefix_dict[prefix] = file_name + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + file_name + '/Dumpjson')[0]
-                    else:
-                        # 此时Dumpjson中有多个json日志，挑选时间最长的那一个
-                        time_stamp = 0
-                        target_json = ''
-                        for json_file in jsons:
-                            if json_file.endswith('json'):
-                                cur_time = int(json_file[json_file.index('&time') + 5:json_file.index('s.json') - 3])
-                                if cur_time >= time_stamp:
-                                    time_stamp = cur_time
-                                    target_json = json_file
-                        prefix_dict[prefix] = dumpjson_folder + target_json
+                    prefix_folder_dict[prefix] = file_name
+    # 此处需要选择一个Dumpjson文件夹里的json，最后用于整合。我们选择时间最久的那个。
+    # 由于这个文件夹里面可能不止一个json，不能单纯的只把第一个拿出来。
+    dumpjson_folder = prefix_folder_dict[prefix] + '/Dumpjson/'
+    jsons = os.listdir(dynamic_log_path + '/' + dumpjson_folder)
+    if len(jsons) == 1 and jsons[0].endswith('.json'):
+        prefix_dict[prefix] = prefix_folder_dict[prefix] + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + prefix_folder_dict[prefix] + '/Dumpjson')[0]
+    else:
+        # 此时Dumpjson中有多个json日志，挑选时间最长的那一个
+        time_stamp = 0
+        target_json = ''
+        for json_file in jsons:
+            if json_file.endswith('json'):
+                cur_time = int(json_file[json_file.index('&time') + 5:json_file.index('s.json') - 3])
+                if cur_time >= time_stamp:
+                    time_stamp = cur_time
+                    target_json = json_file
+        prefix_dict[prefix] = dumpjson_folder + target_json
     # print(prefix_dict)
     return prefix_dict
 
