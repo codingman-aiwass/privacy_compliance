@@ -226,19 +226,22 @@ def initSettings():
         execute_cmd_with_timeout("dos2unix *.sh")
         execute_cmd_with_timeout("bash kill_all_background_apps.sh")
         # 重启frida
-        execute_cmd_with_timeout("bash restart_frida15.sh")
+        execute_cmd_with_timeout("bash restart_frida15.sh",timeout=10)
     elif get_OS_type() == 'linux':
         print('kill all background apps in unix-like os!')
         subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
         # execute_cmd_with_timeout("dos2unix *.sh")
         execute_cmd_with_timeout("bash kill_all_background_apps.sh")
         # 重启frida
-        execute_cmd_with_timeout("bash restart_frida15.sh")
+        execute_cmd_with_timeout("bash restart_frida15.sh",timeout=10)
     elif get_OS_type() == 'win':
         print('kill all background apps in win!')
         execute_cmd_with_timeout("powershell.exe .\\kill_all_background_apps.ps1")
         # 重启frida
-        execute_cmd_with_timeout("powershell.exe restart_frida15.ps1")
+        try:
+            execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1",timeout=10)
+        except Exception:
+            print("start frida done.")
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
     total_apks_to_analysis = get_apks_num(apk_path)
@@ -276,10 +279,16 @@ def run_code_inspection(cur_path, total_apks_to_analysis, os_type, log_folder_pa
         print('start get apk info at {}...'.format(time.ctime()))
         stdout_file = log_folder_path + 'get_apk_info_output.log'
         stderr_file = log_folder_path + 'get_apk_info_error.log'
-        with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
-            subprocess.run("java -jar getApkInfo.jar",
-                           cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
-                           timeout=60 * total_apks_to_analysis, stdout=stdout, stderr=stderr, shell=True)
+        if os_type in ['linux','mac']:
+            with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
+                subprocess.run("java -jar getApkInfo.jar",
+                               cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
+                               timeout=10, stdout=stdout, stderr=stderr, shell=True)
+        elif os_type == 'win':
+            with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
+                subprocess.run("powershell.exe .\\getApkInfo.ps1",
+                               cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
+                               timeout=10, stdout=stdout, stderr=stderr, shell=True)
         print('finish get apk info at at {}...'.format(time.ctime()))
 
 
@@ -316,13 +325,11 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                     clear_app_cache(pkgName)
                     # 重启uiautomator2
                     rerun_uiautomator2()
-                    # TODO 在不同操作系统中重启frida-server。
                     if os_type in ['linux', 'mac']:
                         # execute_cmd_with_timeout(
                         #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                         config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        # execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time']],
@@ -334,7 +341,6 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
                         #                                        config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        execute_cmd_with_timeout("bash restart_frida15.sh")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time']],
@@ -535,10 +541,10 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                 subprocess.run(['python', 'run_jar.py'],
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
-                               timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
+                               timeout=total_apks_to_analysis * 1200, stdout=stdout, stderr=stderr)
                 subprocess.run(['python', 'run_UI_static.py'],
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
-                               timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
+                               timeout=total_apks_to_analysis * 1200, stdout=stdout, stderr=stderr)
         elif os_type in ['linux', 'mac']:
             # execute_cmd_with_timeout('python3 run_jar.py', total_apks_to_analysis * 600)
             # print('execute python3 run_UI_static.py ....')
