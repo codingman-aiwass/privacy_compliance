@@ -1,6 +1,6 @@
 # /bin/bash
-# 该脚本在宿主机运行python run_docker.py之后，在进入docker容器后使用
 adb devices
+adb shell su -c setenforce 0
 frida_server_running=$(adb shell ps -e | grep frida15)
 
 if [[ -n $frida_server_running ]]; then
