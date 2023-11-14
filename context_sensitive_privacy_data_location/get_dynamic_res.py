@@ -62,57 +62,68 @@ def get_log():
                 if int(cur_timestamp) > timestamp:
                     timestamp = int(cur_timestamp)
                     prefix_folder_dict[prefix] = file_name
+    # print('prefix_folder_dict',prefix_folder_dict)
     # 此处需要选择一个Dumpjson文件夹里的json，最后用于整合。我们选择时间最久的那个。
     # 由于这个文件夹里面可能不止一个json，不能单纯的只把第一个拿出来。
-    dumpjson_folder = prefix_folder_dict[prefix] + '/Dumpjson/'
-    jsons = os.listdir(dynamic_log_path + '/' + dumpjson_folder)
-    if len(jsons) == 1 and jsons[0].endswith('.json'):
-        prefix_dict[prefix] = prefix_folder_dict[prefix] + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + prefix_folder_dict[prefix] + '/Dumpjson')[0]
-    else:
-        # 此时Dumpjson中有多个json日志，挑选时间最长的那一个
-        time_stamp = 0
-        target_json = ''
-        for json_file in jsons:
-            if json_file.endswith('json'):
-                cur_time = int(json_file[json_file.index('&time') + 5:json_file.index('s.json') - 3])
-                if cur_time >= time_stamp:
-                    time_stamp = cur_time
-                    target_json = json_file
-        prefix_dict[prefix] = dumpjson_folder + target_json
-    # print(prefix_dict)
+    for prefix in prefix_set:
+        dumpjson_folder = prefix_folder_dict[prefix] + '/Dumpjson/'
+        # print('dumpjson_folder',dumpjson_folder)
+        try:
+            jsons = os.listdir(dynamic_log_path + '/' + dumpjson_folder)
+        except FileNotFoundError:
+            print(f'there is no Dumpjson in {prefix_folder_dict[prefix]}')
+            continue
+        if len(jsons) == 1 and jsons[0].endswith('.json'):
+            # print('prefix',prefix)
+            # print("in if len(jsons) == 1 and jsons[0].endswith('.json'):")
+            # print(prefix_folder_dict[prefix] + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + prefix_folder_dict[prefix] + '/Dumpjson')[0])
+            prefix_dict[prefix] = prefix_folder_dict[prefix] + '/Dumpjson/' + os.listdir(dynamic_log_path + '/' + prefix_folder_dict[prefix] + '/Dumpjson')[0]
+        else:
+            # 此时Dumpjson中有多个json日志，挑选时间最长的那一个
+            time_stamp = 0
+            target_json = ''
+            for json_file in jsons:
+                if json_file.endswith('json'):
+                    cur_time = int(json_file[json_file.index('&time') + 5:json_file.index('s.json') - 3])
+                    if cur_time >= time_stamp:
+                        time_stamp = cur_time
+                        target_json = json_file
+            prefix_dict[prefix] = dumpjson_folder + target_json
+        # print(prefix_dict)
     return prefix_dict
 
 
 # 得到log之后,需要重命名一下,复制到output文件夹下,然后依次送给 integrate_dynamic \ data_item_infer \ label_new_or_old 处理
+if __name__ == '__main__':
 
-app_name_log_dict = get_log()
-# print(app_name_log_dict)
-os_type = get_OS_type()
-for key, val in app_name_log_dict.items():
-    new_name = outputdir + '/' + key + '_dynamic.json'
-    if new_name[new_name.rindex('/') + 1:] in os.listdir(outputdir):
-        print(new_name + ' existed, no need to copy again.')
-    else:
-        shutil.copyfile(dynamic_log_path + '/' + val, new_name)
-    if os_type == 'win':
-        execute_cmd_with_timeout(
-            'python integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
+    app_name_log_dict = get_log()
+    print(app_name_log_dict)
+    os_type = get_OS_type()
+    for key, val in app_name_log_dict.items():
+        new_name = outputdir + '/' + key + '_dynamic.json'
+        if new_name[new_name.rindex('/') + 1:] in os.listdir(outputdir):
+            print(new_name + ' existed, no need to copy again.')
+        else:
+            shutil.copyfile(dynamic_log_path + '/' + val, new_name)
+        if os_type == 'win':
+            execute_cmd_with_timeout(
+                'python integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
 
-        execute_cmd_with_timeout(
-            'python data_item_infer_new.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
-                                                     outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
+            execute_cmd_with_timeout(
+                'python data_item_infer_new.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
+                                                         outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
 
-        # execute_cmd_with_timeout(
-        #     'python label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
-        #                                               outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
-    elif os_type in ['mac','linux']:
-        execute_cmd_with_timeout(
-            'python3 integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
+            # execute_cmd_with_timeout(
+            #     'python label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
+            #                                               outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
+        elif os_type in ['mac','linux']:
+            execute_cmd_with_timeout(
+                'python3 integrate_dynamic.py {} {}'.format(new_name, outputdir + '/' + key + '_dynamic_output.json'))
 
-        execute_cmd_with_timeout(
-            'python3 data_item_infer_new.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
-                                                          outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
+            execute_cmd_with_timeout(
+                'python3 data_item_infer_new.py {} {}'.format(outputdir + '/' + key + '_dynamic_output.json',
+                                                              outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
 
-        # execute_cmd_with_timeout(
-        #     'python3 label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
-        #                                               outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
+            # execute_cmd_with_timeout(
+            #     'python3 label_new_or_old.py {} {}'.format(outputdir + '/' + key + '_dynamic_output_filtered.json',
+            #                                               outputdir + '/' + key + '_dynamic_output_filtered_labeled.json'))
