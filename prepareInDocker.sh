@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 # 该脚本在宿主机运行python run_docker.py之后，在进入docker容器后使用
 IP=$(cat /app/IP.txt)
 adb connect $IP;
