@@ -1,7 +1,7 @@
 # 运行 adb devices
 adb devices
 adb shell su -c setenforce 0
-adb shell setprop persist.device_config.runtime_native.usap_pool_enabled false
+adb shell su -c setprop persist.device_config.runtime_native.usap_pool_enabled false
 # 检查 frida-server 是否正在运行
 $frida_server_running = adb shell ps -e | Select-String "frida15"
 
