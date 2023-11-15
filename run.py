@@ -177,9 +177,37 @@ def initSettings():
         print('run.py -c <config.ini>')
         sys.exit(2)
     config_settings = None
+    in_docker = False
     if len(opts) == 0:
         # 没有指定配置文件,按照默认配置来
-        config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'false',
+        # 根据是否在docker中运行，决定使用不同的默认config_settings
+        if get_OS_type() in ['win','mac']:
+            in_docker = False
+        elif get_OS_type() == 'linux':
+            output_info = subprocess.check_output('if [ -f /.dockerenv ]; then echo "inside docker";else echo "in real world";fi',shell=True)
+            if output_info == b'inside_docker\n':
+                in_docker = True
+            elif output_info == b'in real world\n':
+                in_docker = False
+        if in_docker:
+            # 默认状态，只获取隐私政策，不考虑覆盖率
+            config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'false',
+                               'run_code_inspection': 'false',
+                               'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
+                               'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
+                               'pp_print_long_sentences': 'true',
+                               'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
+                               'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
+                               'analysis_privacy_policy': 'true',
+                               'run_ui_static': 'true', 'run_dynamic_part': 'true',
+                               'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'true',
+                               'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'restart_frida': 'true',
+                               'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
+                               'clear_final_res_dir_before_run': 'true',
+                               'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low",
+                               'host_machine_os_type': 'linux'}
+        else:
+            config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'false',
                            'run_code_inspection': 'false',
                            'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
                            'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
@@ -188,12 +216,11 @@ def initSettings():
                            'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
                            'analysis_privacy_policy': 'true',
                            'run_ui_static': 'true', 'run_dynamic_part': 'true',
-                           'dynamic_ui_depth': '3', 'dynamic_run_time': '600', 'run_in_docker': 'false',
-                           'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'restart_frida': 'false',
-                           'SearchPrivacyPolicy': 'true', 'DrawAppCallGraph': 'false',
+                           'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'false',
+                           'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'restart_frida': 'true',
+                           'searchprivacypolicy': 'true', 'drawappcallgraph': 'false','screenuidrep':"loc",
                            'clear_final_res_dir_before_run': 'true',
-                           'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low",
-                           'host_machine_os_type': 'linux'}
+                           'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
 
     else:
         for opt, arg in opts:
@@ -205,7 +232,7 @@ def initSettings():
                 print('content of config_settings', config_settings)
 
     # 默认情况下,直接按顺序执行,判断是否在docker中执行
-    if config_settings['run_in_docker'] == 'true':
+    if in_docker:
         apk_path = (os.getcwd() + os.path.sep + 'apks').replace('\\', '/')
         host_machine_os_type = config_settings['host_machine_os_type']
         # 执行初始化脚本，prepareInDocker.sh
@@ -216,7 +243,7 @@ def initSettings():
         elif host_machine_os_type == 'linux':
             execute_cmd_with_timeout("bash prepareInDocker_linux.sh")
 
-    elif config_settings['run_in_docker'] == 'false':
+    elif in_docker is False:
         print('input apks to analysis(give absolute path)...')
         apk_path = input().replace("\\", "/")
     # 清空正在运行的第三方应用程序和Google Chrome
@@ -331,7 +358,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph']],
+                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
                                            cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                            timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                            stderr=stderr)
@@ -349,7 +376,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                             config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph']],
+                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
                                            cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                            timeout=int(config_settings['dynamic_run_time']) + 600, stderr=stderr,
                                            stdout=stdout)
@@ -603,7 +630,7 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                         config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph']],
+                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
@@ -626,7 +653,7 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                         config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph']],
+                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
