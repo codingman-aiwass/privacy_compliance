@@ -104,7 +104,7 @@ Make sure you are at `{your workdir}/privacy_compliance` first, and then run `py
 - Install the tesseract and config its language package.
 
 - If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py
-
+- If you want to run this tool in docker, you can go and check `the how_to_run_docker.md`.
 
 #### Note
 
