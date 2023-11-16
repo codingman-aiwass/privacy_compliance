@@ -295,9 +295,17 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             # execute_cmd_with_timeout('python3 get_urls.py')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                 subprocess.run('python3 get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,shell=True)
+        print('finish get_privacy_policy at {}...'.format(time.ctime()))
+        if config_settings['analysis_privacy_policy'] == 'true':
+            print('start analysis_privacy_policy at {}...'.format(time.ctime()))
+            analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folder_path)
+            print('end analysis_privacy_policy at {}...'.format(time.ctime()))
     else:
         # 动态运行获取隐私政策
         # os.chdir('./AppUIAutomator2Navigation')
+        # 检查是否有上次运行时留下的记录
+        if 'successful_analysis_pp.txt' in os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation')):
+            os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'))
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]
@@ -364,6 +372,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                     print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
                     time.sleep(2)
         # os.chdir(cur_path)
+        print('finish get_privacy_policy at {}...'.format(time.ctime()))
         apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData'))
         app_dict = {}
         pkgName_appName_dict = {}
@@ -391,16 +400,27 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                 app_dict[app] = app_folder
         print('app_dict')
         print(app_dict)
+        # 成功找到隐私政策URL的app数量
+        cnt_pp_num = 0
+        # 此时需要读取successful_analysis_pp.txt的记录,看哪些是成功请求到了的URL,这里就不再分析
+        # 但是没有请求成功的,这里还要继续尝试
+        with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'), 'r',
+                  encoding='utf-8') as f:
+            content = f.readlines()
+        successful_pp_set = set([item.rstrip('\n') for item in content])
         for key, val in app_dict.items():
             # dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
             dirs = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData', val))
+            if 'PrivacyPolicy' in dirs:
+                cnt_pp_num += 1
             if 'PrivacyPolicy' not in dirs:
                 print('privacy policy not in ', val)
                 apps_missing_pp.add(key)
                 continue
             # 由于引入了使用守护线程检测是否获取到隐私政策以及在消费者方法中实现了调用隐私政策解析模块,原本设想这一分支暂时不需要调用,以免造成重复调用
             # 但是如果留给动态分析的时间不足5分钟,将会继续调用原本的处理逻辑再次处理,以防动态分析启动的子线程来不及处理完成URL
-            elif int(config_settings['dynamic_run_time']) < 300 and 'PrivacyPolicy' in dirs:
+            # 如果这个隐私政策URL没有在守护线程中成功分析,也需要再次分析
+            elif (int(config_settings['dynamic_run_time']) < 170 or key not in successful_pp_set) and 'PrivacyPolicy' in dirs:
                 print('There may be not enough time for subprocess to analysis privacy policy in dynamic part, '
                       'so analysis again.')
                 # 找到了隐私政策,修改此处逻辑，判断是否有多行，有多行返回列表；只有一行返回字符串
@@ -467,13 +487,13 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                   encoding='utf-8') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=False)
         print('app_pp', app_pp)
+        # 如果成功请求数量小于成功获取到隐私政策URL的应用数量,也需要再次启动隐私政策解析模块
+        if config_settings['analysis_privacy_policy'] == 'true' and (
+                int(config_settings['dynamic_run_time']) <= 170 or cnt_pp_num != len(successful_pp_set)):
+            print('start analysis_privacy_policy at {}...'.format(time.ctime()))
+            analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folder_path)
+            print('end analysis_privacy_policy at {}...'.format(time.ctime()))
     # os.chdir(cur_path)
-    print('finish get_privacy_policy at {}...'.format(time.ctime()))
-
-    if config_settings['analysis_privacy_policy'] == 'true' and int(config_settings['dynamic_run_time']) <= 300:
-        print('start analysis_privacy_policy at {}...'.format(time.ctime()))
-        analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folder_path)
-        print('end analysis_privacy_policy at {}...'.format(time.ctime()))
 
 
 # 隐私政策分析模块
@@ -580,6 +600,9 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
             "config_settings['run_dynamic_part'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
         # os.chdir('./AppUIAutomator2Navigation')
         # with open('apk_pkgName.txt', 'r', encoding='utf-8') as f:
+        # 检查是否有上次运行时留下的记录
+        if 'successful_analysis_pp.txt' in os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation')):
+            os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation','successful_analysis_pp.txt'))
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]

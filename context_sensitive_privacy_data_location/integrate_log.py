@@ -94,7 +94,10 @@ for app_name, jsons in prefix_dict.items():
         with open(pp_compliance_dir + '/' + app_name + '.json','r',encoding='utf-8') as f:
             pp = json.load(f)
             data_cn_total = pp[0]['data-cn-total']
-            permission_list = pp[0]['permission_list']
+            try:
+                permission_list = pp[0]['permission_list']
+            except KeyError:
+                permission_list = 'not found'
 
             # TODO 此处还需要细分各类情况.比如声明权限信息 SDK信息,等等.需要多设置几个变量接收
             pp_compliance = pp[2]
