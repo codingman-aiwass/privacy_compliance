@@ -4,10 +4,7 @@ __pycache__/
 test.py
 .history
 *.log
-test/
-test1.py
-test2.py
 .idea/
 .vscode/
-AppUIAutomator2Navigation/
-uiautomator2/
+test/
+RunningConfig.properties
