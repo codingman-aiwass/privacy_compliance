@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+import sys
 import time
 
 from lxml import etree
@@ -99,15 +100,23 @@ def get_pp_from_app_store(pkg_names):
 
 if __name__ == '__main__':
     choice = True
-    if os.path.exists('./Privacy-compliance-detection-2.1/core/pkgName_url.json'):
-        print('pkgName_url exists,enter y to get privacy policy url from app store again,n to reuse privacy policy urls in pkgName_url.json.')
-        input_ = input()
-        if input_ == 'y':
+    try:
+        user_choice = sys.argv[1][:]
+        if user_choice == 'y':
             choice = True
-        elif input_ == 'n':
-            choice = False
         else:
-            print('error input...')
+            choice = False
+    except Exception:
+        print('no user input.')
+        if os.path.exists('./Privacy-compliance-detection-2.1/core/pkgName_url.json'):
+            print('pkgName_url exists,enter y to get privacy policy url from app store again,n to reuse privacy policy urls in pkgName_url.json.')
+            input_ = input()
+            if input_ == 'y':
+                choice = True
+            elif input_ == 'n':
+                choice = False
+            else:
+                print('error input...')
     if choice:
 
         # pkg_names = get_pkg_names_from_apk_pkgNametxt()
@@ -129,9 +138,23 @@ if __name__ == '__main__':
         #             pp_urls[pkg_name] = pp_url
         #             # print(pp_url)
         pp_urls,missing_urls = get_pp_from_app_store(get_pkg_names_from_apk_pkgNametxt())
-
+        # 需要读取apk_pkgName.txt里的应用名记录
+        with open(os.path.join('AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
+            content = f.readlines()
+        pkgName_appName_list = [item.rstrip('\n') for item in content]
+        # 保存包名/应用名键值对到字典中
+        pkgName_appName_dict = {}
+        for pkgName_appName in pkgName_appName_list:
+            pkgName, appName = pkgName_appName.split(' | ')
+            appName = appName.strip('\'')
+            pkgName_appName_dict[pkgName] = appName
+        for key, val in pp_urls.items():
+            if type(val) == list:
+                pp_urls[key] = [pkgName_appName_dict[key], val]
+            else:
+                pp_urls[key] = [pkgName_appName_dict[key], [val]]
         with open('./Privacy-compliance-detection-2.1/core/pkgName_url.json', 'w') as f:
-            json.dump(pp_urls, f, indent=4)
+            json.dump(pp_urls, f, indent=4,ensure_ascii=False)
         if len(missing_urls) > 0:
             with open('./apps_missing_pp_url.txt', 'w') as f:
                 for app in missing_urls:
