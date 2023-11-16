@@ -364,12 +364,6 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                     print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
                     time.sleep(2)
         # os.chdir(cur_path)
-        # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
-        # TODO 为实现能够在动态测试app时，得到隐私政策就让隐私政策解析模块解析该信息。需要使用多线程持续监视文件夹的变化。
-        # 要有一个记录，记录哪些app的隐私政策已经获取到了，总共需要获取的隐私政策的app信息在apk_pkgName.txt中。
-        # 需要起一个守护线程，每隔一段时间去查找collectData下，未获取到隐私政策的那些app是否已经有了
-        # 还需要设置一个时间戳，collectData中，只有时间在此之后的文件夹才会被纳入扫描范围
-
         apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData'))
         app_dict = {}
         pkgName_appName_dict = {}
@@ -484,14 +478,13 @@ def analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folde
     stdout_file = log_folder_path + 'analysis_privacy_policy_output.log'
     stderr_file = log_folder_path + 'analysis_privacy_policy_error.log'
     # os.chdir('./Privacy-compliance-detection-2.1/core')
-    if 'Privacypolicy_txt' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
-        # clear_all_files_in_folder('./Privacypolicy_txt')
-        clear_all_files_in_folder(
-            os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'Privacypolicy_txt'))
-    if 'PrivacyPolicySaveDir' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
-        # clear_all_files_in_folder('./PrivacyPolicySaveDir')
-        clear_all_files_in_folder(
-            os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'PrivacyPolicySaveDir'))
+    # 删除调用前清空之前结果的逻辑
+    # if 'Privacypolicy_txt' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+    #     clear_all_files_in_folder(
+    #         os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'Privacypolicy_txt'))
+    # if 'PrivacyPolicySaveDir' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+    #     clear_all_files_in_folder(
+    #         os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'PrivacyPolicySaveDir'))
     if 'Privacypolicy_txt' not in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
         os.mkdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'Privacypolicy_txt'))
     if 'PrivacyPolicySaveDir' not in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
