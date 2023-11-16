@@ -320,11 +320,11 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
         if os_type == 'win':
             # execute_cmd_with_timeout('python get_urls.py')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run('python get_urls.py', timeout=total_apk * 300, stdout=stdout, stderr=stderr)
+                subprocess.run('python get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,shell=True)
         elif os_type in ['mac', 'linux']:
             # execute_cmd_with_timeout('python3 get_urls.py')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run('python3 get_urls.py', timeout=total_apk * 300, stdout=stdout, stderr=stderr)
+                subprocess.run('python3 get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,shell=True)
     else:
         # 动态运行获取隐私政策
         # os.chdir('./AppUIAutomator2Navigation')

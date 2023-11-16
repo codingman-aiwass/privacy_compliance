@@ -275,6 +275,13 @@ def table_handle_no_rowspan(table):
                     table_dict_list.append(dict(sdk_dict_temp))
                 #else:
                  #   print("写入行数据失败")
+    #删除表头
+    try:
+        for dict_item in table_dict_list:
+            if all(value is None for value in dict_item.values()):
+                table_dict_list.remove(dict_item)
+    except Exception as e:
+        print(e)
     return table_dict_list
 def table_handle_rowspan(table):
     table_dict_list_row = []
@@ -731,22 +738,26 @@ def run_SDK_analysis(url = None,soup = None):
     return final_result
 def random_50():
     filepath = "D:\\中山\\隐私合规\\PrivacyLegal"
+    #filepath = "D:\\pythonProject3_SRL2\\random50\\soup"
     filename_list = os.listdir(filepath)
     count = 0
+    flag = 0
     for i in filename_list:
         try:
             print(i)
+            flag +=1
             soup = get_html_soup(filepath+"\\"+i)
             if soup:
                 result = run_SDK_analysis(soup = soup)
             if result:
                 count +=1
-                with open("random_50_9_24/"+i[:-5]+".json",'w',encoding='utf-8')as f:
+                with open("D:\\中山\\隐私合规\\PrivacyLegal_sdk_analysis\\"+i[:-5]+".json",'w',encoding='utf-8')as f:
                     json.dump(result,f,ensure_ascii=False,indent=2)
                 f.close()
                 print("已完成")
             if count==200:
                 break
+            print(count)
         except Exception as e:
             print(e)
 if __name__ == '__main__':
@@ -755,33 +766,9 @@ if __name__ == '__main__':
     random_50()
     end_time = time.time()
     total_time = end_time - start_time
-    print("程序运行时间：", total_time, "秒") '''
-    result = run_SDK_analysis(url ='https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202203300948_54070.html?spm=hemdefault.11124225.6429453315.1')
-    #result = run_table_handle(url = "https://html5.moji.com/tpd/agreement/partners_info.html")
-    #result = run_display_handle(url ="https://terms.alicdn.com/legal-agreement/terms/suit_bu1_alibaba_hema/suit_bu1_alibaba_hema202009041732_77262.html?spm=a1zaa.8161610.0.0.7e0915758VW7ME")
-    with open('temp_sdk_result/com.wudaokou.hippo_sdk.json','w',encoding='utf-8')as f:
+    print("程序运行时间：", total_time, "秒")
+    '''
+    result = run_table_handle(url = "https://terms.alicdn.com/legal-agreement/terms/privacy_description_of_sharing/20230210162254258/20230210162254258.html")
+    with open('temp_sdk_result/com.tmall.wireless_sdk.json','w',encoding='utf-8')as f:
         json.dump(result,f,ensure_ascii=False,indent=2)#盒马漏掉了一个sdk链接，陈列形式的。
     f.close()
-    #盒马的url判定有问题，然后可以追加一个，如果某个字典的键值对和周围不一样且里面有明显过长字符，则查找上一个字典的键看是否在里面，然后切割成为新的键值。
-    '''
-    print(futher_display_dict_handle([
-        {
-            "name": "Android版本：",
-            "text": "支付宝",
-            "运营方": "支付宝（中国）网络技术有限公司",
-            "功能": "帮用户完成付款、提供安全认证服务",
-            "收集个人信息类型": "电话状态、位置信息、设备标识符（IMEI、MAC地址、IMSI、BSSID、SSID、Androidid）、摄像头、Wi-Fi列表、写入SDcard数据、蓝牙MAC地址、应用列表",
-            "隐私权政策链接": "https://render.alipay.com/p/c/k2cx0tg8",
-            "url": [
-                "https://render.alipay.com/p/c/k2cx0tg8"
-            ]
-        },
-        {
-            "name": "云闪付",
-            "运营方": "中国银联股份有限公司功能帮用户完成付款、提供安全认证服务收集个人信息类型电话状态、位置信息、设备标识符（设备型号、设备名称、序列号、设备MAC地址、操作系统类型、IMEI）、AndroidID、AndroidOAID、OpenID、GUID、IMSI隐私权政策链接https://base.95516.com/s/wl//WebAPP/helpAgree/page/agreement/regPrivacy.html",
-            "url": [
-                "https://base.95516.com/s/wl/WebAPP/helpAgree/page/agreement/regPrivacy.html"
-            ]
-        }]
-    ))
-'''
