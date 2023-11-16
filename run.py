@@ -2,7 +2,6 @@ import configparser
 import datetime
 import getopt
 import json
-import logging
 import os
 import pickle
 import platform
@@ -73,43 +72,6 @@ def execute_cmd_with_timeout(cmd, timeout=1800, cwd=None):
     except subprocess.TimeoutExpired:
         p.send_signal(signal.SIGINT)
         p.wait()
-
-
-def execute_cmd_with_timeout_and_log(cmd, timeout=1800, cwd=None, log_path=None):
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-    # 创建文件处理器
-    if log_path is None:
-        file_handler = logging.FileHandler('app.log')
-    else:
-        file_handler = logging.FileHandler(log_path)
-    file_handler.setFormatter(formatter)
-
-    # 将文件处理器添加到日志记录器
-    logger.addHandler(file_handler)
-
-    if cwd is None:
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    else:
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, cwd=cwd)
-
-    try:
-        stdout, stderr = p.communicate(timeout=timeout)
-        stdout = stdout.decode('utf-8')
-        stderr = stderr.decode('utf-8')
-
-        if stdout:
-            logger.info("Command output:\n%s", stdout)
-        if stderr:
-            logger.error("Command error:\n%s", stderr)
-
-        p.wait()
-    except subprocess.TimeoutExpired:
-        p.send_signal(signal.SIGINT)
-        p.wait()
-        logger.error("Command execution timed out.")
 
 
 def get_OS_type():
@@ -201,7 +163,7 @@ def initSettings():
                                'analysis_privacy_policy': 'true',
                                'run_ui_static': 'true', 'run_dynamic_part': 'true',
                                'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'true',
-                               'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'restart_frida': 'true',
+                               'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
                                'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
                                'clear_final_res_dir_before_run': 'true',
                                'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low",
@@ -217,7 +179,7 @@ def initSettings():
                            'analysis_privacy_policy': 'true',
                            'run_ui_static': 'true', 'run_dynamic_part': 'true',
                            'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'false',
-                           'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'restart_frida': 'true',
+                           'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
                            'searchprivacypolicy': 'true', 'drawappcallgraph': 'false','screenuidrep':"loc",
                            'clear_final_res_dir_before_run': 'true',
                            'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
@@ -248,19 +210,27 @@ def initSettings():
         apk_path = input().replace("\\", "/")
     # 清空正在运行的第三方应用程序和Google Chrome
     # 非docker环境下也需要清除后台所有程序
+
+    # 暂时弃用启动前清空后台的操作。
+    # if get_OS_type() == 'mac':
+    #     print('kill all background apps in unix-like os!')
+    #     # subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
+    #     execute_cmd_with_timeout("dos2unix *.sh")
+    #     execute_cmd_with_timeout("bash kill_all_background_apps.sh")
+    # elif get_OS_type() == 'linux':
+    #     print('kill all background apps in unix-like os!')
+    #     subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
+    #     execute_cmd_with_timeout("bash kill_all_background_apps.sh")
+    # elif get_OS_type() == 'win':
+    #     print('kill all background apps in win!')
+    #     execute_cmd_with_timeout("powershell.exe .\\kill_all_background_apps.ps1")
+
+    # 保留在unix-like os上将Windows上的换行符替换为unix-like os上的换行符的逻辑，防止执行shell脚本的时候报错。
     if get_OS_type() == 'mac':
-        print('kill all background apps in unix-like os!')
-        # subprocess.run("sed -i 's/\r$//' kill_all_background_apps.sh", shell=True)
         execute_cmd_with_timeout("dos2unix *.sh")
-        execute_cmd_with_timeout("bash kill_all_background_apps.sh")
-    elif get_OS_type() == 'linux':
-        print('kill all background apps in unix-like os!')
         subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
-        # execute_cmd_with_timeout("dos2unix *.sh")
-        execute_cmd_with_timeout("bash kill_all_background_apps.sh")
-    elif get_OS_type() == 'win':
-        print('kill all background apps in win!')
-        execute_cmd_with_timeout("powershell.exe .\\kill_all_background_apps.ps1")
+    elif get_OS_type() == 'linux':
+        subprocess.run("sed -i 's/\r$//' *.sh", shell=True)
     config_apks_to_analysis(apk_path)
     cur_path = os.getcwd()
     total_apks_to_analysis = get_apks_num(apk_path)
@@ -350,9 +320,9 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         #                                         config_settings['dynamic_run_time']),
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
                         # 重启frida
-                        if config_settings['restart_frida'] == 'true':
+                        if config_settings['start_frida'] == 'true':
                             try:
-                                execute_cmd_with_timeout("bash restart_frida15.sh", timeout=10)
+                                execute_cmd_with_timeout("bash start_frida15.sh", timeout=10)
                             except Exception:
                                 print("start frida done.")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
@@ -364,9 +334,9 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                                            stderr=stderr)
                     else:
                         # 重启frida
-                        if config_settings['restart_frida'] == 'true':
+                        if config_settings['start_frida'] == 'true':
                             try:
-                                execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1", timeout=10)
+                                execute_cmd_with_timeout("powershell.exe .\\start_frida15.ps1", timeout=10)
                             except Exception:
                                 print("start frida done.")
                         # execute_cmd_with_timeout(
@@ -395,6 +365,11 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                     time.sleep(2)
         # os.chdir(cur_path)
         # 从动态分析的文件夹中获取得到的隐私政策url,按照app分类,查看是否其下的文件夹中有隐私政策url,任意找到一个就返回
+        # TODO 为实现能够在动态测试app时，得到隐私政策就让隐私政策解析模块解析该信息。需要使用多线程持续监视文件夹的变化。
+        # 要有一个记录，记录哪些app的隐私政策已经获取到了，总共需要获取的隐私政策的app信息在apk_pkgName.txt中。
+        # 需要起一个守护线程，每隔一段时间去查找collectData下，未获取到隐私政策的那些app是否已经有了
+        # 还需要设置一个时间戳，collectData中，只有时间在此之后的文件夹才会被纳入扫描范围
+
         apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData'))
         app_dict = {}
         pkgName_appName_dict = {}
@@ -622,9 +597,9 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                 # 判断操作系统版本,分win和linux/mac
                 if os_type in ['linux', 'mac']:
                     # 重启frida
-                    if config_settings['restart_frida'] == 'true':
+                    if config_settings['start_frida'] == 'true':
                         try:
-                            execute_cmd_with_timeout("bash restart_frida15.sh", timeout=10)
+                            execute_cmd_with_timeout("bash start_frida15.sh", timeout=10)
                         except Exception:
                             print("start frida done.")
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
@@ -640,9 +615,9 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
                 else:
                     # 重启frida
-                    if config_settings['restart_frida'] == 'true':
+                    if config_settings['start_frida'] == 'true':
                         try:
-                            execute_cmd_with_timeout("powershell.exe .\\restart_frida15.ps1", timeout=10)
+                            execute_cmd_with_timeout("powershell.exe .\\start_frida15.ps1", timeout=10)
                         except Exception:
                             print("start frida done.")
                     # execute_cmd_with_timeout(
