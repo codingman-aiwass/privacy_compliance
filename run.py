@@ -398,7 +398,11 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                 print('privacy policy not in ', val)
                 apps_missing_pp.add(key)
                 continue
-            elif 'PrivacyPolicy' in dirs:
+            # 由于引入了使用守护线程检测是否获取到隐私政策以及在消费者方法中实现了调用隐私政策解析模块,原本设想这一分支暂时不需要调用,以免造成重复调用
+            # 但是如果留给动态分析的时间不足5分钟,将会继续调用原本的处理逻辑再次处理,以防动态分析启动的子线程来不及处理完成URL
+            elif int(config_settings['dynamic_run_time']) < 300 and 'PrivacyPolicy' in dirs:
+                print('There may be not enough time for subprocess to analysis privacy policy in dynamic part, '
+                      'so analysis again.')
                 # 找到了隐私政策,修改此处逻辑，判断是否有多行，有多行返回列表；只有一行返回字符串
                 # pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/')[
                 #     0]
@@ -466,7 +470,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
     # os.chdir(cur_path)
     print('finish get_privacy_policy at {}...'.format(time.ctime()))
 
-    if config_settings['analysis_privacy_policy'] == 'true':
+    if config_settings['analysis_privacy_policy'] == 'true' and int(config_settings['dynamic_run_time']) <= 300:
         print('start analysis_privacy_policy at {}...'.format(time.ctime()))
         analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folder_path)
         print('end analysis_privacy_policy at {}...'.format(time.ctime()))
