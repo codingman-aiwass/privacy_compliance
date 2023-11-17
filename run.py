@@ -138,51 +138,38 @@ def initSettings():
     except getopt.GetoptError:
         print('run.py -c <config.ini>')
         sys.exit(2)
-    config_settings = None
+    config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'true',
+                       'run_code_inspection': 'true',
+                       'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
+                       'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
+                       'pp_print_long_sentences': 'true',
+                       'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
+                       'get_pp_from_app_store': 'false',
+                       'analysis_privacy_policy': 'true',
+                       'run_ui_static': 'true', 'run_dynamic_part': 'true',
+                       'dynamic_ui_depth': '3', 'dynamic_run_time': '180',
+                       'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
+                       'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
+                       'clear_final_res_dir_before_run': 'true',
+                       'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
     in_docker = False
     if len(opts) == 0:
         # 没有指定配置文件,按照默认配置来
         # 根据是否在docker中运行，决定使用不同的默认config_settings
-        if get_OS_type() in ['win','mac']:
+        if get_OS_type() in ['win', 'mac']:
             in_docker = False
         elif get_OS_type() == 'linux':
-            output_info = subprocess.check_output('if [ -f /.dockerenv ]; then echo "inside docker";else echo "in real world";fi',shell=True)
+            output_info = subprocess.check_output(
+                'if [ -f /.dockerenv ]; then echo "inside docker";else echo "in real world";fi', shell=True)
             if output_info == b'inside_docker\n':
                 in_docker = True
             elif output_info == b'in real world\n':
                 in_docker = False
         if in_docker:
             # 默认状态，只获取隐私政策，不考虑覆盖率
-            config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'false',
-                               'run_code_inspection': 'false',
-                               'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
-                               'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
-                               'pp_print_long_sentences': 'true',
-                               'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
-                               'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
-                               'analysis_privacy_policy': 'true',
-                               'run_ui_static': 'true', 'run_dynamic_part': 'true',
-                               'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'true',
-                               'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
-                               'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
-                               'clear_final_res_dir_before_run': 'true',
-                               'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low",
-                               'host_machine_os_type': 'linux'}
-        else:
-            config_settings = {'ui_static': 'true', 'ui_dynamic': 'true', 'code_inspection': 'false',
-                           'run_code_inspection': 'false',
-                           'pp_print_permission_info': 'true', 'pp_print_sdk_info': 'true',
-                           'pp_print_sensitive_item': 'true', 'pp_print_others': 'true',
-                           'pp_print_long_sentences': 'true',
-                           'dynamic_print_full_ui_content': 'true', 'dynamic_print_sensitive_item': 'true',
-                           'get_pp_from_app_store': 'false', 'get_pp_from_dynamically_running_app': 'true',
-                           'analysis_privacy_policy': 'true',
-                           'run_ui_static': 'true', 'run_dynamic_part': 'true',
-                           'dynamic_ui_depth': '3', 'dynamic_run_time': '300', 'run_in_docker': 'false',
-                           'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
-                           'searchprivacypolicy': 'true', 'drawappcallgraph': 'false','screenuidrep':"loc",
-                           'clear_final_res_dir_before_run': 'true',
-                           'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
+            # 在docker中,默认会执行prepareInDocker.sh,在这个脚本里会启动frida,所以没必要让start_frida为true
+            config_settings['host_machine_os_type'] = 'linux'
+            config_settings['start_frida'] = 'false'
 
     else:
         for opt, arg in opts:
@@ -290,11 +277,13 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
         if os_type == 'win':
             # execute_cmd_with_timeout('python get_urls.py')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run('python get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,shell=True)
+                subprocess.run('python get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,
+                               shell=True)
         elif os_type in ['mac', 'linux']:
             # execute_cmd_with_timeout('python3 get_urls.py')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run('python3 get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,shell=True)
+                subprocess.run('python3 get_urls.py y', timeout=total_apk * 300, stdout=stdout, stderr=stderr,
+                               shell=True)
         print('finish get_privacy_policy at {}...'.format(time.ctime()))
         if config_settings['analysis_privacy_policy'] == 'true':
             print('start analysis_privacy_policy at {}...'.format(time.ctime()))
@@ -309,7 +298,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]
-        if config_settings['get_pp_from_dynamically_running_app'] == 'true':
+        if config_settings['searchprivacypolicy'] == 'true':
             # with open(os.path.join(cur_path,'AppUIAutomator2Navigation','apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             #     content = f.readlines()
             # pkgName_appName_list = [item.rstrip('\n') for item in content]
@@ -335,8 +324,8 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                                 print("start frida done.")
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                            config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
+                                            config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                            config_settings['drawappcallgraph'], config_settings['screenuidrep']],
                                            cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                            timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                            stderr=stderr)
@@ -353,8 +342,8 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                         #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
                         with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                             subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                            config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
+                                            config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                            config_settings['drawappcallgraph'], config_settings['screenuidrep']],
                                            cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                            timeout=int(config_settings['dynamic_run_time']) + 600, stderr=stderr,
                                            stdout=stdout)
@@ -418,9 +407,8 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                 apps_missing_pp.add(key)
                 continue
             # 由于引入了使用守护线程检测是否获取到隐私政策以及在消费者方法中实现了调用隐私政策解析模块,原本设想这一分支暂时不需要调用,以免造成重复调用
-            # 但是如果留给动态分析的时间不足5分钟,将会继续调用原本的处理逻辑再次处理,以防动态分析启动的子线程来不及处理完成URL
             # 如果这个隐私政策URL没有在守护线程中成功分析,也需要再次分析
-            elif (int(config_settings['dynamic_run_time']) < 170 or key not in successful_pp_set) and 'PrivacyPolicy' in dirs:
+            elif key not in successful_pp_set and 'PrivacyPolicy' in dirs:
                 print('There may be not enough time for subprocess to analysis privacy policy in dynamic part, '
                       'so analysis again.')
                 # 找到了隐私政策,修改此处逻辑，判断是否有多行，有多行返回列表；只有一行返回字符串
@@ -487,9 +475,9 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                   encoding='utf-8') as f:
             json.dump(app_pp, f, indent=4, ensure_ascii=False)
         print('app_pp', app_pp)
-        # 如果成功请求数量小于成功获取到隐私政策URL的应用数量,也需要再次启动隐私政策解析模块
+        # 如果成功请求数量小于成功获取到隐私政策URL的应用数量,或者有些app未能hook到隐私政策,也需要再次启动隐私政策解析模块
         if config_settings['analysis_privacy_policy'] == 'true' and (
-                int(config_settings['dynamic_run_time']) <= 170 or cnt_pp_num != len(successful_pp_set)):
+                len(apps_missing_pp) > 0 or cnt_pp_num != len(successful_pp_set)):
             print('start analysis_privacy_policy at {}...'.format(time.ctime()))
             analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folder_path)
             print('end analysis_privacy_policy at {}...'.format(time.ctime()))
@@ -592,17 +580,17 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
     stderr_file = log_folder_path + 'dynamic_app_test_error.log'
     print('start dynamic_app_test at {}...'.format(time.ctime()))
     if config_settings['run_dynamic_part'] == 'true' and config_settings[
-        'get_pp_from_dynamically_running_app'] == 'true':
+        'searchprivacypolicy'] == 'true':
         print('this module has been run before...')
     elif config_settings['run_dynamic_part'] == 'true' and config_settings[
-        'get_pp_from_dynamically_running_app'] == 'false':
+        'searchprivacypolicy'] == 'false':
         print(
-            "config_settings['run_dynamic_part'] == 'true' and config_settings['get_pp_from_dynamically_running_app'] == 'false'")
+            "config_settings['run_dynamic_part'] == 'true' and config_settings['searchprivacypolicy'] == 'false'")
         # os.chdir('./AppUIAutomator2Navigation')
         # with open('apk_pkgName.txt', 'r', encoding='utf-8') as f:
         # 检查是否有上次运行时留下的记录
         if 'successful_analysis_pp.txt' in os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation')):
-            os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation','successful_analysis_pp.txt'))
+            os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'))
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             content = f.readlines()
         pkgName_appName_list = [item.rstrip('\n') for item in content]
@@ -624,8 +612,8 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                             print("start frida done.")
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                        config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
+                                        config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                        config_settings['drawappcallgraph'], config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
@@ -647,8 +635,8 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
 
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                        config_settings['dynamic_run_time'],config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'],config_settings['screenuidrep']],
+                                        config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                        config_settings['drawappcallgraph'], config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
