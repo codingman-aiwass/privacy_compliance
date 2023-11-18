@@ -1,0 +1,5 @@
+FROM nullptr001/ubuntu_miniconda_dependencies_include_pip
+COPY adbkey /root/.android/adbkey
+COPY adbkey.pub /root/.android/adbkey.pub
+COPY . /app
+CMD ["/bin/bash"]

@@ -1,6 +1,6 @@
 config_settings.pkl
 test.py
 final_res_log_dir/
-tmp-output/
+tmp_output/
 .idea/
 __pycache__/

@@ -19,6 +19,6 @@ def delete_privacy_json():
             os.remove(file_path)
 if __name__ == '__main__':
     #run_handle("D:/中山/ali/privacy policy/ali")
-    delete_privacy_json()
+    # delete_privacy_json()
     main("pkgName_url.json")
     run_compliance_analysis()

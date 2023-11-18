@@ -1,5 +1,4 @@
 package android;
-import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Set;
@@ -19,7 +18,7 @@ public class ProcessStr {
     static {
         try {
             List<String> stopWordsList = Files.readAllLines(
-                    Paths.get(System.getProperty("user.home"), "nltk_data" + File.separator + "corpora" + File.separator + "stopwords" + File.separator + "english"));
+                    Paths.get(System.getProperty("user.home"), "nltk_data/corpora/stopwords/english"));
             for (String stopWord : stopWordsList) {
                 STOP_WORDS.add(stopWord.toLowerCase());
             }
