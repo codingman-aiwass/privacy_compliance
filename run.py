@@ -393,10 +393,15 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
         cnt_pp_num = 0
         # 此时需要读取successful_analysis_pp.txt的记录,看哪些是成功请求到了的URL,这里就不再分析
         # 但是没有请求成功的,这里还要继续尝试
-        with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'), 'r',
-                  encoding='utf-8') as f:
-            content = f.readlines()
-        successful_pp_set = set([item.rstrip('\n') for item in content])
+        # 由于存在运行时间过短的可能性，这时successful_analysis_pp.txt可能压根没有产生
+        try:
+            with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'), 'r',
+                      encoding='utf-8') as f:
+                content = f.readlines()
+            successful_pp_set = set([item.rstrip('\n') for item in content])
+        except FileNotFoundError:
+            successful_pp_set = set()
+
         for key, val in app_dict.items():
             # dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
             dirs = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData', val))

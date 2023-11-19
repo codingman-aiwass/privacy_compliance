@@ -1,27 +1,23 @@
 package android;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import org.xmlpull.v1.XmlPullParserException;
 import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StringConstant;
 import soot.jimple.infoflow.android.manifest.ProcessManifest;
 import soot.options.Options;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-import org.xmlpull.v1.XmlPullParserException;
+import java.util.concurrent.*;
 
 public class findMultipleAPKIoTDataPoints {
     public static String logsPath = "";
@@ -401,9 +397,11 @@ public class findMultipleAPKIoTDataPoints {
                                 boolean isPrivacyItem = false;
                                 for (String s : privacyItemList) {
                                     // if (tmp.contains(s)) {
-                                    // 判断策略为 编辑距离相似度 > 0.75 || 以隐私数据项开头 || 以隐私数据项结尾
-                                    if (getEditDistanceSimilarity(tmp, s) > 0.75 || tmp.startsWith(s)
-                                            || tmp.endsWith(s)) {
+                                    // 判断策略为 编辑距离相似度 > 0.75 || 以隐私数据项开头 || 以隐私数据项结尾,
+                                    // 但是要求数据项的长度不能大于2倍的隐私数据项目长度
+                                    // 用来避免类似password save action, password save open dialog的误报
+                                    if ((getEditDistanceSimilarity(tmp, s) > 0.75 || tmp.startsWith(s)
+                                            || tmp.endsWith(s)) && tmp.length() < 2 * s.length()) {
                                         isPrivacyItem = true;
                                         break;
                                     }
