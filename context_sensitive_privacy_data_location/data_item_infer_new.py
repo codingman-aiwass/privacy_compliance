@@ -14,7 +14,7 @@ pos = hanlp.load(hanlp.pretrained.pos.CTB9_POS_ELECTRA_SMALL)
 dep = hanlp.load(hanlp.pretrained.dep.CTB7_BIAFFINE_DEP_ZH)
 
 verbs_list = ['编辑', '设置', '修改', '发布']
-verbs_list_En = ['modify', 'edit', 'upload']
+verbs_list_En = ['modify', 'edit', 'upload', 'personal']
 # setting
 pn_list = ['你','您','我']
 
@@ -571,14 +571,44 @@ class DateInfer:
 
         for text_object in self.data_item_extracted:
             if text_object['Text'] not in text_obj_set_infer:
+                if get_normal_chinese(text_object['Text']) == "":
+                    continue
                 text_obj_set_infer.add(text_object['Text'])
                 json_output['outputObjects'].append({'text': text_object['Text']})
         for text_object in self.data_item_implied:
             if text_object['form'] not in text_obj_set_imply:
+                if get_normal_chinese(text_object['form']) == "":
+                    continue
                 text_obj_set_imply.add(text_object['form'])
                 json_output['outputObjects'].append({'text': text_object['form']})
         with open(self.output_file_path, 'w', encoding='utf-8') as f:
             json.dump(json_output, f, indent=2, ensure_ascii=False)
+
+
+import unicodedata
+
+
+def get_normal_chinese(text: str):
+    # 去掉所有特殊字符，空格、换行符、16进制字符。。。
+    special_chars = []
+    code_names = ['CJK', 'SPACE', 'LATIN', 'DIGIT']
+    for char in text:
+        # 是英文，正常字符
+        # if char.isalpha():
+        #     continue
+        if ord(char) <= 127:
+            special_chars.append(char)
+        char_name = unicodedata.name(char, "")
+        normal = False
+        # 把不是中文的字符都算作不正常字符
+        for code_name in code_names:
+            if code_name in char_name:
+                normal = True
+            if not normal:
+                special_chars.append(char)
+    for char in special_chars:
+        text = text.replace(char, '')
+    return text
 
 
 if __name__ == '__main__':
