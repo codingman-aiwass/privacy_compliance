@@ -150,7 +150,7 @@ def initSettings():
                        'dynamic_ui_depth': '3', 'dynamic_run_time': '180',
                        'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
                        'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
-                       'clear_final_res_dir_before_run': 'true',
+                       'clear_final_res_dir_before_run': 'true','clear_pp_analysis_res_before_run':'true',
                        'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
     in_docker = False
     if len(opts) == 0:
@@ -225,6 +225,14 @@ def initSettings():
     time_now = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     os.makedirs(f'./logs/log_{time_now}')
     log_folder_path = f'{cur_path}/logs/log_{time_now}/'
+    # 新增运行工具前，判断是否清除上一轮隐私政策解析的结果
+    if config_settings['clear_pp_analysis_res_before_run'] == 'true':
+        if 'Privacypolicy_txt' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+            clear_all_files_in_folder(
+                os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'Privacypolicy_txt'))
+        if 'PrivacyPolicySaveDir' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+            clear_all_files_in_folder(
+                os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'PrivacyPolicySaveDir'))
     return config_settings, cur_path, apk_path, get_OS_type(), total_apks_to_analysis, log_folder_path
 
 
@@ -393,10 +401,14 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
         cnt_pp_num = 0
         # 此时需要读取successful_analysis_pp.txt的记录,看哪些是成功请求到了的URL,这里就不再分析
         # 但是没有请求成功的,这里还要继续尝试
-        with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'), 'r',
-                  encoding='utf-8') as f:
-            content = f.readlines()
-        successful_pp_set = set([item.rstrip('\n') for item in content])
+        # 由于存在运行时间过短的可能性，这时successful_analysis_pp.txt可能压根没有产生
+        try:
+            with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'), 'r',
+                      encoding='utf-8') as f:
+                content = f.readlines()
+            successful_pp_set = set([item.rstrip('\n') for item in content])
+        except FileNotFoundError:
+            successful_pp_set = set()
         for key, val in app_dict.items():
             # dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
             dirs = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData', val))
@@ -528,20 +540,12 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
     if config_settings['run_ui_static'] == 'true':
         # os.chdir('./context_sensitive_privacy_data_location')
         if 'tmp-output' in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # shutil.rmtree('tmp-output')
-            # os.mkdir('tmp-output')
-            # 同理，不直接使用rmtree
             if config_settings['clear_tmp_output_dir_before_run'] == 'true':
                 clear_all_files_in_folder(
                     os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'tmp-output'))
         if 'tmp-output' not in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # os.mkdir('tmp-output')
             os.mkdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'tmp-output'))
         if 'final_res_log_dir' in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # shutil.rmtree('final_res_log_dir')
-            # os.mkdir('final_res_log_dir')
-            # 同理，不直接使用rmtree
-            # clear_all_files_in_folder('./final_res_log_dir')
             if config_settings['clear_final_res_dir_before_run'] == 'true':
                 clear_all_files_in_folder(
                     os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'final_res_log_dir'))
@@ -559,10 +563,6 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
                                timeout=total_apks_to_analysis * 1200, stdout=stdout, stderr=stderr)
         elif os_type in ['linux', 'mac']:
-            # execute_cmd_with_timeout('python3 run_jar.py', total_apks_to_analysis * 600)
-            # print('execute python3 run_UI_static.py ....')
-            # execute_cmd_with_timeout('python3 run_UI_static.py')
-            # print('execute run_UI_static over...')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                 subprocess.run(['python3', 'run_jar.py'],
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
@@ -586,9 +586,6 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
         'searchprivacypolicy'] == 'false':
         print(
             "config_settings['run_dynamic_part'] == 'true' and config_settings['searchprivacypolicy'] == 'false'")
-        # os.chdir('./AppUIAutomator2Navigation')
-        # with open('apk_pkgName.txt', 'r', encoding='utf-8') as f:
-        # 检查是否有上次运行时留下的记录
         if 'successful_analysis_pp.txt' in os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation')):
             os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'))
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
