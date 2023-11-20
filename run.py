@@ -150,7 +150,7 @@ def initSettings():
                        'dynamic_ui_depth': '3', 'dynamic_run_time': '180',
                        'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
                        'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
-                       'clear_final_res_dir_before_run': 'true',
+                       'clear_final_res_dir_before_run': 'true','clear_pp_analysis_res_before_run':'true',
                        'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
     in_docker = False
     if len(opts) == 0:
@@ -225,6 +225,14 @@ def initSettings():
     time_now = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     os.makedirs(f'./logs/log_{time_now}')
     log_folder_path = f'{cur_path}/logs/log_{time_now}/'
+    # 新增运行工具前，判断是否清除上一轮隐私政策解析的结果
+    if config_settings['clear_pp_analysis_res_before_run'] == 'true':
+        if 'Privacypolicy_txt' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+            clear_all_files_in_folder(
+                os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'Privacypolicy_txt'))
+        if 'PrivacyPolicySaveDir' in os.listdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core')):
+            clear_all_files_in_folder(
+                os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'PrivacyPolicySaveDir'))
     return config_settings, cur_path, apk_path, get_OS_type(), total_apks_to_analysis, log_folder_path
 
 
