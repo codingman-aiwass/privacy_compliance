@@ -110,7 +110,13 @@ for app_name, jsons in prefix_dict.items():
                         break
                 if flag is True:
                     pairs_2.append(text)
-
+        # 在这里加一层过滤。使用从大量app的隐私政策中提取出来的隐私数据项和pairs_1，pairs_2的结果做交集，过滤掉一些乱码或者无意义数据。
+        # 确保最终报告的数据项是有意义的
+        with open('total_pp_privacy_data_items.txt', 'r', encoding='utf8') as f:
+            contents = f.readlines()
+        total_pp_data_items = set(contents)
+        pairs_1 = list(total_pp_data_items.intersection(set(pairs_1)))
+        pairs_2 = list(total_pp_data_items.intersection(set(pairs_2)))
         # TODO 此处可以根据config的配置情况,使用if-else判断输出什么log
         data_item = {}
         if config_settings['code_inspection'] == 'true':
