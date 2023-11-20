@@ -540,20 +540,12 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
     if config_settings['run_ui_static'] == 'true':
         # os.chdir('./context_sensitive_privacy_data_location')
         if 'tmp-output' in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # shutil.rmtree('tmp-output')
-            # os.mkdir('tmp-output')
-            # 同理，不直接使用rmtree
             if config_settings['clear_tmp_output_dir_before_run'] == 'true':
                 clear_all_files_in_folder(
                     os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'tmp-output'))
         if 'tmp-output' not in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # os.mkdir('tmp-output')
             os.mkdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'tmp-output'))
         if 'final_res_log_dir' in os.listdir(os.path.join(cur_path, 'context_sensitive_privacy_data_location')):
-            # shutil.rmtree('final_res_log_dir')
-            # os.mkdir('final_res_log_dir')
-            # 同理，不直接使用rmtree
-            # clear_all_files_in_folder('./final_res_log_dir')
             if config_settings['clear_final_res_dir_before_run'] == 'true':
                 clear_all_files_in_folder(
                     os.path.join(cur_path, 'context_sensitive_privacy_data_location', 'final_res_log_dir'))
@@ -571,10 +563,6 @@ def static_UI_analysis(total_apks_to_analysis, config_settings, os_type, cur_pat
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
                                timeout=total_apks_to_analysis * 1200, stdout=stdout, stderr=stderr)
         elif os_type in ['linux', 'mac']:
-            # execute_cmd_with_timeout('python3 run_jar.py', total_apks_to_analysis * 600)
-            # print('execute python3 run_UI_static.py ....')
-            # execute_cmd_with_timeout('python3 run_UI_static.py')
-            # print('execute run_UI_static over...')
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
                 subprocess.run(['python3', 'run_jar.py'],
                                cwd=os.path.join(cur_path, 'context_sensitive_privacy_data_location'),
@@ -598,9 +586,6 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
         'searchprivacypolicy'] == 'false':
         print(
             "config_settings['run_dynamic_part'] == 'true' and config_settings['searchprivacypolicy'] == 'false'")
-        # os.chdir('./AppUIAutomator2Navigation')
-        # with open('apk_pkgName.txt', 'r', encoding='utf-8') as f:
-        # 检查是否有上次运行时留下的记录
         if 'successful_analysis_pp.txt' in os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation')):
             os.remove(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'successful_analysis_pp.txt'))
         with open(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'apk_pkgName.txt'), 'r', encoding='utf-8') as f:
