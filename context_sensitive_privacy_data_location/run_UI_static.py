@@ -41,8 +41,13 @@ if __name__ == '__main__':
     output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_output.json')
     # 读取json文件里的包名,修改文件名
     for output_json in output_jsons:
+        # print(f'opening {output_json} in run_UI_static')
         with open(output_json, 'r') as f:
-            content = json.load(f)
+            try:
+                content = json.load(f)
+            except json.decoder.JSONDecodeError:
+                print(f'error occured in {output_json} due to JSONDecoderError,continue...')
+                continue
         appName = content.get('AppName')
         if 'dynamic' in output_json:
             continue
@@ -50,7 +55,13 @@ if __name__ == '__main__':
         # if re.compile(r'\b\d+\b').search(output_json):
         #     continue
         # os.rename(output_json, appName + output_json[output_json.index('_'):])
-        new_name = output_json[:output_json.rindex('/') + 1] + appName + '_static' + output_json[output_json.rindex('_output'):]
+        # 因为在Windows上，文件分隔符号为\\，Linux上为/，需要做下修改
+        new_name = os.path.dirname(output_json) + os.path.sep + appName + '_static' + output_json[
+                                                                                      output_json.rindex('_output'):]
+        # if get_OS_type() == 'win':
+        #     new_name = os.path.dirname(output_json) + os.path.sep + appName + '_static' + output_json[output_json.rindex('_output'):]
+        # else:
+        #     new_name = output_json[:output_json.rindex('/') + 1] + appName + '_static' + output_json[output_json.rindex('_output'):]
         print('in run_UI_static.py----------')
         print('output_json:',output_json)
         print('new_name',new_name)
@@ -63,7 +74,7 @@ if __name__ == '__main__':
 
 
     output_jsons = get_ends_with_suffix_files_in_folder(outputdir, '_static_output.json')
-    print(output_jsons)
+    print('output_jsons',output_jsons)
     os_type = get_OS_type()
     print('run_UI_static start...')
     print('os_type_in_run_UI_static.py...',os_type)
