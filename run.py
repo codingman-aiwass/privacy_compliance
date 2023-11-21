@@ -310,67 +310,88 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             # with open(os.path.join(cur_path,'AppUIAutomator2Navigation','apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             #     content = f.readlines()
             # pkgName_appName_list = [item.rstrip('\n') for item in content]
-            for pkgName_appName in pkgName_appName_list:
-                try:
-                    pkgName, appName = pkgName_appName.split(' | ')
-                    appName = appName.strip('\'')
-                    # 清除app缓存数据
-                    print(f'在get privacy policy, 包名为{pkgName}')
-                    clear_app_cache(pkgName)
-                    # 重启uiautomator2
-                    rerun_uiautomator2()
-                    if os_type in ['linux', 'mac']:
-                        # execute_cmd_with_timeout(
-                        #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                        #                                         config_settings['dynamic_run_time']),
-                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        # 重启frida
-                        if config_settings['start_frida'] == 'true':
-                            try:
-                                execute_cmd_with_timeout("bash start_frida15.sh", timeout=10)
-                            except Exception:
-                                print("start frida done.")
-                        with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                            subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                            config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'], config_settings['screenuidrep']],
-                                           cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                                           timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
-                                           stderr=stderr)
-                    else:
-                        # 重启frida
-                        if config_settings['start_frida'] == 'true':
-                            try:
-                                execute_cmd_with_timeout("powershell.exe .\\start_frida15.ps1", timeout=10)
-                            except Exception:
-                                print("start frida done.")
-                        # execute_cmd_with_timeout(
-                        #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
-                        #                                        config_settings['dynamic_run_time']),
-                        #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
-                        with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                            subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
-                                            config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                            config_settings['drawappcallgraph'], config_settings['screenuidrep']],
-                                           cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
-                                           timeout=int(config_settings['dynamic_run_time']) + 600, stderr=stderr,
-                                           stdout=stdout)
+            print(f'all pkgName_appName to be analyzed {pkgName_appName_list}')
+            try:
+                for pkgName_appName in pkgName_appName_list:
+                    try:
+                        pkgName, appName = pkgName_appName.split(' | ')
+                        appName = appName.strip('\'')
+                        # 清除app缓存数据
+                        print(f'在get privacy policy, 包名为{pkgName}')
+                        clear_app_cache(pkgName)
+                        # 重启uiautomator2
+                        rerun_uiautomator2()
+                        if os_type in ['linux', 'mac']:
+                            # execute_cmd_with_timeout(
+                            #     'python3 run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                            #                                         config_settings['dynamic_run_time']),
+                            #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+                            # 重启frida
+                            if config_settings['start_frida'] == 'true':
+                                try:
+                                    execute_cmd_with_timeout("bash start_frida15.sh", timeout=10)
+                                except Exception:
+                                    print("start frida done.")
+                            with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                                print(f'start subprocess.run {pkgName_appName}')
+                                subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
+                                                config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                                config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                               cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                               timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
+                                               stderr=stderr)
+                        else:
+                            # 重启frida
+                            if config_settings['start_frida'] == 'true':
+                                try:
+                                    execute_cmd_with_timeout("powershell.exe .\\start_frida15.ps1", timeout=10)
+                                except Exception:
+                                    print("start frida done.")
+                            # execute_cmd_with_timeout(
+                            #     'python run.py {} {} {} {}'.format(pkgName, appName, config_settings['dynamic_ui_depth'],
+                            #                                        config_settings['dynamic_run_time']),
+                            #     timeout=int(config_settings['dynamic_run_time']),cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'))
+                            with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
+                                print(f'start subprocess.run {pkgName_appName}')
+                                subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
+                                                config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
+                                                config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                               cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
+                                               timeout=int(config_settings['dynamic_run_time']) + 600, stderr=stderr,
+                                               stdout=stdout)
 
-                    # 运行结束后，使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
-                    print(f'kill_app.sh in dynamic_run in try..,kill {pkgName}')
-                    time.sleep(2)
-                except Exception as e:
-                    print(e)
-                    traceback.print_exc()
-                    print('error occurred, continue...')
-                    # 使用adb关闭该应用的进程
-                    execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
-                    print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
-                    time.sleep(2)
+                        # 运行结束后，使用adb关闭该应用的进程
+                        execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
+                        print(f'kill_app.sh in dynamic_run in try..,kill {pkgName}')
+                        time.sleep(2)
+                    except Exception as e:
+                        print(e)
+                        traceback.print_exc()
+                        print('error occurred in try subprocess.run(), continue...')
+                        # 使用adb关闭该应用的进程
+                        execute_cmd_with_timeout(f"adb shell am force-stop {pkgName}", cwd=cur_path)
+                        print(f'kill_app.sh in dynamic_run exception..,kill {pkgName}')
+                        time.sleep(2)
+            except Exception as e:
+                traceback.print_exc()
+                print(e)
+                print('error occured in get privacy policy outer for...')
         # os.chdir(cur_path)
         print('finish get_privacy_policy at {}...'.format(time.ctime()))
-        apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData'))
+        total_apps_folders = os.listdir(os.path.join(cur_path, 'AppUIAutomator2Navigation', 'collectData'))
+        apps_folders = set()
+        # 在这里加一层判断，只分析本次动态分析的app的隐私政策
+        # pkgName_set中存放本次动态分析的目标app
+        pkgName_set = set()
+        for pkgName_appName in pkgName_appName_list:
+            pkgName, appName = pkgName_appName.split(' | ')
+            pkgName_set.add(pkgName)
+        for dir in total_apps_folders:
+            for pkg_name in pkgName_set:
+                if dir.startswith(pkg_name):
+                    apps_folders.add(dir)
+                    continue
+
         app_dict = {}
         pkgName_appName_dict = {}
         # 保存包名/应用名键值对到字典中
@@ -408,6 +429,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                 content = f.readlines()
             successful_pp_set = set([item.rstrip('\n') for item in content])
         except FileNotFoundError:
+            print('No successful_analysis_pp.txt...')
             successful_pp_set = set()
         for key, val in app_dict.items():
             # dirs = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val)
@@ -421,7 +443,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             # 由于引入了使用守护线程检测是否获取到隐私政策以及在消费者方法中实现了调用隐私政策解析模块,原本设想这一分支暂时不需要调用,以免造成重复调用
             # 如果这个隐私政策URL没有在守护线程中成功分析,也需要再次分析
             elif key not in successful_pp_set and 'PrivacyPolicy' in dirs:
-                print('There may be not enough time for subprocess to analysis privacy policy in dynamic part, '
+                print(f'{key} did not be analysised, There may be not enough time for subprocess to analysis privacy policy in dynamic part, '
                       'so analysis again.')
                 # 找到了隐私政策,修改此处逻辑，判断是否有多行，有多行返回列表；只有一行返回字符串
                 # pp_file = os.listdir('./AppUIAutomator2Navigation/collectData' + '/' + val + '/PrivacyPolicy/')[

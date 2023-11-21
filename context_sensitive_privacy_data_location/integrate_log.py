@@ -38,7 +38,13 @@ for prefix in prefix_set:
     for file_name in os.listdir(outputdir):
         if file_name.startswith(prefix) and file_name.endswith('_output_filtered_labeled.json'):
             prefix_dict[prefix].append(file_name)
-
+# 加一层过滤，不要整合本次运行没有指定的app
+with open('../AppUIAutomator2Navigation/apk_pkgName.txt','r',encoding='utf-8') as f:
+    contents = set([line.strip('\n').split('|')[0].strip() for line in f.readlines()])
+keys = list(prefix_dict.keys())
+for app in keys:
+    if app not in contents:
+        prefix_dict.pop(app,f"{app} does not exists in apk_pkgName.txt...")
 # print(prefix_dict)
 # 开始遍历字典
 for app_name, jsons in prefix_dict.items():
@@ -80,20 +86,27 @@ for app_name, jsons in prefix_dict.items():
             # TODO 此处还需要细分各类情况.比如声明权限信息 SDK信息,等等.需要多设置几个变量接收
             pp_compliance = pp[2]
     except FileNotFoundError:
+        # 进入这个except的话，就说明隐私政策解析文件不存在，即pkgName.json文件不存在
         print('find no privacy policy analysis result: ' + pp_compliance_dir + '/' + app_name + '.json')
+        data_cn_total = None
+        permission_list = None
+        pp_compliance = None
 
     try:
         with open(pp_compliance_dir + '/' + app_name + '_sdk.json', 'r', encoding='utf-8') as f:
             pp_sdk = json.load(f)
     except FileNotFoundError:
         print(
-            'find no privacy policy sdk result: ' + pp_compliance_dir + '/' + app_name + 'sdk.json')
+            'find no privacy policy sdk result: ' + pp_compliance_dir + '/' + app_name + '_sdk.json')
+        pp_sdk = None
 
     final_res = []
     pairs_1 = []
     # 检查哪一些text不在隐私政策中
     # 检查佳涛的
-    if text_label_pairs_1 is not None:
+    # 检查之前先检测data_cn_total是否为None
+    # 为None说明没有拿到隐私政策分析结果，无需进入循环进行检测
+    if text_label_pairs_1 is not None and data_cn_total is not None:
         for text in text_label_pairs_1:
             flag = True
         # for text, label in text_label_pairs_1:
@@ -108,7 +121,7 @@ for app_name, jsons in prefix_dict.items():
                 pairs_1.append(text)
     # 检查东鹏的
     pairs_2 = []
-    if text_label_pairs_2 is not None:
+    if text_label_pairs_2 is not None and data_cn_total is not None:
         for text in text_label_pairs_2:
             flag = True
         # for text, label in text_label_pairs_2:
@@ -145,17 +158,33 @@ for app_name, jsons in prefix_dict.items():
         data_item['pp_sdk_info'] = pp_sdk
     if config_settings['pp_print_others'] == 'true':
         data_item['compliance_analysis_part_1'] = {}
-        data_item['compliance_analysis_part_1']['data_recall'] = pp_compliance['compliance-analysis'][
-            'data-recall']
-        data_item['compliance_analysis_part_1']['account_delete'] = pp_compliance['compliance-analysis'][
-            'account-delete']
-        data_item['compliance_analysis_part_1']['complaint_channel'] = pp_compliance['compliance-analysis'][
-            'complaint-channel']
+        if pp_compliance is not None:
+            data_item['compliance_analysis_part_1']['data_recall'] = pp_compliance['compliance-analysis'][
+                'data-recall']
+            data_item['compliance_analysis_part_1']['account_delete'] = pp_compliance['compliance-analysis'][
+                'account-delete']
+            data_item['compliance_analysis_part_1']['complaint_channel'] = pp_compliance['compliance-analysis'][
+                'complaint-channel']
+        else:
+            data_item['compliance_analysis_part_1']['data_recall'] = 'not found'
+            data_item['compliance_analysis_part_1']['account_delete'] = 'not found'
+            data_item['compliance_analysis_part_1']['complaint_channel'] = 'not found'
     if config_settings['pp_print_long_sentences'] == 'true':
-        data_item['pp_long_sentences'] = pp_compliance['compliance-analysis']['long-sentence-judge']
+        if pp_compliance is not None:
+            data_item['pp_long_sentences'] = pp_compliance['compliance-analysis']['long-sentence-judge']
+        else:
+            data_item['pp_long_sentences']= 'not found'
     if config_settings['dynamic_print_full_ui_content'] == 'true' and config_settings['ui_dynamic'] == 'true':
         # 把dumpjson里的JSON日志拷贝过来,代码逻辑去别的文件拷贝一份
         app_name_log_dict = get_log()
+        # 删掉本次分析未指定的app 的json log
+        with open('../AppUIAutomator2Navigation/apk_pkgName.txt', 'r', encoding='utf-8') as f:
+            contents = set([line.strip('\n').split('|')[0].strip() for line in f.readlines()])
+        keys = list(app_name_log_dict.keys())
+        for app in keys:
+            if app not in contents:
+                app_name_log_dict.pop(app, f"{app} does not exists in apk_pkgName.txt...")
+
         for key, val in app_name_log_dict.items():
             new_name = final_res_log_dir + '/' + key + '_dynamic.json'
             if new_name[new_name.rindex('/') + 1:] in os.listdir(final_res_log_dir):
