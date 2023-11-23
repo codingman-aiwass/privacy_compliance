@@ -145,14 +145,14 @@ for app_name, jsons in prefix_dict.items():
     pairs_2_data = pairs_2[:]
     pairs_1 = set()
     pairs_2 = set()
-    # print(pairs_1_data)
-    # print(pairs_2_data)
-    # print(len(total_pp_data_items))
+    print(pairs_1_data)
+    print(pairs_2_data)
+    print(len(total_pp_data_items))
     for item in pairs_1_data:
-        # print(item)
+        print(item)
         for privacy_item in total_pp_data_items:
             if item in privacy_item.strip() or privacy_item.strip() in item:
-                # print(f'{item}|{privacy_item}')
+                print(f'{item}|{privacy_item}')
                 pairs_1.add(item)
                 continue
     for item in pairs_2_data:
