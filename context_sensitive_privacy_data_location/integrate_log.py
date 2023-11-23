@@ -140,8 +140,30 @@ for app_name, jsons in prefix_dict.items():
     with open('total_pp_privacy_data_items.txt', 'r', encoding='utf8') as f:
         contents = f.readlines()
     total_pp_data_items = set(contents)
-    pairs_1 = list(total_pp_data_items.intersection(set(pairs_1)))
-    pairs_2 = list(total_pp_data_items.intersection(set(pairs_2)))
+    # 原本的直接取交集太容易把可能符合的数据项过滤掉，改用判断找到的数据项是否含有隐私数据项字典里的数据项
+    pairs_1_data = pairs_1[:]
+    pairs_2_data = pairs_2[:]
+    pairs_1 = set()
+    pairs_2 = set()
+    print(pairs_1_data)
+    print(pairs_2_data)
+    print(len(total_pp_data_items))
+    for item in pairs_1_data:
+        print(item)
+        for privacy_item in total_pp_data_items:
+            if item in privacy_item.strip() or privacy_item.strip() in item:
+                print(f'{item}|{privacy_item}')
+                pairs_1.add(item)
+                continue
+    for item in pairs_2_data:
+        for privacy_item in total_pp_data_items:
+            if item in privacy_item or privacy_item in item:
+                pairs_2.add(item)
+                continue
+    pairs_1 = list(pairs_1)
+    pairs_2 = list(pairs_2)
+    # pairs_1 = list(total_pp_data_items.intersection(set(pairs_1)))
+    # pairs_2 = list(total_pp_data_items.intersection(set(pairs_2)))
     # TODO 此处可以根据config的配置情况,使用if-else判断输出什么log
     data_item = {}
     if config_settings['code_inspection'] == 'true':

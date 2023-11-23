@@ -18,7 +18,6 @@ from AppUIAutomator2Navigation.stop_and_run_uiautomator import rerun_uiautomator
 from get_urls import get_pkg_names_from_input_list
 from get_urls import get_pp_from_app_store
 
-
 def get_config_settings(config_file):
     config = configparser.ConfigParser()
     config.read(config_file, encoding='utf-8')
@@ -311,6 +310,10 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             #     content = f.readlines()
             # pkgName_appName_list = [item.rstrip('\n') for item in content]
             print(f'all pkgName_appName to be analyzed {pkgName_appName_list}')
+            print(f'all pkgName_appName to be analyzed: ')
+            for item in pkgName_appName_list:
+                print(item)
+            print('===========================================')
             try:
                 for pkgName_appName in pkgName_appName_list:
                     try:
@@ -537,15 +540,15 @@ def analysis_privacy_policy(total_apks_to_analysis, os_type, cur_path, log_folde
         os.mkdir(os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core', 'PrivacyPolicySaveDir'))
     try:
         if os_type == 'win':
-            # execute_cmd_with_timeout('python privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
+            # execute_cmd_with_timeout('python privacy-policy-main.py -y', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run(['python', 'privacy-policy-main.py'],
+                subprocess.run(['python', 'privacy-policy-main.py','y'],
                                cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
                                timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
         elif os_type in ['linux', 'mac']:
-            # execute_cmd_with_timeout('python3 privacy-policy-main.py', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
+            # execute_cmd_with_timeout('python3 privacy-policy-main.py -y', timeout=total_apks_to_analysis * 600,cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'))
             with open(stdout_file, "a") as stdout, open(stderr_file, "a") as stderr:
-                subprocess.run(['python3', 'privacy-policy-main.py'],
+                subprocess.run(['python3', 'privacy-policy-main.py','y'],
                                cwd=os.path.join(cur_path, 'Privacy-compliance-detection-2.1', 'core'),
                                timeout=total_apks_to_analysis * 600, stdout=stdout, stderr=stderr)
     except UnboundLocalError:
@@ -749,8 +752,8 @@ if __name__ == '__main__':
         thread1.start()
 
         # 创建并启动线程2：get_privacy_policy
-        # 睡眠5s，以确保apk_pkgName.txt里的数据更新
-        time.sleep(5)
+        # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
+        time.sleep(0.5 * total_apks_to_analysis)
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)
@@ -787,8 +790,8 @@ if __name__ == '__main__':
         thread1.start()
 
         # 创建并启动线程2：get_privacy_policy
-        # 睡眠5s，以确保apk_pkgName.txt里的数据更新
-        time.sleep(5)
+        # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
+        time.sleep(0.5 * total_apks_to_analysis)
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)
