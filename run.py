@@ -309,7 +309,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             # with open(os.path.join(cur_path,'AppUIAutomator2Navigation','apk_pkgName.txt'), 'r', encoding='utf-8') as f:
             #     content = f.readlines()
             # pkgName_appName_list = [item.rstrip('\n') for item in content]
-            print(f'all pkgName_appName to be analyzed {pkgName_appName_list}')
+            # print(f'all pkgName_appName to be analyzed {pkgName_appName_list}')
             print(f'all pkgName_appName to be analyzed: ')
             for item in pkgName_appName_list:
                 print(item)
