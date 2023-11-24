@@ -1,0 +1,1056 @@
+{
+  "AppName": "com.cainiao.wireless",
+  "outputObjects": [
+    {
+      "HostName": "com.taobao.android.pissarro.camera.CameraPreviewActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_camera_preview_activity",
+          "LayoutTitle": "重拍 [or] ",
+          "texts": [
+            {
+              "Text": "重拍",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "编辑",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "使用照片",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.pissarro.MainActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_activity_main",
+          "LayoutTitle": "最大选图数 [or] ",
+          "texts": [
+            {
+              "Text": "开启滤镜",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "开启涂鸦",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "开启马赛克",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "开启pose检查入口",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "default,hot",
+              "UIClassName": "android.widget.EditText",
+              "UserContext": "1"
+            },
+            {
+              "Text": "查看选中图片",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "编辑图片",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "多图模式",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "单图模式",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "后置摄像头",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "前置摄像头",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "Dialog模式",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "页面模式",
+              "UIClassName": "android.widget.RadioButton",
+              "UserContext": "1"
+            },
+            {
+              "Text": "最大选图数",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "9",
+              "UIClassName": "android.widget.EditText",
+              "UserContext": "1"
+            },
+            {
+              "Text": "启用裁剪",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "开启贴纸",
+              "UIClassName": "android.widget.CheckBox",
+              "UserContext": "1"
+            },
+            {
+              "Text": "6",
+              "UIClassName": "android.widget.EditText",
+              "UserContext": "1"
+            },
+            {
+              "Text": "目标图的大小",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "相机OR相册",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "相机",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "相册",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.pissarro.album.ImageMixtureActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_mixture_activity",
+          "LayoutTitle": "点击进入拍照 [or] ",
+          "texts": [
+            {
+              "Text": "",
+              "UIClassName": "com.taobao.android.pissarro.view.IconFontTextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "点击进入拍照",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.ImageGalleryActivity",
+      "layouts": [
+        {
+          "LayoutName": "imagebucketactivity",
+          "LayoutTitle": "选择文件夹 [or] ",
+          "texts": []
+        }
+      ]
+    },
+    {
+      "HostName": "com.alibaba.security.realidentity.ui.activity.RpLoadingActivity",
+      "layouts": [
+        {
+          "LayoutName": "rp_face_loading_activity",
+          "LayoutTitle": "人脸识别启动中 [or] ",
+          "texts": [
+            {
+              "Text": "人脸识别启动中",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "请保持网络通畅，等待启动完成",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "人脸识别启动失败",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "请检查手机网络连接并重试",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "再来一次",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.packagelist.view.activity.PackageSearchActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_layout_package_search",
+          "LayoutTitle": "包裹搜索 [or] ",
+          "texts": []
+        }
+      ]
+    },
+    {
+      "HostName": "com.ali.user.open.ucc.webview.WebViewDialogActivity",
+      "layouts": [
+        {
+          "LayoutName": "member_sdk_ucc_dialog_layout",
+          "LayoutTitle": "绑定淘宝账号 [or] ",
+          "texts": [
+            {
+              "Text": "绑定淘宝账号",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.FeedBackAcvitity",
+      "layouts": [
+        {
+          "LayoutName": "personal_center_feed_back_layout",
+          "LayoutTitle": "反馈 [or] ",
+          "texts": [
+            {
+              "Text": "提交",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "请选择反馈问题的类型",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "问题和意见",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "添加图片（选填，提供问题截图）",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "查看常见问题",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ads.activity.SearchKeywordGoodsActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_search_keyword_goods",
+          "LayoutTitle": "取消 [or] ",
+          "texts": [
+            {
+              "Text": "取消",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.homepage.view.activity.ImportTbPackagesGuideActivity",
+      "layouts": [
+        {
+          "LayoutName": "homepage_import_tb_pkg_guide",
+          "LayoutTitle": "是否自动导入淘宝包裹？ [or] ",
+          "texts": [
+            {
+              "Text": "是否自动导入淘宝包裹？",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "实时同步淘宝包裹的物流状态",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "立即导入",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "暂不导入",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.ImageBucketActivity",
+      "layouts": [
+        {
+          "LayoutName": "imagebucketactivity",
+          "LayoutTitle": "选择文件夹 [or] ",
+          "texts": []
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggscancode.capture.alipay.ui.SimpleScannerActivity",
+      "layouts": [
+        {
+          "LayoutName": "new_activity_simplescan",
+          "LayoutTitle": "请对准快递单上的条形码，如长时间扫不中，可向站长求助 [or] ",
+          "texts": [
+            {
+              "Text": "自动扫描二维码/条形码，查取快递",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "请对准快递单上的条形码，如长时间扫不中，可向站长求助",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "扫一扫",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "快速取件",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.NullPackageBindGuideActivity",
+      "layouts": [
+        {
+          "LayoutName": "null_package_bind_guide_layout",
+          "LayoutTitle": "false [or] ",
+          "texts": [
+            {
+              "Text": "欢迎使用菜鸟！\\10您当前的手机号暂无包裹",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "暂不添加，跳过",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "添加收件手机号",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "多平台包裹一键轻松查取",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "去添加",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "添加亲友手机号",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "互相查取包裹",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "去绑定",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.ShareMeActivity",
+      "layouts": [
+        {
+          "LayoutName": "personal_center_shareme_activity",
+          "LayoutTitle": "分享 [or] ",
+          "texts": [
+            {
+              "Text": "法律条款",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "分享二维码给好友",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggscancode.capture.alipay.ui.PickupScannerActivity",
+      "layouts": [
+        {
+          "LayoutName": "new_activity_scanpackage_pickup",
+          "LayoutTitle": "请拍摄包含完整条形码的面单 [or] ",
+          "texts": [
+            {
+              "Text": "请拍摄包含完整条形码的面单",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "识别中",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "取消",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "参考范例",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.ali.user.mobile.ability.webview.AliUserWebTransparent",
+      "layouts": [
+        {
+          "LayoutName": "aliuser_web_trans",
+          "LayoutTitle": "填写验证码教学视频 [or] ",
+          "texts": [
+            {
+              "Text": "填写验证码教学视频",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.alibaba.security.realidentity.ui.activity.RPTakePhotoActivity",
+      "layouts": [
+        {
+          "LayoutName": "rp_alrealidentity_activity_rp_take_photo",
+          "LayoutTitle": "取消 [or] ",
+          "texts": [
+            {
+              "Text": "取消",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "示例图加载中，请稍等...",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "换一张",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "相册上传",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "重拍",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "使用照片",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "换一张",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "示例图加载中，请稍等...",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "换一张",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity",
+      "layouts": [
+        {
+          "LayoutName": "ttdownloader_activity_app_detail_info",
+          "LayoutTitle": "权限详情 [or] ",
+          "texts": [
+            {
+              "Text": "应用信息正在完善中...",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "权限详情",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "立即下载",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity",
+      "layouts": [
+        {
+          "LayoutName": "ttdownloader_activity_app_privacy_policy",
+          "LayoutTitle": "隐私政策 [or] ",
+          "texts": [
+            {
+              "Text": "隐私政策",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.components.ocr.view.MultiPackageImportActivity",
+      "layouts": [
+        {
+          "LayoutName": "multi_package_ocr_import_layout",
+          "LayoutTitle": "false [or] ",
+          "texts": [
+            {
+              "Text": "立即导入",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.FeedBackResultAcvitity",
+      "layouts": [
+        {
+          "LayoutName": "personal_center_feed_back_result_layout",
+          "LayoutTitle": "反馈 [or] ",
+          "texts": [
+            {
+              "Text": "反馈已提交，等待处理中",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.MultiPhoneBindGuideActivity",
+      "layouts": [
+        {
+          "LayoutName": "multi_phone_guide_bind_layout",
+          "LayoutTitle": "false [or] ",
+          "texts": [
+            {
+              "Text": "查询到您的淘宝有多个手机号，绑定手机号查取包裹更方便。",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "请选择1个您常用的取件号码",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.components.ocr.view.ImageOcrPreviewActivity",
+      "layouts": [
+        {
+          "LayoutName": "image_ocr_preview_layout",
+          "LayoutTitle": "false [or] ",
+          "texts": [
+            {
+              "Text": "确认返回",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.pissarro.album.ImageAlbumActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_album_activity",
+          "LayoutTitle": "相册 [or] ",
+          "texts": [
+            {
+              "Text": "相册",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "取消",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggcabinet.presentation.view.activity.OneKeyOpenBoxPoiActivity",
+      "layouts": [
+        {
+          "LayoutName": "open_box_poi_activity",
+          "LayoutTitle": "一键开柜地图 [or] ",
+          "texts": []
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggscancode.capture.alipay.ui.QuickPickScanActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_quick_pick_scan",
+          "LayoutTitle": "扫描快递单上的条形码 [or] ",
+          "texts": [
+            {
+              "Text": "扫描快递单上的条形码",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.mvp.activities.GuideActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_guide",
+          "LayoutTitle": "菜鸟 [or] ",
+          "texts": [
+            {
+              "Text": "跳过",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.pissarro.ImageChoiceActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_choice_dialog",
+          "texts": [
+            {
+              "Text": "拍照",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "从相册选择",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "取消",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ClipImageActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_clip_image_of_choose_multi_picture",
+          "LayoutTitle": "图片 [or] ",
+          "texts": [
+            {
+              "Text": "图片",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggcabinet.presentation.view.activity.OneKeyOpenBoxActivity",
+      "layouts": [
+        {
+          "LayoutName": "one_key_open_box",
+          "LayoutTitle": "一键开柜 [or] ",
+          "texts": [
+            {
+              "Text": "请确认你在自提柜旁边，避免包裹丢失",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "滑动来开柜",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "正在开柜中…",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "请在自提柜上再次确认开启",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "获取提货码",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "我要重试",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.huawei.hms.activity.EnableServiceActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_endisable_service",
+          "LayoutTitle": "Please enable the HMS service in settings tag [or] ",
+          "texts": [
+            {
+              "Text": "Please enable the HMS service in settings tag",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ucrop.PhotoCropActivity",
+      "layouts": [
+        {
+          "LayoutName": "send_photo_crop_activity",
+          "texts": [
+            {
+              "Text": "重新选择",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ucrop.UCropActivity",
+      "layouts": [
+        {
+          "LayoutName": "send_photo_crop_activity",
+          "texts": [
+            {
+              "Text": "重新选择",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            },
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.Button",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ggscancode.capture.alipay.ui.PickupSelfHelpActivity",
+      "layouts": [
+        {
+          "LayoutName": "ggscan_activity_pick_up_scan_self_help",
+          "LayoutTitle": "打开手电筒 [or] ",
+          "texts": [
+            {
+              "Text": "关闭",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "打开手电筒",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.PreviewActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_preview_of_choose_multi_picture",
+          "LayoutTitle": "",
+          "texts": [
+            {
+              "Text": "选择",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.preview.DXTemplatePreviewActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_template_preview",
+          "LayoutTitle": "Back [or] ",
+          "texts": [
+            {
+              "Text": "Back",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.ImageSelectorActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_image_select_of_choose_multi_picture",
+          "LayoutTitle": "图片 [or] ",
+          "texts": [
+            {
+              "Text": "图片",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            },
+            {
+              "Text": "预览",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.components.ocr.view.CompanySelectActivity",
+      "layouts": [
+        {
+          "LayoutName": "popup_select_company",
+          "LayoutTitle": "请选择物流公司 [or] ",
+          "texts": [
+            {
+              "Text": "未查到物流公司",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.ali.user.open.ucc.webview.WebViewTransparentActivity",
+      "layouts": [
+        {
+          "LayoutName": "member_sdk_ucc_pop_layout",
+          "LayoutTitle": "绑定淘宝账号 [or] ",
+          "texts": [
+            {
+              "Text": "绑定淘宝账号",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.taobao.android.pissarro.album.ImageClipActivity",
+      "layouts": [
+        {
+          "LayoutName": "pissarro_image_clip_activity",
+          "LayoutTitle": "确定 [or] ",
+          "texts": [
+            {
+              "Text": "确定",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.homepage.view.secondfloor.SecondFloorTransformActivity",
+      "layouts": [
+        {
+          "LayoutName": "activity_second_floor",
+          "LayoutTitle": "跳过 [or] ",
+          "texts": [
+            {
+              "Text": "跳过",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.send.view.activity.ContactActivity",
+      "layouts": [
+        {
+          "LayoutName": "send_contact_layout",
+          "LayoutTitle": "#a2a5a8 [or] 17sp [or] ",
+          "texts": [
+            {
+              "Text": "无联系人信息",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "HostName": "com.cainiao.wireless.pickup.view.activity.QuickPickQrCodeActivity",
+      "layouts": [
+        {
+          "LayoutName": "layout_quick_pick_qr_code",
+          "LayoutTitle": "快速取件码 [or] ",
+          "texts": [
+            {
+              "Text": "快速取件码",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "快速取件安全码",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "请在「快速取件通道」核验通过",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            },
+            {
+              "Text": "已实名认证",
+              "UIClassName": "android.widget.TextView",
+              "UserContext": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

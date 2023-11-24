@@ -1,7 +1,5 @@
 import json
 import re
-import time
-
 from bs4 import BeautifulSoup
 from bs4 import element
 from selenium_driver import driver
@@ -213,8 +211,11 @@ def url_juudge(value):
     else:
         for u in value[1]:
             soup = html_response_soup(u)
-            temp_text = soup.get_text()
-            if value[0].replace("视频","") in temp_text and '隐私政策' in temp_text:
+            try:
+                temp_text = soup.get_text()
+            except Exception as e:
+                print(e)
+            if value[0].replace("视频","") in temp_text and '隐私' in temp_text and '政策':
                 return soup,u
     return None,value[1][0]
 def clean_url_dict(packagename_url_dict):
@@ -303,6 +304,7 @@ def url_analysis2(value_url,packagename):
                     soup = redirection_judge(soup)
                     if soup:
                         name,res2 = html_handle2(soup)
+                        SDK_result = run_SDK_analysis(url=url, soup=soup)
                         if res2:
                             res2 = pingjie(nbsp_rechange(res2))
                             with open('Privacypolicy_txt/' + packagename +".txt", 'w', encoding='utf-8') as f:
@@ -319,7 +321,7 @@ def url_analysis2(value_url,packagename):
                 print(str(url)+"解析失败！失败原因："+str(e))
         return url
     else:
-        print("无有效隐私政策链接输入"+url)
+        print("无有效隐私政策链接输入")
         return None
 def run_url_analysis(filepath):
     #如果是url.txt文件
@@ -335,9 +337,10 @@ def run_url_analysis(filepath):
             temp = clean_url_dict(packagename_url_dict)
             for key in temp:
                 url = url_analysis2(temp[key],key)
-                #time.sleep(2)
                 if url:
                     new_pkgname_dict[key] = url
+                #这里返回二次清洗的处理的url，然后保存到新的字典，最后生成和之前格式一样的一个result_pkgName_url.json
+                #print(packagename_url_dict[key])
         if new_pkgname_dict:
             with open("result_pkgName_url.json",'w',encoding='utf-8')as f:
                 json.dump(new_pkgname_dict,f, ensure_ascii=False, indent=2)
@@ -349,10 +352,8 @@ if __name__ == '__main__':
         url_analysis(url)    '''
     #read_json_file('temp/pkgName_url.json')
     #总体调试
-    run_url_analysis('pkgName_url.json')
-    #优酷"https://terms.alicdn.com/legal-agreement/terms/suit_bu1_unification/suit_bu1_unification202005141916_91107.html#Intent"
-    #爬取失败
+    run_url_analysis('pkgName_url(1).json')
     #单个调试
-    #url_analysis2("https://h5.m.youku.com/app/flsm.html",'com.youku.phone')
+    url_analysis2(['蚂蚁金融',["https://render.alipay.com/p/c/17fu1jxtj9a8"]],'蚂蚁金融')
     #table_static(html_response_soup('https://www.xiaohongshu.com/crown/community/third_checklist'))
 

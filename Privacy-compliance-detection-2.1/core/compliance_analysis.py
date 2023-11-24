@@ -231,11 +231,21 @@ def run_compliance_3(txt_path):
     else:
         print("ERROR! 无隐私政策进行合规分析。")
     return compliance3_result
-def run_compliance_4(txt_path):
+def run_compliance_4(txt_path,only_analysis_pkgName_url = 'n'):
     filename_list = os.listdir(txt_path)
+    apps = set(filename_list)
+    if only_analysis_pkgName_url == 'y':
+        try:
+            with open('pkgName_url.json', 'r', encoding='utf8') as f:
+                json_file = json.load(f)
+                apps = set(json_file.keys())
+        except FileNotFoundError:
+            # 找不到pkgName_url.json的话，就按原本的方法进行。。
+            print('no pkgName_url.json, fail to analysis...')
+
     if filename_list:
         for i in filename_list:
-            if i.endswith(".txt"):
+            if i.endswith(".txt") and (i[:-4] in apps or i in apps):
                 text = read_txt(txt_path+"/"+i)
                 segments = run_subsection(text)
                 result_dict = subsection_match(segments)
@@ -250,14 +260,20 @@ def run_compliance_4(txt_path):
                 with open("PrivacyPolicySaveDir/"+i[:-4]+".json",'w',encoding='utf-8')as f:
                     json.dump(data,f,ensure_ascii=False, indent=2)
                 f.close()
+        return result_dict
     else:
         print("ERROR! 无隐私政策进行合规分析。")
-    return result_dict
+
+
+
 def write_compliance_in_json(compliance3_list,longsentence_result,danger_permission_lost_result):
     return False
-def run_compliance_analysis():
+def run_compliance_analysis(only_analysis_pkgName_url = 'n'):
     #撤回授权、更正删除注销、投诉举报，分析对象隐私政策
-    compliance4_list = run_compliance_4('Privacypolicy_txt')
+    if only_analysis_pkgName_url == 'n':
+        compliance4_list = run_compliance_4('Privacypolicy_txt')
+    else:
+        compliance4_list = run_compliance_4('Privacypolicy_txt','y')
     #{'data-recall': True, 'account-delete': True, 'complaint-channel': True}
     #长句检测，分析对象隐私政策
     #longsentence_result = run_long_sentence_judge('Privacypolicy_txt')
