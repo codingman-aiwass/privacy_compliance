@@ -51,6 +51,7 @@ make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detect
 - `pip install alibabacloud_teaopenai==0.3.2`
 - `pip install hanlp`
 - `pip install selinium`
+- `pip install dashscope`
 To run this module successfully, you also need to config the Chromedriver in your machine.
 - 
 - `python3 privacy-policy-main.py`
@@ -104,6 +105,7 @@ Make sure you are at `{your workdir}/privacy_compliance` first, and then run `py
 - Install the tesseract and config its language package.
 
 - If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py
+- If you want to ask llm about privacy policy. You can go to `Privacy-compliance-detection-2.1/core` and execute `python3 compliance_analysis.py` or `python3 permission_query.py`.
 
 
 #### Note

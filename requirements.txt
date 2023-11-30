@@ -11,3 +11,4 @@ configobj
 configparser
 chardet
 selenium
+dashscope

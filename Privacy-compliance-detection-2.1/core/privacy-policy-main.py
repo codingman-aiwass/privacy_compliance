@@ -30,9 +30,9 @@ def main(filename,only_analysis_pkgName_url = 'n'):
         run_handle("Privacypolicy_txt",'y')
 
 def delete_privacy_json():
-    folder_path = 'PrivacyPolicySaveDir'  # 将 path/to/folder 替换为你的文件夹路径
+    folder_path = 'Privacypolicy_txt'
     for file_name in os.listdir(folder_path):
-        if file_name.endswith('.json'):
+        if file_name.endswith('.txt'):
             file_path = os.path.join(folder_path, file_name)
             os.remove(file_path)
 if __name__ == '__main__':
@@ -44,6 +44,7 @@ if __name__ == '__main__':
     except IndexError:
         # 采用默认情况
         print('no args input.')
+        delete_privacy_json()
         main("pkgName_url.json")
         run_compliance_analysis()
 
