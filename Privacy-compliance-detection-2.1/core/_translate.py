@@ -1,13 +1,26 @@
 # -*- coding: utf-8 -*-
 import re
 import json
+
+import configparser
 from alibabacloud_alimt20181012.client import Client as alimt20181012Client
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_alimt20181012 import models as alimt_20181012_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
-ACCESS_KEY_ID = "LTAI5tH3Wa7UafkbDAn6ang1"
-ACCESS_KEY_SECRET = "zjj6AS82Z5dBdffY3SSsgnuodE1GUS"
+def get_config_settings(config_file):
+    config = configparser.ConfigParser()
+    config.read(config_file, encoding='utf-8')
+    pairs = []
+    for section in config.sections():
+        pairs.extend(config.items(section))
+    dic = {}
+    for key, value in pairs:
+        dic[key] = value
+    return dic
+config_settings = get_config_settings('api_key.ini')
+ACCESS_KEY_ID = config_settings['access_key_id']
+ACCESS_KEY_SECRET = config_settings['access_key_secret']
 def create_client(
         access_key_id: str,
         access_key_secret: str,
