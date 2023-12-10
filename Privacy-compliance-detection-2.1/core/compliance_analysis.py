@@ -5,6 +5,9 @@ import jieba
 import spacy
 nlp = spacy.load("zh_core_web_trf")
 stopwords = [line.strip() for line in open("stopwords/hit_stopwords.txt", encoding="utf-8").readlines()]  # 加载停用词
+with open("Dict/dangerous_permission.json", 'r', encoding='utf-8') as f:
+    danger_permission = json.load(f)
+f.close()
 def remove_stopwords(sentence):
     #删除句子中的停用词，并返回句子。
     words = jieba.lcut(sentence)
@@ -224,13 +227,41 @@ def run_compliance_3(txt_path):
                     t10_count +=1
                 if result_dict["complaint-channel"] == False:
                     t13_count +=1
-                #with open("result/"+i[:-4]+".json",'w',encoding='utf-8')as f:
-                 #   json.dump(result_dict,f,ensure_ascii=False, indent=2)
-                #f.close()
                 compliance3_result.append({i:result_dict})
     else:
         print("ERROR! 无隐私政策进行合规分析。")
     return compliance3_result
+
+def permission_compliance(data,name):
+    '''
+    :param data:  PrivacyPolicySaveDir中的处理结果，为了获取隐私政策声明的权限列表
+    :param name: 保存app中权限的文件名字
+    :return:
+    '''
+    result_list = []
+    app_permission = []
+    try:
+        pp_permission_list = data[0]["permission_list"][:]
+    except:
+        pp_permission_list = []
+    if pp_permission_list:#声明权限
+        try:
+            with open("permissions/"+name[:-4]+".txt",'r',encoding='utf-8')as f:
+                permission_string = f.read()
+                permission_string = permission_string.upper()
+            f.close()
+        except:
+            permission_string = None
+        if permission_string:
+            for dp in danger_permission:
+                if dp in permission_string:
+                    app_permission.append(dp)
+        if app_permission:#app使用危险权限
+            for apd in app_permission:
+                if apd not in pp_permission_list:
+                    result_list.append(apd)
+    return result_list
+
 def run_compliance_4(txt_path,only_analysis_pkgName_url = 'n'):
     filename_list = os.listdir(txt_path)
     apps = set(filename_list)
@@ -256,6 +287,8 @@ def run_compliance_4(txt_path,only_analysis_pkgName_url = 'n'):
                 with open("PrivacyPolicySaveDir/"+i[:-4]+".json",'r',encoding='utf-8')as f:
                     data = json.load(f)
                 f.close()
+                # 隐私政策权限声明与app使用权限对比。找到未经声明使用的危险权限。
+                result_dict["permission-lost"] = permission_compliance(data, i)[:]
                 data.append({'compliance-analysis':result_dict})
                 with open("PrivacyPolicySaveDir/"+i[:-4]+".json",'w',encoding='utf-8')as f:
                     json.dump(data,f,ensure_ascii=False, indent=2)
@@ -268,19 +301,12 @@ def run_compliance_4(txt_path,only_analysis_pkgName_url = 'n'):
 
 def write_compliance_in_json(compliance3_list,longsentence_result,danger_permission_lost_result):
     return False
-
 def  run_compliance_analysis(only_analysis_pkgName_url = 'n'):
-
     #撤回授权、更正删除注销、投诉举报，分析对象隐私政策
     if only_analysis_pkgName_url == 'n':
         compliance4_list = run_compliance_4('Privacypolicy_txt')
     else:
         compliance4_list = run_compliance_4('Privacypolicy_txt','y')
-    #{'data-recall': True, 'account-delete': True, 'complaint-channel': True}
-    #长句检测，分析对象隐私政策
-    #longsentence_result = run_long_sentence_judge('Privacypolicy_txt')
-    #这里的长句分析并不完整。。。还有另一部分，我不知道放哪里了，绝了。tmd
-    #write_compliance_in_json(compliance3_list,longsentence_result)
 if __name__ == '__main__':
     run_compliance_analysis()
     #run_long_sentence_judge("Privacypolicy_txt")

@@ -2,13 +2,26 @@ import os
 import sys
 import traceback
 
+import configparser
+
 from selenium_driver import driver
 import re
 import dashscope
 from dashscope import Generation
 from http import HTTPStatus
 import json
-dashscope.api_key="sk-14cf2f9bce7e4991a6887b0a3ff9c758"
+def get_config_settings(config_file):
+    config = configparser.ConfigParser()
+    config.read(config_file, encoding='utf-8')
+    pairs = []
+    for section in config.sections():
+        pairs.extend(config.items(section))
+    dic = {}
+    for key, value in pairs:
+        dic[key] = value
+    return dic
+config_settings = get_config_settings('api_key.ini')
+dashscope.api_key=config_settings['dashscope_api_key']
 def split_str_5000(str_list):
     if str_list:
         for i in range(0,len(str_list)):

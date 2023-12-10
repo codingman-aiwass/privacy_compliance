@@ -148,7 +148,7 @@ def initSettings():
                        'run_ui_static': 'true', 'run_dynamic_part': 'true',
                        'dynamic_ui_depth': '3', 'dynamic_run_time': '180',
                        'clear_cache': 'true', 'rerun_uiautomator2': 'true', 'start_frida': 'true',
-                       'searchprivacypolicy': 'true', 'drawappcallgraph': 'false', 'screenuidrep': "loc",
+                       'searchprivacypolicy': 'true', 'screenuidrep': "loc",
                        'clear_final_res_dir_before_run': 'true','clear_pp_analysis_res_before_run':'true',
                        'clear_tmp_output_dir_before_run': 'true', 'multi-thread': "low"}
     in_docker = False
@@ -330,6 +330,11 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
             print('===========================================')
             try:
                 for pkgName_appName in pkgName_appName_list:
+                    if pkgName_appName.startswith('#'):
+                        print(pkgName_appName + 'is ignored,continue...')
+                        continue
+                    if len(pkgName_appName) < 3:
+                        continue
                     try:
                         pkgName, appName = pkgName_appName.split(' | ')
                         appName = appName.strip('\'')
@@ -353,7 +358,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                                 print(f'start subprocess.run {pkgName_appName}')
                                 subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                                 config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                                config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                                config_settings['screenuidrep']],
                                                cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                                timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                                stderr=stderr)
@@ -372,7 +377,7 @@ def get_privacy_policy(os_type, config_settings, cur_path, total_apk, log_folder
                                 print(f'start subprocess.run {pkgName_appName}')
                                 subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                                 config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                                config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                                config_settings['screenuidrep']],
                                                cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                                timeout=int(config_settings['dynamic_run_time']) + 600, stderr=stderr,
                                                stdout=stdout)
@@ -668,7 +673,7 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python3", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                         config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                        config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                        config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
@@ -691,7 +696,7 @@ def dynamic_app_test(config_settings, cur_path, os_type, log_folder_path):
                     with open(stdout_file, "w") as stdout, open(stderr_file, "w") as stderr:
                         subprocess.run(["python", "run.py", pkgName, appName, config_settings['dynamic_ui_depth'],
                                         config_settings['dynamic_run_time'], config_settings['searchprivacypolicy'],
-                                        config_settings['drawappcallgraph'], config_settings['screenuidrep']],
+                                        config_settings['screenuidrep']],
                                        cwd=os.path.join(cur_path, 'AppUIAutomator2Navigation'),
                                        timeout=int(config_settings['dynamic_run_time']) + 600, stdout=stdout,
                                        stderr=stderr)
@@ -786,10 +791,8 @@ if __name__ == '__main__':
 
         # 创建并启动线程2：get_privacy_policy
         # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
-
         print(f'sleep for {0.5 * total_apks_to_analysis + 5}s')
         time.sleep(0.5 * total_apks_to_analysis + 5)
-
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)
@@ -827,10 +830,8 @@ if __name__ == '__main__':
 
         # 创建并启动线程2：get_privacy_policy
         # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
-
         print(f'sleep for {0.5 * total_apks_to_analysis + 5}s')
         time.sleep(0.5 * total_apks_to_analysis + 5)
-
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)

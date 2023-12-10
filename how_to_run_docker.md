@@ -9,7 +9,7 @@
 2. Run `powershell.exe .\build_image.ps1` in Windows, or run `sh build_image.sh` in Unix-Like OS.
 3. Run `python run_docker.py` in Windows, or run `sudo python3 run_docker.py` in Unix-Like OS.
 4. Now you are in the docker container. Run `conda deactivate`
-5. Now you can run the python script to start analysis. Run `sudo python3 run.py -c config.ini`
+5. Now you can run the python script to start analysis. Run `sudo python3 one_command_run.py -c config.ini`
 
 ### Analysis Results
 Results are stored in ./docker_result. You can modify the running settings in the confg.ini file in ./docker_result.

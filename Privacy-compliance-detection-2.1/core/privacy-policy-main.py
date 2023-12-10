@@ -45,7 +45,6 @@ if __name__ == '__main__':
         # 采用默认情况
         print('no args input.')
         delete_privacy_json()
-
         main("pkgName_url.json")
         run_compliance_analysis()
 
