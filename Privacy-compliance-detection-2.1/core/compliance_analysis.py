@@ -268,7 +268,9 @@ def run_compliance_4(txt_path,only_analysis_pkgName_url = 'n'):
 
 def write_compliance_in_json(compliance3_list,longsentence_result,danger_permission_lost_result):
     return False
+
 def  run_compliance_analysis(only_analysis_pkgName_url = 'n'):
+
     #撤回授权、更正删除注销、投诉举报，分析对象隐私政策
     if only_analysis_pkgName_url == 'n':
         compliance4_list = run_compliance_4('Privacypolicy_txt')

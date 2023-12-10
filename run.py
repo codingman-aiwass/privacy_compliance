@@ -786,8 +786,10 @@ if __name__ == '__main__':
 
         # 创建并启动线程2：get_privacy_policy
         # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
+
         print(f'sleep for {0.5 * total_apks_to_analysis + 5}s')
         time.sleep(0.5 * total_apks_to_analysis + 5)
+
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)
@@ -825,8 +827,10 @@ if __name__ == '__main__':
 
         # 创建并启动线程2：get_privacy_policy
         # 每个应用睡眠0.5s，以确保apk_pkgName.txt里的数据更新
+
         print(f'sleep for {0.5 * total_apks_to_analysis + 5}s')
         time.sleep(0.5 * total_apks_to_analysis + 5)
+
         thread2 = threading.Thread(target=get_privacy_policy,
                                    args=(os_type, config_settings, cur_path, total_apks_to_analysis, log_folder_path))
         threads.append(thread2)
