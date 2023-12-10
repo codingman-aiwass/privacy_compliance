@@ -119,7 +119,7 @@ def run_write_json(single_txt_path,save_json_path):
         url_name_dict = json.load(f)
     f.close()
     try:
-        url = url_name_dict[os.path.basename(single_txt_path)[:-4]]#只需要改这里的逻辑就行,解析文件名字提取url,+后面到
+        url = url_name_dict[os.path.basename(single_txt_path)[:-4]]
         print(os.path.basename(single_txt_path)[:-4]+"------------")
         permission_list = run_permission_handle(list(set(data_total_list)),s_list,url)
         total_dict["permission_list"] = list(set(permission_list))

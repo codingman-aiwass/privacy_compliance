@@ -149,7 +149,6 @@ def html_handle2(soup):
                         result.extend(text)
     return extract_chinese(str(title_tag)), result
 def redirection_judge(soup):
-    #print(str(soup))
     if re.search(r'window\.location\.href',str(soup)):
         #获取指向的URL
         script_tags = soup.find_all('script')
@@ -244,7 +243,7 @@ def clean_url_dict(packagename_url_dict):
                          temp.append(url)
                     if flag ==0:
                         temp1.append(url)
-                if temp:#需要对这个再做一次清理，如果字符串从开头到后面超过多少个字符一样，则保留更长的那个
+                if temp:
                     if len(temp)>1:
                         temp = list(set(temp))
                     result_dict[key].append(temp[:])
@@ -269,7 +268,7 @@ def url_analysis2(value_url,packagename):
             SDK_result = run_SDK_analysis(url=url,soup=soup)
             if result:
                 result = pingjie(nbsp_rechange(result))
-                if len(result)>4:#把url写到txt文件的名字里，这样后面权限处理模块就可以正常处理，并且可以不改动此页逻辑
+                if len(result)>4:
                     with open('Privacypolicy_txt/'+packagename+".txt",'w',encoding='utf-8')as f:
                         for i in result:
                             f.write("%s\n" % i)
@@ -339,8 +338,7 @@ def run_url_analysis(filepath):
                 url = url_analysis2(temp[key],key)
                 if url:
                     new_pkgname_dict[key] = url
-                #这里返回二次清洗的处理的url，然后保存到新的字典，最后生成和之前格式一样的一个result_pkgName_url.json
-                #print(packagename_url_dict[key])
+
         if new_pkgname_dict:
             with open("result_pkgName_url.json",'w',encoding='utf-8')as f:
                 json.dump(new_pkgname_dict,f, ensure_ascii=False, indent=2)
