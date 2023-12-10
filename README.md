@@ -34,6 +34,7 @@
 - openJDK8
 - python3.8.0
 - adb tool
+- An Android device with Root and frida-server.
 
 
 #### Setup & Run
@@ -51,12 +52,13 @@ make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detect
 - `pip install alibabacloud_teaopenai==0.3.2`
 - `pip install hanlp`
 - `pip install selinium`
+- `pip install dashscope`
 To run this module successfully, you also need to config the Chromedriver in your machine.
 - 
 - `python3 privacy-policy-main.py`
 
-If you want to run permission check via LLM, you can execute the script in ..(path)
-- Run `python3 xx.py`
+If you want to run permission check via LLM, you can execute the script 
+- Run `python3 permission_query.py` or `python3 compliance_analysis.py`
 
 ''' Static analysis Setup&Run '''
 make sure you are at {your workdir}/privacy_compliance/Privacy-compliance-detection-2.1/core
@@ -80,7 +82,7 @@ Config what apps to dynamically test in `apk_pkgName.txt`. It should be package 
 - Run `pip install -r requirements.txt`
 - Run `pip install -r requirements_yolov5.txt`
 
-Run `python3 test_integrate.py`
+Run `python3 run_config.py`
 
 '''context_sensitive_privacy_data_location Setup&Run'''
 
@@ -93,17 +95,22 @@ Run `pip install chardet`
 - Run `python3 run_jar.py`
 - Run `python3 run_UI_static.py`
 
+
+
+
+
 '''One command run'''
 If you choose to run this, you **should not** change settings in above modules, i.e., you should not change settings in RunningConfig.ini and RunningConfig.properties.
-Make sure you are at `{your workdir}/privacy_compliance` first, and then run `python3 run.py -c config.ini` .
-- Make sure you are at./privacy_compliance.
+Make sure you are at `{your workdir}/privacy_compliance` first.
+
 - Run `pip install -r requirements.txt`
 - Run `pip install -r requirements_yolov5.txt`
 - Run `pip install hanlp[full] -U`
 - Install the ChromeDriver according to the chrome version in your local machine.
 - Install the tesseract and config its language package.
 
-- If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py
+- If you want to run with config file, run`python3 run.py -c config.ini`, else run `python3 run.py`
+- If you want to ask llm about privacy policy. You can go to `Privacy-compliance-detection-2.1/core` and execute `python3 compliance_analysis.py` or `python3 permission_query.py`.
 
 
 #### Note
@@ -119,8 +126,9 @@ Make sure the file directory structure is like this:
   - config.ini
   - requirements.txt
   - requirements_yolov5.txt
+  - final_res_log_dir
   
-**Final integrate logs lie in ./context_sensitive_privacy_data_location/final_res_log_dir**
+**Final integrate logs lie in final_res_log_dir**
 
 
 
